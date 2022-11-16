@@ -3,7 +3,7 @@ import HomePage from "../components/HomePage.vue";
 
 const routes = [
   {
-    path: "/testing",
+    path: "/",
     name: "Home",
     component: HomePage,
   },

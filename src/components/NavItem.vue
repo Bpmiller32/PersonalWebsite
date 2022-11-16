@@ -21,6 +21,6 @@ if (useRoute().path === props.linkName) {
     }"
   >
     {{ props.linkName }}
-    {{ useRoute().path }}
+    <!-- {{ useRoute().path }} -->
   </li>
 </template>
