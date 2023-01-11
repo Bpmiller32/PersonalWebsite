@@ -14,7 +14,7 @@
       <!-- Photo -->
       <div class="flex justify-center">
         <img
-          class="object-cover mt-5 h-60 rounded-3xl"
+          class="object-cover mt-5 h-60 rounded-3xl shadow-2xl"
           src="..\assets\aboutMe.png"
         />
       </div>
@@ -32,7 +32,7 @@
         </p>
         <p class="mt-5">
           Fast-forward to today, and I’ve had the privilege of working in
-          education, freelance, a huge corporation, and a small . My main focus
+          education, freelance, a huge corporation, and a small. My main focus
           these days is building accessible, inclusive products and digital
           experiences at Upstatement for a variety of clients.
         </p>

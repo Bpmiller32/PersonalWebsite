@@ -1,6 +1,6 @@
 <template>
   <div
-    class="border border-gray-600 py-8 px-4 shadow rounded-lg sm:px-10 min-w-[30vw]"
+    class="border-2 border-zinc-700/40 py-8 px-4 shadow rounded-lg sm:px-10 min-w-[30vw]"
   >
     <form class="space-y-6" action="#" method="POST">
       <div>
