@@ -25,16 +25,16 @@
           exceptional digital experiences.
         </p>
         <p class="mt-5">
-          I enjoy creating things that live on the internet. My interest in web
-          development started back in 2012 when I decided to try editing custom
-          Tumblr themes — turns out hacking together a custom reblog button
-          taught me a lot about HTML & CSS!
+          I started playing with computers when I was 6 years old. Since then I
+          have been tinkering with all sorts of technologies that in some way or
+          another lead me to work on photography, electrical engineering,
+          automation, and video game console modding.
         </p>
         <p class="mt-5">
           Fast-forward to today, and I’ve had the privilege of working in
-          education, freelance, a huge corporation, and a small. My main focus
-          these days is building accessible, inclusive products and digital
-          experiences at Upstatement for a variety of clients.
+          education, freelance, huge corporations, and a local hackathons. My
+          main focus these days is building reactive, accessible, inclusive
+          products and digital experiences at Matthews for a variety of clients.
         </p>
       </div>
     </div>

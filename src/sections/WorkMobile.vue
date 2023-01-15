@@ -52,9 +52,9 @@
         <div
           class="ml-3 flex flex-col text-gray-100 font-poppins text-[0.93rem]"
         >
-          <p>Experienced in C#,</p>
-          <p>Powershell, .Net Core,</p>
-          <p>WinForms, UWP.</p>
+          <p>5 years of development</p>
+          <p>experience in C#, Powershell,</p>
+          <p>.Net Core, WinForms, UWP</p>
         </div>
       </div>
     </div>
@@ -83,9 +83,9 @@
         <div
           class="ml-3 flex flex-col text-gray-100 font-poppins text-[0.93rem]"
         >
-          <p>6+ years of development</p>
+          <p>3 years of development</p>
           <p>experience in HTML, CSS, JS</p>
-          <p>Vue, Nuxt, and Asp.Net.</p>
+          <p>Vue, Nuxt, and Asp.Net Core.</p>
         </div>
       </div>
     </div>
@@ -113,7 +113,7 @@
         <div
           class="ml-3 flex flex-col text-gray-100 font-poppins text-[0.93rem]"
         >
-          <p>10+ years experiece in</p>
+          <p>10 years experiece in</p>
           <p>designing, managing,</p>
           <p>and implementing</p>
           <p>large-scale IT challenges.</p>
@@ -122,7 +122,7 @@
     </div>
 
     <!-- Resume Card -->
-    <div class="mt-10 rounded-2xl border-2 p-6 border-zinc-700/40">
+    <!-- <div class="mt-10 rounded-2xl border-2 p-6 border-zinc-700/40">
       <h2 class="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <span class="ml-3">Work</span>
       </h2>
@@ -256,6 +256,6 @@
             stroke-linejoin="round"
           ></path></svg
       ></a>
-    </div>
+    </div> -->
   </section>
 </template>
