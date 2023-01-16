@@ -34,12 +34,12 @@
 
       <button
         type="submit"
-        class="flex w-full justify-center rounded-md border border-transparent bg-teal-400 py-2 px-4 text-sm font-medium text-gray-100 shadow-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+        class="flex w-full justify-center rounded-md border border-transparent bg-bteal-50 py-2 px-4 text-sm font-medium text-gray-100 shadow-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
       >
         <p class="">Send Message</p>
 
         <svg
-          class="ml-2 h-6 w-6 flex-shrink-0 text-gray-100 hover:text-[#BB77FF]"
+          class="ml-2 h-6 w-6 flex-shrink-0 text-gray-100 hover:text-bpink-50"
           x-description="Heroicon name: outline/envelope"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

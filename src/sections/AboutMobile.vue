@@ -4,8 +4,8 @@
     <div class="mx-5 mt-5">
       <!-- Header for section -->
       <h1 class="flex justify-end font-poppins font-bold baseline text-4xl">
-        <p class="text-teal-400">01</p>
-        <p class="text-[#BB77FF]">.</p>
+        <p class="text-bteal-50">01</p>
+        <p class="text-bpink-50">.</p>
         <p class="ml-3 text-gray-100">About</p>
         <p class="ml-3 text-gray-100">Me</p>
         <div class="mt-5 ml-3 h-0.5 w-full bg-white"></div>
@@ -34,7 +34,7 @@
           Fast-forward to today, and I’ve had the privilege of working in
           education, freelance, huge corporations, and a local hackathons. My
           main focus these days is building reactive, accessible, inclusive
-          products and digital experiences at Matthews for a variety of clients.
+          digital experiences at Matthews for a variety of clients.
         </p>
       </div>
     </div>

@@ -5,8 +5,8 @@
       <div class="mt-5 mr-3 h-0.5 w-full bg-white"></div>
       <div class="flex flex-col">
         <div class="flex">
-          <p class="text-teal-400">02</p>
-          <p class="text-[#BB77FF]">.</p>
+          <p class="text-bteal-50">02</p>
+          <p class="text-bpink-50">.</p>
           <p class="ml-3 text-gray-100">Work</p>
           <p class="ml-3 text-gray-100">&</p>
         </div>
@@ -15,7 +15,7 @@
     </h1>
 
     <!-- Overall container -->
-    <div class="mt-5 rounded-2xl border-2 border-zinc-700/40 bg-[#0E0E0E]">
+    <div class="mt-5 rounded-2xl border-2 border-zinc-700/40 bg-bzync-50">
       <!-- Heading -->
       <div class="flex justify-center items-center mt-5 space-x-5">
         <!-- Heading Image -->
@@ -60,7 +60,7 @@
     </div>
 
     <!-- Overall container -->
-    <div class="mt-5 rounded-2xl border-2 border-zinc-700/40 bg-[#0E0E0E]">
+    <div class="mt-5 rounded-2xl border-2 border-zinc-700/40 bg-bzync-50">
       <!-- Heading -->
       <div class="flex justify-center items-center mt-5 space-x-5">
         <!-- Heading Image -->
@@ -91,7 +91,7 @@
     </div>
 
     <!-- Overall container -->
-    <div class="mt-5 rounded-2xl border-2 border-zinc-700/40 bg-[#0E0E0E]">
+    <div class="mt-5 rounded-2xl border-2 border-zinc-700/40 bg-bzync-50">
       <!-- Heading -->
       <div class="flex justify-center items-center mt-5 space-x-5">
         <!-- Heading Image -->

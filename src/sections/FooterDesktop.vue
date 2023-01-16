@@ -8,22 +8,22 @@ const year = new Date().getFullYear();
     <div class="flex justify-between">
       <div class="flex space-x-5">
         <a href="#" class="group">
-          <p class="text-gray-100 font-poppins group-hover:text-teal-400">
+          <p class="text-gray-100 font-poppins group-hover:text-bteal-50">
             About
           </p>
         </a>
         <a href="#" class="group">
-          <p class="text-gray-100 font-poppins group-hover:text-teal-400">
+          <p class="text-gray-100 font-poppins group-hover:text-bteal-50">
             Work
           </p>
         </a>
         <a href="#" class="group">
-          <p class="text-gray-100 font-poppins group-hover:text-teal-400">
+          <p class="text-gray-100 font-poppins group-hover:text-bteal-50">
             Projects
           </p>
         </a>
         <a href="#" class="group">
-          <p class="text-gray-100 font-poppins group-hover:text-teal-400">
+          <p class="text-gray-100 font-poppins group-hover:text-bteal-50">
             Contact
           </p>
         </a>

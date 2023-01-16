@@ -16,8 +16,8 @@ if (useRoute().path === props.linkName) {
   <li
     class="px-3 py-2"
     :class="{
-      'text-teal-400': isActive,
-      'hover:text-teal-400': !isActive,
+      'text-bteal-50': isActive,
+      'hover:text-bteal-50': !isActive,
     }"
   >
     {{ props.linkName }}

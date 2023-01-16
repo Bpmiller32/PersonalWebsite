@@ -85,9 +85,9 @@ import NavItem from "./NavItem.vue";
 
       <!-- Spotlight text -->
       <div class="w-full">
-        <p class="font-poppins font-bold text-teal-400">Hi my name is</p>
+        <p class="font-poppins font-bold text-bteal-50">Hi my name is</p>
         <p class="font-poppins font-bold text-4xl text-white">Billy Miller</p>
-        <p class="font-poppins font-bold text-4xl text-teal-400">
+        <p class="font-poppins font-bold text-4xl text-bteal-50">
           Software Engineer
         </p>
       </div>

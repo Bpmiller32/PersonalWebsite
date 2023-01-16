@@ -1,14 +1,17 @@
 <script setup>
+// JS
 import { animate, timeline, scroll, inView, spring } from "motion";
 import { ref, onMounted, watch } from "vue";
 
 // Assets
-import SpotlightLogo from "../assets/SpotlightLogo.vue";
+import BpmillerLogoText from "../assets/BpmillerLogoText.vue";
+import BpmillerLogoTerminal from "../assets/BpmillerLogoTerminal.vue";
 import SpotlightText from "../assets/SpotlightText.vue";
 import ScrollBubble from "../assets/ScrollBubble.vue";
 
 // Components
 import MobileMenu from "../components/MobileMenu.vue";
+import SvgHandler from "../components/SvgHandler.vue";
 
 // Sections
 import AboutMobile from "../sections/AboutMobile.vue";
@@ -24,6 +27,7 @@ const mobilePhoto2 = ref(null);
 const mobilePhoto3 = ref(null);
 const mobilePhoto4 = ref(null);
 const contentSections = ref(null);
+const grayFilter = ref(null);
 
 onMounted(() => {
   // Create sequence here because photo needs to be mounted to assign animation to photoX.value
@@ -35,6 +39,9 @@ onMounted(() => {
     [mobilePhoto4.value, { y: -400 }, { at: 0, duration: 1 }],
     [contentSections.value, { y: -500 }, { at: 0, duration: 1 }],
   ];
+
+  // Animate filter in
+  // animate(grayFilter.value, { opacity: [0, 0.4] }, { at: 0, duration: 3 });
 
   // Scrolling paralax function
   scroll(
@@ -68,10 +75,15 @@ onMounted(() => {
     />
 
     <!-- Opacity filter for better contrast with elements and text -->
-    <div class="absolute w-full h-screen bg-black opacity-40"></div>
+    <div
+      ref="grayFilter"
+      class="absolute w-full h-screen bg-black opacity-40"
+    ></div>
 
     <!-- Spotlight text -->
-    <div class="absolute h-screen w-full flex justify-center items-center">
+    <div
+      class="absolute h-screen w-full flex justify-center items-center animate__animated animate__fadeIn"
+    >
       <SpotlightText class="mx-5 h-auto w-auto" />
     </div>
 
@@ -83,7 +95,9 @@ onMounted(() => {
     />
 
     <!-- ScrollBubble -->
-    <div class="absolute h-screen w-full flex justify-center">
+    <div
+      class="absolute h-screen w-full flex justify-center animate__animated animate__fadeIn animate__delay-1s"
+    >
       <ScrollBubble class="absolute bottom-0 mb-32 w-12 h-12" />
     </div>
 
@@ -95,17 +109,18 @@ onMounted(() => {
     />
 
     <!-- Menu, logo -->
-    <div class="mt-20 absolute w-full flex justify-center">
-      <!-- Menu -->
-      <div class="w-full flex justify-center items-center">
-        <div class="bg-green-500 w-10 h-10"><MobileMenu></MobileMenu></div>
-      </div>
+    <div class="mt-20 absolute w-full flex justify-between">
       <!-- Logo -->
-      <div class="w-full">
-        <SpotlightLogo class="w-48 h-12" />
+      <div class="mx-5 flex items-center animate__animated animate__fadeIn">
+        <SvgHandler name="BpmillerLogoText" />
+        <BpmillerLogoTerminal
+          class="h-12 animate__animated animate__flash animate__repeat-1"
+        />
       </div>
-      <!-- Blank -->
-      <div class="w-full"></div>
+      <!-- Menu -->
+      <div class="mx-5 animate__animated animate__fadeIn">
+        <MobileMenu />
+      </div>
     </div>
   </div>
 
