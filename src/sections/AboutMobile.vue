@@ -1,3 +1,20 @@
+<script setup>
+import { inView, animate } from "motion";
+import { ref, onMounted } from "vue";
+
+const description = ref(null);
+
+onMounted(() => {
+  inView(description.value, () => {
+    animate(description.value, { opacity: [0, 1] }, { at: 0, duration: 1 });
+
+    return () => {
+      description.value.style.opacity = 0;
+    };
+  });
+});
+</script>
+
 <template>
   <section class="w-full pb-5 bg-gray-800 border-y border-gray-600">
     <!-- Container for content -->
@@ -19,7 +36,10 @@
         />
       </div>
       <!-- Description -->
-      <div class="flex flex-col text-gray-100 font-poppins text-[0.93rem]">
+      <div
+        ref="description"
+        class="flex flex-col text-gray-100 font-poppins text-[0.93rem] opacity-0"
+      >
         <p class="mt-5">
           I’m a software engineer specializing in building and designing
           exceptional digital experiences.

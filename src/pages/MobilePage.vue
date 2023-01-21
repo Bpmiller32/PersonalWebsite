@@ -26,7 +26,7 @@ const mobilePhoto1 = ref(null);
 const mobilePhoto2 = ref(null);
 const mobilePhoto3 = ref(null);
 const mobilePhoto4 = ref(null);
-const contentSections = ref(null);
+const spotlightSection = ref(null);
 const grayFilter = ref(null);
 
 onMounted(() => {
@@ -37,7 +37,7 @@ onMounted(() => {
     [mobilePhoto2.value, { y: 50 }, { at: 0, duration: 1 }],
     [mobilePhoto3.value, { y: -200 }, { at: 0, duration: 1 }],
     [mobilePhoto4.value, { y: -400 }, { at: 0, duration: 1 }],
-    [contentSections.value, { y: -500 }, { at: 0, duration: 1 }],
+    [spotlightSection.value, { y: 500 }, { at: 0, duration: 1 }],
   ];
 
   // Animate filter in
@@ -54,7 +54,7 @@ onMounted(() => {
 
 <template>
   <!-- Spotlight section -->
-  <div class="relative h-screen">
+  <div ref="spotlightSection" class="relative h-screen">
     <img
       ref="mobilePhoto0"
       class="object-cover absolute h-screen"
@@ -111,21 +111,21 @@ onMounted(() => {
     <!-- Menu, logo -->
     <div class="mt-20 absolute w-full flex justify-between">
       <!-- Logo -->
-      <div class="mx-5 flex items-center animate__animated animate__fadeIn">
+      <div class="ml-5 flex items-center animate__animated animate__fadeIn">
         <SvgHandler name="BpmillerLogoText" />
         <BpmillerLogoTerminal
           class="h-12 animate__animated animate__flash animate__repeat-1"
         />
       </div>
       <!-- Menu -->
-      <div class="mx-5 animate__animated animate__fadeIn">
+      <div class="mr-5 animate__animated animate__fadeIn">
         <MobileMenu />
       </div>
     </div>
   </div>
 
   <!-- Content sections -->
-  <div ref="contentSections">
+  <div class="absolute">
     <AboutMobile />
     <WorkMobile />
     <ProjectsMobile />

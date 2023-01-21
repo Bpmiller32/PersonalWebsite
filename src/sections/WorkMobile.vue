@@ -1,3 +1,8 @@
+<script setup>
+// Components
+import ResumeBox from "../components/ResumeBox.vue";
+</script>
+
 <template>
   <section class="mx-5 my-10">
     <!-- Header for section -->
@@ -122,140 +127,6 @@
     </div>
 
     <!-- Resume Card -->
-    <!-- <div class="mt-10 rounded-2xl border-2 p-6 border-zinc-700/40">
-      <h2 class="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <span class="ml-3">Work</span>
-      </h2>
-      <ol class="mt-6 space-y-4">
-        <li class="flex gap-4">
-          <div
-            class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0"
-          >
-            <img
-              alt=""
-              src="/_next/static/media/planetaria.ecd81ade.svg"
-              width="32"
-              height="32"
-              decoding="async"
-              data-nimg="1"
-              class="h-7 w-7"
-              loading="lazy"
-              style="color: transparent"
-            />
-          </div>
-          <dl class="flex flex-auto flex-wrap gap-x-2">
-            <dt class="sr-only">Company</dt>
-            <dd
-              class="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100"
-            >
-              Matthews Automation
-            </dd>
-            <dd class="text-xs text-zinc-500 dark:text-zinc-400">
-              Technicial Services Manager
-            </dd>
-            <dd
-              class="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-              aria-label="2019 until Present"
-            >
-              <time datetime="2019">2019</time>
-              <span aria-hidden="true">—</span>
-              <time datetime="2023">Present</time>
-            </dd>
-          </dl>
-        </li>
-        <li class="flex gap-4">
-          <div
-            class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0"
-          >
-            <img
-              alt=""
-              src="/_next/static/media/airbnb.b4000690.svg"
-              width="28"
-              height="28"
-              decoding="async"
-              data-nimg="1"
-              class="h-7 w-7"
-              loading="lazy"
-              style="color: transparent"
-            />
-          </div>
-          <dl class="flex flex-auto flex-wrap gap-x-2">
-            <dt class="sr-only">Company</dt>
-            <dd
-              class="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100"
-            >
-              Louisiana Department of Education
-            </dd>
-            <dt class="sr-only">Role</dt>
-            <dd class="text-xs text-zinc-500 dark:text-zinc-400">
-              IT Specialist
-            </dd>
-            <dt class="sr-only">Date</dt>
-            <dd
-              class="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-              aria-label="2014 until 2019"
-            >
-              <time datetime="2014">2014</time>
-              <span aria-hidden="true">—</span>
-              <time datetime="2019">2019</time>
-            </dd>
-          </dl>
-        </li>
-        <li class="flex gap-4">
-          <div
-            class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0"
-          >
-            <img
-              alt=""
-              src="/_next/static/media/facebook.dd9e7d48.svg"
-              width="28"
-              height="28"
-              decoding="async"
-              data-nimg="1"
-              class="h-7 w-7"
-              loading="lazy"
-              style="color: transparent"
-            />
-          </div>
-          <dl class="flex flex-auto flex-wrap gap-x-2">
-            <dt class="sr-only">Company</dt>
-            <dd
-              class="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100"
-            >
-              Louisiana State University
-            </dd>
-            <dt class="sr-only">Role</dt>
-            <dd class="text-xs text-zinc-500 dark:text-zinc-400">
-              Network Technician
-            </dd>
-            <dt class="sr-only">Date</dt>
-            <dd
-              class="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-              aria-label="2011 until 2014"
-            >
-              <time datetime="2011">2011</time>
-              <span aria-hidden="true">—</span>
-              <time datetime="2014">2014</time>
-            </dd>
-          </dl>
-        </li>
-      </ol>
-      <a
-        class="inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-50 font-medium text-zinc-900 hover:bg-zinc-100 active:bg-zinc-100 active:text-zinc-900/60 dark:bg-zinc-800/50 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:active:bg-zinc-800/50 dark:active:text-zinc-50/70 group mt-6 w-full"
-        href="/#"
-        >Download Resume<svg
-          viewBox="0 0 16 16"
-          fill="none"
-          aria-hidden="true"
-          class="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50"
-        >
-          <path
-            d="M4.75 8.75 8 12.25m0 0 3.25-3.5M8 12.25v-8.5"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></path></svg
-      ></a>
-    </div> -->
+    <ResumeBox />
   </section>
 </template>

@@ -1,10 +1,12 @@
 <script setup>
+// JS
 import { ref, onMounted } from "vue";
 
+// Pages
 import MobilePage from "./pages/MobilePage.vue";
 import DesktopPage from "./pages/DesktopPage.vue";
 
-let appWidth = ref(null);
+const appWidth = ref(null);
 
 onMounted(() => {
   // Set app dimensions on mount and on browser window resize
