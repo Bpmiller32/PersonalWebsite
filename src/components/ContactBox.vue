@@ -1,3 +1,8 @@
+<script setup>
+// Components
+import SvgHandler from "../components/SvgHandler.vue";
+</script>
+
 <template>
   <div
     class="border-2 border-zinc-700/40 py-8 px-4 shadow rounded-lg sm:px-10 min-w-[30vw]"
@@ -34,26 +39,11 @@
 
       <button
         type="submit"
-        class="flex w-full justify-center rounded-md border border-transparent bg-bteal-50 py-2 px-4 text-sm font-medium text-gray-100 shadow-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+        class="flex w-full justify-center items-center rounded-md border border-transparent bg-bteal-50 py-2 px-4 text-sm font-medium text-gray-100 shadow-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
       >
-        <p class="">Send Message</p>
+        <p class="mr-3">Send Message</p>
 
-        <svg
-          class="ml-2 h-6 w-6 flex-shrink-0 text-gray-100 hover:text-bpink-50"
-          x-description="Heroicon name: outline/envelope"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          aria-hidden="true"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-          ></path>
-        </svg>
+        <SvgHandler name="MailIcon" />
       </button>
     </form>
 

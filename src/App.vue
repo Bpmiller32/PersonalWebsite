@@ -1,5 +1,5 @@
 <script setup>
-// JS
+// Js
 import { ref, onMounted } from "vue";
 
 // Pages

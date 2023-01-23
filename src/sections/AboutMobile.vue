@@ -1,5 +1,5 @@
 <script setup>
-import { inView, animate } from "motion";
+import { animate, timeline, scroll, inView, spring } from "motion";
 import { ref, onMounted } from "vue";
 
 const description = ref(null);
@@ -8,9 +8,14 @@ onMounted(() => {
   inView(description.value, () => {
     animate(description.value, { opacity: [0, 1] }, { at: 0, duration: 1 });
 
-    return () => {
-      description.value.style.opacity = 0;
-    };
+    // scroll(
+    //   animate(description.value, { opacity: [0, 1] }, { at: 0, duration: 0.1 }),
+    //   { direction: "alternate" }
+    // );
+
+    // return () => {
+    //   description.value.style.opacity = 0;
+    // };
   });
 });
 </script>
@@ -23,22 +28,22 @@ onMounted(() => {
       <h1 class="flex justify-end font-poppins font-bold baseline text-4xl">
         <p class="text-bteal-50">01</p>
         <p class="text-bpink-50">.</p>
-        <p class="ml-3 text-gray-100">About</p>
-        <p class="ml-3 text-gray-100">Me</p>
-        <div class="mt-5 ml-3 h-0.5 w-full bg-white"></div>
+        <p class="ml-3 text-zinc-200">About</p>
+        <p class="ml-3 text-zinc-200">Me</p>
+        <div class="mt-5 ml-3 h-0.5 w-full bg-zinc-200"></div>
       </h1>
 
       <!-- Photo -->
       <div class="flex justify-center">
         <img
           class="object-cover mt-5 h-60 rounded-3xl shadow-2xl"
-          src="..\assets\aboutMe.png"
+          src="..\assets\common\aboutMe.webp"
         />
       </div>
       <!-- Description -->
       <div
         ref="description"
-        class="flex flex-col text-gray-100 font-poppins text-[0.93rem] opacity-0"
+        class="flex flex-col text-zinc-200 font-poppins text-[0.93rem] opacity-0"
       >
         <p class="mt-5">
           I’m a software engineer specializing in building and designing

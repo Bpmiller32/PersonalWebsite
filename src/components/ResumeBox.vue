@@ -1,7 +1,13 @@
 <script setup>
+// Js
+import { animate, timeline, scroll, inView, spring } from "motion";
 import { ref, onMounted } from "vue";
 
+// Components
+import SvgHandler from "../components/SvgHandler.vue";
+
 const appWidth = ref(null);
+const resumeBox = ref(null);
 
 onMounted(() => {
   // Set app dimensions on mount and on browser window resize
@@ -10,14 +16,29 @@ onMounted(() => {
   window.addEventListener("resize", () => {
     appWidth.value = window.innerWidth;
   });
+
+  inView(resumeBox.value, () => {
+    animate(
+      resumeBox.value,
+      { opacity: [0, 1], y: [30, 0] },
+      { at: 0, duration: 1 }
+    );
+
+    // return () => {
+    //   resumeBox.value.style.opacity = 0;
+    // };
+  });
 });
 </script>
 
 <template>
-  <div class="mt-10 rounded-2xl border-2 p-6 border-zinc-700/40">
+  <div
+    ref="resumeBox"
+    class="mt-10 rounded-2xl border-2 p-6 border-zinc-700/40 opacity-0"
+  >
     <!-- Heading -->
     <h2 class="flex items-center text-sm font-poppins text-gray-100">
-      <div class="h-6 w-6 bg-red-500 rounded-full text-xs"></div>
+      <SvgHandler name="BriefcaseIcon" />
       <span class="ml-3">Work</span>
     </h2>
     <!-- Jobs container -->
@@ -25,9 +46,11 @@ onMounted(() => {
       <!-- Matthews-->
       <div class="flex">
         <!-- Logo -->
-        <div
-          class="mt-1 h-10 w-10 bg-red-500 rounded-full flex flex-none"
-        ></div>
+        <img
+          class="mt-1 h-10 w-10 rounded-full flex flex-none"
+          src="..\assets\common\matthews.webp"
+          alt="Logo for Matthews"
+        />
 
         <!-- Company and Titles-->
         <div class="ml-3 w-full text-sm text-zinc-100 font-poppins">
@@ -40,13 +63,13 @@ onMounted(() => {
               class="flex flex-wrap flex-none justify-between text-xs font-poppins"
             >
               <p class="text-zinc-400 w-full">Technical Services Manager</p>
-              <p class="text-zinc-500 ml-auto">2020 - Present</p>
+              <p class="text-zinc-500">2020 - Present</p>
             </div>
             <div
               class="flex flex-wrap flex-none justify-between text-xs font-poppins"
             >
               <p class="text-zinc-400 w-full">Software Engineer</p>
-              <p class="text-zinc-500 ml-auto">2016-2020</p>
+              <p class="text-zinc-500">2016-2020</p>
             </div>
           </div>
           <div v-else>
@@ -69,9 +92,12 @@ onMounted(() => {
       <!-- LDOE-->
       <div class="flex">
         <!-- Logo -->
-        <div
-          class="mt-1 h-10 w-10 bg-red-500 rounded-full flex flex-none"
-        ></div>
+        <div></div>
+        <img
+          class="mt-1 h-10 w-10 rounded-full flex flex-none"
+          src="..\assets\common\ldoa.webp"
+          alt="Logo for LDOA"
+        />
 
         <!-- Company and Titles-->
         <div class="ml-3 w-full text-sm text-zinc-100 font-poppins">
@@ -84,7 +110,7 @@ onMounted(() => {
               class="flex flex-wrap flex-none justify-between text-xs font-poppins"
             >
               <p class="text-zinc-400 w-full">IT Specialist</p>
-              <p class="text-zinc-500 ml-auto">2012 - 2016</p>
+              <p class="text-zinc-500">2012 - 2016</p>
             </div>
           </div>
           <div v-else>
@@ -101,9 +127,11 @@ onMounted(() => {
       <!-- LSU-->
       <div class="flex">
         <!-- Logo -->
-        <div
-          class="mt-1 h-10 w-10 bg-red-500 rounded-full flex flex-none"
-        ></div>
+        <img
+          class="mt-1 h-10 w-10 rounded-full flex flex-none"
+          src="..\assets\common\lsu.webp"
+          alt="Logo for LSU"
+        />
 
         <!-- Company and Titles-->
         <div class="ml-3 w-full text-sm text-zinc-100 font-poppins">
@@ -118,7 +146,7 @@ onMounted(() => {
               <p class="text-zinc-400 w-full">
                 Network Infrastructure Technician
               </p>
-              <p class="text-zinc-500 ml-auto">2010 - 2012</p>
+              <p class="text-zinc-500">2010 - 2012</p>
             </div>
           </div>
           <div v-else>
@@ -135,10 +163,9 @@ onMounted(() => {
     <!-- Download button -->
     <a
       class="inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-50 font-medium text-zinc-900 hover:bg-zinc-100 active:bg-zinc-100 active:text-zinc-900/60 dark:bg-zinc-800/50 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:active:bg-zinc-800/50 dark:active:text-zinc-50/70 group mt-6 w-full"
-      href="/#"
+      href="#"
       >Download Resume
-
-      <div class="h-4 w-4 bg-red-500 rounded-full"></div>
+      <SvgHandler name="DownloadIcon" />
     </a>
   </div>
 </template>

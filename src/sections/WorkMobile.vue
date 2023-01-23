@@ -1,46 +1,75 @@
 <script setup>
+// Js
+import { animate, timeline, scroll, inView, spring } from "motion";
+import { ref, onMounted } from "vue";
+
 // Components
 import ResumeBox from "../components/ResumeBox.vue";
+import SvgHandler from "../components/SvgHandler.vue";
+
+onMounted(() => {
+  // For code backgrounds
+  inView(".backgroundImage", (info) => {
+    animate(
+      info.target,
+      { opacity: [0, 0.2], y: [50, 0] },
+      { at: 0, duration: 2 }
+    );
+
+    // return () => {
+    //   info.target.style.opacity = 0;
+    // };
+  });
+
+  // For work boxes
+  inView("figure", (info) => {
+    animate(
+      info.target,
+      { opacity: [0, 1], y: [30, 0] },
+      { at: 0, duration: 1 }
+    );
+
+    // return () => {
+    //   info.target.style.opacity = 0;
+    // };
+  });
+});
 </script>
 
 <template>
-  <section class="mx-5 my-10">
+  <section class="relative mx-5 my-10">
     <!-- Header for section -->
     <h1 class="flex justify-end font-poppins font-bold text-4xl">
-      <div class="mt-5 mr-3 h-0.5 w-full bg-white"></div>
+      <div class="mt-5 mr-3 h-0.5 w-full bg-zinc-200"></div>
       <div class="flex flex-col">
         <div class="flex">
           <p class="text-bteal-50">02</p>
           <p class="text-bpink-50">.</p>
-          <p class="ml-3 text-gray-100">Work</p>
-          <p class="ml-3 text-gray-100">&</p>
+          <p class="ml-3 text-zinc-200">Work</p>
+          <p class="ml-3 text-zinc-200">&</p>
         </div>
-        <p class="self-end text-gray-100">Experience</p>
+        <p class="self-end text-zinc-200">Experience</p>
       </div>
     </h1>
 
+    <!-- Background code image -->
+    <div class="backgroundImage absolute top-[10%] left-0 w-1/2 opacity-0">
+      <img src="..\assets\common\codeBackground.webp" alt="" />
+    </div>
+    <!-- Background code image -->
+    <div class="backgroundImage absolute top-[45%] right-0 w-1/2 opacity-0">
+      <img src="..\assets\common\codeBackground.webp" alt="" />
+    </div>
+
     <!-- Overall container -->
-    <div class="mt-5 rounded-2xl border-2 border-zinc-700/40 bg-bzync-50">
+    <figure class="mt-5 rounded-2xl border-2 border-zinc-800 opacity-0">
       <!-- Heading -->
       <div class="flex justify-center items-center mt-5 space-x-5">
         <!-- Heading Image -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="w-176 h-12 text-white"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"
-          />
-        </svg>
+        <SvgHandler name="DesktopIcon" />
 
         <!-- Heading text -->
-        <div class="relative text-gray-100 font-poppins font-bold text-2xl">
+        <div class="relative text-zinc-200 font-poppins font-bold text-2xl">
           <div
             class="absolute mt-[1.15rem] h-2 w-full bg-pink-500 opacity-80"
           ></div>
@@ -50,28 +79,36 @@ import ResumeBox from "../components/ResumeBox.vue";
       </div>
 
       <!-- Description -->
-      <div class="flex justify-center items-center">
-        <!-- Description Image -->
-        <div class="my-5 h-32 w-1 bg-green-500"></div>
+      <div class="relative flex justify-center items-center">
+        <!-- Description bracket -->
+        <div class="text-zinc-700 font-poppins font-bold">
+          <!-- Top "open div text" -->
+          <p class="mt-5">&lt;div&gt;</p>
+          <!-- Vertical bar -->
+          <div class="flex justify-center">
+            <div class="h-24 w-[0.15rem] bg-zinc-700"></div>
+          </div>
+          <!-- Bottom "close div text" -->
+          <p class="mb-5">&lt;/div&gt;</p>
+        </div>
         <!-- Description text -->
-        <div
-          class="ml-3 flex flex-col text-gray-100 font-poppins text-[0.93rem]"
-        >
+        <div class="-ml-2 text-zinc-200 font-poppins text-[0.93rem]">
           <p>5 years of development</p>
           <p>experience in C#, Powershell,</p>
           <p>.Net Core, WinForms, UWP</p>
         </div>
       </div>
-    </div>
+    </figure>
 
     <!-- Overall container -->
-    <div class="mt-5 rounded-2xl border-2 border-zinc-700/40 bg-bzync-50">
+    <figure class="mt-5 rounded-2xl border-2 border-zinc-800 opacity-0">
       <!-- Heading -->
       <div class="flex justify-center items-center mt-5 space-x-5">
         <!-- Heading Image -->
-        <img class="h-12 w-12" src="..\assets\vueAsp.png" alt="" />
+        <SvgHandler name="VueIcon" />
+
         <!-- Heading text -->
-        <div class="relative text-gray-100 font-poppins font-bold text-2xl">
+        <div class="relative text-zinc-200 font-poppins font-bold text-2xl">
           <div
             class="absolute mt-[1.15rem] h-2 w-full bg-blue-500 opacity-80"
           ></div>
@@ -82,27 +119,37 @@ import ResumeBox from "../components/ResumeBox.vue";
 
       <!-- Description -->
       <div class="flex justify-center items-center">
-        <!-- Description Image -->
-        <div class="my-5 h-32 w-1 bg-green-500"></div>
+        <!-- Description bracket -->
+        <div>
+          <!-- Top "div text" -->
+          <p class="mt-5 text-zinc-700 font-poppins font-bold">&lt;div&gt;</p>
+          <!-- Vertical bar -->
+          <div class="flex justify-center">
+            <div class="h-20 w-[0.15rem] bg-zinc-700"></div>
+          </div>
+          <!-- Bottom "div text" -->
+          <p class="mb-5 text-zinc-700 font-poppins font-bold">&lt;/div&gt;</p>
+        </div>
         <!-- Description text -->
         <div
-          class="ml-3 flex flex-col text-gray-100 font-poppins text-[0.93rem]"
+          class="-ml-2 flex flex-col text-zinc-200 font-poppins text-[0.93rem]"
         >
           <p>3 years of development</p>
           <p>experience in HTML, CSS, JS</p>
           <p>Vue, Nuxt, and Asp.Net Core.</p>
         </div>
       </div>
-    </div>
+    </figure>
 
     <!-- Overall container -->
-    <div class="mt-5 rounded-2xl border-2 border-zinc-700/40 bg-bzync-50">
+    <figure class="mt-5 rounded-2xl border-2 border-zinc-800 opacity-0">
       <!-- Heading -->
       <div class="flex justify-center items-center mt-5 space-x-5">
         <!-- Heading Image -->
-        <img class="h-12 w-12" src="..\assets\enterpriseIt.png" alt="" />
+        <SvgHandler name="ItIcon" />
+
         <!-- Heading text -->
-        <div class="relative text-gray-100 font-poppins font-bold text-2xl">
+        <div class="relative text-zinc-200 font-poppins font-bold text-2xl">
           <div
             class="absolute mt-[1.15rem] h-2 w-full bg-orange-500 opacity-80"
           ></div>
@@ -112,11 +159,20 @@ import ResumeBox from "../components/ResumeBox.vue";
 
       <!-- Description -->
       <div class="flex justify-center items-center">
-        <!-- Description Image -->
-        <div class="my-5 h-32 w-1 bg-green-500"></div>
+        <!-- Description bracket -->
+        <div>
+          <!-- Top "div text" -->
+          <p class="mt-5 text-zinc-700 font-poppins font-bold">&lt;div&gt;</p>
+          <!-- Vertical bar -->
+          <div class="flex justify-center">
+            <div class="h-28 w-[0.15rem] bg-zinc-700"></div>
+          </div>
+          <!-- Bottom "div text" -->
+          <p class="mb-5 text-zinc-700 font-poppins font-bold">&lt;/div&gt;</p>
+        </div>
         <!-- Description text -->
         <div
-          class="ml-3 flex flex-col text-gray-100 font-poppins text-[0.93rem]"
+          class="-ml-2 flex flex-col text-zinc-200 font-poppins text-[0.93rem]"
         >
           <p>10 years experiece in</p>
           <p>designing, managing,</p>
@@ -124,8 +180,8 @@ import ResumeBox from "../components/ResumeBox.vue";
           <p>large-scale IT challenges.</p>
         </div>
       </div>
-    </div>
-
+    </figure>
+    <div></div>
     <!-- Resume Card -->
     <ResumeBox />
   </section>

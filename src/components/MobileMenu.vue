@@ -1,5 +1,5 @@
 <script setup>
-// JS
+// Js
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/vue";
 
 // Components
@@ -9,7 +9,7 @@ import SvgHandler from "../components/SvgHandler.vue";
 <template>
   <Popover>
     <PopoverButton class="rounded-full bg-slate-500 p-2">
-      <SvgHandler name="MenuIconBars" />
+      <SvgHandler name="MobileMenuBars" />
     </PopoverButton>
 
     <transition
@@ -20,7 +20,7 @@ import SvgHandler from "../components/SvgHandler.vue";
       leave-from-class="opacity-100 scale-100"
       leave-to-class="opacity-0 scale-95"
     >
-      <PopoverPanel class="absolute -top-6 inset-x-0 z-10 px-2">
+      <PopoverPanel class="absolute -top-3 inset-x-0 z-10 px-2">
         <!-- Panel container -->
         <div
           class="rounded-lg bg-gray-800 shadow-md ring-1 ring-black ring-opacity-5"
@@ -30,41 +30,53 @@ import SvgHandler from "../components/SvgHandler.vue";
             <!-- Logo -->
             <SvgHandler name="BpmillerLogoFull" />
             <!-- Menu button -->
-            <PopoverButton class="rounded-full -mr-3 p-2">
-              <SvgHandler name="MenuIconClose" />
+            <PopoverButton class="rounded-full -mr-2 p-2">
+              <SvgHandler name="MobileMenuClose" />
             </PopoverButton>
           </div>
 
           <!-- Links to sections -->
-          <div class="space-y-3 px-2 pt-2 pb-3">
-            <div class="flex items-center">
-              <SvgHandler name="MobileMenuAbout" />
-              <a
-                class="rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-50 hover:text-gray-900"
-                >About Me</a
+          <div class="space-y-3 p-3">
+            <a href="#" class="flex items-center group">
+              <div class="bg-bzync-50 rounded-lg p-2.5">
+                <SvgHandler name="MobileMenuAbout" />
+              </div>
+              <p
+                class="rounded-md ml-2 px-3 py-2 font-poppins text-zinc-200 group-hover:bg-gray-50 group-hover:text-gray-900"
               >
-            </div>
-            <div class="flex items-center">
-              <SvgHandler name="MobileMenuAbout" />
-              <a
-                class="rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-50 hover:text-gray-900"
-                >Work and Experience</a
+                About Me
+              </p>
+            </a>
+            <a href="#" class="flex items-center group">
+              <div class="bg-bzync-50 rounded-lg p-2.5">
+                <SvgHandler name="MobileMenuWork" />
+              </div>
+              <p
+                class="rounded-md ml-2 px-3 py-2 font-poppins text-zinc-200 group-hover:bg-gray-50 group-hover:text-gray-900"
               >
-            </div>
-            <div class="flex items-center">
-              <SvgHandler name="MobileMenuAbout" />
-              <a
-                class="rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-50 hover:text-gray-900"
-                >Projects</a
+                Work and Experience
+              </p>
+            </a>
+            <a href="#" class="flex items-center group">
+              <div class="bg-bzync-50 rounded-lg p-2.5">
+                <SvgHandler name="MobileMenuProjects" />
+              </div>
+              <p
+                class="rounded-md ml-2 px-3 py-2 font-poppins text-zinc-200 group-hover:bg-gray-50 group-hover:text-gray-900"
               >
-            </div>
-            <div class="flex items-center">
-              <SvgHandler name="MobileMenuAbout" />
-              <a
-                class="rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-50 hover:text-gray-900"
-                >Contact</a
+                Projects
+              </p>
+            </a>
+            <a href="#" class="flex items-center group">
+              <div class="bg-bzync-50 rounded-lg p-2.5">
+                <SvgHandler name="MobileMenuContact" />
+              </div>
+              <p
+                class="rounded-md ml-2 px-3 py-2 font-poppins text-zinc-200 group-hover:bg-gray-50 group-hover:text-gray-900"
               >
-            </div>
+                Contact
+              </p>
+            </a>
           </div>
         </div>
       </PopoverPanel>
