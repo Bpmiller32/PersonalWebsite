@@ -6,16 +6,7 @@ const description = ref(null);
 
 onMounted(() => {
   inView(description.value, () => {
-    animate(description.value, { opacity: [0, 1] }, { at: 0, duration: 1 });
-
-    // scroll(
-    //   animate(description.value, { opacity: [0, 1] }, { at: 0, duration: 0.1 }),
-    //   { direction: "alternate" }
-    // );
-
-    // return () => {
-    //   description.value.style.opacity = 0;
-    // };
+    animate(description.value, { opacity: [0, 1] }, { duration: 1 });
   });
 });
 </script>
@@ -43,7 +34,7 @@ onMounted(() => {
       <!-- Description -->
       <div
         ref="description"
-        class="flex flex-col text-zinc-200 font-poppins text-[0.93rem] opacity-0"
+        class="text-zinc-200 font-poppins text-[0.93rem] opacity-0"
       >
         <p class="mt-5">
           I’m a software engineer specializing in building and designing

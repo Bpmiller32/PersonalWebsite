@@ -36,27 +36,48 @@ import SvgHandler from "../components/SvgHandler.vue";
 
       <!-- Social media links -->
       <div class="flex flex-col space-y-2">
-        <a href="https://twitter.com/bpmiller2" class="flex items-center group">
-          <SvgHandler name="TwitterIcon" />
-          <p class="ml-3 text-gray-100 font-poppins group-hover:text-bteal-50">
-            Twitter
-          </p>
-        </a>
-        <a
-          href="https://www.linkedin.com/in/billy-miller-45849b70/"
-          class="flex items-center group"
-        >
-          <SvgHandler name="LinkedinIcon" />
-          <p class="ml-3 text-gray-100 font-poppins group-hover:text-bteal-50">
-            LinkedIn
-          </p>
-        </a>
-        <a href="https://github.com/Bpmiller32" class="flex items-center group">
-          <SvgHandler name="GithubIcon" />
-          <p class="ml-3 text-gray-100 font-poppins group-hover:text-bteal-50">
-            Github
-          </p>
-        </a>
+        <!-- Twitter -->
+        <div class="w-max">
+          <a
+            href="https://twitter.com/bpmiller2"
+            class="flex items-center group"
+          >
+            <SvgHandler name="TwitterIcon" />
+            <p
+              class="rounded-md ml-1 px-2 py-2 font-poppins text-zinc-200 group-hover:bg-gray-50 group-hover:text-gray-900"
+            >
+              Twitter
+            </p>
+          </a>
+        </div>
+        <!-- LinkedIn -->
+        <div class="w-max">
+          <a
+            href="https://www.linkedin.com/in/billy-miller-45849b70/"
+            class="flex items-center group"
+          >
+            <SvgHandler name="LinkedinIcon" />
+            <p
+              class="rounded-md ml-1 px-2 py-2 font-poppins text-zinc-200 group-hover:bg-gray-50 group-hover:text-gray-900"
+            >
+              LinkedIn
+            </p>
+          </a>
+        </div>
+        <!-- Github -->
+        <div class="w-max">
+          <a
+            href="https://github.com/Bpmiller32"
+            class="flex items-center group"
+          >
+            <SvgHandler name="GithubIcon" />
+            <p
+              class="rounded-md ml-1 px-2 py-2 font-poppins text-zinc-200 group-hover:bg-gray-50 group-hover:text-gray-900"
+            >
+              Github
+            </p>
+          </a>
+        </div>
       </div>
 
       <!-- ContactBox -->

@@ -570,7 +570,7 @@ const props = defineProps(["name"]);
   <!-- TwitterIcon -->
   <svg
     v-if="name == 'TwitterIcon'"
-    class="w-12 h-auto"
+    class="w-8 h-auto"
     width="64px"
     height="64px"
     viewBox="0 0 64 64"
@@ -605,7 +605,7 @@ const props = defineProps(["name"]);
   <!-- LinkedinIcon -->
   <svg
     v-if="name == 'LinkedinIcon'"
-    class="w-12 h-auto"
+    class="w-8 h-auto"
     width="64px"
     height="64px"
     viewBox="0 0 64 64"
@@ -641,7 +641,7 @@ const props = defineProps(["name"]);
   <!-- GithubIcon -->
   <svg
     v-if="name == 'GithubIcon'"
-    class="w-12 h-auto"
+    class="w-8 h-auto"
     width="64px"
     height="64px"
     viewBox="0 0 64 64"

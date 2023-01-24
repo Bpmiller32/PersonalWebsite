@@ -1,7 +1,7 @@
 <script setup>
 // Js
-import { animate, timeline, scroll, inView, spring } from "motion";
-import { ref, onMounted } from "vue";
+import { animate, inView } from "motion";
+import { onMounted } from "vue";
 
 // Components
 import ResumeBox from "../components/ResumeBox.vue";
@@ -15,10 +15,6 @@ onMounted(() => {
       { opacity: [0, 0.2], y: [50, 0] },
       { at: 0, duration: 2 }
     );
-
-    // return () => {
-    //   info.target.style.opacity = 0;
-    // };
   });
 
   // For work boxes
@@ -28,10 +24,6 @@ onMounted(() => {
       { opacity: [0, 1], y: [30, 0] },
       { at: 0, duration: 1 }
     );
-
-    // return () => {
-    //   info.target.style.opacity = 0;
-    // };
   });
 });
 </script>
@@ -54,11 +46,14 @@ onMounted(() => {
 
     <!-- Background code image -->
     <div class="backgroundImage absolute top-[10%] left-0 w-1/2 opacity-0">
-      <img src="..\assets\common\codeBackground.webp" alt="" />
+      <img
+        src="..\assets\common\codeBackground.webp"
+        alt="Image of the code that made this, meta!"
+      />
     </div>
-    <!-- Background code image -->
-    <div class="backgroundImage absolute top-[45%] right-0 w-1/2 opacity-0">
-      <img src="..\assets\common\codeBackground.webp" alt="" />
+    <!-- Background code image long -->
+    <div class="backgroundImage absolute top-[37%] right-0 w-1/2 opacity-0">
+      <img src="..\assets\common\codeBackgroundLong.webp" alt="" />
     </div>
 
     <!-- Overall container -->
@@ -95,7 +90,7 @@ onMounted(() => {
         <div class="-ml-2 text-zinc-200 font-poppins text-[0.93rem]">
           <p>5 years of development</p>
           <p>experience in C#, Powershell,</p>
-          <p>.Net Core, WinForms, UWP</p>
+          <p>.Net Core, WinForms, and UWP.</p>
         </div>
       </div>
     </figure>
@@ -135,7 +130,7 @@ onMounted(() => {
           class="-ml-2 flex flex-col text-zinc-200 font-poppins text-[0.93rem]"
         >
           <p>3 years of development</p>
-          <p>experience in HTML, CSS, JS</p>
+          <p>experience in HTML, CSS, JS,</p>
           <p>Vue, Nuxt, and Asp.Net Core.</p>
         </div>
       </div>
