@@ -1,7 +1,7 @@
 <script setup>
 // Js
 import { ref, onMounted } from "vue";
-import { animate, timeline, scroll, inView, spring } from "motion";
+import { animate, inView } from "motion";
 
 // Sections
 import SpotlightMobile from "./sections/SpotlightMobile.vue";
@@ -39,14 +39,6 @@ onMounted(() => {
       { duration: 2.5, allowWebkitAcceleration: true }
     );
   });
-
-  // inView(".animateFadeUpSmall", (info) => {
-  //   animate(
-  //     info.target,
-  //     { opacity: [0, 1], y: [15, 0] },
-  //     { duration: 1, allowWebkitAcceleration: true }
-  //   );
-  // });
 
   inView(".animateFadeIn", (info) => {
     animate(

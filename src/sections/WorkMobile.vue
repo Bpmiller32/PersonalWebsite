@@ -1,7 +1,8 @@
 <script setup>
 // Components
 import SvgHandler from "../components/SvgHandler.vue";
-import ResumeBox from "../components/ResumeCard.vue";
+import WorkCard from "../components/WorkCard.vue";
+import ResumeCard from "../components/ResumeCard.vue";
 </script>
 
 <template>
@@ -28,138 +29,59 @@ import ResumeBox from "../components/ResumeCard.vue";
       />
     </div>
     <!-- Background code image long -->
-    <div class="animateFadeUpSlow opacity-0 absolute top-[37%] right-0 w-1/2">
+    <div class="animateFadeUpSlow opacity-0 absolute top-[36%] right-0 w-1/2">
       <img src="..\assets\common\codeBackgroundLong.webp" alt="" />
     </div>
 
-    <!-- Work Card -->
-    <div
-      class="animateFadeUp opacity-0 mt-5 rounded-2xl border-2 border-zinc-800"
-    >
-      <!-- Heading -->
-      <div class="flex justify-center items-center mt-5 space-x-5">
-        <!-- Heading Image -->
+    <!-- Desktop app dev -->
+    <WorkCard color="absolute bg-green-500" divsize="h-24">
+      <template #title>
+        <p class="relative">Desktop App</p>
+        <p class="relative">Development</p>
+      </template>
+      <template #icon>
         <SvgHandler name="DesktopIcon" />
+      </template>
+      <template #description>
+        <p>5 years of development</p>
+        <p>experience in C#, Powershell,</p>
+        <p>.Net Core, WinForms, and UWP.</p>
+      </template>
+    </WorkCard>
 
-        <!-- Heading text -->
-        <div class="relative text-zinc-200 font-poppins font-bold text-2xl">
-          <div
-            class="absolute mt-[1.15rem] h-2 w-full bg-pink-500 opacity-80"
-          ></div>
-          <p class="relative">Desktop App</p>
-          <p class="relative">Development</p>
-        </div>
-      </div>
-
-      <!-- Description -->
-      <div class="relative flex justify-center items-center">
-        <!-- Description bracket -->
-        <div class="text-zinc-700 font-poppins font-bold">
-          <!-- Top "open div text" -->
-          <p class="mt-5">&lt;div&gt;</p>
-          <!-- Vertical bar -->
-          <div class="flex justify-center">
-            <div class="h-24 w-[0.15rem] bg-zinc-700"></div>
-          </div>
-          <!-- Bottom "close div text" -->
-          <p class="mb-5">&lt;/div&gt;</p>
-        </div>
-        <!-- Description text -->
-        <div class="-ml-2 text-zinc-200 font-poppins text-[0.93rem]">
-          <p>5 years of development</p>
-          <p>experience in C#, Powershell,</p>
-          <p>.Net Core, WinForms, and UWP.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Work Card -->
-    <div
-      class="animateFadeUp opacity-0 mt-5 rounded-2xl border-2 border-zinc-800"
-    >
-      <!-- Heading -->
-      <div class="flex justify-center items-center mt-5 space-x-5">
-        <!-- Heading Image -->
+    <!-- Web dev -->
+    <WorkCard color="absolute bg-blue-500" divsize="h-20">
+      <template #title>
+        <p class="relative">Full Stack Web</p>
+        <p class="relative">Development</p>
+      </template>
+      <template #icon>
         <SvgHandler name="VueIcon" />
+      </template>
+      <template #description>
+        <p>3 years of development</p>
+        <p>experience in HTML, CSS, JS,</p>
+        <p>Vue, Nuxt, and Asp.Net Core.</p>
+      </template>
+    </WorkCard>
 
-        <!-- Heading text -->
-        <div class="relative text-zinc-200 font-poppins font-bold text-2xl">
-          <div
-            class="absolute mt-[1.15rem] h-2 w-full bg-blue-500 opacity-80"
-          ></div>
-          <p class="relative">Full Stack Web</p>
-          <p class="relative">Development</p>
-        </div>
-      </div>
-
-      <!-- Description -->
-      <div class="flex justify-center items-center">
-        <!-- Description bracket -->
-        <div>
-          <!-- Top "div text" -->
-          <p class="mt-5 text-zinc-700 font-poppins font-bold">&lt;div&gt;</p>
-          <!-- Vertical bar -->
-          <div class="flex justify-center">
-            <div class="h-20 w-[0.15rem] bg-zinc-700"></div>
-          </div>
-          <!-- Bottom "div text" -->
-          <p class="mb-5 text-zinc-700 font-poppins font-bold">&lt;/div&gt;</p>
-        </div>
-        <!-- Description text -->
-        <div
-          class="-ml-2 flex flex-col text-zinc-200 font-poppins text-[0.93rem]"
-        >
-          <p>3 years of development</p>
-          <p>experience in HTML, CSS, JS,</p>
-          <p>Vue, Nuxt, and Asp.Net Core.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Work Card -->
-    <div
-      class="animateFadeUp opacity-0 mt-5 rounded-2xl border-2 border-zinc-800"
-    >
-      <!-- Heading -->
-      <div class="flex justify-center items-center mt-5 space-x-5">
-        <!-- Heading Image -->
+    <!-- Enterprise IT -->
+    <WorkCard color="absolute bg-blue-500" divsize="h-28">
+      <template #title>
+        <p class="relative">Enterprise IT</p>
+      </template>
+      <template #icon>
         <SvgHandler name="ItIcon" />
+      </template>
+      <template #description>
+        <p>10 years experiece in</p>
+        <p>designing, managing,</p>
+        <p>and implementing</p>
+        <p>large-scale IT challenges.</p>
+      </template>
+    </WorkCard>
 
-        <!-- Heading text -->
-        <div class="relative text-zinc-200 font-poppins font-bold text-2xl">
-          <div
-            class="absolute mt-[1.15rem] h-2 w-full bg-orange-500 opacity-80"
-          ></div>
-          <p class="relative">Enterprise IT</p>
-        </div>
-      </div>
-
-      <!-- Description -->
-      <div class="flex justify-center items-center">
-        <!-- Description bracket -->
-        <div>
-          <!-- Top "div text" -->
-          <p class="mt-5 text-zinc-700 font-poppins font-bold">&lt;div&gt;</p>
-          <!-- Vertical bar -->
-          <div class="flex justify-center">
-            <div class="h-28 w-[0.15rem] bg-zinc-700"></div>
-          </div>
-          <!-- Bottom "div text" -->
-          <p class="mb-5 text-zinc-700 font-poppins font-bold">&lt;/div&gt;</p>
-        </div>
-        <!-- Description text -->
-        <div
-          class="-ml-2 flex flex-col text-zinc-200 font-poppins text-[0.93rem]"
-        >
-          <p>10 years experiece in</p>
-          <p>designing, managing,</p>
-          <p>and implementing</p>
-          <p>large-scale IT challenges.</p>
-        </div>
-      </div>
-    </div>
-    <div></div>
     <!-- Resume Box -->
-    <ResumeBox />
+    <ResumeCard />
   </section>
 </template>

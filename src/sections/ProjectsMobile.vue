@@ -32,6 +32,7 @@ import ProjectCard from "../components/ProjectCard.vue";
         </p>
       </div>
 
+      <!-- RAF -->
       <ProjectCard projlinks="true" projtype="js">
         <template #title>RAF Technology</template>
         <template #link1>raf.com</template>
@@ -48,6 +49,7 @@ import ProjectCard from "../components/ProjectCard.vue";
         >
       </ProjectCard>
 
+      <!-- Directory Commander -->
       <ProjectCard projlinks="true" projtype="js">
         <template #title>Directory Commander</template>
         <template #link1>firebase.com</template>
@@ -70,6 +72,7 @@ import ProjectCard from "../components/ProjectCard.vue";
         </template>
       </ProjectCard>
 
+      <!-- DMI -->
       <ProjectCard projtype="c#">
         <template #title>Dangerous Mail Investigation</template>
         <template #description
@@ -83,6 +86,7 @@ import ProjectCard from "../components/ProjectCard.vue";
         >
       </ProjectCard>
 
+      <!-- FireGame -->
       <ProjectCard projlinks="true" projtype="c#">
         <template #title>Fire Game</template>
         <template #link1>itch.io</template>
@@ -94,6 +98,7 @@ import ProjectCard from "../components/ProjectCard.vue";
         <template #technology>Godot 4</template>
       </ProjectCard>
 
+      <!-- Barry -->
       <ProjectCard projlinks="true" projtype="c#">
         <template #title>Barry for Discord</template>
         <template #link1>discord.com</template>

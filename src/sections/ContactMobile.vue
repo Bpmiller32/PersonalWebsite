@@ -1,7 +1,7 @@
 <script setup>
 // Components
 import SvgHandler from "../components/SvgHandler.vue";
-import ContactBox from "../components/ContactCard.vue";
+import ContactCard from "../components/ContactCard.vue";
 </script>
 
 <template>
@@ -80,6 +80,6 @@ import ContactBox from "../components/ContactCard.vue";
     </div>
 
     <!-- ContactBox -->
-    <div class="animateFadeUp mt-10"><ContactBox /></div>
+    <div class="animateFadeUp mt-10"><ContactCard /></div>
   </section>
 </template>
