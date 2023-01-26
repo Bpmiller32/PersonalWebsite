@@ -1,7 +1,42 @@
+<script setup>
+// Js
+import { animate, timeline, scroll, inView, spring } from "motion";
+import { ref, onMounted } from "vue";
+
+const description = ref(null);
+
+const rafTechnologyImage = ref(null);
+const directoryCommanderImage = ref(null);
+const dangerousMailImage = ref(null);
+const fireGameImage = ref(null);
+const barryDiscordImage = ref(null);
+
+const rafTechnologyLogo = ref(null);
+const directoryCommanderLogo = ref(null);
+const dangerousMailLogo = ref(null);
+const fireGameLogo = ref(null);
+const barryDiscordLogo = ref(null);
+
+onMounted(() => {
+  // // For image
+  // inView("figure", (info) => {
+  //   animate(
+  //     info.target,
+  //     { opacity: [0, 1], y: [15, 0] },
+  //     { at: 0, duration: 1 }
+  //   );
+  // });
+  // // For text description
+  // inView("section", (info) => {
+  //   animate(info.target, { opacity: [0, 1] }, { duration: 1 });
+  // });
+});
+</script>
+
 <template>
   <section class="w-full bg-gray-800 border-y border-gray-600">
     <!-- Container for content -->
-    <div class="mx-5 my-10">
+    <div class="mx-5 mt-5 mb-10">
       <!-- Header for section -->
       <h1 class="flex justify-end font-poppins font-bold baseline text-4xl">
         <p class="text-bteal-50">03</p>
@@ -11,7 +46,10 @@
       </h1>
 
       <!-- Section description -->
-      <div ref="description" class="text-zinc-200 font-poppins text-[0.93rem]">
+      <div
+        ref="description"
+        class="text-zinc-200 font-poppins text-[0.93rem] opacity-0"
+      >
         <p class="mt-5">
           I’ve worked on tons of little projects over the years but these are
           the ones that I’m most proud of.
@@ -29,36 +67,41 @@
         class="mt-5 rounded-2xl border-2 p-6 border-zinc-700 bg-bzync-50 font-poppins"
       >
         <!-- Image -->
-        <div class="flex justify-center">
+        <figure ref="rafTechnologyImage" class="flex justify-center opacity-0">
           <div class="w-48 h-48 bg-red-500"></div>
-        </div>
+        </figure>
         <!-- Divider -->
         <div class="mt-5 h-[0.15rem] w-full bg-zinc-700"></div>
         <!-- Logo -->
-        <div class="mt-5 rounded-full w-20 h-20 bg-red-500"></div>
+        <figure
+          ref="rafTechnologyLogo"
+          class="mt-5 rounded-full w-20 h-20 bg-red-500"
+        ></figure>
         <!-- Title -->
-        <div class="mt-5 text-white font-poppins font-bold text-2xl">
+        <section
+          class="mt-5 text-white font-poppins font-bold text-2xl opacity-0"
+        >
           RAF Technology
-        </div>
+        </section>
         <!-- Links -->
-        <div class="mt-1 flex items-center">
+        <figure class="mt-1 flex items-center">
           <div class="rounded-full bg-red-500 h-5 w-5"></div>
           <div class="ml-1 text-white font-poppins font-bold">raf.com</div>
           <div class="ml-3 rounded-full bg-red-500 h-5 w-5"></div>
           <div class="ml-1 text-white font-poppins font-bold">github.com</div>
-        </div>
+        </figure>
         <!-- Description -->
-        <div class="text-zinc-400 mt-10">
+        <section class="text-zinc-400 mt-10 opacity-0">
           RAF Technology provides the most advanced optical character
           recognition products for extracting data from different fonts, print
           styles, and handwriting. Our wide variety of vision applications are
           primarily deployed in fulfillment, transportation, and distribution.
-        </div>
+        </section>
         <!-- Technology used -->
-        <div class="text-zinc-100 mt-5">Technology used</div>
-        <div class="text-zinc-400">
+        <section class="text-zinc-100 mt-5 opacity-0">Technology used</section>
+        <section class="text-zinc-400 opacity-0">
           Vue, Vue Router, Tailwind, Motion One, WordPress, Elementor
-        </div>
+        </section>
       </div>
 
       <!-- Overall container -->
@@ -66,13 +109,19 @@
         class="mt-5 rounded-2xl border-2 p-6 border-zinc-700 bg-bzync-50 font-poppins"
       >
         <!-- Image -->
-        <div class="flex justify-center">
+        <div
+          ref="directoryCommanderImage"
+          class="flex justify-center opacity-0"
+        >
           <div class="w-48 h-48 bg-red-500"></div>
         </div>
         <!-- Divider -->
         <div class="mt-5 h-[0.15rem] w-full bg-zinc-700"></div>
         <!-- Logo -->
-        <div class="mt-5 rounded-full w-20 h-20 bg-red-500"></div>
+        <div
+          ref="directoryCommanderLogo"
+          class="mt-5 rounded-full w-20 h-20 bg-red-500"
+        ></div>
         <!-- Title -->
         <div class="mt-5 text-white font-poppins font-bold text-2xl">
           Directory Commander
@@ -108,13 +157,16 @@
         class="mt-5 rounded-2xl border-2 p-6 border-zinc-700 bg-bzync-50 font-poppins"
       >
         <!-- Image -->
-        <div class="flex justify-center">
+        <div ref="dangerousMailImage" class="flex justify-center opacity-0">
           <div class="w-48 h-48 bg-red-500"></div>
         </div>
         <!-- Divider -->
         <div class="mt-5 h-[0.15rem] w-full bg-zinc-700"></div>
         <!-- Logo -->
-        <div class="mt-5 rounded-full w-20 h-20 bg-red-500"></div>
+        <div
+          ref="dangerousMailLogo"
+          class="mt-5 rounded-full w-20 h-20 bg-red-500"
+        ></div>
         <!-- Title -->
         <div class="mt-5 text-white font-poppins font-bold text-2xl">
           Dangerous Mail Investigation
@@ -139,13 +191,16 @@
         class="mt-5 rounded-2xl border-2 p-6 border-zinc-700 bg-bzync-50 font-poppins"
       >
         <!-- Image -->
-        <div class="flex justify-center">
+        <div ref="fireGameImage" class="flex justify-center opacity-0">
           <div class="w-48 h-48 bg-red-500"></div>
         </div>
         <!-- Divider -->
         <div class="mt-5 h-[0.15rem] w-full bg-zinc-700"></div>
         <!-- Logo -->
-        <div class="mt-5 rounded-full w-20 h-20 bg-red-500"></div>
+        <div
+          ref="fireGameLogo"
+          class="mt-5 rounded-full w-20 h-20 bg-red-500"
+        ></div>
         <!-- Title -->
         <div class="mt-5 text-white font-poppins font-bold text-2xl">
           Fire Game
@@ -159,7 +214,8 @@
         </div>
         <!-- Description -->
         <div class="text-zinc-400 mt-10">
-          Help Randy the fireman to put out fires and rescue civilians.
+          Help Randy the fireman defeat fire monsters, rescue civilians, and
+          save the day!
         </div>
         <!-- Technology used -->
         <div class="text-zinc-100 mt-5">Technology used</div>
@@ -171,13 +227,16 @@
         class="mt-5 rounded-2xl border-2 p-6 border-zinc-700 bg-bzync-50 font-poppins"
       >
         <!-- Image -->
-        <div class="flex justify-center">
+        <div ref="barryDiscordImage" class="flex justify-center opacity-0">
           <div class="w-48 h-48 bg-red-500"></div>
         </div>
         <!-- Divider -->
         <div class="mt-5 h-[0.15rem] w-full bg-zinc-700"></div>
         <!-- Logo -->
-        <div class="mt-5 rounded-full w-20 h-20 bg-red-500"></div>
+        <div
+          ref="barryDiscordLogo"
+          class="mt-5 rounded-full w-20 h-20 bg-red-500"
+        ></div>
         <!-- Title -->
         <div class="mt-5 text-white font-poppins font-bold text-2xl">
           Barry for Discord

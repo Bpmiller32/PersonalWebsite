@@ -19,16 +19,12 @@ import SvgHandler from "../components/SvgHandler.vue";
     </PopoverButton>
 
     <!-- Overlay -->
-    <transition
-      enter-active-class="duration-150 ease-out"
-      enter-from-class="opacity-0 scale-95"
-      enter-to-class="opacity-100 scale-100"
-      leave-active-class="duration-100 ease-in"
-      leave-from-class="opacity-100 scale-100"
-      leave-to-class="opacity-0 scale-95"
-    >
-      <PopoverOverlay class="fixed inset-0 bg-black opacity-30" />
-    </transition>
+    <PopoverOverlay
+      @wheel.prevent
+      @touchmove.prevent
+      @scroll.prevent
+      class="fixed inset-0 bg-black opacity-30"
+    />
 
     <!-- Panel -->
     <transition
@@ -39,7 +35,12 @@ import SvgHandler from "../components/SvgHandler.vue";
       leave-from-class="opacity-100 scale-100"
       leave-to-class="opacity-0 scale-95"
     >
-      <PopoverPanel class="absolute -top-3 inset-x-0 z-10 px-2">
+      <PopoverPanel
+        @wheel.prevent
+        @touchmove.prevent
+        @scroll.prevent
+        class="absolute -top-3 inset-x-0 z-10 px-2"
+      >
         <!-- Panel container -->
         <div
           class="rounded-lg bg-gray-800 shadow-md ring-1 ring-black ring-opacity-5"

@@ -3,7 +3,7 @@ const year = new Date().getFullYear();
 </script>
 
 <template>
-  <section class="mx-5 my-10">
+  <section class="mx-5 mt-5 mb-10">
     <div class="my-5 h-0.5 bg-white"></div>
     <div class="flex justify-around">
       <div class="flex space-x-5">

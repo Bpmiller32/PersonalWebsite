@@ -1,7 +1,7 @@
 <script setup>
 // Js
 import { animate, timeline, scroll, inView, spring } from "motion";
-import { ref, onMounted, watch } from "vue";
+import { ref, onMounted, watch, toRaw } from "vue";
 
 // Components
 import SvgHandler from "../components/SvgHandler.vue";
@@ -25,22 +25,8 @@ const spotlightSection = ref(null);
 const spotlightText = ref(null);
 const scrollBubble = ref(null);
 const bpmillerLogo = ref(null);
+const bpmillerTerminal = ref(null);
 const mobileMenu = ref(null);
-
-const bounce = animate(
-  scrollBubble.value,
-  {
-    transformOrigin: "center bottom",
-    y: ["0px", "30px"],
-    // scaleY: [1, 1.1],
-  },
-  {
-    easing: spring({ damping: 100 }),
-    direction: "alternate",
-    delay: 0,
-    repeat: Infinity,
-  }
-);
 
 onMounted(() => {
   // Create sequence here because photo needs to be mounted to assign animation to photoX.value
@@ -61,51 +47,72 @@ onMounted(() => {
   );
 
   // Animate in scroll bubble
-  // animate(
-  //   scrollBubble.value,
-  //   { opacity: [0, 1] },
-  //   { delay: 1.1, duration: 1.3 }
-  // );
+  animate(
+    scrollBubble.value,
+    { opacity: [0, 1] },
+    { delay: 1.1, duration: 1.3 }
+  );
 
   // Bounce scroll bubble
-  // setInterval(() => {
-  //   animate(
-  //     scrollBubble.value,
-  //     {
-  //       transformOrigin: "center bottom",
-  //       y: ["0%", "-6%", "-3%", "0%", "-0.5%", "0%"],
-  //       scaleY: [1, 1.1, 1.05, 1],
-  //     },
-  //     {
-  //       // delay: 3,
-  //       duration: 1,
-  //       // repeat: Infinity,
-  //     }
-  //   ).finished.then(() => {
-  //     console.log("test");
-  //     scrollBubble.value.style = "";
-  //   });
-  // }, 3000);
+  animate(
+    scrollBubble.value,
+    {
+      transformOrigin: [
+        "center bottom",
+        "center bottom",
+        "center bottom",
+        "center bottom",
+        "center bottom",
+        "center bottom",
+        "center bottom",
+        "center bottom",
+        "center bottom",
+      ],
+      transform: [
+        "",
+        "",
+        "",
+        "translate3d(0, -30px, 0) scaleY(1.1)",
+        "scaleY(1.1)",
+        "translate3d(0, -15px, 0) scaleY(1.05)",
+        "translate3d(0, 0, 0) scaleY(0.95)",
+        "translate3d(0, -4px, 0) scaleY(1.02)",
+        "translate3d(0, 0, 0)",
+      ],
+    },
+    {
+      delay: 3,
+      // offset: [0, 0.2, 0.4, 0.43, 0.53, 0.7, 0.8, 0.9, 1],
+      offset: [0, 0.066, 0.133, 0.143, 0.176, 0.233, 0.266, 0.3, 0.333, 1],
+      easing: [
+        "ease",
+        "ease",
+        "ease",
+        [0.755, 0.05, 0.855, 0.06],
+        "ease",
+        [0.755, 0.05, 0.855, 0.06],
+        [0.215, 0.61, 0.355, 1],
+        "ease",
+        [0.215, 0.61, 0.355, 1],
+      ],
+      duration: 3,
+      repeat: Infinity,
+    }
+  );
 
-  // Test 2
-  setInterval(() => {
-    animate(
-      scrollBubble.value,
-      {
-        y: ["0px", "30px"],
-        // scaleY: [1, 1.1],
-      },
-      {
-        easing: spring({ damping: 100 }),
-        direction: "alternate",
-        delay: 0,
-        repeat: Infinity,
-      }
-    ).finished.then(() => {
-      console.log("test");
-      scrollBubble.value.style = "";
-    });
-  }, 5000);
+  // Flash terminal in logo
+  animate(
+    bpmillerTerminal.value,
+    { opacity: ["", "", "", 0, ""] },
+    {
+      // delay: 3,
+      offset: [0, 0.25, 0.5, 0.75, 1],
+      easing: "ease",
+      duration: 1,
+      repeat: Infinity,
+      allowWebkitAcceleration: true,
+    }
+  );
 
   // Scrolling paralax function
   scroll(
@@ -178,7 +185,9 @@ onMounted(() => {
       <!-- Logo -->
       <div ref="bpmillerLogo" class="ml-5 flex items-center opacity-0">
         <SvgHandler name="BpmillerLogoText" />
-        <SvgHandler name="BpmillerLogoTerminal" />
+        <div ref="bpmillerTerminal">
+          <SvgHandler name="BpmillerLogoTerminal" />
+        </div>
       </div>
       <!-- Menu -->
       <div ref="mobileMenu" class="mr-5 opacity-0">

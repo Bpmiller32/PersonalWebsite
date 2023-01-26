@@ -1,10 +1,22 @@
 <script setup>
+// Js
 import { animate, timeline, scroll, inView, spring } from "motion";
 import { ref, onMounted } from "vue";
 
+const portrait = ref(null);
 const description = ref(null);
 
 onMounted(() => {
+  // For image
+  inView(portrait.value, () => {
+    animate(
+      portrait.value,
+      { opacity: [0, 1], y: [30, 0] },
+      { at: 0, duration: 1 }
+    );
+  });
+
+  // For text description
   inView(description.value, () => {
     animate(description.value, { opacity: [0, 1] }, { duration: 1 });
   });
@@ -12,9 +24,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="w-full pb-5 bg-gray-800 border-y border-gray-600">
+  <section class="w-full bg-gray-800 border-y border-gray-600">
     <!-- Container for content -->
-    <div class="mx-5 mt-5">
+    <div class="mx-5 mt-5 mb-10">
       <!-- Header for section -->
       <h1 class="flex justify-end font-poppins font-bold baseline text-4xl">
         <p class="text-bteal-50">01</p>
@@ -25,7 +37,7 @@ onMounted(() => {
       </h1>
 
       <!-- Photo -->
-      <div class="flex justify-center">
+      <div ref="portrait" class="flex justify-center opacity-0">
         <img
           class="object-cover mt-5 h-60 rounded-3xl shadow-2xl"
           src="..\assets\common\aboutMe.webp"

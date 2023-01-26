@@ -7,7 +7,7 @@ import SvgHandler from "../components/SvgHandler.vue";
 </script>
 
 <template>
-  <section class="mx-5 my-10">
+  <section class="mx-5 mt-5 mb-10">
     <!-- Header for section -->
     <h1 class="flex justify-end font-poppins font-bold text-4xl">
       <div class="mt-5 mr-3 h-0.5 w-full bg-white"></div>
