@@ -1,23 +1,21 @@
 <script setup>
-// Js
-import ContactBox from "../components/ContactBox.vue";
-
 // Components
 import SvgHandler from "../components/SvgHandler.vue";
+import ContactBox from "../components/ContactCard.vue";
 </script>
 
 <template>
   <section class="mx-5 mt-5 mb-10">
     <!-- Header for section -->
     <h1 class="flex justify-end font-poppins font-bold text-4xl">
-      <div class="mt-5 mr-3 h-0.5 w-full bg-white"></div>
+      <div class="mt-5 mr-3 h-0.5 w-full bg-zinc-200"></div>
       <p class="text-bteal-50">04</p>
       <p class="text-bpink-50">.</p>
       <p class="ml-3 text-gray-100">Contact</p>
     </h1>
 
     <!-- Contact info and contact form -->
-    <div class="flex flex-col justify-center">
+    <div class="animateFadeIn opacity-0 flex flex-col justify-center">
       <!-- Contact description -->
       <div class="mt-5 max-w-xs text-gray-100 font-poppins font-bold text-2xl">
         Available for select freelance opportunities.
@@ -79,9 +77,9 @@ import SvgHandler from "../components/SvgHandler.vue";
           </a>
         </div>
       </div>
-
-      <!-- ContactBox -->
-      <div class="mt-10"><ContactBox /></div>
     </div>
+
+    <!-- ContactBox -->
+    <div class="animateFadeUp mt-10"><ContactBox /></div>
   </section>
 </template>

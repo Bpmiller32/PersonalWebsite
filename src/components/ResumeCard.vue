@@ -1,13 +1,11 @@
 <script setup>
 // Js
-import { animate, timeline, scroll, inView, spring } from "motion";
 import { ref, onMounted } from "vue";
 
 // Components
-import SvgHandler from "../components/SvgHandler.vue";
+import SvgHandler from "./SvgHandler.vue";
 
 const appWidth = ref(null);
-const resumeBox = ref(null);
 
 onMounted(() => {
   // Set app dimensions on mount and on browser window resize
@@ -16,25 +14,12 @@ onMounted(() => {
   window.addEventListener("resize", () => {
     appWidth.value = window.innerWidth;
   });
-
-  inView(resumeBox.value, () => {
-    animate(
-      resumeBox.value,
-      { opacity: [0, 1], y: [30, 0] },
-      { at: 0, duration: 1 }
-    );
-
-    // return () => {
-    //   resumeBox.value.style.opacity = 0;
-    // };
-  });
 });
 </script>
 
 <template>
   <div
-    ref="resumeBox"
-    class="mt-10 rounded-2xl border-2 p-6 border-zinc-700/40 opacity-0"
+    class="animateFadeUp opacity-0 mt-10 rounded-2xl border-2 p-6 border-zinc-700/40"
   >
     <!-- Heading -->
     <h2 class="flex items-center text-sm font-poppins text-gray-100">
@@ -160,6 +145,7 @@ onMounted(() => {
         </div>
       </div>
     </div>
+
     <!-- Download button -->
     <a
       class="inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-50 font-medium text-zinc-900 hover:bg-zinc-100 active:bg-zinc-100 active:text-zinc-900/60 dark:bg-zinc-800/50 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:active:bg-zinc-800/50 dark:active:text-zinc-50/70 group mt-6 w-full"

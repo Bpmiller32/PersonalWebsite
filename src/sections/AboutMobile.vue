@@ -1,28 +1,3 @@
-<script setup>
-// Js
-import { animate, timeline, scroll, inView, spring } from "motion";
-import { ref, onMounted } from "vue";
-
-const portrait = ref(null);
-const description = ref(null);
-
-onMounted(() => {
-  // For image
-  inView(portrait.value, () => {
-    animate(
-      portrait.value,
-      { opacity: [0, 1], y: [30, 0] },
-      { at: 0, duration: 1 }
-    );
-  });
-
-  // For text description
-  inView(description.value, () => {
-    animate(description.value, { opacity: [0, 1] }, { duration: 1 });
-  });
-});
-</script>
-
 <template>
   <section class="w-full bg-gray-800 border-y border-gray-600">
     <!-- Container for content -->
@@ -37,7 +12,7 @@ onMounted(() => {
       </h1>
 
       <!-- Photo -->
-      <div ref="portrait" class="flex justify-center opacity-0">
+      <div class="animateFadeUp opacity-0 flex justify-center">
         <img
           class="object-cover mt-5 h-60 rounded-3xl shadow-2xl"
           src="..\assets\common\aboutMe.webp"
@@ -45,8 +20,7 @@ onMounted(() => {
       </div>
       <!-- Description -->
       <div
-        ref="description"
-        class="text-zinc-200 font-poppins text-[0.93rem] opacity-0"
+        class="animateFadeIn opacity-0 text-zinc-200 font-poppins text-[0.93rem]"
       >
         <p class="mt-5">
           I’m a software engineer specializing in building and designing

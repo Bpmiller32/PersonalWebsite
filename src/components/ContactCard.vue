@@ -1,6 +1,6 @@
 <script setup>
 // Components
-import SvgHandler from "../components/SvgHandler.vue";
+import SvgHandler from "./SvgHandler.vue";
 </script>
 
 <template>

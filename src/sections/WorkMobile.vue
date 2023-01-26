@@ -1,31 +1,7 @@
 <script setup>
-// Js
-import { animate, inView } from "motion";
-import { onMounted } from "vue";
-
 // Components
-import ResumeBox from "../components/ResumeBox.vue";
 import SvgHandler from "../components/SvgHandler.vue";
-
-onMounted(() => {
-  // For code backgrounds
-  inView(".backgroundImage", (info) => {
-    animate(
-      info.target,
-      { opacity: [0, 0.2], y: [50, 0] },
-      { at: 0, duration: 2 }
-    );
-  });
-
-  // For work boxes
-  inView("figure", (info) => {
-    animate(
-      info.target,
-      { opacity: [0, 1], y: [30, 0] },
-      { at: 0, duration: 1 }
-    );
-  });
-});
+import ResumeBox from "../components/ResumeCard.vue";
 </script>
 
 <template>
@@ -45,19 +21,21 @@ onMounted(() => {
     </h1>
 
     <!-- Background code image -->
-    <div class="backgroundImage absolute top-[10%] left-0 w-1/2 opacity-0">
+    <div class="animateFadeUpSlow opacity-0 absolute top-[10%] left-0 w-1/2">
       <img
         src="..\assets\common\codeBackground.webp"
         alt="Image of the code that made this, meta!"
       />
     </div>
     <!-- Background code image long -->
-    <div class="backgroundImage absolute top-[37%] right-0 w-1/2 opacity-0">
+    <div class="animateFadeUpSlow opacity-0 absolute top-[37%] right-0 w-1/2">
       <img src="..\assets\common\codeBackgroundLong.webp" alt="" />
     </div>
 
-    <!-- Overall container -->
-    <figure class="mt-5 rounded-2xl border-2 border-zinc-800 opacity-0">
+    <!-- Work Card -->
+    <div
+      class="animateFadeUp opacity-0 mt-5 rounded-2xl border-2 border-zinc-800"
+    >
       <!-- Heading -->
       <div class="flex justify-center items-center mt-5 space-x-5">
         <!-- Heading Image -->
@@ -93,10 +71,12 @@ onMounted(() => {
           <p>.Net Core, WinForms, and UWP.</p>
         </div>
       </div>
-    </figure>
+    </div>
 
-    <!-- Overall container -->
-    <figure class="mt-5 rounded-2xl border-2 border-zinc-800 opacity-0">
+    <!-- Work Card -->
+    <div
+      class="animateFadeUp opacity-0 mt-5 rounded-2xl border-2 border-zinc-800"
+    >
       <!-- Heading -->
       <div class="flex justify-center items-center mt-5 space-x-5">
         <!-- Heading Image -->
@@ -134,10 +114,12 @@ onMounted(() => {
           <p>Vue, Nuxt, and Asp.Net Core.</p>
         </div>
       </div>
-    </figure>
+    </div>
 
-    <!-- Overall container -->
-    <figure class="mt-5 rounded-2xl border-2 border-zinc-800 opacity-0">
+    <!-- Work Card -->
+    <div
+      class="animateFadeUp opacity-0 mt-5 rounded-2xl border-2 border-zinc-800"
+    >
       <!-- Heading -->
       <div class="flex justify-center items-center mt-5 space-x-5">
         <!-- Heading Image -->
@@ -175,7 +157,7 @@ onMounted(() => {
           <p>large-scale IT challenges.</p>
         </div>
       </div>
-    </figure>
+    </div>
     <div></div>
     <!-- Resume Box -->
     <ResumeBox />

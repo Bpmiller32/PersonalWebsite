@@ -1,32 +1,26 @@
 <script setup>
 // Js
-import { animate, timeline, scroll, inView, spring } from "motion";
-import { ref, onMounted, watch, toRaw } from "vue";
+import { ref, onMounted } from "vue";
+import { animate, timeline, scroll } from "motion";
 
 // Components
 import SvgHandler from "../components/SvgHandler.vue";
 import MobileMenu from "../components/MobileMenu.vue";
 
-// Sections
-import AboutMobile from "../sections/AboutMobile.vue";
-import WorkMobile from "../sections/WorkMobile.vue";
-import ProjectsMobile from "../sections/ProjectsMobile.vue";
-import ContactMobile from "../sections/ContactMobile.vue";
-import FooterMobile from "../sections/FooterMobile.vue";
-
 // Template refs
+const spotlightSection = ref(null);
+
 const mobilePhoto0 = ref(null);
 const mobilePhoto1 = ref(null);
 const mobilePhoto2 = ref(null);
 const mobilePhoto3 = ref(null);
 const mobilePhoto4 = ref(null);
-const spotlightSection = ref(null);
 
-const spotlightText = ref(null);
-const scrollBubble = ref(null);
 const bpmillerLogo = ref(null);
 const bpmillerTerminal = ref(null);
 const mobileMenu = ref(null);
+const spotlightText = ref(null);
+const scrollBubble = ref(null);
 
 onMounted(() => {
   // Create sequence here because photo needs to be mounted to assign animation to photoX.value
@@ -105,8 +99,8 @@ onMounted(() => {
     bpmillerTerminal.value,
     { opacity: ["", "", "", 0, ""] },
     {
-      // delay: 3,
-      offset: [0, 0.25, 0.5, 0.75, 1],
+      delay: 2,
+      offset: [0, 0.25, 0.5, 0.75],
       easing: "ease",
       duration: 1,
       repeat: Infinity,
@@ -124,7 +118,6 @@ onMounted(() => {
 </script>
 
 <template>
-  <!-- Spotlight section -->
   <div ref="spotlightSection" class="relative h-screen">
     <!-- Ocean background image -->
     <img
@@ -194,14 +187,5 @@ onMounted(() => {
         <MobileMenu />
       </div>
     </div>
-  </div>
-
-  <!-- Content sections -->
-  <div class="absolute w-full">
-    <AboutMobile />
-    <WorkMobile />
-    <ProjectsMobile />
-    <ContactMobile />
-    <FooterMobile />
   </div>
 </template>
