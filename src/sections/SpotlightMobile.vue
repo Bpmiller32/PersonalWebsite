@@ -7,6 +7,9 @@ import { animate, timeline, scroll } from "motion";
 import SvgHandler from "../components/SvgHandler.vue";
 import MobileMenu from "../components/MobileMenu.vue";
 
+// Vue
+const emit = defineEmits(["RouteApp"]);
+
 // Template refs
 const spotlightSection = ref(null);
 
@@ -21,6 +24,11 @@ const bpmillerTerminal = ref(null);
 const mobileMenu = ref(null);
 const spotlightText = ref(null);
 const scrollBubble = ref(null);
+
+// Routing function
+function RouteSpotlight(route) {
+  emit("RouteApp", route);
+}
 
 onMounted(() => {
   // Create sequence here because photo needs to be mounted to assign animation to photoX.value
@@ -184,7 +192,7 @@ onMounted(() => {
       </div>
       <!-- Menu -->
       <div ref="mobileMenu" class="mr-5 opacity-0">
-        <MobileMenu />
+        <MobileMenu @route-spotlight="RouteSpotlight" />
       </div>
     </div>
   </div>

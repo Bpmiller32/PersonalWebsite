@@ -37,7 +37,7 @@ onMounted(() => {
     </div>
 
     <!-- Title -->
-    <div class="mt-5 text-white font-poppins font-bold text-2xl">
+    <div class="mt-5 text-gray-100 font-poppins font-bold text-2xl">
       <slot name="title"> Project Title </slot>
     </div>
     <!-- Links -->
@@ -45,13 +45,13 @@ onMounted(() => {
       <div v-if="appWidth <= 349" class="mt-1">
         <div class="flex items-center">
           <div class="rounded-full bg-red-500 h-5 w-5 flex-none"></div>
-          <div class="ml-1 mr-3 text-white font-poppins font-bold">
+          <div class="ml-1 mr-3 text-gray-100 font-poppins font-bold">
             <slot name="link1"> bpmiller.com </slot>
           </div>
         </div>
         <div class="flex items-center">
           <div class="rounded-full bg-red-500 h-5 w-5 flex-none"></div>
-          <div class="ml-1 text-white font-poppins font-bold">
+          <div class="ml-1 text-gray-100 font-poppins font-bold">
             <slot name="link2"> bpmiller.com </slot>
           </div>
         </div>
@@ -59,13 +59,13 @@ onMounted(() => {
       <div v-else class="mt-1 flex">
         <div class="flex items-center">
           <div class="rounded-full bg-red-500 h-5 w-5 flex-none"></div>
-          <div class="ml-1 mr-3 text-white font-poppins font-bold">
+          <div class="ml-1 mr-3 text-gray-100 font-poppins font-bold">
             <slot name="link1"> bpmiller.com </slot>
           </div>
         </div>
         <div class="flex items-center">
           <div class="rounded-full bg-red-500 h-5 w-5 flex-none"></div>
-          <div class="ml-1 text-white font-poppins font-bold">
+          <div class="ml-1 text-gray-100 font-poppins font-bold">
             <slot name="link2"> bpmiller.com </slot>
           </div>
         </div>

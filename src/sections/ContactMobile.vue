@@ -5,7 +5,7 @@ import ContactCard from "../components/ContactCard.vue";
 </script>
 
 <template>
-  <section class="mx-5 mt-5 mb-10">
+  <section class="mx-5 pt-5 pb-10">
     <!-- Header for section -->
     <h1 class="flex justify-end font-poppins font-bold text-4xl">
       <div class="mt-5 mr-3 h-0.5 w-full bg-zinc-200"></div>
@@ -42,7 +42,7 @@ import ContactCard from "../components/ContactCard.vue";
           >
             <SvgHandler name="TwitterIcon" />
             <p
-              class="rounded-md ml-1 px-2 py-2 font-poppins text-zinc-200 group-hover:bg-gray-50 group-hover:text-gray-900"
+              class="rounded-md ml-1 px-2 py-2 font-poppins text-zinc-200 group-hover:bg-gray-100 group-hover:text-gray-900"
             >
               Twitter
             </p>
@@ -56,7 +56,7 @@ import ContactCard from "../components/ContactCard.vue";
           >
             <SvgHandler name="LinkedinIcon" />
             <p
-              class="rounded-md ml-1 px-2 py-2 font-poppins text-zinc-200 group-hover:bg-gray-50 group-hover:text-gray-900"
+              class="rounded-md ml-1 px-2 py-2 font-poppins text-zinc-200 group-hover:bg-gray-100 group-hover:text-gray-900"
             >
               LinkedIn
             </p>
@@ -70,7 +70,7 @@ import ContactCard from "../components/ContactCard.vue";
           >
             <SvgHandler name="GithubIcon" />
             <p
-              class="rounded-md ml-1 px-2 py-2 font-poppins text-zinc-200 group-hover:bg-gray-50 group-hover:text-gray-900"
+              class="rounded-md ml-1 px-2 py-2 font-poppins text-zinc-200 group-hover:bg-gray-100 group-hover:text-gray-900"
             >
               Github
             </p>

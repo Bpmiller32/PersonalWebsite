@@ -6,7 +6,7 @@ import ResumeCard from "../components/ResumeCard.vue";
 </script>
 
 <template>
-  <section class="relative mx-5 mt-5 mb-10">
+  <section class="relative mx-5 pt-5 pb-10">
     <!-- Header for section -->
     <h1 class="flex justify-end font-poppins font-bold text-4xl">
       <div class="mt-5 mr-3 h-0.5 w-full bg-zinc-200"></div>
@@ -34,7 +34,7 @@ import ResumeCard from "../components/ResumeCard.vue";
     </div>
 
     <!-- Desktop app dev -->
-    <WorkCard color="absolute bg-green-500" divsize="h-24">
+    <WorkCard color="absolute bg-pink-500" divsize="h-24">
       <template #title>
         <p class="relative">Desktop App</p>
         <p class="relative">Development</p>
@@ -66,7 +66,7 @@ import ResumeCard from "../components/ResumeCard.vue";
     </WorkCard>
 
     <!-- Enterprise IT -->
-    <WorkCard color="absolute bg-blue-500" divsize="h-28">
+    <WorkCard color="absolute bg-orange-500" divsize="h-28">
       <template #title>
         <p class="relative">Enterprise IT</p>
       </template>

@@ -1,7 +1,7 @@
 <template>
   <section class="w-full bg-gray-800 border-y border-gray-600">
     <!-- Container for content -->
-    <div class="mx-5 mt-5 mb-10">
+    <div class="mx-5 pt-5 pb-10">
       <!-- Header for section -->
       <h1 class="flex justify-end font-poppins font-bold baseline text-4xl">
         <p class="text-bteal-50">01</p>

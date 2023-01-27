@@ -9,12 +9,29 @@ import {
 
 // Components
 import SvgHandler from "../components/SvgHandler.vue";
+
+// Vue
+const emit = defineEmits(["RouteSpotlight", "BubbleAnimation"]);
+
+// Routing function
+function RouteMenu(close, route) {
+  close();
+  emit("RouteSpotlight", route);
+}
+
+// Bubble animation
+function BubbleMenu(action) {
+  emit("BubbleAnimation", action);
+}
 </script>
 
 <template>
   <Popover>
     <!-- Open button -->
-    <PopoverButton class="rounded-full bg-slate-500 p-2">
+    <PopoverButton
+      @click="BubbleMenu('stop')"
+      class="rounded-full bg-slate-500 p-2"
+    >
       <SvgHandler name="MobileMenuBars" />
     </PopoverButton>
 
@@ -36,6 +53,8 @@ import SvgHandler from "../components/SvgHandler.vue";
       leave-to-class="opacity-0 scale-95"
     >
       <PopoverPanel
+        v-slot="{ close }"
+        @vnode-unmounted="BubbleMenu('start')"
         @wheel.prevent
         @touchmove.prevent
         @scroll.prevent
@@ -57,46 +76,58 @@ import SvgHandler from "../components/SvgHandler.vue";
 
           <!-- Links to sections -->
           <div class="space-y-3 px-3 pt-3 pb-5">
-            <a href="#" class="flex items-center group">
+            <button
+              @click="RouteMenu(close, 'about')"
+              class="flex items-center group"
+            >
               <div class="border-2 border-zinc-200 rounded-lg p-2.5">
                 <SvgHandler name="MobileMenuAbout" />
               </div>
               <p
-                class="rounded-md ml-2 px-3 py-2 font-poppins text-zinc-200 group-hover:bg-gray-50 group-hover:text-gray-900"
+                class="rounded-md ml-2 px-3 py-2 font-poppins text-zinc-200 group-hover:bg-gray-100 group-hover:text-gray-900"
               >
                 About Me
               </p>
-            </a>
-            <a href="#" class="flex items-center group">
+            </button>
+            <button
+              @click="RouteMenu(close, 'work')"
+              class="flex items-center group"
+            >
               <div class="border-2 border-zinc-200 rounded-lg p-2.5">
                 <SvgHandler name="MobileMenuWork" />
               </div>
               <p
-                class="rounded-md ml-2 px-3 py-2 font-poppins text-zinc-200 group-hover:bg-gray-50 group-hover:text-gray-900"
+                class="rounded-md ml-2 px-3 py-2 font-poppins text-zinc-200 group-hover:bg-gray-100 group-hover:text-gray-900"
               >
                 Work and Experience
               </p>
-            </a>
-            <a href="#" class="flex items-center group">
+            </button>
+            <button
+              @click="RouteMenu(close, 'projects')"
+              class="flex items-center group"
+            >
               <div class="border-2 border-zinc-200 rounded-lg p-2.5">
                 <SvgHandler name="MobileMenuProjects" />
               </div>
               <p
-                class="rounded-md ml-2 px-3 py-2 font-poppins text-zinc-200 group-hover:bg-gray-50 group-hover:text-gray-900"
+                class="rounded-md ml-2 px-3 py-2 font-poppins text-zinc-200 group-hover:bg-gray-100 group-hover:text-gray-900"
               >
                 Projects
               </p>
-            </a>
-            <a href="#" class="flex items-center group">
+            </button>
+            <button
+              @click="RouteMenu(close, 'contact')"
+              class="flex items-center group"
+            >
               <div class="border-2 border-zinc-200 rounded-lg p-2.5">
                 <SvgHandler name="MobileMenuContact" />
               </div>
               <p
-                class="rounded-md ml-2 px-3 py-2 font-poppins text-zinc-200 group-hover:bg-gray-50 group-hover:text-gray-900"
+                class="rounded-md ml-2 px-3 py-2 font-poppins text-zinc-200 group-hover:bg-gray-100 group-hover:text-gray-900"
               >
                 Contact
               </p>
-            </a>
+            </button>
           </div>
         </div>
       </PopoverPanel>
