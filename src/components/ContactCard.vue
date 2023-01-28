@@ -1,13 +1,26 @@
 <script setup>
+// Js
+import { ref, onMounted } from "vue";
+import { db } from "../firebase/index.js";
+import { doc, addDoc, collection } from "firebase/firestore";
+
 // Components
 import SvgHandler from "./SvgHandler.vue";
+
+async function SendMessage() {
+  await addDoc(collection(db, "websiteMessages"), {
+    email: "website@testing",
+    message: "Hello website",
+    time: new Date(),
+  });
+}
 </script>
 
 <template>
   <div
     class="border-2 border-zinc-700/40 py-8 px-4 shadow rounded-lg sm:px-10 min-w-[30vw]"
   >
-    <form class="space-y-6" action="#" method="POST">
+    <div class="space-y-6">
       <div>
         <label for="email" class="block text-gray-100 text-sm font-medium"
           >Email address</label
@@ -38,13 +51,13 @@ import SvgHandler from "./SvgHandler.vue";
       </div>
 
       <button
-        type="submit"
+        @click="SendMessage()"
         class="flex w-full justify-center items-center rounded-md border border-transparent bg-bteal-50 py-2 px-4 text-sm font-medium text-gray-100 shadow-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
       >
         <p class="mr-3">Send Message</p>
 
         <SvgHandler name="MailIcon" />
       </button>
-    </form>
+    </div>
   </div>
 </template>
