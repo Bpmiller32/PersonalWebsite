@@ -35,6 +35,12 @@ import ProjectCard from "../components/ProjectCard.vue";
       <!-- RAF -->
       <ProjectCard projlinks="true" projtype="js">
         <template #title>RAF Technology</template>
+        <template #image
+          ><img
+            class="w-2/3"
+            src="..\assets\mobile\showcaseRaf.webp"
+            alt="Image of the code that made this, meta!"
+        /></template>
         <template #link1>raf.com</template>
         <template #link2>github.com</template>
         <template #description
@@ -47,6 +53,13 @@ import ProjectCard from "../components/ProjectCard.vue";
         <template #technology
           >Vue, Vue Router, Tailwind, Motion One, WordPress, Elementor</template
         >
+        <template #badges
+          ><img
+            class="rounded-full w-6 h-auto mt-0.5 mr-2 shrink-0"
+            src="..\assets\common\js.webp"
+            alt="Image of the code that made this, meta!"
+          />
+        </template>
       </ProjectCard>
 
       <!-- Directory Commander -->
@@ -70,6 +83,13 @@ import ProjectCard from "../components/ProjectCard.vue";
             </div>
           </div>
         </template>
+        <template #badges
+          ><img
+            class="rounded-full w-6 h-auto mt-0.5 mr-2 shrink-0"
+            src="..\assets\common\js.webp"
+            alt="Image of the code that made this, meta!"
+          />
+        </template>
       </ProjectCard>
 
       <!-- DMI -->
@@ -84,6 +104,13 @@ import ProjectCard from "../components/ProjectCard.vue";
         <template #technology
           >WinForms, Telerik, Entity Framework, MongoDb</template
         >
+        <template #badges
+          ><img
+            class="rounded-full w-6 h-auto mt-0.5 mr-2 shrink-0"
+            src="..\assets\common\cSharp.webp"
+            alt="Image of the code that made this, meta!"
+          />
+        </template>
       </ProjectCard>
 
       <!-- FireGame -->
@@ -96,6 +123,13 @@ import ProjectCard from "../components/ProjectCard.vue";
           save the day!</template
         >
         <template #technology>Godot 4</template>
+        <template #badges
+          ><img
+            class="rounded-full w-6 h-auto mt-0.5 mr-2 shrink-0"
+            src="..\assets\common\cSharp.webp"
+            alt="Image of the code that made this, meta!"
+          />
+        </template>
       </ProjectCard>
 
       <!-- Barry -->
@@ -115,6 +149,13 @@ import ProjectCard from "../components/ProjectCard.vue";
           >Discord.net, Entity Framework, Sqlite, Lavaplayer,
           Spotify-NET</template
         >
+        <template #badges
+          ><img
+            class="rounded-full w-6 h-auto mt-0.5 mr-2 shrink-0"
+            src="..\assets\common\cSharp.webp"
+            alt="Image of the code that made this, meta!"
+          />
+        </template>
       </ProjectCard>
     </div>
   </section>

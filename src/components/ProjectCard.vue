@@ -1,6 +1,7 @@
 <script setup>
 // Js
 import { ref, onMounted } from "vue";
+import SvgHandler from "./SvgHandler.vue";
 
 const props = defineProps(["projlinks", "projtype"]);
 
@@ -44,13 +45,13 @@ onMounted(() => {
     <div v-if="props.projlinks">
       <div v-if="appWidth <= 349" class="mt-1">
         <div class="flex items-center">
-          <div class="rounded-full bg-red-500 h-5 w-5 flex-none"></div>
+          <SvgHandler name="ProjectLink" />
           <div class="ml-1 mr-3 text-gray-100 font-poppins font-bold">
             <slot name="link1"> bpmiller.com </slot>
           </div>
         </div>
         <div class="flex items-center">
-          <div class="rounded-full bg-red-500 h-5 w-5 flex-none"></div>
+          <SvgHandler name="ProjectLink" />
           <div class="ml-1 text-gray-100 font-poppins font-bold">
             <slot name="link2"> bpmiller.com </slot>
           </div>
@@ -58,13 +59,13 @@ onMounted(() => {
       </div>
       <div v-else class="mt-1 flex">
         <div class="flex items-center">
-          <div class="rounded-full bg-red-500 h-5 w-5 flex-none"></div>
+          <SvgHandler name="ProjectLink" />
           <div class="ml-1 mr-3 text-gray-100 font-poppins font-bold">
             <slot name="link1"> bpmiller.com </slot>
           </div>
         </div>
         <div class="flex items-center">
-          <div class="rounded-full bg-red-500 h-5 w-5 flex-none"></div>
+          <SvgHandler name="ProjectLink" />
           <div class="ml-1 text-gray-100 font-poppins font-bold">
             <slot name="link2"> bpmiller.com </slot>
           </div>
@@ -77,16 +78,24 @@ onMounted(() => {
     </div>
     <!-- Technology used -->
     <div class="text-zinc-100 mt-5">Technology used</div>
-    <div class="text-zinc-400 flex items-start">
-      <!-- Project languages icon -->
-      <div
-        v-if="props.projtype == 'c#'"
-        class="h-5 w-5 rounded-full bg-purple-500 mt-0.5 mr-2 flex-none"
-      ></div>
-      <div
-        v-if="props.projtype == 'js'"
-        class="h-5 w-5 rounded-full bg-yellow-500 mt-0.5 mr-2 flex-none"
-      ></div>
+    <!-- Project languages icon -->
+    <div class="text-zinc-400 flex items-center">
+      <slot name="badges">
+        <div v-if="props.projtype == 'c#'">
+          <img
+            class="rounded-full w-6 h-auto mt-0.5 mr-2 flex-none"
+            src="..\assets\common\cSharp.webp"
+            alt="Image of the code that made this, meta!"
+          />
+        </div>
+        <div v-if="props.projtype == 'js'">
+          <img
+            class="rounded-full w-6 h-auto mt-0.5 mr-2 flex-none"
+            src="..\assets\common\js.webp"
+            alt="Image of the code that made this, meta!"
+          />
+        </div>
+      </slot>
 
       <slot name="technology"> List of technologies used in the project </slot>
     </div>

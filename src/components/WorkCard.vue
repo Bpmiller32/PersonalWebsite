@@ -5,7 +5,7 @@ const props = defineProps(["color", "divsize"]);
 <template>
   <!-- WorkCard -->
   <div
-    class="animateFadeUp opacity-0 mt-5 rounded-2xl border-2 border-zinc-800"
+    class="animateFadeUp opacity-0 mt-5 rounded-2xl border-2 border-zinc-700/40"
   >
     <!-- Heading -->
     <div class="flex justify-center items-center mt-5 space-x-5">
