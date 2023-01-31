@@ -25,9 +25,26 @@ const mobileMenu = ref(null);
 const spotlightText = ref(null);
 const scrollBubble = ref(null);
 
+// Animation refs
+const flash = ref(null);
+const bounce = ref(null);
+
 // Routing function
 function RouteSpotlight(route) {
   emit("RouteApp", route);
+}
+
+// Control bubble function
+function ControlAnimations(action) {
+  console.log("heard");
+
+  if (action == "start") {
+    bounce.value.play();
+    flash.value.play();
+  } else if (action == "stop") {
+    bounce.value.pause();
+    flash.value.pause();
+  }
 }
 
 onMounted(() => {
@@ -48,7 +65,7 @@ onMounted(() => {
     { duration: 1.3 }
   );
 
-  // Animate in scroll bubble
+  // // Animate in scroll bubble
   animate(
     scrollBubble.value,
     { opacity: [0, 1] },
@@ -56,7 +73,7 @@ onMounted(() => {
   );
 
   // Bounce scroll bubble
-  animate(
+  bounce.value = animate(
     scrollBubble.value,
     {
       transformOrigin: [
@@ -103,7 +120,7 @@ onMounted(() => {
   );
 
   // Flash terminal in logo
-  animate(
+  flash.value = animate(
     bpmillerTerminal.value,
     { opacity: ["", "", "", 0, ""] },
     {
@@ -192,7 +209,10 @@ onMounted(() => {
       </div>
       <!-- Menu -->
       <div ref="mobileMenu" class="mr-5 opacity-0">
-        <MobileMenu @route-spotlight="RouteSpotlight" />
+        <MobileMenu
+          @route-spotlight="RouteSpotlight"
+          @control-animations="ControlAnimations"
+        />
       </div>
     </div>
   </div>

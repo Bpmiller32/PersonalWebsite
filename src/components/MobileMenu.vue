@@ -1,5 +1,6 @@
 <script setup>
 // Js
+import { onMounted } from "vue";
 import {
   Popover,
   PopoverButton,
@@ -11,32 +12,45 @@ import {
 import SvgHandler from "../components/SvgHandler.vue";
 
 // Vue
-const emit = defineEmits(["RouteSpotlight", "BubbleAnimation"]);
+const emit = defineEmits(["RouteSpotlight", "ControlAnimations"]);
+
+onMounted(() => {
+  const popover = document.querySelector("#popover");
+
+  const observerPopover = new MutationObserver(() => {
+    if (popover.childElementCount == 3) {
+      // Menu is open
+      emit("ControlAnimations", "stop");
+    } else if (popover.childElementCount == 2) {
+      // Menu is closed
+      emit("ControlAnimations", "start");
+    }
+  });
+
+  observerPopover.observe(popover, {
+    subtree: false,
+    childList: false,
+    attributes: true,
+  });
+});
 
 // Routing function
 function RouteMenu(close, route) {
   close();
   emit("RouteSpotlight", route);
 }
-
-// Bubble animation
-function BubbleMenu(action) {
-  emit("BubbleAnimation", action);
-}
 </script>
 
 <template>
-  <Popover>
+  <Popover id="popover">
     <!-- Open button -->
-    <PopoverButton
-      @click="BubbleMenu('stop')"
-      class="rounded-full bg-slate-500 p-2"
-    >
+    <PopoverButton class="rounded-full bg-slate-500 p-2">
       <SvgHandler name="MobileMenuBars" />
     </PopoverButton>
 
     <!-- Overlay -->
     <PopoverOverlay
+      id="overlay"
       @wheel.prevent
       @touchmove.prevent
       @scroll.prevent
@@ -54,7 +68,6 @@ function BubbleMenu(action) {
     >
       <PopoverPanel
         v-slot="{ close }"
-        @vnode-unmounted="BubbleMenu('start')"
         @wheel.prevent
         @touchmove.prevent
         @scroll.prevent

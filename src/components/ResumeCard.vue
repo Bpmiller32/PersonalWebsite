@@ -28,6 +28,41 @@ onMounted(() => {
     </h2>
     <!-- Jobs container -->
     <div class="mt-6 space-y-4">
+      <!-- Freelance-->
+      <div class="flex">
+        <!-- Logo -->
+        <div></div>
+        <img
+          class="mt-1 h-10 w-10 rounded-full flex flex-none"
+          src="..\assets\common\ldoa.webp"
+          alt="Logo for LDOA"
+        />
+
+        <!-- Company and Titles-->
+        <div class="ml-3 w-full text-sm text-zinc-100 font-poppins">
+          <!-- Company -->
+          <p>DataDyne LLC</p>
+
+          <!-- Titles -->
+          <div v-if="appWidth <= 425">
+            <div
+              class="flex flex-wrap flex-none justify-between text-xs font-poppins"
+            >
+              <p class="text-zinc-400 w-full">Freelance Developer</p>
+              <p class="text-zinc-500">2023 - Present</p>
+            </div>
+          </div>
+          <div v-else>
+            <div
+              class="flex flex-wrap flex-none justify-between text-xs font-poppins"
+            >
+              <p class="text-zinc-400">Freelance Developer</p>
+              <p class="text-zinc-500">2023 - Present</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Matthews-->
       <div class="flex">
         <!-- Logo -->
