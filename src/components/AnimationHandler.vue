@@ -14,7 +14,7 @@ const props = defineProps({
 function EnterHandler(el, done) {
   console.log("here");
   if (typeof animations[props.enterAnimation] !== "undefined") {
-    animations[props.enterAnimation](el, done);
+    animations[props.enterAnimation](el.value, done);
   } else {
     animations["EmptyAnimation"](el, done);
   }

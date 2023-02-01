@@ -36,8 +36,6 @@ function RouteSpotlight(route) {
 
 // Control bubble function
 function ControlAnimations(action) {
-  console.log("heard");
-
   if (action == "start") {
     bounce.value.play();
     flash.value.play();

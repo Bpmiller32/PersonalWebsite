@@ -34,14 +34,14 @@ onMounted(() => {
         <div></div>
         <img
           class="mt-1 h-10 w-10 rounded-full flex flex-none"
-          src="..\assets\common\ldoa.webp"
+          src="..\assets\common\datasea.webp"
           alt="Logo for LDOA"
         />
 
         <!-- Company and Titles-->
         <div class="ml-3 w-full text-sm text-zinc-100 font-poppins">
           <!-- Company -->
-          <p>DataDyne LLC</p>
+          <p>DataSea LLC</p>
 
           <!-- Titles -->
           <div v-if="appWidth <= 425">
@@ -184,7 +184,7 @@ onMounted(() => {
     <!-- Download button -->
     <a
       class="inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-50 font-medium text-zinc-900 hover:bg-zinc-100 active:bg-zinc-100 active:text-zinc-900/60 dark:bg-zinc-800/50 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:active:bg-zinc-800/50 dark:active:text-zinc-50/70 group mt-6 w-full"
-      href="#"
+      href="https://storage.googleapis.com/bpmillerwebsitestorage/Billy's%20Resume.docx.pdf"
       >Download Resume
       <SvgHandler name="DownloadIcon" />
     </a>

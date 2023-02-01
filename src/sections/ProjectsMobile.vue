@@ -41,6 +41,13 @@ import ProjectCard from "../components/ProjectCard.vue";
             src="..\assets\mobile\showcaseRaf.webp"
             alt="Image of the code that made this, meta!"
         /></template>
+        <template #logo>
+          <img
+            class="rounded-full w-20 h-auto"
+            src="..\assets\common\raf.webp"
+            alt="Image of the code that made this, meta!"
+          />
+        </template>
         <template #link1>raf.com</template>
         <template #link2>github.com</template>
         <template #description
@@ -50,63 +57,105 @@ import ProjectCard from "../components/ProjectCard.vue";
           primarily deployed in fulfillment, transportation, and
           distribution.</template
         >
-        <template #technology
-          >Vue, Vue Router, Tailwind, Motion One, WordPress, Elementor</template
-        >
-        <template #badges
-          ><img
-            class="rounded-full w-6 h-auto mt-0.5 mr-2 shrink-0"
-            src="..\assets\common\js.webp"
-            alt="Image of the code that made this, meta!"
-          />
+        <template #technology>
+          <div class="flex">
+            <img
+              class="rounded-full w-6 h-6 mt-0.5 mr-2 shrink-0"
+              src="..\assets\common\js.webp"
+              alt="Image of the code that made this, meta!"
+            />
+            <div>
+              Vue, Vue Router, Tailwind, Motion One, WordPress, Elementor
+            </div>
+          </div>
         </template>
       </ProjectCard>
 
       <!-- Directory Commander -->
       <ProjectCard projlinks="true" projtype="js">
         <template #title>Directory Commander</template>
+        <template #image
+          ><img
+            class="w-2/3"
+            src="..\assets\mobile\showcaseDirCommander.webp"
+            alt="Image of the code that made this, meta!"
+        /></template>
+        <template #logo>
+          <img
+            class="rounded-full w-20 h-auto"
+            src="..\assets\common\dirCommander.webp"
+            alt="Image of the code that made this, meta!"
+          />
+        </template>
         <template #link1>firebase.com</template>
         <template #link2>github.com</template>
         <template #description
           >A series of projects to completely automate a core responsibility of
           the TechServices team - to gather, compile, build, test, burn, verify,
-          and deliver different sets of postal directories to partners in a
-          given month. Frees up hours of time and resources for multiple team
-          members at the start of every month.</template
+          and publish different sets of international postal directories to
+          partners in a given month. Frees up hours of time and resources for
+          multiple team members at the start of every month.</template
         >
         <template #technology>
           <div>
-            <div>Javascript: Vue, Vue Router, Pinia, Tailwind, AnimeJs</div>
-            <div class="mt-1">
-              C#: Asp.net Core, Entity Framework, Sqlite, Serilog, Sockets,
-              Websockets, HtmlAgilityPack, MailKit, Puppeteer
+            <div class="flex">
+              <img
+                class="rounded-full w-6 h-6 mt-0.5 mr-2 shrink-0"
+                src="..\assets\common\js.webp"
+                alt="Image of the code that made this, meta!"
+              />
+              <div>Vue, Vue Router, Pinia, Tailwind, AnimeJs</div>
+            </div>
+            <div class="flex mt-1">
+              <img
+                class="rounded-full w-6 h-6 mt-0.5 mr-2 shrink-0 flex-none"
+                src="..\assets\common\cSharp.webp"
+                alt="Image of the code that made this, meta!"
+              />
+              <div>
+                Asp.net Core, Entity Framework, Sqlite, Serilog, Sockets,
+                Websockets, HtmlAgilityPack, MailKit, Puppeteer
+              </div>
             </div>
           </div>
-        </template>
-        <template #badges
-          ><img
-            class="rounded-full w-6 h-auto mt-0.5 mr-2 shrink-0"
-            src="..\assets\common\js.webp"
-            alt="Image of the code that made this, meta!"
-          />
         </template>
       </ProjectCard>
 
       <!-- DMI -->
       <ProjectCard projtype="c#">
         <template #title>Dangerous Mail Investigation</template>
+        <template #image
+          ><img
+            class="w-2/3"
+            src="..\assets\mobile\showcaseDmi.webp"
+            alt="Image of the code that made this, meta!"
+        /></template>
+        <template #logo>
+          <img
+            class="rounded-full w-20 h-auto"
+            src="..\assets\common\dmi.webp"
+            alt="Image of the code that made this, meta!"
+          />
+        </template>
         <template #description
           >A solution to the problem of manually viewing and analyzing tens of
           thousands of mailpiece images to determine which ones may have similar
           characteristics to a previousUpSmall identified dangerous mailpiece
           using OCR and intelligent searching, sorting, and filtering.</template
         >
-        <template #technology
-          >WinForms, Telerik, Entity Framework, MongoDb</template
-        >
+        <template #technology>
+          <div class="flex">
+            <img
+              class="rounded-full w-6 h-6 mt-0.5 mr-2 shrink-0"
+              src="..\assets\common\cSharp.webp"
+              alt="Image of the code that made this, meta!"
+            />
+            <div>WinForms, Telerik, Entity Framework, MongoDb</div>
+          </div>
+        </template>
         <template #badges
           ><img
-            class="rounded-full w-6 h-auto mt-0.5 mr-2 shrink-0"
+            class="rounded-full w-6 h-6 mt-0.5 mr-2 shrink-0"
             src="..\assets\common\cSharp.webp"
             alt="Image of the code that made this, meta!"
           />
@@ -114,7 +163,7 @@ import ProjectCard from "../components/ProjectCard.vue";
       </ProjectCard>
 
       <!-- FireGame -->
-      <ProjectCard projlinks="true" projtype="c#">
+      <!-- <ProjectCard projlinks="true" projtype="c#">
         <template #title>Fire Game</template>
         <template #link1>itch.io</template>
         <template #link2>github.com</template>
@@ -122,39 +171,53 @@ import ProjectCard from "../components/ProjectCard.vue";
           >Help Randy the fireman defeat fire monsters, rescue civilians, and
           save the day!</template
         >
-        <template #technology>Godot 4</template>
-        <template #badges
-          ><img
-            class="rounded-full w-6 h-auto mt-0.5 mr-2 shrink-0"
-            src="..\assets\common\cSharp.webp"
-            alt="Image of the code that made this, meta!"
-          />
+        <template #technology>
+          <div class="flex">
+            <img
+              class="rounded-full w-6 h-6 mt-0.5 mr-2 shrink-0"
+              src="..\assets\common\cSharp.webp"
+              alt="Image of the code that made this, meta!"
+            />
+            <div>Godot 4</div>
+          </div>
         </template>
-      </ProjectCard>
+      </ProjectCard> -->
 
       <!-- Barry -->
       <ProjectCard projlinks="true" projtype="c#">
         <template #title>Barry for Discord</template>
+        <template #image
+          ><img
+            class="w-2/3"
+            src="..\assets\mobile\showcaseBarry.webp"
+            alt="Image of the code that made this, meta!"
+        /></template>
+        <template #logo>
+          <img
+            class="rounded-full w-20 h-auto"
+            src="..\assets\common\barry.webp"
+            alt="Image of the code that made this, meta!"
+          />
+        </template>
         <template #link1>discord.com</template>
         <template #link2>github.com</template>
         <template #description
-          >Yet another discord music bot - with a twist! This bot adds
-          particular features lacking in other music bots such as serving
-          age-restricted songs/videos from YouTube, additional music sources
-          including Spotify integration, and a user database to play back old
-          listening sessions and favorite songs requested by other
-          users.</template
+          >YAMusicBot! Barry has features not found in other music bots such as
+          serving age-restricted songs from YouTube, additional music source
+          integration with Spotify, and a user database to play back old
+          listening sessions and favorite songs requested by users.</template
         >
-        <template #technology
-          >Discord.net, Entity Framework, Sqlite, Lavaplayer,
-          Spotify-NET</template
-        >
-        <template #badges
-          ><img
-            class="rounded-full w-6 h-auto mt-0.5 mr-2 shrink-0"
-            src="..\assets\common\cSharp.webp"
-            alt="Image of the code that made this, meta!"
-          />
+        <template #technology>
+          <div class="flex">
+            <img
+              class="rounded-full w-6 h-6 mt-0.5 mr-2 shrink-0"
+              src="..\assets\common\cSharp.webp"
+              alt="Image of the code that made this, meta!"
+            />
+            <div>
+              Discord.net, Entity Framework, Sqlite, Lavaplayer, Spotify-NET
+            </div>
+          </div>
         </template>
       </ProjectCard>
     </div>

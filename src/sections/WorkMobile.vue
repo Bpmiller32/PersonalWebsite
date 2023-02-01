@@ -34,7 +34,7 @@ import ResumeCard from "../components/ResumeCard.vue";
     </div>
 
     <!-- Desktop app dev -->
-    <WorkCard color="absolute bg-pink-500" divsize="h-24">
+    <WorkCard color="bg-pink-500" divsize="h-24">
       <template #title>
         <p class="relative">Desktop App</p>
         <p class="relative">Development</p>
@@ -50,7 +50,7 @@ import ResumeCard from "../components/ResumeCard.vue";
     </WorkCard>
 
     <!-- Web dev -->
-    <WorkCard color="absolute bg-blue-500" divsize="h-20">
+    <WorkCard color="bg-blue-500" divsize="h-20">
       <template #title>
         <p class="relative">Full Stack Web</p>
         <p class="relative">Development</p>
@@ -66,7 +66,7 @@ import ResumeCard from "../components/ResumeCard.vue";
     </WorkCard>
 
     <!-- Enterprise IT -->
-    <WorkCard color="absolute bg-orange-500" divsize="h-28">
+    <WorkCard color="bg-orange-500" divsize="h-28">
       <template #title>
         <p class="relative">Enterprise IT</p>
       </template>
