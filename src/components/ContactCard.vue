@@ -6,8 +6,8 @@ import { doc, addDoc, collection } from "firebase/firestore";
 
 // Components
 import SvgHandler from "./SvgHandler.vue";
-import AnimationHandler from "./AnimationHandler.vue";
 import { animate } from "motion";
+import { Motion } from "motion/vue";
 
 // Regex for email validation
 const re =
@@ -113,6 +113,7 @@ async function SendMessage() {
       <!-- Submit button -->
       <div v-if="isSent == false">
         <button
+          id="submitButton"
           @click="SendMessage()"
           class="flex w-full justify-center items-center rounded-md border border-transparent bg-bteal-50 py-2 px-4 text-sm font-medium text-gray-100 shadow-sm hover:bg-bteal-50 focus:outline-none focus:ring-2 focus:ring-bteal-50 focus:ring-offset-2"
         >

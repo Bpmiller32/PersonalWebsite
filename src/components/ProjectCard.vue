@@ -80,23 +80,6 @@ onMounted(() => {
     <div class="text-zinc-100 mt-5">Technology used</div>
     <!-- Project languages icon -->
     <div class="text-zinc-400 flex items-center">
-      <slot name="badges">
-        <div v-if="props.projtype == 'c#'">
-          <img
-            class="rounded-full w-6 h-auto mt-0.5 mr-2 flex-none"
-            src="..\assets\common\cSharp.webp"
-            alt="Image of the code that made this, meta!"
-          />
-        </div>
-        <div v-if="props.projtype == 'js'">
-          <img
-            class="rounded-full w-6 h-auto mt-0.5 mr-2 flex-none"
-            src="..\assets\common\js.webp"
-            alt="Image of the code that made this, meta!"
-          />
-        </div>
-      </slot>
-
       <slot name="technology"> List of technologies used in the project </slot>
     </div>
   </div>

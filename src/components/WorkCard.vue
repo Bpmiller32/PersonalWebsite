@@ -17,8 +17,7 @@ const props = defineProps(["color", "divsize"]);
       <!-- Heading text -->
       <div class="relative text-zinc-200 font-poppins font-bold text-2xl">
         <div
-          class="mt-[1.15rem] h-2 w-full opacity-80"
-          :class="props.color"
+          :class="['absolute mt-[1.15rem] h-2 w-full opacity-80', props.color]"
         ></div>
         <slot name="title">
           <p class="relative">Heading</p>
