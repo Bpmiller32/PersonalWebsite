@@ -53,20 +53,11 @@ onMounted(() => {
     );
   });
 
-  inView(".animateFadeUpSlow", (info) => {
-    animate(
-      info.target,
-      { opacity: [0, 0.2], y: [50, 0] },
-      { duration: 2.5 }
-      // { duration: 2.5, allowWebkitAcceleration: true }
-    );
-  });
-
   inView(".animateFadeIn", (info) => {
     animate(
       info.target,
       { opacity: [0, 1] },
-      { duration: 1.3 }
+      { duration: 2 }
       // { duration: 1.3, allowWebkitAcceleration: true }
     );
   });
@@ -74,7 +65,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="contentMobile" v-if="appWidth <= 640">
+  <div ref="contentMobile" v-if="appWidth <= 850">
     <!-- Spotlight section -->
     <SpotlightMobile @route-app="RouteApp" />
 

@@ -3,11 +3,9 @@
 import { ref } from "vue";
 import { db } from "../firebase/index.js";
 import { doc, addDoc, collection } from "firebase/firestore";
-
+import { animate } from "motion";
 // Components
 import SvgHandler from "./SvgHandler.vue";
-import { animate } from "motion";
-import { Motion } from "motion/vue";
 
 // Regex for email validation
 const re =
@@ -22,8 +20,10 @@ const message = ref(null);
 const isAttempted = ref(false);
 const isSent = ref(false);
 const isValidEmail = ref(true);
+const buttonText = ref("Submit Message");
 
 function EmailInput() {
+  // Called on every event but after if submit button was pressed once
   if (isAttempted.value == true) {
     const result = regex.test(email.value);
 
@@ -36,15 +36,29 @@ function EmailInput() {
 }
 
 async function SendMessage() {
+  // Message has already been sent
+  if (isSent.value == true) {
+    return;
+  }
+
+  // Button was pressed
   isAttempted.value = true;
 
-  // Debug
-  // const result = regex.test(email.value);
-  const result = true;
+  // Check if email is valid
+  const result = regex.test(email.value);
 
   if (result == true) {
     isValidEmail.value = true;
     isSent.value = true;
+
+    buttonText.value = "Message Sent!";
+
+    animate(
+      "#submitButton",
+      { backgroundSize: ["150% 150%", "0% 0%"] },
+      { duration: 0.5 }
+    );
+    animate("#buttonText", { opacity: [0, 1] }, { duration: 0.5 });
 
     // await addDoc(collection(db, "websiteMessages"), {
     //   email: email.value,
@@ -54,11 +68,24 @@ async function SendMessage() {
   } else {
     isValidEmail.value = false;
 
-    await animate("#submitButton", { opacity: [0, 1] }, { at: 0, duration: 5 })
-      .finish;
+    animate(
+      "#emailValidate",
+      {
+        transform: [
+          "translateX(0)",
+          "translateX(-6px) rotateY(-9deg)",
+          "translateX(5px) rotateY(7deg)",
+          "translateX(-3px) rotateY(-5deg)",
+          "translateX(2px) rotateY(3deg)",
+          "translateX(0)",
+        ],
+      },
+      {
+        offset: [0, 0.065, 0.185, 0.315, 0.435, 0.5],
+        duration: 1,
+      }
+    );
   }
-
-  console.log("ContactCard button pressed!");
 }
 </script>
 
@@ -83,7 +110,8 @@ async function SendMessage() {
             }"
           />
           <div
-            v-if="isValidEmail == false && isSent == false"
+            id="emailValidate"
+            v-show="isValidEmail == false && isSent == false"
             class="absolute ml-0.5 font-poppins text-sm text-red-500"
           >
             Please enter a valid email address
@@ -111,26 +139,24 @@ async function SendMessage() {
       </div>
 
       <!-- Submit button -->
-      <div v-if="isSent == false">
-        <button
-          id="submitButton"
-          @click="SendMessage()"
-          class="flex w-full justify-center items-center rounded-md border border-transparent bg-bteal-50 py-2 px-4 text-sm font-medium text-gray-100 shadow-sm hover:bg-bteal-50 focus:outline-none focus:ring-2 focus:ring-bteal-50 focus:ring-offset-2"
-        >
-          <p class="mr-3 py-0.5 font-poppins text-sm">Send Message</p>
+      <button
+        id="submitButton"
+        @click="SendMessage()"
+        :class="{
+          'bg-bteal-50 bg-[length:150%,150%] hover:from-teal-500 hover:to-teal-500 focus:outline-none focus:ring-2 focus:ring-bteal-50 focus:ring-offset-2':
+            isSent == false,
+          'bg-bpink-50 bg-[length:0%,0%] cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-bpink-50 focus:ring-offset-2':
+            isSent == true,
+          'flex w-full justify-center items-center rounded-md border border-transparent py-2 px-4 bg-gradient-to-r from-bteal-50 to-bteal-50 bg-no-repeat bg-center text-sm font-medium text-gray-100 shadow-sm': true,
+        }"
+      >
+        <p id="buttonText" class="mr-3 py-0.5 font-poppins text-sm">
+          {{ buttonText }}
+        </p>
 
-          <SvgHandler name="MailIcon" />
-        </button>
-      </div>
-      <div v-else>
-        <button
-          class="flex w-full justify-center items-center rounded-md border border-transparent bg-bpink-50 py-2 px-4 text-sm font-medium text-gray-100 shadow-sm hover:bg-bpink-50 focus:outline-none focus:ring-2 focus:ring-bpink-50 focus:ring-offset-2"
-        >
-          <p class="mr-3 py-0.5 font-poppins text-sm">Message Sent!</p>
-
-          <SvgHandler name="SentIcon" />
-        </button>
-      </div>
+        <SvgHandler v-if="isSent == false" name="MailIcon" />
+        <SvgHandler v-else name="SentIcon" />
+      </button>
     </div>
   </div>
 </template>

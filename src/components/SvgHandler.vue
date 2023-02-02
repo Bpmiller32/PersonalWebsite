@@ -1,4 +1,5 @@
 <script setup>
+// Vue
 const props = defineProps(["name"]);
 </script>
 
@@ -702,7 +703,7 @@ const props = defineProps(["name"]);
     class="w-5 h-auto"
     width="33.5px"
     height="33.5px"
-    viewBox="0 0 33.5 33.5"
+    viewBox="0 -1 33 36"
     version="1.1"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns="http://www.w3.org/2000/svg"

@@ -1,6 +1,5 @@
 <script setup>
 // Components
-import SvgHandler from "../components/SvgHandler.vue";
 import ProjectCard from "../components/ProjectCard.vue";
 </script>
 
@@ -12,7 +11,7 @@ import ProjectCard from "../components/ProjectCard.vue";
       <h1 class="flex justify-end font-poppins font-bold baseline text-4xl">
         <p class="text-bteal-50">03</p>
         <p class="text-bpink-50">.</p>
-        <p class="ml-3 text-gray-100">Projects</p>
+        <p class="ml-3 text-zinc-200">Projects</p>
         <div class="mt-5 ml-3 h-0.5 w-full bg-zinc-200"></div>
       </h1>
 
@@ -60,7 +59,7 @@ import ProjectCard from "../components/ProjectCard.vue";
         <template #technology>
           <div class="flex">
             <img
-              class="rounded-full w-6 h-6 mt-0.5 mr-2 shrink-0"
+              class="rounded-full w-6 h-6 mr-2 shrink-0"
               src="..\assets\common\js.webp"
               alt="Image of the code that made this, meta!"
             />
@@ -100,7 +99,7 @@ import ProjectCard from "../components/ProjectCard.vue";
           <div>
             <div class="flex">
               <img
-                class="rounded-full w-6 h-6 mt-0.5 mr-2 shrink-0"
+                class="rounded-full w-6 h-6 mr-2 shrink-0"
                 src="..\assets\common\js.webp"
                 alt="Image of the code that made this, meta!"
               />
@@ -108,7 +107,7 @@ import ProjectCard from "../components/ProjectCard.vue";
             </div>
             <div class="flex mt-1">
               <img
-                class="rounded-full w-6 h-6 mt-0.5 mr-2 shrink-0 flex-none"
+                class="rounded-full w-6 h-6 mr-2 shrink-0 flex-none"
                 src="..\assets\common\cSharp.webp"
                 alt="Image of the code that made this, meta!"
               />
@@ -146,7 +145,7 @@ import ProjectCard from "../components/ProjectCard.vue";
         <template #technology>
           <div class="flex">
             <img
-              class="rounded-full w-6 h-6 mt-0.5 mr-2 shrink-0"
+              class="rounded-full w-6 h-6 mr-2 shrink-0"
               src="..\assets\common\cSharp.webp"
               alt="Image of the code that made this, meta!"
             />
@@ -155,7 +154,7 @@ import ProjectCard from "../components/ProjectCard.vue";
         </template>
         <template #badges
           ><img
-            class="rounded-full w-6 h-6 mt-0.5 mr-2 shrink-0"
+            class="rounded-full w-6 h-6 mr-2 shrink-0"
             src="..\assets\common\cSharp.webp"
             alt="Image of the code that made this, meta!"
           />
@@ -174,7 +173,7 @@ import ProjectCard from "../components/ProjectCard.vue";
         <template #technology>
           <div class="flex">
             <img
-              class="rounded-full w-6 h-6 mt-0.5 mr-2 shrink-0"
+              class="rounded-full w-6 h-6 mr-2 shrink-0"
               src="..\assets\common\cSharp.webp"
               alt="Image of the code that made this, meta!"
             />
@@ -210,7 +209,7 @@ import ProjectCard from "../components/ProjectCard.vue";
         <template #technology>
           <div class="flex">
             <img
-              class="rounded-full w-6 h-6 mt-0.5 mr-2 shrink-0"
+              class="rounded-full w-6 h-6 mr-2 shrink-0"
               src="..\assets\common\cSharp.webp"
               alt="Image of the code that made this, meta!"
             />
