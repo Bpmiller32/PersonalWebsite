@@ -1,7 +1,6 @@
 <script setup>
 // Js
-import { animate, timeline, scroll } from "motion";
-
+import { animate } from "motion";
 // Vue
 const props = defineProps({
   enterAnimation: { type: String, default: "EmptyAnimation" },

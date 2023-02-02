@@ -1,7 +1,6 @@
 <script setup>
 // Js
 import { ref, onMounted } from "vue";
-
 // Components
 import SvgHandler from "./SvgHandler.vue";
 
@@ -18,16 +17,19 @@ onMounted(() => {
 </script>
 
 <template>
+  <!-- ResumeCard -->
   <div
     class="animateFadeUp opacity-0 mt-10 rounded-2xl border-2 p-6 border-zinc-700/40"
   >
     <!-- Heading -->
-    <h2 class="flex items-center text-sm font-poppins text-gray-100">
+    <h2 class="flex items-center text-sm font-poppins text-zinc-200">
       <SvgHandler name="BriefcaseIcon" />
       <span class="ml-3">Work</span>
     </h2>
     <!-- Jobs container -->
     <div class="mt-6 space-y-4">
+      <!-- JOBS LIST -->
+
       <!-- Freelance-->
       <div class="flex">
         <!-- Logo -->
@@ -38,9 +40,9 @@ onMounted(() => {
           alt="Logo for LDOA"
         />
 
-        <!-- Company and Titles-->
-        <div class="ml-3 w-full text-sm text-zinc-100 font-poppins">
-          <!-- Company -->
+        <!-- CompanyName and Titles-->
+        <div class="ml-3 w-full text-sm text-zinc-200 font-poppins">
+          <!-- CompanyName -->
           <p>DataSea LLC</p>
 
           <!-- Titles -->
@@ -72,9 +74,9 @@ onMounted(() => {
           alt="Logo for Matthews"
         />
 
-        <!-- Company and Titles-->
+        <!-- CompanyName and Titles-->
         <div class="ml-3 w-full text-sm text-zinc-100 font-poppins">
-          <!-- Company -->
+          <!-- CompanyName -->
           <p>Matthews International</p>
 
           <!-- Titles -->
@@ -119,9 +121,9 @@ onMounted(() => {
           alt="Logo for LDOA"
         />
 
-        <!-- Company and Titles-->
-        <div class="ml-3 w-full text-sm text-zinc-100 font-poppins">
-          <!-- Company -->
+        <!-- CompanyName and Titles-->
+        <div class="ml-3 w-full text-sm text-zinc-200 font-poppins">
+          <!-- CompanyName -->
           <p>Louisiana Division of Administration</p>
 
           <!-- Titles -->
@@ -153,9 +155,9 @@ onMounted(() => {
           alt="Logo for LSU"
         />
 
-        <!-- Company and Titles-->
-        <div class="ml-3 w-full text-sm text-zinc-100 font-poppins">
-          <!-- Company -->
+        <!-- CompanyName and Titles-->
+        <div class="ml-3 w-full text-sm text-zinc-200 font-poppins">
+          <!-- CompanyName -->
           <p>Louisiana State University</p>
 
           <!-- Titles -->

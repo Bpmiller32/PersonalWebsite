@@ -1,4 +1,5 @@
 <script setup>
+// Vue
 const props = defineProps(["color", "divsize"]);
 </script>
 

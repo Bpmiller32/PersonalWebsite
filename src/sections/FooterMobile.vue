@@ -20,29 +20,29 @@ function RouteFooter(route) {
       <!-- Container to space links apart -->
       <div class="flex justify-around space-x-5">
         <button @click="RouteFooter('about')" class="group">
-          <p class="text-gray-100 font-poppins group-hover:text-bteal-50">
+          <p class="text-zinc-200 font-poppins group-hover:text-bteal-50">
             About
           </p>
         </button>
         <button @click="RouteFooter('work')" class="group">
-          <p class="text-gray-100 font-poppins group-hover:text-bteal-50">
+          <p class="text-zinc-200 font-poppins group-hover:text-bteal-50">
             Work
           </p>
         </button>
         <button @click="RouteFooter('projects')" class="group">
-          <p class="text-gray-100 font-poppins group-hover:text-bteal-50">
+          <p class="text-zinc-200 font-poppins group-hover:text-bteal-50">
             Projects
           </p>
         </button>
         <button @click="RouteFooter('contact')" class="group">
-          <p class="text-gray-100 font-poppins group-hover:text-bteal-50">
+          <p class="text-zinc-200 font-poppins group-hover:text-bteal-50">
             Contact
           </p>
         </button>
       </div>
     </div>
     <!-- Designed by -->
-    <p class="flex justify-center mt-5 text-gray-100 font-poppins">
+    <p class="flex justify-center mt-5 text-zinc-200 font-poppins">
       © {{ year }} | Designed by Billy Miller
     </p>
   </section>

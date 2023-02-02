@@ -1,8 +1,23 @@
 <script setup>
+// Js
+import { onMounted } from "vue";
+import { animate, inView } from "motion";
+
 // Components
 import SvgHandler from "../components/SvgHandler.vue";
 import WorkCard from "../components/WorkCard.vue";
 import ResumeCard from "../components/ResumeCard.vue";
+
+onMounted(() => {
+  inView(".animateFadeUpSlow", (info) => {
+    animate(
+      info.target,
+      { opacity: [0, 0.2], y: [50, 0] },
+      { duration: 2.5 }
+      // { duration: 2.5, allowWebkitAcceleration: true }
+    );
+  });
+});
 </script>
 
 <template>

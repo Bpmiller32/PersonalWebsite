@@ -7,16 +7,21 @@ import {
   PopoverPanel,
   PopoverOverlay,
 } from "@headlessui/vue";
-
 // Components
 import SvgHandler from "../components/SvgHandler.vue";
-
 // Vue
 const emit = defineEmits(["RouteSpotlight", "ControlAnimations"]);
+
+// Routing function
+function RouteMenu(close, route) {
+  close();
+  emit("RouteSpotlight", route);
+}
 
 onMounted(() => {
   const popover = document.querySelector("#popover");
 
+  // Emit when popover enters or leaves the DOM using observer
   const observerPopover = new MutationObserver(() => {
     if (popover.childElementCount == 3) {
       // Menu is open
@@ -33,12 +38,6 @@ onMounted(() => {
     attributes: true,
   });
 });
-
-// Routing function
-function RouteMenu(close, route) {
-  close();
-  emit("RouteSpotlight", route);
-}
 </script>
 
 <template>
@@ -50,7 +49,6 @@ function RouteMenu(close, route) {
 
     <!-- Overlay -->
     <PopoverOverlay
-      id="overlay"
       @wheel.prevent
       @touchmove.prevent
       @scroll.prevent

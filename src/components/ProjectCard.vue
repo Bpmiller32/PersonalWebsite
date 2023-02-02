@@ -2,7 +2,7 @@
 // Js
 import { ref, onMounted } from "vue";
 import SvgHandler from "./SvgHandler.vue";
-
+// Vue
 const props = defineProps(["projlinks", "projtype"]);
 
 const appWidth = ref(null);
@@ -38,7 +38,7 @@ onMounted(() => {
     </div>
 
     <!-- Title -->
-    <div class="mt-5 text-gray-100 font-poppins font-bold text-2xl">
+    <div class="mt-5 text-zinc-200 font-poppins font-bold text-2xl">
       <slot name="title"> Project Title </slot>
     </div>
     <!-- Links -->
@@ -46,13 +46,13 @@ onMounted(() => {
       <div v-if="appWidth <= 349" class="mt-1">
         <div class="flex items-center">
           <SvgHandler name="ProjectLink" />
-          <div class="ml-1 mr-3 text-gray-100 font-poppins font-bold">
+          <div class="ml-1 mr-3 text-zinc-200 font-poppins font-bold">
             <slot name="link1"> bpmiller.com </slot>
           </div>
         </div>
         <div class="flex items-center">
           <SvgHandler name="ProjectLink" />
-          <div class="ml-1 text-gray-100 font-poppins font-bold">
+          <div class="ml-1 text-zinc-200 font-poppins font-bold">
             <slot name="link2"> bpmiller.com </slot>
           </div>
         </div>
@@ -60,13 +60,13 @@ onMounted(() => {
       <div v-else class="mt-1 flex">
         <div class="flex items-center">
           <SvgHandler name="ProjectLink" />
-          <div class="ml-1 mr-3 text-gray-100 font-poppins font-bold">
+          <div class="ml-1 mr-3 text-zinc-200 font-poppins font-bold">
             <slot name="link1"> bpmiller.com </slot>
           </div>
         </div>
         <div class="flex items-center">
           <SvgHandler name="ProjectLink" />
-          <div class="ml-1 text-gray-100 font-poppins font-bold">
+          <div class="ml-1 text-zinc-200 font-poppins font-bold">
             <slot name="link2"> bpmiller.com </slot>
           </div>
         </div>
@@ -77,7 +77,7 @@ onMounted(() => {
       <slot name="description"> Description of project </slot>
     </div>
     <!-- Technology used -->
-    <div class="text-zinc-100 mt-5">Technology used</div>
+    <div class="text-zinc-200 mt-5">Technology used</div>
     <!-- Project languages icon -->
     <div class="text-zinc-400 flex items-center">
       <slot name="technology"> List of technologies used in the project </slot>
