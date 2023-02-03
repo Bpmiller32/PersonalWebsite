@@ -4,6 +4,7 @@ import ProjectCard from "../components/ProjectCard.vue";
 </script>
 
 <template>
+  <!-- Projects section -->
   <section class="w-full bg-gray-800 border-y border-gray-600">
     <!-- Container for content -->
     <div class="mx-5 pt-5 pb-10">
@@ -16,9 +17,7 @@ import ProjectCard from "../components/ProjectCard.vue";
       </h1>
 
       <!-- Section description -->
-      <div
-        class="animateFadeIn opacity-0 text-zinc-200 font-poppins text-[0.93rem]"
-      >
+      <div class="animateFadeIn text-zinc-200 font-poppins text-[0.93rem]">
         <p class="mt-5">
           I’ve worked on tons of little projects over the years but these are
           the ones that I’m most proud of.

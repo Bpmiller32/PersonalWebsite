@@ -5,7 +5,8 @@ import ContactCard from "../components/ContactCard.vue";
 </script>
 
 <template>
-  <section class="mx-5 pt-5 pb-10">
+  <!-- Contact section -->
+  <section class="px-5 pt-5 pb-10">
     <!-- Header for section -->
     <h1 class="flex justify-end font-poppins font-bold text-4xl">
       <div class="mt-5 mr-3 h-0.5 w-full bg-zinc-200"></div>
@@ -15,7 +16,7 @@ import ContactCard from "../components/ContactCard.vue";
     </h1>
 
     <!-- Contact info and contact form -->
-    <div class="animateFadeIn opacity-0 flex flex-col justify-center">
+    <div class="animateFadeIn flex flex-col justify-center">
       <!-- Contact description -->
       <div class="mt-5 max-w-xs text-zinc-200 font-poppins font-bold text-2xl">
         Available for select freelance opportunities.
@@ -80,6 +81,8 @@ import ContactCard from "../components/ContactCard.vue";
     </div>
 
     <!-- ContactBox -->
-    <div class="animateFadeUp mt-10"><ContactCard /></div>
+    <div class="animateFadeUp mt-10">
+      <ContactCard />
+    </div>
   </section>
 </template>

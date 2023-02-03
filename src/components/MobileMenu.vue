@@ -7,15 +7,17 @@ import {
   PopoverPanel,
   PopoverOverlay,
 } from "@headlessui/vue";
+
 // Components
 import SvgHandler from "../components/SvgHandler.vue";
+
 // Vue
-const emit = defineEmits(["RouteSpotlight", "ControlAnimations"]);
+const emit = defineEmits(["RouteLink1", "ControlAnimations"]);
 
 // Routing function
-function RouteMenu(close, route) {
+function RouteLink2(close, route) {
   close();
-  emit("RouteSpotlight", route);
+  emit("RouteLink1", route);
 }
 
 onMounted(() => {
@@ -88,7 +90,7 @@ onMounted(() => {
           <!-- Links to sections -->
           <div class="space-y-3 px-3 pt-3 pb-5">
             <button
-              @click="RouteMenu(close, 'about')"
+              @click="RouteLink2(close, 'about')"
               class="flex items-center group"
             >
               <div class="border-2 border-zinc-200 rounded-lg p-2.5">
@@ -101,7 +103,7 @@ onMounted(() => {
               </p>
             </button>
             <button
-              @click="RouteMenu(close, 'work')"
+              @click="RouteLink2(close, 'work')"
               class="flex items-center group"
             >
               <div class="border-2 border-zinc-200 rounded-lg p-2.5">
@@ -114,7 +116,7 @@ onMounted(() => {
               </p>
             </button>
             <button
-              @click="RouteMenu(close, 'projects')"
+              @click="RouteLink2(close, 'projects')"
               class="flex items-center group"
             >
               <div class="border-2 border-zinc-200 rounded-lg p-2.5">
@@ -127,7 +129,7 @@ onMounted(() => {
               </p>
             </button>
             <button
-              @click="RouteMenu(close, 'contact')"
+              @click="RouteLink2(close, 'contact')"
               class="flex items-center group"
             >
               <div class="border-2 border-zinc-200 rounded-lg p-2.5">

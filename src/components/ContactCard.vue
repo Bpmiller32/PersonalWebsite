@@ -4,6 +4,7 @@ import { ref } from "vue";
 import { db } from "../firebase/index.js";
 import { doc, addDoc, collection } from "firebase/firestore";
 import { animate } from "motion";
+
 // Components
 import SvgHandler from "./SvgHandler.vue";
 
@@ -91,11 +92,13 @@ async function SendMessage() {
 
 <template>
   <!-- ContactCard -->
-  <div class="border-2 border-zinc-700/40 pb-8 pt-6 px-4 rounded-lg">
+  <div
+    class="min-w-[25rem] border-2 border-zinc-700/40 pb-8 pt-6 px-4 rounded-lg"
+  >
     <div class="space-y-6">
       <!-- Email section -->
       <div>
-        <label for="email" class="text-gray-100 text-sm font-poppins"
+        <label for="email" class="text-zinc-200 text-sm font-poppins"
           >Email address</label
         >
         <div class="mt-1">
@@ -121,7 +124,7 @@ async function SendMessage() {
 
       <!-- Message section -->
       <div>
-        <label for="comment" class="text-gray-100 text-sm font-poppins"
+        <label for="comment" class="text-zinc-200 text-sm font-poppins"
           >Message</label
         >
         <div class="mt-1">
@@ -147,7 +150,7 @@ async function SendMessage() {
             isSent == false,
           'bg-bpink-50 bg-[length:0%,0%] cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-bpink-50 focus:ring-offset-2':
             isSent == true,
-          'flex w-full justify-center items-center rounded-md border border-transparent py-2 px-4 bg-gradient-to-r from-bteal-50 to-bteal-50 bg-no-repeat bg-center text-sm font-medium text-gray-100 shadow-sm': true,
+          'flex w-full justify-center items-center rounded-md border border-transparent py-2 px-4 bg-gradient-to-r from-bteal-50 to-bteal-50 bg-no-repeat bg-center text-sm font-medium text-zinc-200 shadow-sm': true,
         }"
       >
         <p id="buttonText" class="mr-3 py-0.5 font-poppins text-sm">

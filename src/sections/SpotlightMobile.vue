@@ -2,19 +2,21 @@
 // Js
 import { ref, onMounted } from "vue";
 import { animate, timeline, scroll } from "motion";
+
 // Components
 import SvgHandler from "../components/SvgHandler.vue";
 import MobileMenu from "../components/MobileMenu.vue";
+
 // Vue
-const emit = defineEmits(["RouteApp"]);
+const emit = defineEmits(["RouteLink0"]);
 
 // Animation refs
 const flash = ref(null);
 const bounce = ref(null);
 
 // Routing function
-function RouteSpotlight(route) {
-  emit("RouteApp", route);
+function RouteLink1(route) {
+  emit("RouteLink0", route);
 }
 
 // Control animations
@@ -28,6 +30,11 @@ function ControlAnimations(action) {
   }
 }
 
+// Reload page
+function ReloadPage() {
+  window.location.reload();
+}
+
 onMounted(() => {
   // Create sequence here because photo needs to be mounted to assign animation to photoX.value
   const sequence = [
@@ -38,9 +45,6 @@ onMounted(() => {
     ["#mobilePhoto4", { y: -500 }, { at: 0, duration: 1 }],
     ["#spotlightSection", { y: 500 }, { at: 0, duration: 1 }],
   ];
-
-  // Animate in nav bar, spotlight text
-  animate(".animateFadeInFast", { opacity: [0, 1] }, { duration: 1.3 });
 
   // // Animate in scroll bubble
   animate("#scrollBubble", { opacity: [0, 1] }, { delay: 1.1, duration: 1.3 });
@@ -74,7 +78,6 @@ onMounted(() => {
     },
     {
       delay: 3,
-      // offset: [0, 0.2, 0.4, 0.43, 0.53, 0.7, 0.8, 0.9, 1, ...extra] base rule,
       // offset: [0, 0.004, 0.008, 0.086, 0.106, 0.14, 0.16, 0.18, 0.2, 1] for 5 second,
       offset: [0, 0.05, 0.1, 0.1075, 0.1325, 0.175, 0.2, 0.225, 0.25, 1],
       easing: [
@@ -97,12 +100,10 @@ onMounted(() => {
   flash.value = animate(
     "#bpmillerTerminal",
     {
-      // 50%, 75%, 100%, 150%, 175%, 200%, extra
       opacity: [1, 0, 1, 1, 0, 1, 1],
     },
     {
       delay: 0.5,
-      // 50%, 75%, 100%, 150%, 175%, 200%, extra
       offset: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 1],
       easing: "ease",
       duration: 5,
@@ -146,78 +147,10 @@ onMounted(() => {
 
     <!-- Spotlight text -->
     <div
-      class="animateFadeInFast absolute h-screen w-full flex justify-center items-center opacity-0"
+      class="animateFadeInFast absolute h-screen w-full flex justify-center items-center"
     >
       <SvgHandler name="SpotlightText" />
     </div>
-    <!-- <div
-      class="animateFadeInFast absolute h-screen w-full flex justify-center items-center font-poppins font-bold"
-    >
-      <h1>
-        <div class="text-xl text-bteal-50">
-          <span>H</span>
-          <span>i</span>
-          <span>m</span>
-          <span>y</span>
-          <span>n</span>
-          <span>a</span>
-          <span>m</span>
-          <span>e</span>
-          <span>i</span>
-          <span>s</span>
-        </div>
-        <div class="text-5xl text-bteal-50">
-          <span>B</span>
-          <span>i</span>
-          <span>l</span>
-          <span>l</span>
-          <span>y</span>
-          <span>M</span>
-          <span>i</span>
-          <span>l</span>
-          <span>l</span>
-          <span>e</span>
-          <span>r</span>
-        </div>
-        <div class="text-5xl text-bteal-50">
-          <span>S</span>
-          <span>o</span>
-          <span>f</span>
-          <span>t</span>
-          <span>w</span>
-          <span>a</span>
-          <span>r</span>
-          <span>e</span>
-          <span>E</span>
-          <span>n</span>
-          <span>g</span>
-          <span>i</span>
-          <span>n</span>
-          <span>e</span>
-          <span>e</span>
-          <span>r</span>
-        </div>
-        <div class="text-5xl text-bteal-50">
-          <span>F</span>
-          <span>u</span>
-          <span>l</span>
-          <span>l</span>
-          <span>S</span>
-          <span>t</span>
-          <span>a</span>
-          <span>c</span>
-          <span>k</span>
-          <span>&</span>
-          <span>D</span>
-          <span>e</span>
-          <span>s</span>
-          <span>k</span>
-          <span>t</span>
-          <span>o</span>
-          <span>p</span>
-        </div>
-      </h1>
-    </div> -->
 
     <!-- Back foreground rock image -->
     <img
@@ -243,16 +176,19 @@ onMounted(() => {
     <!-- Menu, logo -->
     <div class="mt-20 absolute w-full flex justify-between items-center">
       <!-- Logo -->
-      <a href="#" class="animateFadeInFast ml-5 flex items-center opacity-0">
+      <button
+        @click="ReloadPage"
+        class="animateFadeInFast ml-5 flex items-center"
+      >
         <SvgHandler name="BpmillerLogoText" />
         <div id="bpmillerTerminal">
           <SvgHandler name="BpmillerLogoTerminal" />
         </div>
-      </a>
+      </button>
       <!-- Menu -->
-      <div class="animateFadeInFast mr-5 opacity-0">
+      <div class="animateFadeInFast mr-5">
         <MobileMenu
-          @route-spotlight="RouteSpotlight"
+          @route-link1="RouteLink1"
           @control-animations="ControlAnimations"
         />
       </div>

@@ -1,6 +1,7 @@
 <script setup>
 // Js
 import { ref, onMounted } from "vue";
+
 // Components
 import SvgHandler from "./SvgHandler.vue";
 
@@ -19,7 +20,7 @@ onMounted(() => {
 <template>
   <!-- ResumeCard -->
   <div
-    class="animateFadeUp opacity-0 mt-10 rounded-2xl border-2 p-6 border-zinc-700/40"
+    class="animateFadeUp max-w-md w-full mt-10 rounded-2xl border-2 p-6 border-zinc-700/40"
   >
     <!-- Heading -->
     <h2 class="flex items-center text-sm font-poppins text-zinc-200">
