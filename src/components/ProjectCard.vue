@@ -2,8 +2,9 @@
 // Js
 import { ref, onMounted } from "vue";
 import SvgHandler from "./SvgHandler.vue";
+
 // Vue
-const props = defineProps(["projlinks", "projtype"]);
+const props = defineProps(["projlinks"]);
 
 const appWidth = ref(null);
 
@@ -20,7 +21,7 @@ onMounted(() => {
 <template>
   <!-- ProjectCard -->
   <div
-    class="animateFadeUp opacity-0 mt-5 rounded-2xl border-2 p-6 border-zinc-700 bg-bzync-50 font-poppins"
+    class="animateFadeUp mt-5 rounded-2xl border-2 p-6 border-zinc-700 bg-bzync-50 font-poppins"
   >
     <!-- Image -->
     <div class="flex justify-center">
