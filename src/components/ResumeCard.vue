@@ -38,7 +38,7 @@ onMounted(() => {
         <img
           class="mt-1 h-10 w-10 rounded-full flex flex-none"
           src="..\assets\common\datasea.webp"
-          alt="Logo for LDOA"
+          alt="Logo for freelance"
         />
 
         <!-- CompanyName and Titles-->

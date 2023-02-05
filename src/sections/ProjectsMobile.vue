@@ -37,13 +37,13 @@ import ProjectCard from "../components/ProjectCard.vue";
           ><img
             class="w-2/3"
             src="..\assets\common\showcaseRaf.webp"
-            alt="Image of the code that made this, meta!"
+            alt="showcase of raf project"
         /></template>
         <template #logo>
           <img
-            class="rounded-full w-20 h-auto"
+            class="rounded-full w-20 h-20"
             src="..\assets\common\raf.webp"
-            alt="Image of the code that made this, meta!"
+            alt="raf logo"
           />
         </template>
         <template #link1>raf.com</template>
@@ -60,7 +60,7 @@ import ProjectCard from "../components/ProjectCard.vue";
             <img
               class="rounded-full w-6 h-6 mr-2 shrink-0"
               src="..\assets\common\js.webp"
-              alt="Image of the code that made this, meta!"
+              alt="js logo"
             />
             <div>
               Vue, Vue Router, Tailwind, Motion One, WordPress, Elementor
@@ -76,13 +76,13 @@ import ProjectCard from "../components/ProjectCard.vue";
           ><img
             class="w-2/3"
             src="..\assets\common\showcaseDirCommander.webp"
-            alt="Image of the code that made this, meta!"
+            alt="showcase of dirCommander project"
         /></template>
         <template #logo>
           <img
-            class="rounded-full w-20 h-auto"
+            class="rounded-full w-20 h-20"
             src="..\assets\common\dirCommander.webp"
-            alt="Image of the code that made this, meta!"
+            alt="dircommander logo"
           />
         </template>
         <template #link1>firebase.com</template>
@@ -100,7 +100,7 @@ import ProjectCard from "../components/ProjectCard.vue";
               <img
                 class="rounded-full w-6 h-6 mr-2 shrink-0"
                 src="..\assets\common\js.webp"
-                alt="Image of the code that made this, meta!"
+                alt="js logo"
               />
               <div>Vue, Vue Router, Pinia, Tailwind, AnimeJs</div>
             </div>
@@ -108,7 +108,7 @@ import ProjectCard from "../components/ProjectCard.vue";
               <img
                 class="rounded-full w-6 h-6 mr-2 shrink-0 flex-none"
                 src="..\assets\common\cSharp.webp"
-                alt="Image of the code that made this, meta!"
+                alt="c sharp logo"
               />
               <div>
                 Asp.net Core, Entity Framework, Sqlite, Serilog, Sockets,
@@ -126,13 +126,13 @@ import ProjectCard from "../components/ProjectCard.vue";
           ><img
             class="w-2/3"
             src="..\assets\common\showcaseDmi.webp"
-            alt="Image of the code that made this, meta!"
+            alt="showcase of dmi project"
         /></template>
         <template #logo>
           <img
-            class="rounded-full w-20 h-auto"
+            class="rounded-full w-20 h-20"
             src="..\assets\common\dmi.webp"
-            alt="Image of the code that made this, meta!"
+            alt="dmi logo"
           />
         </template>
         <template #description
@@ -146,17 +146,10 @@ import ProjectCard from "../components/ProjectCard.vue";
             <img
               class="rounded-full w-6 h-6 mr-2 shrink-0"
               src="..\assets\common\cSharp.webp"
-              alt="Image of the code that made this, meta!"
+              alt="c sharp logo"
             />
             <div>WinForms, Telerik, Entity Framework, MongoDb</div>
           </div>
-        </template>
-        <template #badges
-          ><img
-            class="rounded-full w-6 h-6 mr-2 shrink-0"
-            src="..\assets\common\cSharp.webp"
-            alt="Image of the code that made this, meta!"
-          />
         </template>
       </ProjectCard>
 
@@ -174,7 +167,7 @@ import ProjectCard from "../components/ProjectCard.vue";
             <img
               class="rounded-full w-6 h-6 mr-2 shrink-0"
               src="..\assets\common\cSharp.webp"
-              alt="Image of the code that made this, meta!"
+              alt="c sharp logo"
             />
             <div>Godot 4</div>
           </div>
@@ -188,13 +181,13 @@ import ProjectCard from "../components/ProjectCard.vue";
           ><img
             class="w-2/3"
             src="..\assets\common\showcaseBarry.webp"
-            alt="Image of the code that made this, meta!"
+            alt="showcase of barry project"
         /></template>
         <template #logo>
           <img
-            class="rounded-full w-20 h-auto"
+            class="rounded-full w-20 h-20"
             src="..\assets\common\barry.webp"
-            alt="Image of the code that made this, meta!"
+            alt="barry logo"
           />
         </template>
         <template #link1>discord.com</template>
@@ -210,7 +203,7 @@ import ProjectCard from "../components/ProjectCard.vue";
             <img
               class="rounded-full w-6 h-6 mr-2 shrink-0"
               src="..\assets\common\cSharp.webp"
-              alt="Image of the code that made this, meta!"
+              alt="c sharp logo"
             />
             <div>
               Discord.net, Entity Framework, Sqlite, Lavaplayer, Spotify-NET

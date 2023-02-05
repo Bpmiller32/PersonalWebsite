@@ -1,17 +1,16 @@
 <script setup>
 // Js
-import { ref, onMounted } from "vue";
+import { ref, onMounted, render } from "vue";
 import { animate, timeline, scroll } from "motion";
 
 // Components
 import SvgHandler from "../components/SvgHandler.vue";
 import MobileMenu from "../components/MobileMenu.vue";
+import { Portal } from "@headlessui/vue";
 
 // Vue
 const emit = defineEmits(["RouteLink0"]);
-const appWidth = ref(null);
-const appHeight = ref(null);
-const sectionHeight = ref(null);
+const portraitMode = ref(null);
 
 // Animation refs
 const flash = ref(null);
@@ -40,58 +39,64 @@ function ReloadPage() {
 
 // Calculate spotlight section height
 function CalculateHeight() {
-  const imageWidth = 1360;
-  const imageHeight = 906;
-  let renderedHeight;
-
-  if (appWidth.value >= imageWidth) {
-    renderedHeight = imageHeight;
-  } else {
-    renderedHeight = imageHeight * (appWidth.value / imageWidth);
+  // Detect portrait mode
+  if (window.innerHeight > window.innerWidth) {
+    return "100vh";
   }
+  // Landscape mode
+  else {
+    // Calculate image rendered height
+    const imageWidth = 1360;
+    const imageHeight = 906;
+    let renderedHeight;
 
-  return renderedHeight;
+    if (window.innerWidth >= imageWidth) {
+      renderedHeight = imageHeight;
+    } else {
+      renderedHeight = imageHeight * (window.innerWidth / imageWidth);
+    }
+
+    return renderedHeight + "px";
+  }
+}
+
+function SetHeight() {
+  const sectionHeight = CalculateHeight();
+
+  const sections = [
+    "#mobilePhoto0",
+    "#mobilePhoto1",
+    "#mobilePhoto2",
+    "#mobilePhoto3",
+    "#mobilePhoto4",
+
+    "#spotlightSection",
+    "#scrollBubble",
+    // "#spotlightText",
+    "#opacityOverlay",
+  ];
+
+  sections.forEach((element) => {
+    document.querySelector(element).style.height = sectionHeight;
+  });
 }
 
 onMounted(() => {
-  const spotlightSection = document.querySelector("#spotlightSection");
-  const scrollBubble = document.querySelector("#scrollBubble");
-  const spotlightText = document.querySelector("#spotlightText");
-  const opacityOverlay = document.querySelector("#opacityOverlay");
+  // Set spotlight section dimensions on mount and on browser window resize
+  SetHeight();
 
-  if (appHeight.value <= appWidth.value) {
-    sectionHeight.value = CalculateHeight();
-
-    spotlightSection.style.height = sectionHeight.value + "px";
-    scrollBubble.style.height = sectionHeight.value + "px";
-    spotlightText.style.height = sectionHeight.value + "px";
-    opacityOverlay.style.height = sectionHeight.value + "px";
-
-    window.addEventListener("resize", () => {
-      appWidth.value = window.innerWidth;
-
-      sectionHeight.value = CalculateHeight();
-
-      spotlightSection.style.height = sectionHeight.value + "px";
-      scrollBubble.style.height = sectionHeight.value + "px";
-      spotlightText.style.height = sectionHeight.value + "px";
-      opacityOverlay.style.height = sectionHeight.value + "px";
-    });
-  } else {
-    spotlightSection.style.height = "100vh";
-    scrollBubble.style.height = "100vh";
-    spotlightText.style.height = "100vh";
-    opacityOverlay.style.height = "100vh";
-  }
+  window.addEventListener("resize", () => {
+    SetHeight();
+  });
 
   // Create sequence here because photo needs to be mounted to assign animation to photoX.value
   const sequence = [
-    ["#mobilePhoto0", { y: 1000 }, { at: 0, duration: 1 }],
-    ["#mobilePhoto1", { y: 1400 }, { at: 0, duration: 1 }],
+    ["#mobilePhoto0", { y: 1100 }, { at: 0, duration: 1 }],
+    ["#mobilePhoto1", { y: 1300 }, { at: 0, duration: 1 }],
     ["#mobilePhoto2", { y: 1000 }, { at: 0, duration: 1 }],
-    ["#mobilePhoto3", { y: -250 }, { at: 0, duration: 1 }],
-    ["#mobilePhoto4", { y: -500 }, { at: 0, duration: 1 }],
-    ["#spotlightSection", { y: 500 }, { at: 0, duration: 1 }],
+    ["#mobilePhoto3", { y: -300 }, { at: 0, duration: 1 }],
+    ["#mobilePhoto4", { y: -700 }, { at: 0, duration: 1 }],
+    ["#spotlightSection", { y: 1000 }, { at: 0, duration: 1 }],
   ];
 
   // // Animate in scroll bubble
@@ -156,7 +161,6 @@ onMounted(() => {
       easing: "ease",
       duration: 5,
       repeat: Infinity,
-      allowWebkitAcceleration: true,
     }
   );
 
@@ -200,12 +204,12 @@ onMounted(() => {
     />
 
     <!-- Spotlight text -->
-    <div
+    <!-- <div
       id="spotlightText"
       class="animateFadeInFast absolute w-full h-[93vh] flex items-center z-20"
     >
       <SvgHandler name="SpotlightText" />
-    </div>
+    </div> -->
 
     <!-- Back foreground rock image -->
     <img
@@ -235,6 +239,7 @@ onMounted(() => {
     <div class="mt-20 absolute w-full flex justify-between items-center z-20">
       <!-- Logo -->
       <button
+        aria-label="logo link to refresh home page"
         @click="ReloadPage"
         class="animateFadeInFast ml-5 flex items-center"
       >

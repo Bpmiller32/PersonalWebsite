@@ -7,7 +7,7 @@ import ResumeCard from "../components/ResumeCard.vue";
 
 <template>
   <!-- Work section -->
-  <section class="relative px-5 pt-5 pb-10">
+  <section class="relative px-5 pt-5 pb-10 bg-bzync-50">
     <!-- Header for section -->
     <h1 class="flex justify-end font-poppins font-bold text-4xl">
       <div class="mt-5 mr-3 h-0.5 w-full bg-zinc-200"></div>
@@ -35,7 +35,7 @@ import ResumeCard from "../components/ResumeCard.vue";
       <img
         class="h-[25rem]"
         src="..\assets\common\codeBackgroundLong.webp"
-        alt=""
+        alt="Longer image of code that made this, meta!"
       />
     </div>
 

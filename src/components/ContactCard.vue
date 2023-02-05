@@ -125,6 +125,7 @@ onMounted(() => {
               'border-gray-300': isSent == false,
               'border-zinc-700/40': isSent == true,
             }"
+            aria-label="email input field"
           />
           <div
             id="emailValidate"
@@ -151,6 +152,7 @@ onMounted(() => {
               'border-gray-300': isSent == false,
               'border-zinc-700/40': isSent == true,
             }"
+            aria-label="message input field"
           ></textarea>
         </div>
       </div>
@@ -158,6 +160,7 @@ onMounted(() => {
       <!-- Submit button -->
       <button
         id="submitButton"
+        aria-label="submitButton"
         @click="SendMessage()"
         :class="{
           'bg-bteal-50 bg-[length:150%,150%] hover:from-teal-500 hover:to-teal-500 focus:outline-none focus:ring-2 focus:ring-bteal-50 focus:ring-offset-2':

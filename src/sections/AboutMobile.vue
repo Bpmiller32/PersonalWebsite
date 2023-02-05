@@ -16,8 +16,9 @@
     <!-- Photo -->
     <div class="animateFadeUp flex justify-center">
       <img
-        class="object-cover mt-5 h-60 rounded-3xl shadow-2xl"
+        class="object-cover mt-5 h-60 w-60 rounded-3xl shadow-2xl"
         src="..\assets\common\aboutMe.webp"
+        alt="photo of billy"
       />
     </div>
     <!-- Description -->

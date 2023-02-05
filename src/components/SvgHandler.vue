@@ -186,7 +186,6 @@ const props = defineProps(["name"]);
   <!-- SpotlightText -->
   <svg
     v-if="name == 'SpotlightText'"
-    class="mx-5 h-auto w-auto"
     width="804.75995px"
     height="325.34692px"
     viewBox="0 0 804.75995 325.34692"

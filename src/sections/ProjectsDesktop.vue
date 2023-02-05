@@ -18,24 +18,24 @@ import ProjectCardDesktop from "../components/ProjectCardDesktop.vue";
         <div class="mt-5 ml-3 h-0.5 w-full bg-zinc-200"></div>
       </h1>
 
-      <!-- Section description -->
-      <div class="flex justify-center">
-        <div class="animateFadeIn w-2/3 text-zinc-200 font-poppins">
-          <p class="mt-5">
-            I’ve worked on tons of little projects over the years but these are
-            the ones that I’m most proud of.
-          </p>
-          <p class="mt-5">
-            Some are proprietary work for companies but many of them are
-            open-source. So if you see something that piques your interest,
-            check out the code and contribute if you have ideas for how it can
-            be improved.
-          </p>
-        </div>
-      </div>
-
       <!-- ProjectCard container -->
       <div class="flex flex-col divide-y-2 divide-zinc-700">
+        <!-- Section description -->
+        <div class="flex justify-center">
+          <div class="animateFadeIn w-2/3 mb-10 text-zinc-200 font-poppins">
+            <p class="mt-5">
+              I’ve worked on tons of little projects over the years but these
+              are the ones that I’m most proud of.
+            </p>
+            <p class="mt-5">
+              Some are proprietary work for companies but many of them are
+              open-source. So if you see something that piques your interest,
+              check out the code and contribute if you have ideas for how it can
+              be improved.
+            </p>
+          </div>
+        </div>
+
         <!-- RAF -->
         <ProjectCardDesktop projlinks="true" :mirror="false">
           <template #title>RAF Technology</template>
@@ -43,13 +43,13 @@ import ProjectCardDesktop from "../components/ProjectCardDesktop.vue";
             ><img
               class=""
               src="..\assets\common\showcaseRaf.webp"
-              alt="Image of the code that made this, meta!"
+              alt="showcase of raf project"
           /></template>
           <template #logo>
             <img
-              class="rounded-full w-20 h-auto"
+              class="rounded-full w-20 h-20"
               src="..\assets\common\raf.webp"
-              alt="Image of the code that made this, meta!"
+              alt="raf logo"
             />
           </template>
           <template #link1>raf.com</template>
@@ -66,7 +66,7 @@ import ProjectCardDesktop from "../components/ProjectCardDesktop.vue";
               <img
                 class="rounded-full w-6 h-6 mr-2 shrink-0"
                 src="..\assets\common\js.webp"
-                alt="Image of the code that made this, meta!"
+                alt="js logo"
               />
               <div>
                 Vue, Vue Router, Tailwind, Motion One, WordPress, Elementor
@@ -81,13 +81,13 @@ import ProjectCardDesktop from "../components/ProjectCardDesktop.vue";
           <template #image
             ><img
               src="..\assets\common\showcaseDirCommander.webp"
-              alt="Image of the code that made this, meta!"
+              alt="showcase of dirCommander project"
           /></template>
           <template #logo>
             <img
-              class="rounded-full w-20 h-auto"
+              class="rounded-full w-20 h-20"
               src="..\assets\common\dirCommander.webp"
-              alt="Image of the code that made this, meta!"
+              alt="dircommander logo"
             />
           </template>
           <template #link1>firebase.com</template>
@@ -106,7 +106,7 @@ import ProjectCardDesktop from "../components/ProjectCardDesktop.vue";
                 <img
                   class="rounded-full w-6 h-6 mr-2 shrink-0"
                   src="..\assets\common\js.webp"
-                  alt="Image of the code that made this, meta!"
+                  alt="js logo"
                 />
                 <div>Vue, Vue Router, Pinia, Tailwind, AnimeJs</div>
               </div>
@@ -114,7 +114,7 @@ import ProjectCardDesktop from "../components/ProjectCardDesktop.vue";
                 <img
                   class="rounded-full w-6 h-6 mr-2 shrink-0 flex-none"
                   src="..\assets\common\cSharp.webp"
-                  alt="Image of the code that made this, meta!"
+                  alt="c sharp logo"
                 />
                 <div>
                   Asp.net Core, Entity Framework, Sqlite, Serilog, Sockets,
@@ -131,13 +131,13 @@ import ProjectCardDesktop from "../components/ProjectCardDesktop.vue";
           <template #image
             ><img
               src="..\assets\common\showcaseDmi.webp"
-              alt="Image of the code that made this, meta!"
+              alt="showcase of dmi project"
           /></template>
           <template #logo>
             <img
-              class="rounded-full w-20 h-auto"
+              class="rounded-full w-20 h-20"
               src="..\assets\common\dmi.webp"
-              alt="Image of the code that made this, meta!"
+              alt="dmi logo"
             />
           </template>
           <template #description
@@ -152,7 +152,7 @@ import ProjectCardDesktop from "../components/ProjectCardDesktop.vue";
               <img
                 class="rounded-full w-6 h-6 mr-2 shrink-0"
                 src="..\assets\common\cSharp.webp"
-                alt="Image of the code that made this, meta!"
+                alt="c sharp logo"
               />
               <div>WinForms, Telerik, Entity Framework, MongoDb</div>
             </div>
@@ -161,7 +161,7 @@ import ProjectCardDesktop from "../components/ProjectCardDesktop.vue";
             ><img
               class="rounded-full w-6 h-6 mr-2 shrink-0"
               src="..\assets\common\cSharp.webp"
-              alt="Image of the code that made this, meta!"
+              alt="c sharp logo"
             />
           </template>
         </ProjectCardDesktop>
@@ -172,13 +172,13 @@ import ProjectCardDesktop from "../components/ProjectCardDesktop.vue";
           <template #image
             ><img
               src="..\assets\common\showcaseBarry.webp"
-              alt="Image of the code that made this, meta!"
+              alt="showcase of barry project"
           /></template>
           <template #logo>
             <img
-              class="rounded-full w-20 h-auto"
+              class="rounded-full w-20 h-20"
               src="..\assets\common\barry.webp"
-              alt="Image of the code that made this, meta!"
+              alt="barry logo"
             />
           </template>
           <template #link1>discord.com</template>
@@ -195,7 +195,7 @@ import ProjectCardDesktop from "../components/ProjectCardDesktop.vue";
               <img
                 class="rounded-full w-6 h-6 mr-2 shrink-0"
                 src="..\assets\common\cSharp.webp"
-                alt="Image of the code that made this, meta!"
+                alt="c sharp logo"
               />
               <div>
                 Discord.net, Entity Framework, Sqlite, Lavaplayer, Spotify-NET
