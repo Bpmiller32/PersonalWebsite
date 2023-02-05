@@ -21,13 +21,13 @@
       />
     </div>
     <!-- Description -->
-    <div class="animateFadeIn text-zinc-200 font-poppins text-[0.93rem]">
+    <div class="animateFadeIn text-zinc-200 font-poppins">
       <p class="mt-5">
         I’m a software engineer specializing in building and designing
         exceptional digital experiences on the web and desktop.
       </p>
       <p class="mt-5">
-        I started playing with computers when I was 6 years old. Since then I
+        I started playing with computers when I was 5 years old. Since then I
         have been tinkering with all sorts of technologies that in some way or
         another lead me to work on photography, electrical engineering,
         automation, and video game console modding.

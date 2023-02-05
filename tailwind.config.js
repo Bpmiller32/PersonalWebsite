@@ -3,6 +3,10 @@ module.exports = {
   content: ["./public/**/*.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      maxWidth: {
+        bcontent: "87rem",
+        bspotlight: "85rem",
+      },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
       },

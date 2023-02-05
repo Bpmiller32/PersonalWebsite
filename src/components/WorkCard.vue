@@ -38,7 +38,7 @@ const props = defineProps(["color", "divsize"]);
         <p class="mb-5">&lt;/div&gt;</p>
       </div>
       <!-- Description text -->
-      <div class="-ml-2 text-zinc-200 font-poppins text-[0.93rem]">
+      <div class="-ml-2 text-zinc-200 font-poppins">
         <slot name="description"> Description </slot>
       </div>
     </div>

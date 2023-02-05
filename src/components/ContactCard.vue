@@ -1,12 +1,14 @@
 <script setup>
 // Js
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { db } from "../firebase/index.js";
 import { doc, addDoc, collection } from "firebase/firestore";
 import { animate } from "motion";
 
 // Components
 import SvgHandler from "./SvgHandler.vue";
+
+const appWidth = ref(null);
 
 // Regex for email validation
 const re =
@@ -88,12 +90,24 @@ async function SendMessage() {
     );
   }
 }
+
+onMounted(() => {
+  // Set app dimensions on mount and on browser window resize
+  appWidth.value = window.innerWidth;
+
+  window.addEventListener("resize", () => {
+    appWidth.value = window.innerWidth;
+  });
+});
 </script>
 
 <template>
   <!-- ContactCard -->
   <div
-    class="min-w-[25rem] border-2 border-zinc-700/40 pb-8 pt-6 px-4 rounded-lg"
+    :class="{
+      'border-2 border-zinc-700/40 pb-8 pt-6 px-4 rounded-lg': true,
+      'min-w-[25rem]': appWidth > 425,
+    }"
   >
     <div class="space-y-6">
       <!-- Email section -->

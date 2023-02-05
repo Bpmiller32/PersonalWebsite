@@ -3,7 +3,7 @@
   <section id="aboutDesktop" class="flex justify-center">
     <!-- Container for content -->
     <div
-      class="px-5 pt-5 pb-10 w-full max-w-7xl rounded-3xl bg-gray-800 border border-gray-600"
+      class="px-5 pt-5 pb-10 w-full max-w-bcontent rounded-3xl bg-gray-800 border border-gray-600"
     >
       <!-- Header for section -->
       <h1 class="flex justify-end font-poppins font-bold baseline text-4xl">
@@ -17,15 +17,13 @@
       <!-- Container for description and photo -->
       <div class="flex justify-evenly items-center">
         <!-- Description -->
-        <div
-          class="animateFadeIn max-w-md text-zinc-200 font-poppins text-[0.93rem]"
-        >
+        <div class="animateFadeIn max-w-md text-zinc-200 font-poppins">
           <p class="mt-5">
             I’m a software engineer specializing in building and designing
             exceptional digital experiences on the web and desktop.
           </p>
           <p class="mt-5">
-            I started playing with computers when I was 6 years old. Since then
+            I started playing with computers when I was 5 years old. Since then
             I have been tinkering with all sorts of technologies that in some
             way or another lead me to work on photography, electrical
             engineering, automation, and video game console modding.

@@ -5,10 +5,13 @@ import { animate, timeline, scroll } from "motion";
 
 // Components
 import SvgHandler from "../components/SvgHandler.vue";
-import MobileMenu from "../components/MobileMenu.vue";
+import NavMenu from "../components/NavMenu.vue";
 
 // Vue
 const emit = defineEmits(["RouteLink0"]);
+const appWidth = ref(null);
+const appHeight = ref(null);
+const sectionHeight = ref(null);
 
 // Animation refs
 const flash = ref(null);
@@ -19,31 +22,82 @@ function RouteLink1(route) {
   emit("RouteLink0", route);
 }
 
-// Control animations
-function ControlAnimations(action) {
-  if (action == "start") {
-    bounce.value.play();
-    flash.value.play();
-  } else if (action == "stop") {
-    bounce.value.pause();
-    flash.value.pause();
-  }
-}
-
 // Reload page
 function ReloadPage() {
   window.location.reload();
 }
 
+// Calculate spotlight section height
+function CalculateHeight() {
+  const imageWidth = 1360;
+  const imageHeight = 906;
+  let renderedHeight;
+
+  if (appWidth.value >= imageWidth) {
+    renderedHeight = imageHeight;
+  } else {
+    renderedHeight = imageHeight * (appWidth.value / imageWidth);
+  }
+
+  return renderedHeight;
+}
+
 onMounted(() => {
+  // Set spotlight section dimensions on mount and on browser window resize
+  appWidth.value = window.innerWidth;
+  appHeight.value = window.innerHeight;
+
+  const spotlightSection = document.querySelector("#spotlightSection");
+  const scrollBubble = document.querySelector("#scrollBubble");
+  const spotlightText = document.querySelector("#spotlightText");
+  const opacityOverlay = document.querySelector("#opacityOverlay");
+
+  sectionHeight.value = CalculateHeight();
+  console.log(sectionHeight.value + "px");
+
+  spotlightSection.style.height = sectionHeight.value + "px";
+  scrollBubble.style.height = sectionHeight.value + "px";
+  spotlightText.style.height = sectionHeight.value + "px";
+  opacityOverlay.style.height = sectionHeight.value + "px";
+
+  window.addEventListener("resize", () => {
+    appWidth.value = window.innerWidth;
+
+    sectionHeight.value = CalculateHeight();
+
+    spotlightSection.style.height = sectionHeight.value + "px";
+    scrollBubble.style.height = sectionHeight.value + "px";
+    spotlightText.style.height = sectionHeight.value + "px";
+    opacityOverlay.style.height = sectionHeight.value + "px";
+  });
+
+  // console.log("appWidth", appWidth.value);
+  // console.log("renderedWidth: ", renderedWidth);
+  // console.log("renderedHeight: ", renderedHeight);
+
+  // // Height
+  // if (appHeight.value <= 853) {
+  //   spotlightSection.style.height = appHeight.value + "px";
+  // } else {
+  //   spotlightSection.style.height = "853px";
+
+  //   // Width
+  //   if (appWidth.value < 1392) {
+  //     console.log("newHeight: ", appHeight.value * aspectRatio.value);
+  //     spotlightSection.style.height =
+  //       appHeight.value * aspectRatio.value + "px";
+  //   }
+  // }
+
   // Create sequence here because photo needs to be mounted to assign animation to photoX.value
   const sequence = [
-    ["#mobilePhoto0", { y: 1000 }, { at: 0, duration: 1 }],
-    ["#mobilePhoto1", { y: 1400 }, { at: 0, duration: 1 }],
-    ["#mobilePhoto2", { y: 1000 }, { at: 0, duration: 1 }],
+    ["#mobilePhoto0", { y: 550 }, { at: 0, duration: 1 }],
+    ["#mobilePhoto1", { y: 600 }, { at: 0, duration: 1 }],
+    ["#mobilePhoto2", { y: 500 }, { at: 0, duration: 1 }],
     ["#mobilePhoto3", { y: -250 }, { at: 0, duration: 1 }],
     ["#mobilePhoto4", { y: -500 }, { at: 0, duration: 1 }],
-    ["#spotlightSection", { y: 500 }, { at: 0, duration: 1 }],
+    ["#spotlightSection", { y: 1000 }, { at: 0, duration: 1 }],
+    ["#paralaxOverlay", { y: -600 }, { at: 0, duration: 1 }],
   ];
 
   // // Animate in scroll bubble
@@ -124,40 +178,53 @@ onMounted(() => {
 <template>
   <!-- Spotlight section -->
   <section class="flex justify-center">
+    <!-- Testing -->
+    <!-- <div class="absolute bg-red-500 w-[1920px] h-[1080px] z-10"></div>
+    <div class="absolute bg-green-500 w-[1800px] h-[1080px] z-20"></div>
+    <div class="absolute bg-blue-500 w-[1725px] h-[1080px] z-20"></div> -->
+
     <!-- Container for content -->
-    <div id="spotlightSection" class="w-full max-w-7xl relative h-screen">
-      <!-- Backdrop to block scrolling into next section -->
+    <div id="spotlightSection" class="w-full max-w-bspotlight relative">
+      <!-- Opacity overlay -->
+      <div
+        id="opacityOverlay"
+        class="absolute w-full bg-black opacity-25 z-10"
+      ></div>
+
+      <!-- Overlay to block scrolling into next section -->
       <img
-        class="object-cover absolute h-[200vh] z-10"
-        src="..\assets\mobile\backdrop.webp"
+        id="paralaxOverlay"
+        class="absolute mt-[1.18rem] z-10"
+        src="..\assets\desktop\overlay.webp"
         alt="Ocean background image"
       />
 
       <!-- Ocean background image -->
       <img
         id="mobilePhoto0"
-        class="object-cover absolute h-screen"
-        src="..\assets\mobile\photo0.webp"
+        class="absolute"
+        src="..\assets\desktop\photo0.webp"
         alt="Ocean background image"
       />
       <!-- Back left rock image -->
       <img
         id="mobilePhoto1"
-        class="object-cover absolute h-screen"
-        src="..\assets\mobile\photo1.webp"
+        class="absolute"
+        src="..\assets\desktop\photo1.webp"
         alt="Back left rock image"
       />
       <!-- Main left cliff image -->
       <img
         id="mobilePhoto2"
-        class="object-cover absolute h-screen"
-        src="..\assets\mobile\photo2.webp"
+        class="absolute"
+        src="..\assets\desktop\photo2.webp"
         alt="Main left cliff image"
       />
 
       <!-- Spotlight text -->
       <div
-        class="animateFadeInFast absolute h-screen w-full flex justify-center items-center"
+        id="spotlightText"
+        class="animateFadeInFast absolute w-3/5 flex items-center z-20"
       >
         <SvgHandler name="SpotlightText" />
       </div>
@@ -165,15 +232,15 @@ onMounted(() => {
       <!-- Back foreground rock image -->
       <img
         id="mobilePhoto3"
-        class="object-cover absolute h-screen"
-        src="..\assets\mobile\photo3.webp"
+        class="absolute"
+        src="..\assets\desktop\photo3.webp"
         alt="Back foreground rock image"
       />
 
       <!-- ScrollBubble -->
       <div
         id="scrollBubble"
-        class="absolute h-screen w-full flex justify-center"
+        class="absolute h-screen w-full flex justify-center z-20"
       >
         <SvgHandler name="ScrollBubble" />
       </div>
@@ -181,30 +248,29 @@ onMounted(() => {
       <!-- Front forground rock and person image -->
       <img
         id="mobilePhoto4"
-        class="object-cover absolute h-screen mt-[1.18rem]"
-        src="..\assets\mobile\photo4.webp"
+        class="absolute mt-[1.18rem]"
+        src="..\assets\desktop\photo4.webp"
         alt="Front forground rock and person image"
       />
 
       <!-- Menu, logo -->
-      <div class="mt-20 absolute w-full flex justify-between items-center">
+      <div
+        class="mt-20 absolute w-full max-w-bspotlight flex justify-between items-center z-20"
+      >
         <!-- Logo -->
         <button
           @click="ReloadPage"
-          class="animateFadeInFast ml-5 flex items-center"
+          class="animateFadeInFast ml-10 flex items-center"
         >
           <SvgHandler name="BpmillerLogoText" />
           <div id="bpmillerTerminal">
             <SvgHandler name="BpmillerLogoTerminal" />
           </div>
         </button>
-        <!-- Menu -->
-        <div class="animateFadeInFast mr-5">
-          <MobileMenu
-            @route-link1="RouteLink1"
-            @control-animations="ControlAnimations"
-          />
-        </div>
+        <!-- NavBar -->
+        <NavMenu @route-link1="RouteLink1" />
+        <!-- Blank -->
+        <div class="shrink w-[225px] h-1 mr-10"></div>
       </div>
     </div>
   </section>
