@@ -17,7 +17,7 @@ import ProjectCard from "../components/ProjectCard.vue";
       </h1>
 
       <!-- Section description -->
-      <div class="animateFadeIn text-zinc-200 font-poppins text-[0.93rem]">
+      <div class="animateFadeIn text-zinc-200 font-poppins">
         <p class="mt-5">
           I’ve worked on tons of little projects over the years but these are
           the ones that I’m most proud of.
@@ -36,7 +36,7 @@ import ProjectCard from "../components/ProjectCard.vue";
         <template #image
           ><img
             class="w-2/3"
-            src="..\assets\mobile\showcaseRaf.webp"
+            src="..\assets\common\showcaseRaf.webp"
             alt="Image of the code that made this, meta!"
         /></template>
         <template #logo>
@@ -75,7 +75,7 @@ import ProjectCard from "../components/ProjectCard.vue";
         <template #image
           ><img
             class="w-2/3"
-            src="..\assets\mobile\showcaseDirCommander.webp"
+            src="..\assets\common\showcaseDirCommander.webp"
             alt="Image of the code that made this, meta!"
         /></template>
         <template #logo>
@@ -125,7 +125,7 @@ import ProjectCard from "../components/ProjectCard.vue";
         <template #image
           ><img
             class="w-2/3"
-            src="..\assets\mobile\showcaseDmi.webp"
+            src="..\assets\common\showcaseDmi.webp"
             alt="Image of the code that made this, meta!"
         /></template>
         <template #logo>
@@ -187,7 +187,7 @@ import ProjectCard from "../components/ProjectCard.vue";
         <template #image
           ><img
             class="w-2/3"
-            src="..\assets\mobile\showcaseBarry.webp"
+            src="..\assets\common\showcaseBarry.webp"
             alt="Image of the code that made this, meta!"
         /></template>
         <template #logo>

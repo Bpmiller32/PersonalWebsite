@@ -8,7 +8,7 @@ import ContactCard from "../components/ContactCard.vue";
   <!-- Contact section -->
   <section class="flex justify-center">
     <!-- Container for content -->
-    <div class="w-full max-w-7xl px-5 pt-5 pb-10">
+    <div class="w-full max-w-bcontent px-5 pt-5 pb-10">
       <!-- Header for section -->
       <h1 class="flex justify-end font-poppins font-bold text-4xl">
         <div class="mt-5 mr-3 h-0.5 w-full bg-zinc-200"></div>
@@ -26,10 +26,10 @@ import ContactCard from "../components/ContactCard.vue";
           >
             Available for select freelance opportunities.
           </div>
-          <div class="mt-5 text-zinc-200 font-poppins text-[0.93rem]">
+          <div class="mt-5 text-zinc-200 font-poppins">
             Have an exciting project you want help with?
           </div>
-          <div class="text-zinc-200 font-poppins text-[0.93rem]">
+          <div class="text-zinc-200 font-poppins">
             Send me an email or contact me via instant message!
           </div>
 

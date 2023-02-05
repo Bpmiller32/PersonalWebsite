@@ -9,6 +9,9 @@ import MobileMenu from "../components/MobileMenu.vue";
 
 // Vue
 const emit = defineEmits(["RouteLink0"]);
+const appWidth = ref(null);
+const appHeight = ref(null);
+const sectionHeight = ref(null);
 
 // Animation refs
 const flash = ref(null);
@@ -35,7 +38,52 @@ function ReloadPage() {
   window.location.reload();
 }
 
+// Calculate spotlight section height
+function CalculateHeight() {
+  const imageWidth = 1360;
+  const imageHeight = 906;
+  let renderedHeight;
+
+  if (appWidth.value >= imageWidth) {
+    renderedHeight = imageHeight;
+  } else {
+    renderedHeight = imageHeight * (appWidth.value / imageWidth);
+  }
+
+  return renderedHeight;
+}
+
 onMounted(() => {
+  const spotlightSection = document.querySelector("#spotlightSection");
+  const scrollBubble = document.querySelector("#scrollBubble");
+  const spotlightText = document.querySelector("#spotlightText");
+  const opacityOverlay = document.querySelector("#opacityOverlay");
+
+  if (appHeight.value <= appWidth.value) {
+    sectionHeight.value = CalculateHeight();
+
+    spotlightSection.style.height = sectionHeight.value + "px";
+    scrollBubble.style.height = sectionHeight.value + "px";
+    spotlightText.style.height = sectionHeight.value + "px";
+    opacityOverlay.style.height = sectionHeight.value + "px";
+
+    window.addEventListener("resize", () => {
+      appWidth.value = window.innerWidth;
+
+      sectionHeight.value = CalculateHeight();
+
+      spotlightSection.style.height = sectionHeight.value + "px";
+      scrollBubble.style.height = sectionHeight.value + "px";
+      spotlightText.style.height = sectionHeight.value + "px";
+      opacityOverlay.style.height = sectionHeight.value + "px";
+    });
+  } else {
+    spotlightSection.style.height = "100vh";
+    scrollBubble.style.height = "100vh";
+    spotlightText.style.height = "100vh";
+    opacityOverlay.style.height = "100vh";
+  }
+
   // Create sequence here because photo needs to be mounted to assign animation to photoX.value
   const sequence = [
     ["#mobilePhoto0", { y: 1000 }, { at: 0, duration: 1 }],
@@ -122,32 +170,39 @@ onMounted(() => {
 </script>
 
 <template>
-  <div id="spotlightSection" class="relative h-screen">
+  <div id="spotlightSection" class="relative flex justify-center">
+    <!-- Opacity overlay -->
+    <div
+      id="opacityOverlay"
+      class="absolute w-full bg-black opacity-25 z-10"
+    ></div>
+
     <!-- Ocean background image -->
     <img
       id="mobilePhoto0"
-      class="object-cover absolute h-screen"
-      src="..\assets\mobile\photo0.webp"
+      class="object-cover absolute"
+      src="..\assets\desktop\photo0.webp"
       alt="Ocean background image"
     />
     <!-- Back left rock image -->
     <img
       id="mobilePhoto1"
-      class="object-cover absolute h-screen"
-      src="..\assets\mobile\photo1.webp"
+      class="object-cover absolute"
+      src="..\assets\desktop\photo1.webp"
       alt="Back left rock image"
     />
     <!-- Main left cliff image -->
     <img
       id="mobilePhoto2"
-      class="object-cover absolute h-screen"
-      src="..\assets\mobile\photo2.webp"
+      class="object-cover absolute"
+      src="..\assets\desktop\photo2.webp"
       alt="Main left cliff image"
     />
 
     <!-- Spotlight text -->
     <div
-      class="animateFadeInFast absolute h-screen w-full flex justify-center items-center"
+      id="spotlightText"
+      class="animateFadeInFast absolute w-full h-[93vh] flex items-center z-20"
     >
       <SvgHandler name="SpotlightText" />
     </div>
@@ -155,26 +210,29 @@ onMounted(() => {
     <!-- Back foreground rock image -->
     <img
       id="mobilePhoto3"
-      class="object-cover absolute h-screen"
-      src="..\assets\mobile\photo3.webp"
+      class="object-cover absolute"
+      src="..\assets\desktop\photo3.webp"
       alt="Back foreground rock image"
     />
 
     <!-- ScrollBubble -->
-    <div id="scrollBubble" class="absolute h-screen w-full flex justify-center">
+    <div
+      id="scrollBubble"
+      class="absolute h-screen w-full flex justify-center z-20"
+    >
       <SvgHandler name="ScrollBubble" />
     </div>
 
     <!-- Front forground rock and person image -->
     <img
       id="mobilePhoto4"
-      class="object-cover absolute h-screen"
-      src="..\assets\mobile\photo4.webp"
+      class="object-cover absolute"
+      src="..\assets\desktop\photo4.webp"
       alt="Front forground rock and person image"
     />
 
     <!-- Menu, logo -->
-    <div class="mt-20 absolute w-full flex justify-between items-center">
+    <div class="mt-20 absolute w-full flex justify-between items-center z-20">
       <!-- Logo -->
       <button
         @click="ReloadPage"

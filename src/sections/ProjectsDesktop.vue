@@ -8,7 +8,7 @@ import ProjectCardDesktop from "../components/ProjectCardDesktop.vue";
   <section class="flex justify-center">
     <!-- Container for content -->
     <div
-      class="px-5 pt-5 pb-10 w-full max-w-7xl rounded-3xl bg-gray-800 border border-gray-600"
+      class="px-5 pt-5 pb-10 w-full max-w-bcontent rounded-3xl bg-gray-800 border border-gray-600"
     >
       <!-- Header for section -->
       <h1 class="flex justify-end font-poppins font-bold baseline text-4xl">
@@ -20,9 +20,7 @@ import ProjectCardDesktop from "../components/ProjectCardDesktop.vue";
 
       <!-- Section description -->
       <div class="flex justify-center">
-        <div
-          class="animateFadeIn w-2/3 text-zinc-200 font-poppins text-[0.93rem]"
-        >
+        <div class="animateFadeIn w-2/3 text-zinc-200 font-poppins">
           <p class="mt-5">
             I’ve worked on tons of little projects over the years but these are
             the ones that I’m most proud of.
@@ -44,7 +42,7 @@ import ProjectCardDesktop from "../components/ProjectCardDesktop.vue";
           <template #image
             ><img
               class=""
-              src="..\assets\mobile\showcaseRaf.webp"
+              src="..\assets\common\showcaseRaf.webp"
               alt="Image of the code that made this, meta!"
           /></template>
           <template #logo>
@@ -82,7 +80,7 @@ import ProjectCardDesktop from "../components/ProjectCardDesktop.vue";
           <template #title>Directory Commander</template>
           <template #image
             ><img
-              src="..\assets\mobile\showcaseDirCommander.webp"
+              src="..\assets\common\showcaseDirCommander.webp"
               alt="Image of the code that made this, meta!"
           /></template>
           <template #logo>
@@ -132,7 +130,7 @@ import ProjectCardDesktop from "../components/ProjectCardDesktop.vue";
           <template #title>Dangerous Mail Investigation</template>
           <template #image
             ><img
-              src="..\assets\mobile\showcaseDmi.webp"
+              src="..\assets\common\showcaseDmi.webp"
               alt="Image of the code that made this, meta!"
           /></template>
           <template #logo>
@@ -173,7 +171,7 @@ import ProjectCardDesktop from "../components/ProjectCardDesktop.vue";
           <template #title>Barry for Discord</template>
           <template #image
             ><img
-              src="..\assets\mobile\showcaseBarry.webp"
+              src="..\assets\common\showcaseBarry.webp"
               alt="Image of the code that made this, meta!"
           /></template>
           <template #logo>

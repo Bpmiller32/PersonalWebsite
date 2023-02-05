@@ -9,7 +9,7 @@ import ResumeCard from "../components/ResumeCard.vue";
   <!-- Work section -->
   <section class="flex justify-center bg-bzync-50">
     <!-- Container for content -->
-    <div class="relative w-full max-w-7xl px-5 pt-5 pb-10">
+    <div class="relative w-full max-w-bcontent px-5 pt-5 pb-10">
       <!-- Header for section -->
       <h1 class="flex justify-end font-poppins font-bold text-4xl">
         <div class="mt-5 mr-3 h-0.5 w-full bg-zinc-200"></div>
@@ -25,15 +25,20 @@ import ResumeCard from "../components/ResumeCard.vue";
       </h1>
 
       <!-- Background code image -->
-      <div class="animateFadeUpSlow absolute top-[10%] left-0 w-1/2">
+      <div class="animateFadeUpSlow absolute top-[10%] left-[5%]">
         <img
+          class="h-[25rem]"
           src="..\assets\common\codeBackground.webp"
           alt="Image of the code that made this, meta!"
         />
       </div>
       <!-- Background code image long -->
-      <div class="animateFadeUpSlow absolute top-[36%] right-0 w-1/2">
-        <img src="..\assets\common\codeBackgroundLong.webp" alt="" />
+      <div class="animateFadeUpSlow absolute top-[25%] right-[5%]">
+        <img
+          class="h-[25rem]"
+          src="..\assets\common\codeBackgroundLong.webp"
+          alt=""
+        />
       </div>
 
       <!-- WorkCards container -->

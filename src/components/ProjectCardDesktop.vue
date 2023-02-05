@@ -25,15 +25,19 @@ const props = defineProps(["projlinks", "mirror"]);
         </div>
         <!-- Links -->
         <div v-if="props.projlinks" class="mt-1 flex">
-          <div class="flex items-center">
+          <div class="flex items-center group">
             <SvgHandler name="ProjectLink" />
-            <div class="ml-1 mr-3 text-zinc-200 font-poppins font-bold">
+            <div
+              class="ml-1 mr-3 text-zinc-200 font-poppins font-bold group-hover:text-bteal-50"
+            >
               <slot name="link1"> bpmiller.com </slot>
             </div>
           </div>
-          <div class="flex items-center">
+          <div class="flex items-center group">
             <SvgHandler name="ProjectLink" />
-            <div class="ml-1 text-zinc-200 font-poppins font-bold">
+            <div
+              class="ml-1 text-zinc-200 font-poppins font-bold group-hover:text-bteal-50"
+            >
               <slot name="link2"> bpmiller.com </slot>
             </div>
           </div>

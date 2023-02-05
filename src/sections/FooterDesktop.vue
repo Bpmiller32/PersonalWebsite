@@ -13,7 +13,7 @@ function RouteLink1(route) {
 <template>
   <!-- Footer section -->
   <section class="flex justify-center">
-    <section class="px-5 pb-10 w-full max-w-7xl">
+    <section class="px-5 pb-10 w-full max-w-bcontent">
       <!-- Divider -->
       <div class="my-5 h-0.5 bg-zinc-200"></div>
 

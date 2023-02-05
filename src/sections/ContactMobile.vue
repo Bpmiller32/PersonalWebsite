@@ -21,10 +21,10 @@ import ContactCard from "../components/ContactCard.vue";
       <div class="mt-5 max-w-xs text-zinc-200 font-poppins font-bold text-2xl">
         Available for select freelance opportunities.
       </div>
-      <div class="mt-5 text-zinc-200 font-poppins text-[0.93rem]">
+      <div class="mt-5 text-zinc-200 font-poppins">
         Have an exciting project you want help with?
       </div>
-      <div class="text-zinc-200 font-poppins text-[0.93rem]">
+      <div class="text-zinc-200 font-poppins">
         Send me an email or contact me via instant message!
       </div>
 
