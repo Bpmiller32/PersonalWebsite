@@ -37,7 +37,7 @@ import ResumeCard from "../components/ResumeCard.vue";
         <img
           class="h-[25rem]"
           src="..\assets\common\codeBackgroundLong.webp"
-          alt=""
+          alt="Longer image of code that made this, meta!"
         />
       </div>
 

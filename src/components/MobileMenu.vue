@@ -45,7 +45,10 @@ onMounted(() => {
 <template>
   <Popover id="popover">
     <!-- Open button -->
-    <PopoverButton class="rounded-full bg-slate-500 p-2">
+    <PopoverButton
+      aria-label="mobile menu button"
+      class="rounded-full bg-slate-500 p-2"
+    >
       <SvgHandler name="MobileMenuBars" />
     </PopoverButton>
 
@@ -90,6 +93,7 @@ onMounted(() => {
           <!-- Links to sections -->
           <div class="space-y-3 px-3 pt-3 pb-5">
             <button
+              aria-label="menu link to about section"
               @click="RouteLink2(close, 'about')"
               class="flex items-center group"
             >
@@ -103,6 +107,7 @@ onMounted(() => {
               </p>
             </button>
             <button
+              aria-label="menu link to work section"
               @click="RouteLink2(close, 'work')"
               class="flex items-center group"
             >
@@ -116,6 +121,7 @@ onMounted(() => {
               </p>
             </button>
             <button
+              aria-label="menu link to projects section"
               @click="RouteLink2(close, 'projects')"
               class="flex items-center group"
             >
@@ -129,6 +135,7 @@ onMounted(() => {
               </p>
             </button>
             <button
+              aria-label="menu link to contact section"
               @click="RouteLink2(close, 'contact')"
               class="flex items-center group"
             >

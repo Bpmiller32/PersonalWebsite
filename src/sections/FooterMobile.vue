@@ -20,22 +20,38 @@ function RouteLink1(route) {
     <div class="flex justify-center">
       <!-- Container to space links apart -->
       <div class="flex justify-around space-x-5">
-        <button @click="RouteLink1('about')" class="group">
+        <button
+          aria-label="footer link to about section"
+          @click="RouteLink1('about')"
+          class="group"
+        >
           <p class="text-zinc-200 font-poppins group-hover:text-bteal-50">
             About
           </p>
         </button>
-        <button @click="RouteLink1('work')" class="group">
+        <button
+          aria-label="footer link to work section"
+          @click="RouteLink1('work')"
+          class="group"
+        >
           <p class="text-zinc-200 font-poppins group-hover:text-bteal-50">
             Work
           </p>
         </button>
-        <button @click="RouteLink1('projects')" class="group">
+        <button
+          aria-label="footer link to projects section"
+          @click="RouteLink1('projects')"
+          class="group"
+        >
           <p class="text-zinc-200 font-poppins group-hover:text-bteal-50">
             Projects
           </p>
         </button>
-        <button @click="RouteLink1('contact')" class="group">
+        <button
+          aria-label="footer link to contact section"
+          @click="RouteLink1('contact')"
+          class="group"
+        >
           <p class="text-zinc-200 font-poppins group-hover:text-bteal-50">
             Contact
           </p>

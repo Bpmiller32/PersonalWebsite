@@ -45,29 +45,37 @@ onMounted(() => {
     <!-- Links -->
     <div v-if="props.projlinks">
       <div v-if="appWidth <= 349" class="mt-1">
-        <div class="flex items-center">
+        <div class="flex items-center group">
           <SvgHandler name="ProjectLink" />
-          <div class="ml-1 mr-3 text-zinc-200 font-poppins font-bold">
+          <div
+            class="ml-1 mr-3 text-zinc-200 font-poppins font-bold group-hover:text-bteal-50"
+          >
             <slot name="link1"> bpmiller.com </slot>
           </div>
         </div>
-        <div class="flex items-center">
+        <div class="flex items-center group">
           <SvgHandler name="ProjectLink" />
-          <div class="ml-1 text-zinc-200 font-poppins font-bold">
+          <div
+            class="ml-1 text-zinc-200 font-poppins font-bold group-hover:text-bteal-50"
+          >
             <slot name="link2"> bpmiller.com </slot>
           </div>
         </div>
       </div>
       <div v-else class="mt-1 flex">
-        <div class="flex items-center">
+        <div class="flex items-center group">
           <SvgHandler name="ProjectLink" />
-          <div class="ml-1 mr-3 text-zinc-200 font-poppins font-bold">
+          <div
+            class="ml-1 mr-3 text-zinc-200 font-poppins font-bold group-hover:text-bteal-50"
+          >
             <slot name="link1"> bpmiller.com </slot>
           </div>
         </div>
-        <div class="flex items-center">
+        <div class="flex items-center group">
           <SvgHandler name="ProjectLink" />
-          <div class="ml-1 text-zinc-200 font-poppins font-bold">
+          <div
+            class="ml-1 text-zinc-200 font-poppins font-bold group-hover:text-bteal-50"
+          >
             <slot name="link2"> bpmiller.com </slot>
           </div>
         </div>

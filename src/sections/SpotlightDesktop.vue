@@ -9,9 +9,6 @@ import NavMenu from "../components/NavMenu.vue";
 
 // Vue
 const emit = defineEmits(["RouteLink0"]);
-const appWidth = ref(null);
-const appHeight = ref(null);
-const sectionHeight = ref(null);
 
 // Animation refs
 const flash = ref(null);
@@ -29,65 +26,48 @@ function ReloadPage() {
 
 // Calculate spotlight section height
 function CalculateHeight() {
+  // Calculate image rendered height
   const imageWidth = 1360;
   const imageHeight = 906;
   let renderedHeight;
 
-  if (appWidth.value >= imageWidth) {
+  if (window.innerWidth >= imageWidth) {
     renderedHeight = imageHeight;
   } else {
-    renderedHeight = imageHeight * (appWidth.value / imageWidth);
+    renderedHeight = imageHeight * (window.innerWidth / imageWidth);
   }
 
-  return renderedHeight;
+  return renderedHeight + "px";
+}
+
+function SetHeight() {
+  const sectionHeight = CalculateHeight();
+
+  const sections = [
+    "#mobilePhoto0",
+    "#mobilePhoto1",
+    "#mobilePhoto2",
+    "#mobilePhoto3",
+    "#mobilePhoto4",
+
+    "#spotlightSection",
+    "#scrollBubble",
+    // "#spotlightText",
+    "#opacityOverlay",
+  ];
+
+  sections.forEach((element) => {
+    document.querySelector(element).style.height = sectionHeight;
+  });
 }
 
 onMounted(() => {
   // Set spotlight section dimensions on mount and on browser window resize
-  appWidth.value = window.innerWidth;
-  appHeight.value = window.innerHeight;
-
-  const spotlightSection = document.querySelector("#spotlightSection");
-  const scrollBubble = document.querySelector("#scrollBubble");
-  const spotlightText = document.querySelector("#spotlightText");
-  const opacityOverlay = document.querySelector("#opacityOverlay");
-
-  sectionHeight.value = CalculateHeight();
-  console.log(sectionHeight.value + "px");
-
-  spotlightSection.style.height = sectionHeight.value + "px";
-  scrollBubble.style.height = sectionHeight.value + "px";
-  spotlightText.style.height = sectionHeight.value + "px";
-  opacityOverlay.style.height = sectionHeight.value + "px";
+  SetHeight();
 
   window.addEventListener("resize", () => {
-    appWidth.value = window.innerWidth;
-
-    sectionHeight.value = CalculateHeight();
-
-    spotlightSection.style.height = sectionHeight.value + "px";
-    scrollBubble.style.height = sectionHeight.value + "px";
-    spotlightText.style.height = sectionHeight.value + "px";
-    opacityOverlay.style.height = sectionHeight.value + "px";
+    SetHeight();
   });
-
-  // console.log("appWidth", appWidth.value);
-  // console.log("renderedWidth: ", renderedWidth);
-  // console.log("renderedHeight: ", renderedHeight);
-
-  // // Height
-  // if (appHeight.value <= 853) {
-  //   spotlightSection.style.height = appHeight.value + "px";
-  // } else {
-  //   spotlightSection.style.height = "853px";
-
-  //   // Width
-  //   if (appWidth.value < 1392) {
-  //     console.log("newHeight: ", appHeight.value * aspectRatio.value);
-  //     spotlightSection.style.height =
-  //       appHeight.value * aspectRatio.value + "px";
-  //   }
-  // }
 
   // Create sequence here because photo needs to be mounted to assign animation to photoX.value
   const sequence = [
@@ -97,7 +77,6 @@ onMounted(() => {
     ["#mobilePhoto3", { y: -250 }, { at: 0, duration: 1 }],
     ["#mobilePhoto4", { y: -500 }, { at: 0, duration: 1 }],
     ["#spotlightSection", { y: 1000 }, { at: 0, duration: 1 }],
-    ["#paralaxOverlay", { y: -600 }, { at: 0, duration: 1 }],
   ];
 
   // // Animate in scroll bubble
@@ -178,11 +157,6 @@ onMounted(() => {
 <template>
   <!-- Spotlight section -->
   <section class="flex justify-center">
-    <!-- Testing -->
-    <!-- <div class="absolute bg-red-500 w-[1920px] h-[1080px] z-10"></div>
-    <div class="absolute bg-green-500 w-[1800px] h-[1080px] z-20"></div>
-    <div class="absolute bg-blue-500 w-[1725px] h-[1080px] z-20"></div> -->
-
     <!-- Container for content -->
     <div id="spotlightSection" class="w-full max-w-bspotlight relative">
       <!-- Opacity overlay -->
@@ -191,48 +165,40 @@ onMounted(() => {
         class="absolute w-full bg-black opacity-25 z-10"
       ></div>
 
-      <!-- Overlay to block scrolling into next section -->
-      <img
-        id="paralaxOverlay"
-        class="absolute mt-[1.18rem] z-10"
-        src="..\assets\desktop\overlay.webp"
-        alt="Ocean background image"
-      />
-
       <!-- Ocean background image -->
       <img
         id="mobilePhoto0"
-        class="absolute"
+        class="object-cover absolute"
         src="..\assets\desktop\photo0.webp"
         alt="Ocean background image"
       />
       <!-- Back left rock image -->
       <img
         id="mobilePhoto1"
-        class="absolute"
+        class="object-cover absolute"
         src="..\assets\desktop\photo1.webp"
         alt="Back left rock image"
       />
       <!-- Main left cliff image -->
       <img
         id="mobilePhoto2"
-        class="absolute"
+        class="object-cover absolute"
         src="..\assets\desktop\photo2.webp"
         alt="Main left cliff image"
       />
 
       <!-- Spotlight text -->
-      <div
+      <!-- <div
         id="spotlightText"
-        class="animateFadeInFast absolute w-3/5 flex items-center z-20"
+        class="animateFadeInFast absolute w-3/5 flex z-20"
       >
         <SvgHandler name="SpotlightText" />
-      </div>
+      </div> -->
 
       <!-- Back foreground rock image -->
       <img
         id="mobilePhoto3"
-        class="absolute"
+        class="object-cover absolute"
         src="..\assets\desktop\photo3.webp"
         alt="Back foreground rock image"
       />
@@ -248,7 +214,7 @@ onMounted(() => {
       <!-- Front forground rock and person image -->
       <img
         id="mobilePhoto4"
-        class="absolute mt-[1.18rem]"
+        class="object-cover absolute mt-[1.18rem]"
         src="..\assets\desktop\photo4.webp"
         alt="Front forground rock and person image"
       />
@@ -259,6 +225,7 @@ onMounted(() => {
       >
         <!-- Logo -->
         <button
+          aria-label="logo link to refresh home page"
           @click="ReloadPage"
           class="animateFadeInFast ml-10 flex items-center"
         >
@@ -268,7 +235,9 @@ onMounted(() => {
           </div>
         </button>
         <!-- NavBar -->
-        <NavMenu @route-link1="RouteLink1" />
+        <div class="animateFadeInFast">
+          <NavMenu @route-link1="RouteLink1" />
+        </div>
         <!-- Blank -->
         <div class="shrink w-[225px] h-1 mr-10"></div>
       </div>
