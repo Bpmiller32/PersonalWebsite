@@ -2,7 +2,7 @@
 // Js
 import { ref, onMounted } from "vue";
 import { db } from "../firebase/index.js";
-import { doc, addDoc, collection } from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
 import { animate } from "motion";
 
 // Components
@@ -63,11 +63,11 @@ async function SendMessage() {
     );
     animate("#buttonText", { opacity: [0, 1] }, { duration: 0.5 });
 
-    // await addDoc(collection(db, "websiteMessages"), {
-    //   email: email.value,
-    //   message: message.value,
-    //   time: new Date(),
-    // });
+    await addDoc(collection(db, "websiteMessages"), {
+      email: email.value,
+      message: message.value,
+      time: new Date(),
+    });
   } else {
     isValidEmail.value = false;
 

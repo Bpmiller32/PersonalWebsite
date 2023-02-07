@@ -79,11 +79,11 @@ onMounted(() => {
   <SpotlightDesktop @route-link0="RouteLink0" />
 
   <!-- Content sections -->
-  <div class="absolute w-full">
+  <main class="absolute w-full">
     <AboutDesktop />
     <WorkDesktop id="workDesktop" />
     <ProjectsDesktop id="projectsDesktop" />
     <ContactDesktop id="contactDesktop" />
     <FooterDesktop @route-link0="RouteLink0" />
-  </div>
+  </main>
 </template>

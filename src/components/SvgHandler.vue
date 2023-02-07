@@ -121,7 +121,7 @@ const props = defineProps(["name"]);
   <!-- ScrollBubble -->
   <svg
     v-if="name == 'ScrollBubble'"
-    class="absolute bottom-0 mb-32 w-12 h-12"
+    class="absolute bottom-0 mb-24 w-12 h-12"
     width="61.661987px"
     height="62.313965px"
     viewBox="0 0 61.661987 62.313965"

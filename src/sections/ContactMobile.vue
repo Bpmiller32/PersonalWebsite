@@ -30,7 +30,7 @@ import ContactCard from "../components/ContactCard.vue";
 
       <!-- Email address -->
       <div class="my-5 text-zinc-200 font-poppins text-2xl">
-        billy@bpmiller.com
+        bpmiller32@gmail.com
       </div>
 
       <!-- Social media links -->

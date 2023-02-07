@@ -70,11 +70,11 @@ onMounted(() => {
   <SpotlightMobile @route-link0="RouteLink0" />
 
   <!-- Content sections -->
-  <div class="absolute w-full">
+  <main class="absolute w-full">
     <AboutMobile />
     <WorkMobile id="workMobile" />
     <ProjectsMobile id="projectsMobile" />
     <ContactMobile id="contactMobile" />
     <FooterMobile @route-link0="RouteLink0" />
-  </div>
+  </main>
 </template>

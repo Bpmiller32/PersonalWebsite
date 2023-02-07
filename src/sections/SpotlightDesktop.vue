@@ -6,6 +6,7 @@ import { animate, timeline, scroll } from "motion";
 // Components
 import SvgHandler from "../components/SvgHandler.vue";
 import NavMenu from "../components/NavMenu.vue";
+import SpotlightText from "../components/SpotlightText.vue";
 
 // Vue
 const emit = defineEmits(["RouteLink0"]);
@@ -44,11 +45,11 @@ function SetHeight() {
   const sectionHeight = CalculateHeight();
 
   const sections = [
-    "#mobilePhoto0",
-    "#mobilePhoto1",
-    "#mobilePhoto2",
-    "#mobilePhoto3",
-    "#mobilePhoto4",
+    "#spotlightPhoto0",
+    "#spotlightPhoto1",
+    "#spotlightPhoto2",
+    "#spotlightPhoto3",
+    "#spotlightPhoto4",
 
     "#spotlightSection",
     "#scrollBubble",
@@ -71,11 +72,11 @@ onMounted(() => {
 
   // Create sequence here because photo needs to be mounted to assign animation to photoX.value
   const sequence = [
-    ["#mobilePhoto0", { y: 550 }, { at: 0, duration: 1 }],
-    ["#mobilePhoto1", { y: 600 }, { at: 0, duration: 1 }],
-    ["#mobilePhoto2", { y: 500 }, { at: 0, duration: 1 }],
-    ["#mobilePhoto3", { y: -250 }, { at: 0, duration: 1 }],
-    ["#mobilePhoto4", { y: -500 }, { at: 0, duration: 1 }],
+    ["#spotlightPhoto0", { y: 550 }, { at: 0, duration: 1 }],
+    ["#spotlightPhoto1", { y: 600 }, { at: 0, duration: 1 }],
+    ["#spotlightPhoto2", { y: 500 }, { at: 0, duration: 1 }],
+    ["#spotlightPhoto3", { y: -250 }, { at: 0, duration: 1 }],
+    ["#spotlightPhoto4", { y: -500 }, { at: 0, duration: 1 }],
     ["#spotlightSection", { y: 1000 }, { at: 0, duration: 1 }],
   ];
 
@@ -159,69 +160,9 @@ onMounted(() => {
   <section class="flex justify-center">
     <!-- Container for content -->
     <div id="spotlightSection" class="w-full max-w-bspotlight relative">
-      <!-- Opacity overlay -->
-      <div
-        id="opacityOverlay"
-        class="absolute w-full bg-black opacity-25 z-10"
-      ></div>
-
-      <!-- Ocean background image -->
-      <img
-        id="mobilePhoto0"
-        class="object-cover absolute"
-        src="..\assets\desktop\photo0.webp"
-        alt="Ocean background image"
-      />
-      <!-- Back left rock image -->
-      <img
-        id="mobilePhoto1"
-        class="object-cover absolute"
-        src="..\assets\desktop\photo1.webp"
-        alt="Back left rock image"
-      />
-      <!-- Main left cliff image -->
-      <img
-        id="mobilePhoto2"
-        class="object-cover absolute"
-        src="..\assets\desktop\photo2.webp"
-        alt="Main left cliff image"
-      />
-
-      <!-- Spotlight text -->
-      <!-- <div
-        id="spotlightText"
-        class="animateFadeInFast absolute w-3/5 flex z-20"
-      >
-        <SvgHandler name="SpotlightText" />
-      </div> -->
-
-      <!-- Back foreground rock image -->
-      <img
-        id="mobilePhoto3"
-        class="object-cover absolute"
-        src="..\assets\desktop\photo3.webp"
-        alt="Back foreground rock image"
-      />
-
-      <!-- ScrollBubble -->
-      <div
-        id="scrollBubble"
-        class="absolute h-screen w-full flex justify-center z-20"
-      >
-        <SvgHandler name="ScrollBubble" />
-      </div>
-
-      <!-- Front forground rock and person image -->
-      <img
-        id="mobilePhoto4"
-        class="object-cover absolute mt-[1.18rem]"
-        src="..\assets\desktop\photo4.webp"
-        alt="Front forground rock and person image"
-      />
-
       <!-- Menu, logo -->
       <div
-        class="mt-20 absolute w-full max-w-bspotlight flex justify-between items-center z-20"
+        class="mt-20 absolute w-full max-w-bspotlight flex justify-between items-center z-30"
       >
         <!-- Logo -->
         <button
@@ -241,6 +182,63 @@ onMounted(() => {
         <!-- Blank -->
         <div class="shrink w-[225px] h-1 mr-10"></div>
       </div>
+
+      <!-- Spotlight text -->
+      <div
+        id="spotlightText"
+        class="animateFadeInFast absolute top-[30%] left-[5%] z-30"
+      >
+        <SpotlightText />
+      </div>
+
+      <!-- Opacity overlay -->
+      <div
+        id="opacityOverlay"
+        class="absolute w-full bg-black opacity-25 z-10"
+      ></div>
+
+      <!-- Ocean background image -->
+      <img
+        id="spotlightPhoto0"
+        class="object-cover absolute z-0"
+        src="..\assets\common\photo0.webp"
+        alt="Ocean background image"
+      />
+      <!-- Back left rock image -->
+      <img
+        id="spotlightPhoto1"
+        class="object-cover absolute z-0"
+        src="..\assets\common\photo1.webp"
+        alt="Back left rock image"
+      />
+      <!-- Main left cliff image -->
+      <img
+        id="spotlightPhoto2"
+        class="object-cover absolute z-0"
+        src="..\assets\common\photo2.webp"
+        alt="Main left cliff image"
+      />
+
+      <!-- Back foreground rock image -->
+      <img
+        id="spotlightPhoto3"
+        class="object-cover absolute z-0"
+        src="..\assets\common\photo3.webp"
+        alt="Back foreground rock image"
+      />
+
+      <!-- ScrollBubble -->
+      <div id="scrollBubble" class="absolute w-full flex justify-center z-10">
+        <SvgHandler name="ScrollBubble" />
+      </div>
+
+      <!-- Front forground rock and person image -->
+      <img
+        id="spotlightPhoto4"
+        class="object-cover absolute mt-[1.18rem]"
+        src="..\assets\common\photo4.webp"
+        alt="Front forground rock and person image"
+      />
     </div>
   </section>
 </template>
