@@ -31,7 +31,7 @@ import ProjectCardMobile from "../components/ProjectCardMobile.vue";
       </div>
 
       <!-- RAF -->
-      <ProjectCardMobile projlinks="true" projtype="js">
+      <ProjectCardMobile projlinks="true">
         <template #title>RAF Technology</template>
         <template #image
           ><img
@@ -70,7 +70,7 @@ import ProjectCardMobile from "../components/ProjectCardMobile.vue";
       </ProjectCardMobile>
 
       <!-- Directory Commander -->
-      <ProjectCardMobile projlinks="true" projtype="js">
+      <ProjectCardMobile projlinks="true">
         <template #title>Directory Commander</template>
         <template #image
           ><img
@@ -120,7 +120,7 @@ import ProjectCardMobile from "../components/ProjectCardMobile.vue";
       </ProjectCardMobile>
 
       <!-- DMI -->
-      <ProjectCardMobile projtype="c#">
+      <ProjectCardMobile>
         <template #title>Dangerous Mail Investigation</template>
         <template #image
           ><img
@@ -154,7 +154,7 @@ import ProjectCardMobile from "../components/ProjectCardMobile.vue";
       </ProjectCardMobile>
 
       <!-- FireGame -->
-      <!-- <ProjectCard projlinks="true" projtype="c#">
+      <!-- <ProjectCard projlinks="true" >
         <template #title>Fire Game</template>
         <template #link1>itch.io</template>
         <template #link2>github.com</template>
@@ -175,7 +175,7 @@ import ProjectCardMobile from "../components/ProjectCardMobile.vue";
       </ProjectCard> -->
 
       <!-- Barry -->
-      <ProjectCardMobile projlinks="true" projtype="c#">
+      <ProjectCardMobile projlinks="true">
         <template #title>Barry for Discord</template>
         <template #image
           ><img
