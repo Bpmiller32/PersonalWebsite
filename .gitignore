@@ -9,3 +9,6 @@
 **/dist
 
 **/Log/
+
+**/package-lock.json
+**/.firebase
