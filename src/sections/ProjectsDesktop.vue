@@ -22,7 +22,7 @@ import ProjectCardDesktop from "../components/ProjectCardDesktop.vue";
       <div class="flex flex-col divide-y-2 divide-zinc-700">
         <!-- Section description -->
         <div class="flex justify-center">
-          <div class="animateFadeIn w-2/3 mb-10 text-zinc-200 font-poppins">
+          <div class="animateFadeIn w-1/2 mb-10 text-zinc-200 font-poppins">
             <p class="mt-5">
               I’ve worked on tons of little projects over the years but these
               are the ones that I’m most proud of.
@@ -41,7 +41,7 @@ import ProjectCardDesktop from "../components/ProjectCardDesktop.vue";
           <template #title>RAF Technology</template>
           <template #image
             ><img
-              class=""
+              class="w-[640px] h-auto"
               src="..\assets\common\showcaseRaf.webp"
               alt="showcase of raf project"
           /></template>
@@ -80,6 +80,7 @@ import ProjectCardDesktop from "../components/ProjectCardDesktop.vue";
           <template #title>Directory Commander</template>
           <template #image
             ><img
+              class="w-[640px] h-auto"
               src="..\assets\common\showcaseDirCommander.webp"
               alt="showcase of dirCommander project"
           /></template>
@@ -130,6 +131,7 @@ import ProjectCardDesktop from "../components/ProjectCardDesktop.vue";
           <template #title>Dangerous Mail Investigation</template>
           <template #image
             ><img
+              class="w-[640px] h-auto"
               src="..\assets\common\showcaseDmi.webp"
               alt="showcase of dmi project"
           /></template>
@@ -171,6 +173,7 @@ import ProjectCardDesktop from "../components/ProjectCardDesktop.vue";
           <template #title>Barry for Discord</template>
           <template #image
             ><img
+              class="w-[640px] h-auto"
               src="..\assets\common\showcaseBarry.webp"
               alt="showcase of barry project"
           /></template>

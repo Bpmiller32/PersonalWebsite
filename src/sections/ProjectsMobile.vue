@@ -1,6 +1,6 @@
 <script setup>
 // Components
-import ProjectCard from "../components/ProjectCard.vue";
+import ProjectCardMobile from "../components/ProjectCardMobile.vue";
 </script>
 
 <template>
@@ -31,7 +31,7 @@ import ProjectCard from "../components/ProjectCard.vue";
       </div>
 
       <!-- RAF -->
-      <ProjectCard projlinks="true" projtype="js">
+      <ProjectCardMobile projlinks="true" projtype="js">
         <template #title>RAF Technology</template>
         <template #image
           ><img
@@ -67,10 +67,10 @@ import ProjectCard from "../components/ProjectCard.vue";
             </div>
           </div>
         </template>
-      </ProjectCard>
+      </ProjectCardMobile>
 
       <!-- Directory Commander -->
-      <ProjectCard projlinks="true" projtype="js">
+      <ProjectCardMobile projlinks="true" projtype="js">
         <template #title>Directory Commander</template>
         <template #image
           ><img
@@ -117,10 +117,10 @@ import ProjectCard from "../components/ProjectCard.vue";
             </div>
           </div>
         </template>
-      </ProjectCard>
+      </ProjectCardMobile>
 
       <!-- DMI -->
-      <ProjectCard projtype="c#">
+      <ProjectCardMobile projtype="c#">
         <template #title>Dangerous Mail Investigation</template>
         <template #image
           ><img
@@ -151,7 +151,7 @@ import ProjectCard from "../components/ProjectCard.vue";
             <div>WinForms, Telerik, Entity Framework, MongoDb</div>
           </div>
         </template>
-      </ProjectCard>
+      </ProjectCardMobile>
 
       <!-- FireGame -->
       <!-- <ProjectCard projlinks="true" projtype="c#">
@@ -175,7 +175,7 @@ import ProjectCard from "../components/ProjectCard.vue";
       </ProjectCard> -->
 
       <!-- Barry -->
-      <ProjectCard projlinks="true" projtype="c#">
+      <ProjectCardMobile projlinks="true" projtype="c#">
         <template #title>Barry for Discord</template>
         <template #image
           ><img
@@ -210,7 +210,7 @@ import ProjectCard from "../components/ProjectCard.vue";
             </div>
           </div>
         </template>
-      </ProjectCard>
+      </ProjectCardMobile>
     </div>
   </section>
 </template>
