@@ -21,7 +21,7 @@ export default class Camera {
 
     this.sizes = this.experience.sizes;
     this.scene = this.experience.scene;
-    this.canvas = this.experience.canvas;
+    this.canvas = this.experience.targetElement;
 
     this.setInstance();
     this.setOrbitControls();

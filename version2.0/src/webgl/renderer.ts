@@ -18,7 +18,7 @@ export default class Renderer {
   constructor() {
     this.experience = Experience.getInstance();
 
-    this.canvas = this.experience.canvas;
+    this.canvas = this.experience.targetElement;
     this.sizes = this.experience.sizes;
     this.scene = this.experience.scene;
     this.camera = this.experience.camera;

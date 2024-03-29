@@ -17,7 +17,7 @@ export default class Experience {
   private constructor() {}
 
   // Definite assignment assertion to all props because of configure()....
-  canvas!: HTMLCanvasElement | null;
+  targetElement!: HTMLCanvasElement | null;
 
   debug!: Debug;
   sizes!: Sizes;
@@ -33,7 +33,7 @@ export default class Experience {
   configure(canvas: HTMLCanvasElement | null) {
     // Setup
     this.debug = new Debug();
-    this.canvas = canvas;
+    this.targetElement = canvas;
 
     this.sizes = new Sizes();
     this.time = new Time();
@@ -73,6 +73,7 @@ export default class Experience {
   update() {
     this.camera.update();
     this.renderer.update();
+    this.world.update();
   }
 
   destroy() {
