@@ -9,11 +9,12 @@ import { OrbitControls } from "three/examples/jsm/Addons.js";
 
 export default class Camera {
   experience: Experience;
-  sizes: Sizes;
-  scene: THREE.Scene;
-  canvas: HTMLCanvasElement | null;
-  instance: THREE.PerspectiveCamera | undefined;
-  controls: OrbitControls | undefined;
+  sizes?: Sizes;
+  scene?: THREE.Scene;
+  canvas?: HTMLCanvasElement | null;
+
+  instance?: THREE.PerspectiveCamera;
+  controls?: OrbitControls;
   //   canvas is |null because the element is null before mounting, instance and controls are undefined before the constructor and the methods don't know about them
 
   constructor() {
@@ -30,13 +31,13 @@ export default class Camera {
   setInstance() {
     this.instance = new THREE.PerspectiveCamera(
       35,
-      this.sizes.width / this.sizes.height,
+      this.sizes!.width / this.sizes!.height,
       0.1,
       100
     );
 
     this.instance.position.set(6, 4, 8);
-    this.scene.add(this.instance);
+    this.scene?.add(this.instance);
   }
 
   setOrbitControls() {
@@ -45,15 +46,15 @@ export default class Camera {
   }
 
   resize() {
-    this.instance!.aspect = this.sizes.width / this.sizes.height;
-    this.instance!.updateProjectionMatrix();
+    this.instance!.aspect = this.sizes!.width / this.sizes!.height;
+    this.instance?.updateProjectionMatrix();
   }
 
   update() {
-    this.controls!.update();
+    this.controls?.update();
   }
 
   destroy() {
-    this.controls!.dispose();
+    this.controls?.dispose();
   }
 }

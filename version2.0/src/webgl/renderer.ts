@@ -9,11 +9,11 @@ import Camera from "./camera";
 
 export default class Renderer {
   experience: Experience;
-  canvas: HTMLCanvasElement | null;
-  sizes: Sizes;
-  scene: THREE.Scene;
-  camera: Camera;
-  instance: THREE.WebGLRenderer | undefined;
+  canvas?: HTMLCanvasElement | null;
+  sizes?: Sizes;
+  scene?: THREE.Scene;
+  camera?: Camera;
+  instance?: THREE.WebGLRenderer;
 
   constructor() {
     this.experience = Experience.getInstance();
@@ -34,20 +34,20 @@ export default class Renderer {
     });
 
     this.instance.setClearColor("#211d20");
-    this.instance.setSize(this.sizes.width, this.sizes.height);
-    this.instance.setPixelRatio(this.sizes.pixelRatio);
+    this.instance.setSize(this.sizes!.width, this.sizes!.height);
+    this.instance.setPixelRatio(this.sizes!.pixelRatio);
   }
 
   resize() {
-    this.instance!.setSize(this.sizes.width, this.sizes.height);
-    this.instance!.setPixelRatio(this.sizes.pixelRatio);
+    this.instance?.setSize(this.sizes!.width, this.sizes!.height);
+    this.instance?.setPixelRatio(this.sizes!.pixelRatio);
   }
 
   update() {
-    this.instance!.render(this.scene, this.camera.instance!);
+    this.instance?.render(this.scene!, this.camera?.instance!);
   }
 
   destroy() {
-    this.instance!.dispose();
+    this.instance?.dispose();
   }
 }

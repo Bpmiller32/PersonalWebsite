@@ -17,17 +17,17 @@ export default class Experience {
   private constructor() {}
 
   // Definite assignment assertion to all props because of configure()....
-  targetElement!: HTMLCanvasElement | null;
+  targetElement?: HTMLCanvasElement | null;
 
-  debug!: Debug;
-  sizes!: Sizes;
-  time!: Time;
+  debug?: Debug;
+  sizes?: Sizes;
+  time?: Time;
 
-  scene!: THREE.Scene;
-  camera!: Camera;
-  renderer!: Renderer;
-  world!: World;
-  resources!: ResourceLoader;
+  scene?: THREE.Scene;
+  camera?: Camera;
+  renderer?: Renderer;
+  world?: World;
+  resources?: ResourceLoader;
 
   // Replacement public constructor
   configure(canvas: HTMLCanvasElement | null) {
@@ -43,7 +43,8 @@ export default class Experience {
     this.renderer = new Renderer();
 
     this.resources = new ResourceLoader([
-      { name: "boat", type: "gltfModel", path: "/model.glb" },
+      { name: "boat", type: "gltfModel", path: "/boat.glb" },
+      { name: "needle", type: "gltfModel", path: "/needle.glb" },
     ]);
     this.world = new World();
 
@@ -67,29 +68,29 @@ export default class Experience {
   }
 
   resize() {
-    this.camera.resize();
-    this.renderer.resize();
+    this.camera?.resize();
+    this.renderer?.resize();
   }
   update() {
-    this.camera.update();
-    this.world.update();
-    this.renderer.update();
+    this.camera?.update();
+    this.world?.update();
+    this.renderer?.update();
   }
 
   destroy() {
     // Event listeners
-    this.sizes.destroy();
-    this.time.destroy();
+    this.sizes?.destroy();
+    this.time?.destroy();
 
     // Scene items first
-    // Write on individual meshes, geometries, materials
+    this.world?.destroy();
 
     // Camera then renderer
-    this.camera.destroy();
-    this.renderer.destroy();
+    this.camera?.destroy();
+    this.renderer?.destroy();
 
     // Debug menu
-    if (this.debug.isActive) {
+    if (this.debug?.isActive) {
       this.debug.destroy();
     }
   }

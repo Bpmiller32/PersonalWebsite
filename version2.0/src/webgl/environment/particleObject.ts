@@ -3,23 +3,27 @@ import Experience from "../experience";
 import Gpgpu from "./gpgpu";
 import VertexShader from "../shaders/vertex.glsl";
 import FragmentShader from "../shaders/fragment.glsl";
+import Debug from "../utils/debug";
+import Time from "../utils/time";
+import ResourceLoader from "../utils/resourceLoader";
 
-export default class Boat {
-  experience: any;
-  scene: any;
-  resources: any;
+export default class ParicleObject {
+  experience: Experience;
+  debug?: Debug;
+  time?: Time;
+  scene?: THREE.Scene;
+  resources?: ResourceLoader;
 
-  model: any;
-  gpgpu: Gpgpu | undefined;
-  geometry: any;
-  simulationTextureSize: number | undefined;
-  material: any;
-  mesh: any;
-  sizes: any;
-  time: any;
-  debug: any;
+  model?: THREE.BufferGeometry;
+  gpgpu?: Gpgpu;
+  simulationTextureSize?: number;
+  geometry?: THREE.BufferGeometry;
+  material?: THREE.ShaderMaterial;
+  mesh?: THREE.Points;
 
-  constructor() {
+  constructor(model: THREE.BufferGeometry) {
+    this.model = model;
+
     this.experience = Experience.getInstance();
     this.debug = this.experience.debug;
     this.time = this.experience.time;
@@ -31,26 +35,17 @@ export default class Boat {
     this.setMaterial();
     this.setMesh();
 
-    if (this.debug.isActive) {
-      this.debug.ui
-        .add(this.material?.uniforms.uSize, "value")
-        .min(0)
-        .max(1)
-        .step(0.001)
-        .name("uSize");
-    }
+    // this.setDebug();
   }
 
   setGeometry() {
-    // Import the boat model, make convience variables for vertex count and gpgpu render size
-    this.model = this.resources.items.boat.scene.children[0].geometry;
+    // Convience variables for vertex count and gpgpu render size
+    const modelVertexCount = this.model?.attributes.position.count;
+    this.simulationTextureSize = Math.ceil(Math.sqrt(modelVertexCount!));
 
-    const modelVertexCount = this.model.attributes.position.count;
-    this.simulationTextureSize = Math.ceil(Math.sqrt(modelVertexCount));
-
-    // Premake a UV texture for the boat's vertex shader, also a good place for random particle sizes array init
-    const particlesUvArray = new Float32Array(modelVertexCount * 2);
-    const particleSizesArray = new Float32Array(modelVertexCount);
+    // Premake a UV texture for thsizesthis.e boat's vertex shader, also a good place for random particle sizes array init
+    const particlesUvArray = new Float32Array(modelVertexCount! * 2);
+    const particleSizesArray = new Float32Array(modelVertexCount!);
 
     for (let y = 0; y < this.simulationTextureSize; y++) {
       for (let x = 0; x < this.simulationTextureSize; x++) {
@@ -73,14 +68,14 @@ export default class Boat {
     // Because BufferGeometry is an empty array there is no aPosition attribute that would be automatically created by shortcut Three.SphereGeometry().
     // Three.Points() mesh shortcut needs aPosition. SetDrawRange() says draw this many verticies with all aPosition default
     this.geometry = new THREE.BufferGeometry();
-    this.geometry.setDrawRange(0, modelVertexCount);
+    this.geometry.setDrawRange(0, modelVertexCount!);
 
     // Set vertex shader attributes
     this.geometry.setAttribute(
       "aParticlesUv",
       new THREE.BufferAttribute(particlesUvArray, 2)
     );
-    this.geometry.setAttribute("aColor", this.model.attributes.color);
+    this.geometry.setAttribute("aColor", this.model!.attributes.color);
     this.geometry.setAttribute(
       "aSize",
       new THREE.BufferAttribute(particleSizesArray, 1)
@@ -89,17 +84,16 @@ export default class Boat {
 
   setGpgpu() {
     this.gpgpu = new Gpgpu(
-      this.simulationTextureSize,
-      this.simulationTextureSize,
-      this.experience.renderer,
-      this.model
+      this.simulationTextureSize!,
+      this.simulationTextureSize!,
+      this.model!
     );
   }
 
   setMaterial() {
-    const width = this.experience.sizes.width;
-    const height = this.experience.sizes.height;
-    const pixelRatio = this.experience.sizes.pixelRatio;
+    const width = this.experience.sizes!.width;
+    const height = this.experience.sizes!.height;
+    const pixelRatio = this.experience.sizes!.pixelRatio;
 
     this.material = new THREE.ShaderMaterial({
       vertexShader: VertexShader,
@@ -117,15 +111,33 @@ export default class Boat {
   setMesh() {
     this.mesh = new THREE.Points(this.geometry, this.material);
     this.mesh.frustumCulled = false;
-    this.scene.add(this.mesh);
+    this.scene?.add(this.mesh);
   }
 
   update() {
     this.gpgpu?.update();
 
     this.material!.uniforms.uParticlesTexture.value =
-      this.gpgpu?.instance.getCurrentRenderTarget(
+      this.gpgpu?.instance!.getCurrentRenderTarget(
         this.gpgpu.simulationObject
       ).texture;
+  }
+
+  destroy() {
+    this.geometry?.dispose();
+    this.material?.dispose();
+  }
+
+  setDebug() {
+    if (this.debug?.isActive) {
+      const boatFolder = this.debug.ui?.addFolder("boat");
+      boatFolder?.open();
+      boatFolder!
+        .add(this.material!.uniforms.uSize, "value")
+        .min(0)
+        .max(1)
+        .step(0.001)
+        .name("uSize");
+    }
   }
 }

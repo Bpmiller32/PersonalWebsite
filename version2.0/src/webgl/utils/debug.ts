@@ -6,7 +6,7 @@ import dat from "dat.gui";
 
 export default class Debug {
   isActive: boolean;
-  ui: dat.GUI | undefined;
+  ui?: dat.GUI;
 
   constructor() {
     this.isActive = window.location.hash === "#debug";

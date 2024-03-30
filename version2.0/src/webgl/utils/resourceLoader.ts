@@ -17,8 +17,8 @@ export default class ResourceLoader extends EventEmitter {
   toLoad: number;
   loaded: number;
 
-  gltfLoader: GLTFLoader | undefined;
-  dracoLoader: DRACOLoader | undefined;
+  gltfLoader?: GLTFLoader;
+  dracoLoader?: DRACOLoader;
 
   constructor(sources: IResource[]) {
     super();
