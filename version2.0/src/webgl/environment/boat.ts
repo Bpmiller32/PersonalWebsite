@@ -1,8 +1,8 @@
 import * as THREE from "three";
 import Experience from "../experience";
 import Gpgpu from "./gpgpu";
-import particlesVertexShader from "../shaders/particles.glsl";
-import particlesFragmentShader from "../shaders/fragment.glsl";
+import VertexShader from "../shaders/vertex.glsl";
+import FragmentShader from "../shaders/fragment.glsl";
 
 export default class Boat {
   experience: any;
@@ -13,19 +13,32 @@ export default class Boat {
   gpgpu: Gpgpu | undefined;
   geometry: any;
   simulationTextureSize: number | undefined;
-  material: THREE.ShaderMaterial | undefined;
+  material: any;
   mesh: any;
+  sizes: any;
+  time: any;
+  debug: any;
 
   constructor() {
     this.experience = Experience.getInstance();
+    this.debug = this.experience.debug;
+    this.time = this.experience.time;
     this.scene = this.experience.scene;
     this.resources = this.experience.resources;
 
     this.setGeometry();
     this.setGpgpu();
-    this.setGpgpuUniforms();
     this.setMaterial();
     this.setMesh();
+
+    if (this.debug.isActive) {
+      this.debug.ui
+        .add(this.material?.uniforms.uSize, "value")
+        .min(0)
+        .max(1)
+        .step(0.001)
+        .name("uSize");
+    }
   }
 
   setGeometry() {
@@ -36,8 +49,8 @@ export default class Boat {
     this.simulationTextureSize = Math.ceil(Math.sqrt(modelVertexCount));
 
     // Premake a UV texture for the boat's vertex shader, also a good place for random particle sizes array init
-    const particlesUvArray = new Float32Array(modelVertexCount.count * 2);
-    const particleSizesArray = new Float32Array(modelVertexCount.count);
+    const particlesUvArray = new Float32Array(modelVertexCount * 2);
+    const particleSizesArray = new Float32Array(modelVertexCount);
 
     for (let y = 0; y < this.simulationTextureSize; y++) {
       for (let x = 0; x < this.simulationTextureSize; x++) {
@@ -83,35 +96,20 @@ export default class Boat {
     );
   }
 
-  setGpgpuUniforms() {
-    this.gpgpu!.simulationObject.material.uniforms.uTime = new THREE.Uniform(0);
-    this.gpgpu!.simulationObject.material.uniforms.uDeltaTime =
-      new THREE.Uniform(0);
-    this.gpgpu!.simulationObject.material.uniforms.uBase = new THREE.Uniform(
-      this.gpgpu!.baseSimulationTexture
-    );
-    this.gpgpu!.simulationObject.material.uniforms.uFlowFieldInfluence =
-      new THREE.Uniform(0.5);
-    this.gpgpu!.simulationObject.material.uniforms.uFlowFieldStrength =
-      new THREE.Uniform(2);
-    this.gpgpu!.simulationObject.material.uniforms.uFlowFieldFrequency =
-      new THREE.Uniform(0.5);
-  }
-
   setMaterial() {
     const width = this.experience.sizes.width;
     const height = this.experience.sizes.height;
     const pixelRatio = this.experience.sizes.pixelRatio;
 
     this.material = new THREE.ShaderMaterial({
-      vertexShader: particlesVertexShader,
-      fragmentShader: particlesFragmentShader,
+      vertexShader: VertexShader,
+      fragmentShader: FragmentShader,
       uniforms: {
         uSize: new THREE.Uniform(0.07),
         uResolution: new THREE.Uniform(
           new THREE.Vector2(width * pixelRatio, height * pixelRatio)
         ),
-        uParticlesTexture: new THREE.Uniform(null),
+        uParticlesTexture: new THREE.Uniform(new THREE.Texture()),
       },
     });
   }
@@ -119,10 +117,12 @@ export default class Boat {
   setMesh() {
     this.mesh = new THREE.Points(this.geometry, this.material);
     this.mesh.frustumCulled = false;
-    // this.scene.add(this.mesh);
+    this.scene.add(this.mesh);
   }
 
   update() {
+    this.gpgpu?.update();
+
     this.material!.uniforms.uParticlesTexture.value =
       this.gpgpu?.instance.getCurrentRenderTarget(
         this.gpgpu.simulationObject

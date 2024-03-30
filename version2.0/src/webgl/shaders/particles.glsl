@@ -12,7 +12,7 @@ void main()
     float time = uTime * 0.2;
 
     vec2 uv = gl_FragCoord.xy / resolution.xy;
-    vec4 particle = texture(uParticles, uv);
+    vec4 particle = texture(uSimulationTexture, uv);
     vec4 base = texture(uBase, uv);
 
     // Dead

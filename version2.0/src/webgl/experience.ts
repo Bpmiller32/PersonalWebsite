@@ -72,8 +72,8 @@ export default class Experience {
   }
   update() {
     this.camera.update();
-    this.renderer.update();
     this.world.update();
+    this.renderer.update();
   }
 
   destroy() {
@@ -89,7 +89,7 @@ export default class Experience {
     this.renderer.destroy();
 
     // Debug menu
-    if (this.debug.active) {
+    if (this.debug.isActive) {
       this.debug.destroy();
     }
   }

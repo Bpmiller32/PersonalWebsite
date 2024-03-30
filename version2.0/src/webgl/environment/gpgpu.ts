@@ -2,6 +2,7 @@ import * as THREE from "three";
 import { GPUComputationRenderer } from "three/examples/jsm/Addons.js";
 import gpgpuParticlesShader from "../shaders/particles.glsl";
 import Experience from "../experience";
+import Time from "../utils/time";
 
 export default class Gpgpu {
   width: any;
@@ -21,6 +22,8 @@ export default class Gpgpu {
     | undefined;
   experience: any;
   scene: any;
+  time: Time;
+  debug: any;
 
   constructor(width: any, height: any, renderer: any, geometryToSimulate: any) {
     this.width = width;
@@ -29,12 +32,44 @@ export default class Gpgpu {
     this.geometryToSimulate = geometryToSimulate;
 
     this.experience = Experience.getInstance();
+    this.debug = this.experience.debug;
+    this.time = this.experience.time;
     this.scene = this.experience.scene;
 
     this.setInstance();
+    this.setUniforms();
     this.instance?.init();
 
     this.setMesh();
+
+    if (this.debug.isActive) {
+      this.debug.ui
+        .add(
+          this.simulationObject.material.uniforms.uFlowFieldInfluence,
+          "value"
+        )
+        .min(0)
+        .max(1)
+        .name("uFlowFieldInfluence");
+      this.debug.ui
+        .add(
+          this.simulationObject.material.uniforms.uFlowFieldStrength,
+          "value"
+        )
+        .min(0)
+        .max(10)
+        .name("uFlowFieldStrength");
+      this.debug.ui
+        .add(
+          this.simulationObject.material.uniforms.uFlowFieldFrequency,
+          "value"
+        )
+        .min(0)
+        .max(1)
+        .step(0.001)
+        .name("uFlowFieldFrequency");
+      this.debug.ui.add(this.debugMesh, "visible").name("gpgpuDebugTexture");
+    }
   }
 
   setInstance() {
@@ -81,8 +116,22 @@ export default class Gpgpu {
     ]);
   }
 
+  setUniforms() {
+    this.simulationObject.material.uniforms.uTime = new THREE.Uniform(0);
+    this.simulationObject.material.uniforms.uDeltaTime = new THREE.Uniform(0);
+    this.simulationObject.material.uniforms.uBase = new THREE.Uniform(
+      this.baseSimulationTexture
+    );
+    this.simulationObject.material.uniforms.uFlowFieldInfluence =
+      new THREE.Uniform(0.5);
+    this.simulationObject.material.uniforms.uFlowFieldStrength =
+      new THREE.Uniform(2);
+    this.simulationObject.material.uniforms.uFlowFieldFrequency =
+      new THREE.Uniform(0.5);
+  }
+
   setMesh() {
-    const debugMesh = new THREE.Mesh(
+    this.debugMesh = new THREE.Mesh(
       new THREE.PlaneGeometry(3, 3),
       new THREE.MeshBasicMaterial({
         map: this.instance.getCurrentRenderTarget(this.simulationObject)
@@ -90,14 +139,12 @@ export default class Gpgpu {
       })
     );
 
-    this.scene.add(debugMesh);
+    this.scene.add(this.debugMesh);
   }
 
   update() {
-    this.simulationObject.material.uniforms.uTime.value =
-      this.experience.time.elapsed;
-    this.simulationObject.material.uniforms.uDeltaTime.value =
-      this.experience.time.delta;
+    this.simulationObject.material.uniforms.uTime.value = this.time.elapsed;
+    this.simulationObject.material.uniforms.uDeltaTime.value = this.time.delta;
     this.instance.compute();
   }
 }

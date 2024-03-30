@@ -16,24 +16,16 @@ export default class World {
   constructor() {
     this.experience = Experience.getInstance();
     this.resources = this.experience.resources;
-
     this.scene = this.experience.scene;
 
     this.resources.on("ready", () => {
-      const testMesh = new THREE.Mesh(
-        new THREE.BoxGeometry(1, 1, 1),
-        new THREE.MeshBasicMaterial({ wireframe: true })
-      );
-      this.scene.add(testMesh);
-
       this.boat = new Boat();
     });
   }
 
   update() {
     if (this.boat) {
-      // this.boat.gpgpu?.update();
-      // this.boat.update();
+      this.boat.update();
     }
   }
 }

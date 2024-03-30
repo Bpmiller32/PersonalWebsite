@@ -5,13 +5,14 @@
 import dat from "dat.gui";
 
 export default class Debug {
-  active: boolean;
+  isActive: boolean;
   ui: dat.GUI | undefined;
 
   constructor() {
-    this.active = window.location.hash === "#debug";
+    this.isActive = window.location.hash === "#debug";
+    this.isActive = true;
 
-    if (this.active) {
+    if (this.isActive) {
       this.ui = new dat.GUI();
     }
   }
