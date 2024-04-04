@@ -1,3 +1,3 @@
 <template>
-  <main class="absolute w-full text-white">asdf</main>
+  <main class="w-full text-white">flowfield</main>
 </template>

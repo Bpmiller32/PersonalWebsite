@@ -12,7 +12,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <!-- <canvas ref="webgl" class="fixed top-0 left-0 outline-none"></canvas> -->
-  <Spotlight></Spotlight>
-  <canvas ref="webglRef" class=""></canvas>
+  <main class="relative">
+    <canvas ref="webglRef" class="fixed top-0 left-0 outline-none z-0"></canvas>
+    <!-- <Spotlight class="relative"></Spotlight>
+    <div class="relative h-[100vh] text-white">test</div>
+    <div class="relative h-[100vh] text-white">test</div> -->
+  </main>
 </template>

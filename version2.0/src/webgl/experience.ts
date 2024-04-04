@@ -45,6 +45,9 @@ export default class Experience {
     this.resources = new ResourceLoader([
       { name: "boat", type: "gltfModel", path: "/boat.glb" },
       { name: "needle", type: "gltfModel", path: "/needle.glb" },
+      { name: "columbiaTower", type: "gltfModel", path: "/columbiaTower.glb" },
+      { name: "combined", type: "gltfModel", path: "/combined.glb" },
+      { name: "cyberpunk", type: "gltfModel", path: "/cyberpunk.glb" },
     ]);
     this.world = new World();
 

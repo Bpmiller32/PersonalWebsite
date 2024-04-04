@@ -35,13 +35,15 @@ export default class ParicleObject {
     this.setMaterial();
     this.setMesh();
 
-    // this.setDebug();
+    this.setDebug();
   }
 
   setGeometry() {
     // Convience variables for vertex count and gpgpu render size
     const modelVertexCount = this.model?.attributes.position.count;
     this.simulationTextureSize = Math.ceil(Math.sqrt(modelVertexCount!));
+
+    console.log(modelVertexCount);
 
     // Premake a UV texture for thsizesthis.e boat's vertex shader, also a good place for random particle sizes array init
     const particlesUvArray = new Float32Array(modelVertexCount! * 2);
@@ -99,7 +101,7 @@ export default class ParicleObject {
       vertexShader: VertexShader,
       fragmentShader: FragmentShader,
       uniforms: {
-        uSize: new THREE.Uniform(0.07),
+        uSize: new THREE.Uniform(0.0),
         uResolution: new THREE.Uniform(
           new THREE.Vector2(width * pixelRatio, height * pixelRatio)
         ),
@@ -121,6 +123,10 @@ export default class ParicleObject {
       this.gpgpu?.instance!.getCurrentRenderTarget(
         this.gpgpu.simulationObject
       ).texture;
+
+    // if (this.material!.uniforms.uSize.value < 0.07) {
+    //   this.material!.uniforms.uSize.value += 0.001;
+    // }
   }
 
   destroy() {

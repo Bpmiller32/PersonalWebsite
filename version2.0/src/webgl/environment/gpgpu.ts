@@ -47,7 +47,7 @@ export default class Gpgpu {
 
     this.setMesh();
 
-    // this.setDebug();
+    this.setDebug();
   }
 
   setInstance() {
