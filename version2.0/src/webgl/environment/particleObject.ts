@@ -101,7 +101,7 @@ export default class ParicleObject {
       vertexShader: VertexShader,
       fragmentShader: FragmentShader,
       uniforms: {
-        uSize: new THREE.Uniform(0.0),
+        uSize: new THREE.Uniform(0.25),
         uResolution: new THREE.Uniform(
           new THREE.Vector2(width * pixelRatio, height * pixelRatio)
         ),

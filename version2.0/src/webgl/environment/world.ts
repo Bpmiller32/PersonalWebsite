@@ -53,7 +53,7 @@ export default class World {
       // this.combined.mesh!.position.y = 0;
       // this.combined.mesh!.position.z = 0;
       // this.combined.mesh!.rotateY(180);
-      this.combined.mesh!.rotateX(90);
+      // this.combined.mesh!.rotateX(90);
       // this.combined.gpgpu!.debugMesh!.position.x += 5;
     });
   }
