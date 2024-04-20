@@ -10,7 +10,7 @@ export default class Debug {
 
   constructor() {
     this.isActive = window.location.hash === "#debug";
-    this.isActive = true;
+    // this.isActive = false;
 
     if (this.isActive) {
       this.ui = new dat.GUI();
