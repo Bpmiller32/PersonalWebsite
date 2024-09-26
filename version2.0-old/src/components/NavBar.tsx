@@ -7,7 +7,7 @@ export default defineComponent({
     const { width: windowWidth } = useWindowSize();
 
     return () => {
-      if (windowWidth.value < 720) {
+      if (windowWidth.value < 768) {
         return (
           <nav class="mt-10 w-full flex justify-between items-center">
             <button class="flex items-center">
@@ -17,13 +17,11 @@ export default defineComponent({
         );
       } else {
         return (
-          <nav class="mt-10 w-full flex justify-around items-center">
+          <nav class="mt-10 w-full flex justify-between items-center">
             <button class="flex items-center">
               <SvgLoader name="bpmLogo" class="h-14 w-14" />
               <SvgLoader name="bpmText" class="h-10 mt-3 ml-2" />
             </button>
-
-            <div>asdf</div>
 
             <div class="flex-none text-sm text-zinc-200">
               <button
