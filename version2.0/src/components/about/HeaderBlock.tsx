@@ -2,24 +2,22 @@ import { Block } from "./Block";
 import { FiArrowRight } from "react-icons/fi";
 import { SiLinkedin, SiGithub, SiInstagram } from "react-icons/si";
 import siteLogo from "../../assets/siteLogo.webp";
+import { MousePostion } from "../utils/Types";
 
-export const HeaderBlock = () => {
-  // Event handler
-  const handleOnMouseMove = (
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>
-  ) => {
-    const rect = event.currentTarget.getBoundingClientRect();
-    const xPosition = event.clientX - rect.left;
-    const yPosition = event.clientY - rect.top;
+interface HeaderBlockProps {
+  mousePosition: MousePostion;
+}
 
-    event.currentTarget.style.setProperty("--mouse-x", `${xPosition}px`);
-    event.currentTarget.style.setProperty("--mouse-y", `${yPosition}px`);
-  };
+export const HeaderBlock: React.FC<HeaderBlockProps> = (props) => {
+  console.log("from HeaderBlock: ", props);
 
   // Render function
   return (
-    <Block className="col-span-12 row-span-2 md:col-span-6">
-      <div onMouseMove={handleOnMouseMove} className="bg-radial-at-mouse p-6">
+    <Block
+      mousePosition={props.mousePosition}
+      className="col-span-12 row-span-2 md:col-span-6"
+    >
+      <div className="p-6 opacity-100 hover:opacity-100 transition-opacity duration-500">
         <img
           src={siteLogo}
           alt="avatar"
