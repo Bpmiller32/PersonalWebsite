@@ -6,8 +6,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#123456",
-        secondary: "#123456",
+        primary: "#32e7e7",
+        secondary: "#8c32e7",
 
         neutralForground: "#232929",
         neutralBackgound: "#181b1b",
@@ -16,10 +16,6 @@ export default {
         textBright: "#fbfbfb",
         textLight: "#d6dcdc",
         textDark: "#9facac",
-      },
-      backgroundImage: {
-        "radial-at-mouse":
-          "radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.06), transparent 40%)",
       },
     },
   },
