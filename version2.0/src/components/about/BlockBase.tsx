@@ -1,18 +1,20 @@
 import { ReactNode, useRef } from "react";
 import { motion, MotionProps } from "framer-motion";
 import { twMerge } from "tailwind-merge";
-import { useMouseContext } from "../utils/MouseContext";
+import { useMouseContext } from "../utils/UseMouseContext";
 
-interface BlockProps extends MotionProps {
+interface Props extends MotionProps {
   className?: string;
   children?: ReactNode;
+  contentNeedsPadding?: boolean;
 }
 
 export const BlockBase = ({
   className,
   children,
+  contentNeedsPadding = true,
   ...motionProps
-}: BlockProps) => {
+}: Props) => {
   const blockContentRef = useRef<HTMLDivElement>(null);
   const mouseContext = useMouseContext();
 
@@ -53,7 +55,10 @@ export const BlockBase = ({
       {/* Content */}
       <div
         style={{ height: "calc(100% - 2px)", width: "calc(100% - 2px)" }}
-        className="relative z-20 left-[1px] top-[1px] p-6 rounded-lg"
+        className={
+          "relative z-20 left-[1px] top-[1px] rounded-lg " +
+          (contentNeedsPadding === true ? "p-6" : "")
+        }
       >
         {children}
       </div>

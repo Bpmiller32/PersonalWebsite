@@ -10,10 +10,12 @@ const MouseContext = createContext<{ x: number; y: number }>({
 // eslint-disable-next-line react-refresh/only-export-components
 export const useMouseContext = () => useContext(MouseContext);
 
+interface Props {
+  children: ReactNode;
+}
+
 // Create a provider component
-export const MousePositionProvider: React.FC<{ children: ReactNode }> = ({
-  children,
-}) => {
+export const MousePositionProvider = ({ children }: Props) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const handleOnMouseMove = (

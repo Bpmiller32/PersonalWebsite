@@ -1,13 +1,13 @@
 import { BlockBase } from "./BlockBase";
 import { FiArrowRight } from "react-icons/fi";
 import { SiLinkedin, SiGithub, SiInstagram } from "react-icons/si";
-import siteLogo from "../../assets/siteLogo.webp";
+import { WebsiteLogo } from "../global/WebsiteLogo";
 
 export const HeaderBlock = () => {
   // Render function
   return (
     <BlockBase className="col-span-12 row-span-2 md:col-span-6">
-      <img src={siteLogo} alt="avatar" className="mb-4 size-14 rounded-full" />
+      <WebsiteLogo className="mb-4 h-14 w-14" />
       <h1 className="mb-12 text-4xl font-medium leading-tight">
         Hi, I'm Billy.{" "}
         <span className="text-textDark">
@@ -20,7 +20,7 @@ export const HeaderBlock = () => {
         </p>
         <div className="flex items-center text-lg gap-3">
           <a
-            className="text-textLight hover:text-primary transition-colors"
+            className="text-textLight hover:text-primary transition-colors duration-500"
             href="https://www.linkedin.com/in/billy-p-miller"
             target="_blank"
             rel="nofollow"
@@ -28,7 +28,7 @@ export const HeaderBlock = () => {
             <SiLinkedin />
           </a>
           <a
-            className="text-textLight hover:text-primary transition-colors"
+            className="text-textLight hover:text-primary transition-colors duration-500"
             href="https://www.github.com/bpmiller32"
             target="_blank"
             rel="nofollow"
@@ -36,7 +36,7 @@ export const HeaderBlock = () => {
             <SiGithub />
           </a>
           <a
-            className="text-textLight hover:text-primary transition-colors"
+            className="text-textLight hover:text-primary transition-colors duration-500"
             href="https://www.instagram.com/billybeboppin/"
             target="_blank"
             rel="nofollow"
