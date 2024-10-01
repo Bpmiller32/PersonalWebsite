@@ -10,7 +10,7 @@ function App() {
       </div> */}
       <main className="relative">
         <header className="absolute right-0 p-6 bg-transparent">
-          <ResumeButton>My Resume</ResumeButton>
+          <ResumeButton />
         </header>
         <AboutSection />
         <ExperienceSection />
