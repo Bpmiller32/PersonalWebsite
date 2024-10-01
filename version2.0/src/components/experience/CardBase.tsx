@@ -46,7 +46,7 @@ export const CardBase = ({
     underlineRef.current?.goToAndStop(0, true);
   };
 
-  const underlineSelector = () => {
+  const underlineColorSelector = () => {
     switch (underlineColor) {
       case "secondary":
         return UnderlineAnimationSecondary;
@@ -77,45 +77,31 @@ export const CardBase = ({
           </div>
 
           <div className="relative text-textBright font-poppins font-bold text-2xl">
-            {/* <div className="absolute top-[1.35rem] h-2 w-full opacity-80 bg-pink-500"></div> */}
             <Lottie
               lottieRef={underlineRef}
-              animationData={underlineSelector()}
+              animationData={underlineColorSelector()}
               loop={false}
               autoplay={false}
               onComplete={handleUnderlineAnimationComplete}
               className="absolute top-[1.35rem] h-2 w-full opacity-80"
             />
             {heading}
-            {/* <p className="relative">Desktop App</p>
-            <p className="relative">Development</p> */}
           </div>
         </div>
 
-        {/* <!-- Description --> */}
         <div className="relative row-span-3 flex justify-center items-center min-w-full min-h-full">
-          {/* <!-- Description bracket --> */}
           <div className="text-zinc-700 font-poppins font-bold">
-            {/* <!-- Top "open div text" --> */}
             <p className="">&lt;div&gt;</p>
-            {/* <!-- Vertical bar --> */}
             <div className="flex justify-center">
               <div
                 style={{ height: verticalBarHeight + "rem" }}
                 className="w-[0.15rem] bg-zinc-700"
               ></div>
             </div>
-            {/* <!-- Bottom "close div text" --> */}
             <p className="">&lt;/div&gt;</p>
           </div>
-          {/* <!-- Description text --> */}
           <div className="-ml-2 text-zinc-200 font-poppins">
-            <div className="relative z-10 text-textDark">
-              {description}
-              {/* <p>5 years professional development</p>
-              <p>experience in C# Powershell</p>
-              <p>.Net Core WinForms UWP, Telerik , and Electron</p> */}
-            </div>
+            <div className="relative z-10 text-textDark">{description}</div>
           </div>
         </div>
       </div>
