@@ -10,7 +10,7 @@ import { HobbiesBlock } from "./HobbiesBlock";
 export const AboutSection = () => {
   return (
     <MousePositionProvider>
-      <div className="min-h-screen bg-neutralBackgound px-4 py-12 text-textBright cursor-default">
+      <section className="min-h-screen bg-neutralBackgound px-4 py-12 text-textBright cursor-default">
         <SectionHeader title="About" titlePlacement="left" />
         <motion.div
           initial="initial"
@@ -26,7 +26,7 @@ export const AboutSection = () => {
           <LocationBlock />
           <HobbiesBlock />
         </motion.div>
-      </div>
+      </section>
     </MousePositionProvider>
   );
 };

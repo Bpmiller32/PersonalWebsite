@@ -15,10 +15,10 @@ interface Props {
 
 export const CardBase = ({
   icon,
-  heading,
-  description,
-  verticalBarHeight,
-  underlineColor,
+  heading = "Heading Placeholder",
+  description = "Description placeholder",
+  verticalBarHeight = "1",
+  underlineColor = "primary",
 }: Props) => {
   const logoRef = useRef<LottieRefCurrentProps>(null);
   const underlineRef = useRef<LottieRefCurrentProps>(null);
@@ -65,7 +65,6 @@ export const CardBase = ({
     >
       <div className="relative z-10 min-h-[320px] grid grid-rows-4 grid-cols-1 overflow-hidden rounded-[7px] bg-neutralBackgound p-8 transition-colors duration-500 group-hover:bg-neutralForground">
         <div className="relative z-10 flex justify-center w-full space-x-5">
-          {/* <div className="w-12 h-12 rounded-full bg-red-500"></div> */}
           <div className="w-12 h-12">
             <Lottie
               lottieRef={logoRef}

@@ -104,8 +104,8 @@ export const JobList = () => {
   return (
     <div className="max-w-7xl mt-12 mx-auto px-4">
       <JobBase {...experience[0]} />
-      <JobBase drawBottomBorder={false} {...experience[1]} />
-      <JobBase drawTitle={false} {...experience[2]} />
+      <JobBase {...experience[1]} />
+      <JobBase {...experience[2]} />
       <JobBase {...experience[3]} />
       <JobBase {...experience[4]} />
     </div>

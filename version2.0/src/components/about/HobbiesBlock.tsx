@@ -120,11 +120,11 @@ export const HobbiesBlock = () => {
       contentNeedsPadding={false}
     >
       <div className="relative w-full h-full overflow-hidden grid grid-cols-5">
-        <p className="col-span-3 md:col-span-2 min-[810px]:col-span-3 py-6 pl-6 text-lg">
+        <p className="col-span-3 md:col-span-2 min-[840px]:col-span-3 py-6 pl-6 text-lg">
           Outside of work{" "}
           <span className="text-textDark">
-            I enjoy exploring photography 📷, snowboarding 🏂, scuba 🤿,
-            traveling ✈️, and college football 🏈
+            I enjoy exploring photography 📷, snowboarding 🏂, scuba 🤿, college
+            football 🏈, and time with my cat 🐱.
           </span>
         </p>
 

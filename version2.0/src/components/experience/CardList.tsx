@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { CardBase } from "./CardBase";
+import DesktopLogo from "../../assets/desktopLogo.json";
 import ReactVueLogos from "../../assets/reactVueLogos.json";
+import CloudLogo from "../../assets/cloudLogo.json";
+import CodeBackground from "../../assets/codeBackground.webp";
 
 export const CardList = () => {
   return (
@@ -10,11 +13,52 @@ export const CardList = () => {
       transition={{
         staggerChildren: 0.05,
       }}
-      className="mx-auto max-w-7xl flex flex-wrap justify-center gap-4"
+      className="relative mx-auto max-w-7xl flex flex-wrap justify-center gap-4"
     >
+      <motion.div
+        animate={{
+          y: [0, 15, 0],
+        }}
+        transition={{
+          duration: 7,
+          ease: "easeInOut",
+          repeat: Infinity,
+          repeatType: "reverse",
+          repeatDelay: 3,
+          times: [0, 0.5, 1],
+        }}
+        className="absolute top-[-2.5%] min-[816px]:top-[-4%] min-[1216px]:top-[-9%] left-[-7%] opacity-25"
+      >
+        <img
+          className="h-[20rem]"
+          src={CodeBackground}
+          alt="Image of the code that made this, meta!"
+        />
+      </motion.div>
+      <motion.div
+        animate={{
+          y: [0, -15, 0],
+        }}
+        transition={{
+          duration: 7,
+          ease: "easeInOut",
+          repeat: Infinity,
+          repeatType: "reverse",
+          repeatDelay: 5,
+          times: [0, 0.5, 1],
+          delay: 2,
+        }}
+        className="absolute bottom-0 right-[-15%] opacity-25"
+      >
+        <img
+          className="h-[20rem]"
+          src={CodeBackground}
+          alt="Image of the code that made this, meta!"
+        />
+      </motion.div>
+
       <CardBase
-        // icon={<div className="w-12 h-12 rounded-full bg-red-500"></div>}
-        icon={ReactVueLogos}
+        icon={DesktopLogo}
         heading={
           <div>
             <p className="relative">Desktop App</p>
@@ -40,7 +84,7 @@ export const CardList = () => {
         }
         description={
           <div className="text-pretty">
-            3 years of development experience with Vue, React, Three, Asp.Net
+            4 years of development experience with Vue, React, Three, Asp.Net
             Core, ExpressJs, Firebase, Wordpress, and Webflow.
           </div>
         }
@@ -48,7 +92,7 @@ export const CardList = () => {
         underlineColor="secondary"
       />
       <CardBase
-        icon={ReactVueLogos}
+        icon={CloudLogo}
         heading={
           <div>
             <p className="relative">Enterprise IT</p>
