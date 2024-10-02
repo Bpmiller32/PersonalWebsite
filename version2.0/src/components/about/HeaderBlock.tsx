@@ -9,7 +9,7 @@ export const HeaderBlock = () => {
     <BlockBase className="col-span-12 row-span-2 md:col-span-6">
       <WebsiteLogo className="mb-4 h-14 w-14" />
       <h1 className="mb-12 text-4xl font-medium leading-tight">
-        Hi, I'm Billy.{" "}
+        Hey, I'm Billy.{" "}
         <span className="text-textDark">
           I create innovative applications and solutions.
         </span>

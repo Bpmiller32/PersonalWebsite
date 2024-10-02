@@ -102,12 +102,12 @@ const experience = [
 
 export const JobList = () => {
   return (
-    <div className="max-w-7xl mt-12 mx-auto px-4">
+    <div className="max-w-4xl mt-12 mx-auto">
       <JobBase {...experience[0]} />
       <JobBase {...experience[1]} />
       <JobBase {...experience[2]} />
       <JobBase {...experience[3]} />
-      <JobBase {...experience[4]} />
+      <JobBase renderBottomBorder={false} {...experience[4]} />
     </div>
   );
 };

@@ -63,7 +63,7 @@ export const CardBase = ({
       onMouseEnter={handleMouseEnter}
       className="group relative w-full max-w-sm overflow-hidden rounded-lg bg-neutralBorder p-0.5 transition-all duration-500 hover:scale-[1.01] hover:bg-neutralForground/50"
     >
-      <div className="relative z-10 min-h-[320px] grid grid-rows-4 grid-cols-1 overflow-hidden rounded-[7px] bg-neutralBackgound p-8 transition-colors duration-500 group-hover:bg-neutralForground">
+      <div className="relative z-10 min-h-full grid grid-rows-4 grid-cols-1 overflow-hidden rounded-[7px] bg-neutralBackgound p-8 transition-colors duration-500 group-hover:bg-neutralForground">
         <div className="relative z-10 flex justify-center w-full space-x-5">
           <div className="w-12 h-12">
             <Lottie
