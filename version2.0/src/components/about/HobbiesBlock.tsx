@@ -122,7 +122,7 @@ export const HobbiesBlock = () => {
       <div className="relative w-full h-full overflow-hidden grid grid-cols-5">
         <p className="col-span-3 md:col-span-2 min-[840px]:col-span-3 py-6 pl-6 text-lg">
           Outside of work{" "}
-          <span className="text-textDark">
+          <span className="text-projectDark">
             I enjoy exploring photography 📷, snowboarding 🏂, scuba 🤿, college
             football 🏈, and time with my cat 🐱.
           </span>
@@ -139,7 +139,7 @@ export const HobbiesBlock = () => {
               sizes.iconWrapperWidth +
               sizes.ringPadding,
           }}
-          className="cold-span-2 overflow-hidden absolute right-0 top-0 z-0 grid translate-x-1/3 place-content-center rounded-full bg-secondary/50 shadow-inner"
+          className="cold-span-2 overflow-hidden absolute right-0 top-0 z-0 grid translate-x-1/3 place-content-center rounded-full bg-projectSecondary/50 shadow-inner"
         >
           <motion.div
             initial={{ rotate: 0 }}
@@ -175,7 +175,7 @@ export const HobbiesBlock = () => {
                   initial={{ rotate: 0 }}
                   animate={{ rotate: -360 }}
                   transition={TRANSITION}
-                  className="absolute grid place-content-center rounded-full bg-gradient-to-br to-[#229898] from-primary text-textBright shadow-lg"
+                  className="absolute grid place-content-center rounded-full bg-gradient-to-br to-[#229898] from-projectPrimary text-projectBright shadow-lg"
                 >
                   <icon.Icon
                     style={{

@@ -102,7 +102,7 @@ const experience = [
 
 export const JobList = () => {
   return (
-    <div className="max-w-4xl mt-12 mx-auto">
+    <div className="max-w-5xl mt-12 mx-auto">
       <JobBase {...experience[0]} />
       <JobBase {...experience[1]} />
       <JobBase {...experience[2]} />

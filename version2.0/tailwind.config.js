@@ -6,16 +6,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#32e7e7",
-        secondary: "#8c32e7",
+        projectPrimary: "#32e7e7",
+        projectSecondary: "#8c32e7",
 
-        neutralForground: "#232929",
-        neutralBackgound: "#181b1b",
-        neutralBorder: "#3b4545",
+        projectForeground: "#232929",
+        projectBackground: "#181b1b",
+        projectBorder: "#3b4545",
 
-        textBright: "#fbfbfb",
-        textLight: "#d6dcdc",
-        textDark: "#9facac",
+        projectBright: "#fbfbfb",
+        projectDark: "#9facac",
       },
     },
   },

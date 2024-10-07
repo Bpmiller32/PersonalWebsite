@@ -7,7 +7,7 @@ export const LocationBlock = () => (
     <div className="flex flex-col items-center justify-center gap-4 w-full h-full">
       <FiMapPin className="text-3xl" />
       <div className="flex items-center gap-1">
-        <p className="text-center text-lg text-textDark">Seattle, WA</p>
+        <p className="text-center text-lg text-projectDark">Seattle, WA</p>
         <GiSpaceNeedle />
       </div>
     </div>

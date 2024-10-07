@@ -1,23 +1,27 @@
-import { ContactLink } from "./ContactLink";
+import { NavLink } from "../global/NavLink";
 
 export const FooterArea = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <section className="w-full pb-10 max-w-7xl">
       {/* <!-- Divider --> */}
-      <div className="mb-5 h-[1px] bg-neutralBorder"></div>
+      <div className="mb-5 h-[1px] bg-projectBorder"></div>
 
       {/* <!-- Container to center links --> */}
-      <div className="flex justify-between">
+      <div className="flex flex-wrap justify-center min-[644px]:justify-between gap-x-20 gap-y-4">
         {/* <!-- Container to space links apart --> */}
-        <div className="flex justify-around space-x-2">
-          <ContactLink text="Home" href="#" />
-          <ContactLink text="About" href="#" />
-          <ContactLink text="Projects" href="#" />
-          <ContactLink text="Experience" href="#" />
-          <ContactLink text="Contact" href="#" />
+        <div className="flex items-center space-x-6">
+          {/* <SimpleFloatingNav /> */}
+          <NavLink children={"About"} />
+          <NavLink children={"Projects"} />
+          <NavLink children={"Experience"} />
+          <NavLink children={"Contact"} />
         </div>
         {/* <!-- Designed by --> */}
-        <p className="text-textLight">2024 | Designed by Billy Miller</p>
+        <p className="text-projectDark">
+          {currentYear} | Designed by Billy Miller
+        </p>
       </div>
     </section>
   );

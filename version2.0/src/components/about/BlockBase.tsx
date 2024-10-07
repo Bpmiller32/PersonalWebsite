@@ -1,7 +1,7 @@
 import { ReactNode, useRef } from "react";
 import { motion, MotionProps } from "framer-motion";
 import { twMerge } from "tailwind-merge";
-import { useMouseContext } from "../utils/UseMouseContext";
+import { useMouseContext } from "../utils/MouseContext";
 
 interface Props extends MotionProps {
   className?: string;
@@ -68,7 +68,7 @@ export const BlockBase = ({
           height: "calc(100% - 2px)",
           width: "calc(100% - 2px)",
         }}
-        className="absolute z-10 left-[1px] top-[1px] inset-0 w-full h-full bg-neutralForground rounded-lg"
+        className="absolute z-10 left-[1px] top-[1px] inset-0 w-full h-full bg-projectForeground rounded-lg"
       >
         <div
           style={{
@@ -78,7 +78,7 @@ export const BlockBase = ({
         ></div>
       </div>
       {/* Border */}
-      <div className="absolute z-0 inset-0 w-full h-full bg-neutralBorder rounded-lg">
+      <div className="absolute z-0 inset-0 w-full h-full bg-projectBorder rounded-lg">
         <div
           style={{
             background: `radial-gradient(400px circle at ${currentMousePosition?.x}px ${currentMousePosition?.y}px, rgba(255, 255, 255, 0.3), transparent 40%)`,

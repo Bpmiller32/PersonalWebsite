@@ -1,17 +1,17 @@
 import { SectionHeader } from "../global/SectionHeader";
-import { FooterArea } from "./FooterArea";
-import { FormArea } from "./FormArea";
+import { MessageBox } from "./MessageBox";
 import { InfoArea } from "./InfoArea";
+import { FooterArea } from "./FooterArea";
 
 export const ContactSection = () => {
   return (
-    <section className="min-h-screen bg-neutralBackgound px-4 text-textBright cursor-default">
+    <section className="bg-projectBackground px-4 text-projectBright cursor-default">
       <SectionHeader title="Contact" titlePlacement="right" />
 
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-12 flex flex-wrap justify-center items-center gap-x-20">
+      <div className="max-w-5xl mx-auto">
+        <div className="mb-12 flex flex-wrap justify-center min-[944px]:justify-between items-center gap-x-20 gap-y-12">
           <InfoArea />
-          <FormArea />
+          <MessageBox />
         </div>
         <FooterArea />
       </div>

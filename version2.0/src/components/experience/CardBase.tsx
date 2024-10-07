@@ -61,11 +61,11 @@ export const CardBase = ({
   return (
     <div
       onMouseEnter={handleMouseEnter}
-      className="group relative w-full max-w-sm overflow-hidden rounded-lg bg-neutralBorder p-0.5 transition-all duration-500 hover:scale-[1.01] hover:bg-neutralForground/50"
+      className="group relative w-full max-w-sm overflow-hidden rounded-lg bg-projectBorder p-0.5 transition-all duration-500 hover:scale-[1.01] hover:bg-projectForeground/50"
     >
-      <div className="relative z-10 min-h-full grid grid-rows-4 grid-cols-1 overflow-hidden rounded-[7px] bg-neutralBackgound p-8 transition-colors duration-500 group-hover:bg-neutralForground">
-        <div className="relative z-10 flex justify-center w-full space-x-5">
-          <div className="w-12 h-12">
+      <div className="relative z-10 min-h-[19.25rem] grid grid-rows-4 grid-cols-1 overflow-hidden rounded-[7px] bg-projectBackground p-6 transition-colors duration-500 group-hover:bg-projectForeground">
+        <div className="relative z-10 flex items-center justify-center w-full space-x-5">
+          <div className="w-14 h-14">
             <Lottie
               lottieRef={logoRef}
               animationData={icon}
@@ -75,7 +75,7 @@ export const CardBase = ({
             />
           </div>
 
-          <div className="relative text-textBright font-poppins font-bold text-2xl">
+          <div className="relative text-projectBright font-poppins font-bold text-2xl">
             <Lottie
               lottieRef={underlineRef}
               animationData={underlineColorSelector()}
@@ -100,7 +100,7 @@ export const CardBase = ({
             <p className="">&lt;/div&gt;</p>
           </div>
           <div className="-ml-2 text-zinc-200 font-poppins">
-            <div className="relative z-10 text-textDark">{description}</div>
+            <div className="relative z-10 text-projectDark">{description}</div>
           </div>
         </div>
       </div>
@@ -114,7 +114,7 @@ export const CardBase = ({
           duration: 3.5,
           ease: "linear",
         }}
-        className="absolute inset-0 z-0 bg-gradient-to-br from-secondary via-secondary/0 to-secondary opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        className="absolute inset-0 z-0 bg-gradient-to-br from-projectSecondary via-projectSecondary/0 to-projectSecondary opacity-0 transition-opacity duration-500 group-hover:opacity-100"
       />
     </div>
   );
