@@ -19,7 +19,7 @@ export const LinkButton = ({ text = <div>Placeholder</div> }: Props) => {
           before:transition-transform before:duration-1000
           before:content-[""]
   
-          hover:scale-105 hover:border-projectBorder hover:text-projectBackground
+          hover:scale-105 hover:border-projectBright hover:text-projectBackground
           hover:before:translate-y-[0%]
           active:scale-100`}
     >

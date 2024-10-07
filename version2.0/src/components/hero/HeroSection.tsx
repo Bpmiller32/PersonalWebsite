@@ -2,13 +2,13 @@ interface Props {
   sectionRef?: React.RefObject<HTMLDivElement>;
 }
 
-export const ProjectsSection = ({ sectionRef }: Props) => {
+export const HeroSection = ({ sectionRef }: Props) => {
   return (
-    <div
+    <section
       ref={sectionRef}
       className="w-screen h-screen bg-blue-500 flex items-center justify-center"
     >
-      <h1 className="text-white text-3xl">Projects placeholder</h1>
-    </div>
+      <h1 className="text-white text-3xl">Hero placeholder</h1>
+    </section>
   );
 };

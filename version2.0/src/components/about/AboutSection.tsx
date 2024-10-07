@@ -7,10 +7,17 @@ import { ImagesBlock } from "./ImagesBlock";
 import { LocationBlock } from "./LocationBlock";
 import { HobbiesBlock } from "./HobbiesBlock";
 
-export const AboutSection = () => {
+interface Props {
+  sectionRef?: React.RefObject<HTMLElement>;
+}
+
+export const AboutSection = ({ sectionRef }: Props) => {
   return (
     <MousePositionProvider>
-      <section className="min-h-screen rounded-t-3xl relative -top-6 bg-projectBackground px-4 py-12 text-projectBright cursor-default">
+      <section
+        ref={sectionRef}
+        className="min-h-screen rounded-t-3xl relative -top-6 bg-projectBackground px-4 py-12 text-projectBright cursor-default"
+      >
         <SectionHeader title="About" titlePlacement="left" />
         <motion.div
           initial="initial"

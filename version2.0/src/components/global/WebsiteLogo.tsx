@@ -5,9 +5,10 @@ import { twMerge } from "tailwind-merge";
 
 interface Props {
   className?: string;
+  targetSection?: React.RefObject<HTMLElement>;
 }
 
-export const WebsiteLogo = ({ className }: Props) => {
+export const WebsiteLogo = ({ className, targetSection }: Props) => {
   const lottieRef = useRef<LottieRefCurrentProps>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -25,8 +26,18 @@ export const WebsiteLogo = ({ className }: Props) => {
     lottieRef.current?.goToAndStop(0, true);
   };
 
+  const handleOnClick = (ref?: React.RefObject<HTMLElement>) => {
+    if (ref?.current) {
+      ref.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <div onMouseEnter={handleMouseEnter} className={twMerge(className)}>
+    <div
+      onMouseEnter={handleMouseEnter}
+      onClick={() => handleOnClick(targetSection)}
+      className={twMerge(className)}
+    >
       <Lottie
         lottieRef={lottieRef}
         animationData={animationData}
