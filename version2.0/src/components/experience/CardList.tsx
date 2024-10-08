@@ -48,7 +48,7 @@ export const CardList = () => {
             Core, ExpressJs, Firebase, Wordpress, and Webflow.
           </div>
         }
-        verticalBarHeight="5.5"
+        verticalBarHeight="6.5"
         underlineColor="secondary"
       />
       <CardBase

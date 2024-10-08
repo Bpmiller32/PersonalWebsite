@@ -21,7 +21,7 @@ export const HeaderBlock = () => {
         <div className="flex items-center text-lg gap-3">
           <a
             className="text-projectBright hover:text-projectPrimary transition-colors duration-500"
-            href="https://www.linkedin.com/in/billy-p-miller"
+            href="https://www.linkedin.com/in/bpmiller32"
             target="_blank"
             rel="nofollow"
           >

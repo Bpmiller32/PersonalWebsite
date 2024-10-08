@@ -25,7 +25,7 @@ export const InfoArea = () => {
         <SocialButton
           icon={<FaLinkedin className="h-8 w-8" />}
           text="LinkedIn"
-          href="https://www.linkedin.com/in/billy-p-miller"
+          href="https://www.linkedin.com/in/bpmiller32"
         />
         <SocialButton
           icon={<FaGithub className="h-8 w-8" />}

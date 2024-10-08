@@ -6,9 +6,9 @@ export const DescriptionBlock = () => {
       <p className="">
         My passion is building exceptional digital experiences.{" "}
         <span className="text-projectDark">
-          My journey in tech began as a kid - exploring engineering, automation,
-          and video game modding. Today, at Constellation, I create accessible
-          and inclusive solutions for a diverse range of clients.
+          My journey in tech began as a kid - exploring video game modding,
+          automation, and engineering. Today, at Constellation, I create
+          accessible and inclusive solutions for a diverse range of clients.
         </span>
       </p>
     </BlockBase>

@@ -13,7 +13,7 @@ export const FooterSection = ({ refsArray }: Props) => {
       <div className="max-w-5xl mx-auto mb-5 h-[1px] bg-projectBorder"></div>
 
       <div className="max-w-5xl mx-auto flex flex-wrap justify-center items-center min-[700px]:justify-between gap-x-20 gap-y-4">
-        <div className="flex items-center space-x-6">
+        <div className="flex items-center space-x-4 min-[400px]:space-x-6">
           <WebsiteLogo
             className="h-8 w-8 cursor-pointer"
             targetSection={refsArray[0]}

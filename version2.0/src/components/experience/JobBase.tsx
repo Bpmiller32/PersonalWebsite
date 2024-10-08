@@ -27,12 +27,12 @@ export const JobBase = ({
           : "pb-6 border-projectBorder"
       }
     >
-      <div className="flex justify-between mb-2">
+      <div className="flex justify-between space-x-10 mb-2">
         <span className="font-bold text-xl text-projectBright">{title}</span>
         <span className="text-projectDark shrink-0">{time}</span>
       </div>
 
-      <div className="flex justify-between mb-4">
+      <div className="flex justify-between space-x-10 mb-4">
         <span className="text-projectSecondary font-bold">{position}</span>
         <span className="text-projectDark shrink-0">{location}</span>
       </div>

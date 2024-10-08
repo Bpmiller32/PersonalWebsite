@@ -23,7 +23,7 @@ function App() {
   ];
 
   return (
-    <main className="relative bg-projectBackground">
+    <main className="relative bg-projectBackground overflow-hidden">
       <NavBar refsArray={refsArray} />
 
       <HeroSection sectionRef={heroSectionRef} />
