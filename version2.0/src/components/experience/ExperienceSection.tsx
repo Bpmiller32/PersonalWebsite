@@ -10,7 +10,7 @@ export const ExperienceSection = ({ sectionRef }: Props) => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen bg-projectBackground px-4 pt-12 pb-8 text-projectBright cursor-default"
+      className="min-h-screen px-4 pt-12 pb-8 text-projectBright cursor-default"
     >
       <SectionHeader title="Experience" titlePlacement="left" />
       <CardList />

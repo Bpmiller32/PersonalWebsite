@@ -10,7 +10,7 @@ export const ContactSection = ({ sectionRef }: Props) => {
   return (
     <section
       ref={sectionRef}
-      className="bg-projectBackground px-4 text-projectBright cursor-default"
+      className="px-4 text-projectBright cursor-default"
     >
       <SectionHeader title="Contact" titlePlacement="right" />
 

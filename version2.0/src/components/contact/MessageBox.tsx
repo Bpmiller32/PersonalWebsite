@@ -1,5 +1,4 @@
 import { IoIosSend } from "react-icons/io";
-import { LinkButton } from "../global/LinkButton";
 
 export const MessageBox = () => {
   return (
@@ -34,7 +33,6 @@ export const MessageBox = () => {
           </div>
         </div>
 
-        <LinkButton text="Send Message" className="w-full" />
         <button
           className={`
             relative w-full z-0 flex items-center justify-center gap-2 overflow-hidden rounded-lg text-sm border-[1px] 

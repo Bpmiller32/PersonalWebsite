@@ -16,7 +16,7 @@ export const AboutSection = ({ sectionRef }: Props) => {
     <MousePositionProvider>
       <section
         ref={sectionRef}
-        className="min-h-screen rounded-t-3xl relative -top-6 bg-projectBackground px-4 py-12 text-projectBright cursor-default"
+        className="min-h-screen rounded-t-3xl relative -top-6 bg-projectBackground px-4 pt-12 text-projectBright cursor-default"
       >
         <SectionHeader title="About" titlePlacement="left" />
         <motion.div
