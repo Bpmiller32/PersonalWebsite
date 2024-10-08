@@ -13,7 +13,7 @@ interface Props {
   underlineColor: string;
 }
 
-export const CardBase = ({
+export const BaseCard = ({
   icon,
   heading = "Heading Placeholder",
   description = "Description placeholder",

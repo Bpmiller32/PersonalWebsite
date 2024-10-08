@@ -1,6 +1,6 @@
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
-import { SocialButton } from "./SocialButton";
+import { LinkButton } from "../global/LinkButton";
 
 export const InfoArea = () => {
   return (
@@ -14,28 +14,44 @@ export const InfoArea = () => {
       </div>
 
       <div className="flex justify-center w-full min-[944px]:block min-[944px]:w-max my-7 text-2xl">
-        <SocialButton
-          icon={<IoIosMail className="h-8 w-8" />}
-          text="bpmiller32@outlook.com"
+        <LinkButton
           href="mailto:bpmiller32@outlook.com"
+          text={
+            <>
+              <IoIosMail className="h-8 w-8" />
+              <div>bpmiller32@outlook.com</div>
+            </>
+          }
         />
       </div>
 
       <div className="flex items-center min-[944px]:items-start flex-col gap-2">
-        <SocialButton
-          icon={<FaLinkedin className="h-8 w-8" />}
-          text="LinkedIn"
+        <LinkButton
           href="https://www.linkedin.com/in/bpmiller32"
+          text={
+            <>
+              <FaLinkedin className="h-8 w-8" />
+              <div>LinkedIn</div>
+            </>
+          }
         />
-        <SocialButton
-          icon={<FaGithub className="h-8 w-8" />}
-          text="Github"
+        <LinkButton
           href="https://www.github.com/bpmiller32"
+          text={
+            <>
+              <FaGithub className="h-8 w-8" />
+              <div>Github</div>
+            </>
+          }
         />
-        <SocialButton
-          icon={<FaInstagram className="h-8 w-8" />}
-          text="Instagram"
+        <LinkButton
           href="https://www.instagram.com/billybeboppin/"
+          text={
+            <>
+              <FaInstagram className="h-8 w-8" />
+              <div>Instagram</div>
+            </>
+          }
         />
       </div>
     </div>

@@ -1,17 +1,21 @@
 import { AiFillGithub, AiOutlineExport } from "react-icons/ai";
-import { LinkButton } from "../global/LinkButton";
 import { BadgeItem } from "../global/BadgeItem";
+// import { ProjectButton } from "../global/ProjectButton";
 
 interface Props {
   title?: string;
   description?: string;
   techUsed?: string[];
+  liveLink?: string;
+  githubLink?: string;
 }
 
 export const BaseProject = ({
   title = "Placeholder Title",
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.",
   techUsed = ["placeholder tech"],
+  liveLink = "#",
+  githubLink = "#",
 }: Props) => {
   return (
     <>
@@ -33,11 +37,11 @@ export const BaseProject = ({
             </h4>
             <div className="w-full h-[1px] bg-projectBorder" />
 
-            <a target="_blank" rel="nofollow">
+            <a href={githubLink} rel="nofollow">
               <AiFillGithub className="text-xl text-projectDark hover:text-projectPrimary transition-colors duration-500 cursor-pointer" />
             </a>
 
-            <a target="_blank" rel="nofollow">
+            <a href={liveLink} rel="nofollow">
               <AiOutlineExport className="text-xl text-projectDark hover:text-projectPrimary transition-colors duration-500 cursor-pointer" />
             </a>
           </div>
@@ -48,15 +52,16 @@ export const BaseProject = ({
           </div>
           <p className="text-projectDark leading-relaxed">
             {description}
-            <LinkButton
-              className="mt-4"
+
+            {/* <ProjectButton
               text={
                 <div className="flex items-center gap-2">
                   <p>Learn more</p>
                   <AiOutlineExport />
                 </div>
               }
-            />
+              className="mt-4"
+            /> */}
           </p>
         </div>
       </div>

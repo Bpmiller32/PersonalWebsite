@@ -1,8 +1,8 @@
-import { BlockBase } from "./BlockBase";
+import { BaseBlock } from "./BaseBlock";
 
 export const DescriptionBlock = () => {
   return (
-    <BlockBase className="col-span-12 text-3xl leading-snug">
+    <BaseBlock className="col-span-12 text-3xl leading-snug">
       <p className="">
         My passion is building exceptional digital experiences.{" "}
         <span className="text-projectDark">
@@ -11,6 +11,6 @@ export const DescriptionBlock = () => {
           accessible and inclusive solutions for a diverse range of clients.
         </span>
       </p>
-    </BlockBase>
+    </BaseBlock>
   );
 };

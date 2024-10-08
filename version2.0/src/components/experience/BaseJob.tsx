@@ -10,7 +10,7 @@ interface Props {
   renderBottomBorder?: boolean;
 }
 
-export const JobBase = ({
+export const BaseJob = ({
   title,
   position,
   time,
@@ -24,7 +24,7 @@ export const JobBase = ({
       className={
         renderBottomBorder === true
           ? "mb-6 border-b pb-6 border-projectBorder"
-          : "pb-6 border-projectBorder"
+          : "border-projectBorder"
       }
     >
       <div className="flex justify-between space-x-10 mb-2">

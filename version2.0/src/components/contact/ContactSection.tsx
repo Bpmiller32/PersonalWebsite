@@ -10,11 +10,11 @@ export const ContactSection = ({ sectionRef }: Props) => {
   return (
     <section
       ref={sectionRef}
-      className="px-4 text-projectBright cursor-default"
+      className="px-4 pt-12 text-projectBright cursor-default"
     >
       <SectionHeader title="Contact" titlePlacement="right" />
 
-      <div className="max-w-5xl mx-auto mb-12 flex flex-wrap justify-center min-[944px]:justify-between items-center gap-x-20 gap-y-12">
+      <div className="max-w-5xl mx-auto flex flex-wrap justify-center min-[944px]:justify-between items-center gap-x-20 gap-y-12">
         <InfoArea />
         <MessageBox />
       </div>

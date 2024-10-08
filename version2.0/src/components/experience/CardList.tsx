@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CardBase } from "./CardBase";
+import { BaseCard } from "./BaseCard";
 import DesktopLogo from "../../assets/desktopLogo.json";
 import ReactVueLogos from "../../assets/reactVueLogos.json";
 import CloudLogo from "../../assets/cloudLogo.json";
@@ -17,7 +17,7 @@ export const CardList = () => {
     >
       <FloatingCode />
 
-      <CardBase
+      <BaseCard
         icon={DesktopLogo}
         heading={
           <div>
@@ -34,7 +34,7 @@ export const CardList = () => {
         verticalBarHeight="6"
         underlineColor="primary"
       />
-      <CardBase
+      <BaseCard
         icon={ReactVueLogos}
         heading={
           <div>
@@ -51,7 +51,7 @@ export const CardList = () => {
         verticalBarHeight="6.5"
         underlineColor="secondary"
       />
-      <CardBase
+      <BaseCard
         icon={CloudLogo}
         heading={
           <div>

@@ -1,4 +1,4 @@
-import { BlockBase } from "./BlockBase";
+import { BaseBlock } from "./BaseBlock";
 import billyImage0 from "../../assets/billyImage0.webp";
 import billyImage1 from "../../assets/billyImage1.webp";
 import billyImage2 from "../../assets/billyImage2.webp";
@@ -7,7 +7,7 @@ import billyImage4 from "../../assets/billyImage4.webp";
 
 export const ImagesBlock = () => (
   <>
-    <BlockBase
+    <BaseBlock
       whileHover={{
         rotate: "2.5deg",
         scale: 1.1,
@@ -20,8 +20,8 @@ export const ImagesBlock = () => (
           src={billyImage0}
         ></img>
       </div>
-    </BlockBase>
-    <BlockBase
+    </BaseBlock>
+    <BaseBlock
       whileHover={{
         rotate: "-2.5deg",
         scale: 1.1,
@@ -34,8 +34,8 @@ export const ImagesBlock = () => (
           src={billyImage4}
         ></img>
       </div>
-    </BlockBase>
-    <BlockBase
+    </BaseBlock>
+    <BaseBlock
       whileHover={{
         rotate: "-2.5deg",
         scale: 1.1,
@@ -48,8 +48,8 @@ export const ImagesBlock = () => (
           src={billyImage1}
         ></img>
       </div>
-    </BlockBase>
-    <BlockBase
+    </BaseBlock>
+    <BaseBlock
       whileHover={{
         rotate: "2.5deg",
         scale: 1.1,
@@ -62,6 +62,6 @@ export const ImagesBlock = () => (
           src={billyImage2}
         ></img>
       </div>
-    </BlockBase>
+    </BaseBlock>
   </>
 );

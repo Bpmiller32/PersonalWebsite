@@ -1,4 +1,4 @@
-import { BlockBase } from "./BlockBase";
+import { BaseBlock } from "./BaseBlock";
 import { FiArrowRight } from "react-icons/fi";
 import { SiLinkedin, SiGithub, SiInstagram } from "react-icons/si";
 import { WebsiteLogo } from "../global/WebsiteLogo";
@@ -6,7 +6,7 @@ import { WebsiteLogo } from "../global/WebsiteLogo";
 export const HeaderBlock = () => {
   // Render function
   return (
-    <BlockBase className="col-span-12 row-span-2 md:col-span-6">
+    <BaseBlock className="col-span-12 row-span-2 md:col-span-6">
       <WebsiteLogo className="mb-4 h-14 w-14" />
       <h1 className="mb-12 text-4xl font-medium leading-tight">
         Hey, I'm Billy.{" "}
@@ -45,6 +45,6 @@ export const HeaderBlock = () => {
           </a>
         </div>
       </div>
-    </BlockBase>
+    </BaseBlock>
   );
 };

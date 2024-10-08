@@ -1,5 +1,5 @@
 import { AnimationProps, motion } from "framer-motion";
-import { BlockBase } from "./BlockBase";
+import { BaseBlock } from "./BaseBlock";
 import { useEffect, useState } from "react";
 import { useWindowSize } from "../utils/UseWindowSize";
 import { degreesToRadians } from "../utils/DegreesToRadians";
@@ -115,7 +115,7 @@ export const HobbiesBlock = () => {
   }, [width]);
 
   return (
-    <BlockBase
+    <BaseBlock
       className="col-span-12 md:col-span-9"
       contentNeedsPadding={false}
     >
@@ -188,6 +188,6 @@ export const HobbiesBlock = () => {
           </motion.div>
         </div>
       </div>
-    </BlockBase>
+    </BaseBlock>
   );
 };

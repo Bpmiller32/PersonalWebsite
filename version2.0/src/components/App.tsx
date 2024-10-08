@@ -26,7 +26,7 @@ function App() {
     <main className="relative bg-projectBackground overflow-hidden">
       <NavBar refsArray={refsArray} />
 
-      <HeroSection sectionRef={heroSectionRef} />
+      <HeroSection sectionRef={heroSectionRef} targetRef={contactSectionRef} />
       <AboutSection sectionRef={aboutSectionRef} />
       <ProjectsSection sectionRef={projectSectionRef} />
       <ExperienceSection sectionRef={experienceSectionRef} />

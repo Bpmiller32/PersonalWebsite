@@ -19,7 +19,10 @@ export const NavBar = ({ refsArray }: Props) => {
         <NavLink text="Experience" targetSection={refsArray[3]} />
         <NavLink text="Contact" targetSection={refsArray[4]} />
 
-        <LinkButton text="My Resume" />
+        <LinkButton
+          href="https://storage.googleapis.com/bpmillerwebsitestorage/Billy's%20Resume.docx.pdf"
+          text="My Resume"
+        />
       </div>
     </nav>
   );

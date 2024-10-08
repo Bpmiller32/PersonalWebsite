@@ -9,7 +9,7 @@ interface Props extends MotionProps {
   contentNeedsPadding?: boolean;
 }
 
-export const BlockBase = ({
+export const BaseBlock = ({
   className,
   children,
   contentNeedsPadding = true,

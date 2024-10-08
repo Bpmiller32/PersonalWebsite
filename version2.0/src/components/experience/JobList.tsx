@@ -1,4 +1,4 @@
-import { JobBase } from "./JobBase";
+import { BaseJob } from "./BaseJob";
 
 const experience = [
   {
@@ -57,6 +57,7 @@ const experience = [
       "Vb.Net",
       "Winforms",
       "Telerik",
+      "MongoDb",
       "MS Access",
       "Wordpress",
       "TortoiseSvn",
@@ -64,38 +65,28 @@ const experience = [
     ],
   },
   {
-    title: "Louisiana Division of Administration",
-    position: "IT Specialist",
+    title: "Louisiana State University",
+    position: "Network Infrastructure Engineer",
     time: "2012 - 2016",
     location: "Baton Rouge, LA",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.",
-    tech: [
-      "Python",
-      "Active Directory",
-      "Git",
-      "GitHub",
-      "Java",
-      "Golang",
-      "K8s",
-    ],
+    tech: ["ARM v4-v7", "Verilog", "Keil", "Pspice", "EaglePCB", "Xbee", "DSP"],
   },
   {
-    title: "Louisiana State University",
-    position: "Network Infrastructure Engineer",
+    title: "Louisiana Division of Administration",
+    position: "IT Specialist",
     time: "2010 - 2012",
     location: "Baton Rouge, LA",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.",
     tech: [
-      "Angular",
-      "Python",
-      "GCP",
-      "Git",
-      "GitHub",
-      "Java",
-      "Golang",
-      "K8s",
+      "Active Directory",
+      "Powershell",
+      "Windows Server Orchestration",
+      "Veeam",
+      "Nginx",
+      "IIS",
     ],
   },
 ];
@@ -103,11 +94,11 @@ const experience = [
 export const JobList = () => {
   return (
     <div className="max-w-5xl mt-12 mx-auto">
-      <JobBase {...experience[0]} />
-      <JobBase {...experience[1]} />
-      <JobBase {...experience[2]} />
-      <JobBase {...experience[3]} />
-      <JobBase renderBottomBorder={false} {...experience[4]} />
+      <BaseJob {...experience[0]} />
+      <BaseJob {...experience[1]} />
+      <BaseJob {...experience[2]} />
+      <BaseJob {...experience[3]} />
+      <BaseJob renderBottomBorder={false} {...experience[4]} />
     </div>
   );
 };
