@@ -1,7 +1,7 @@
 import { ReactNode, useRef } from "react";
 import { motion, MotionProps } from "framer-motion";
 import { twMerge } from "tailwind-merge";
-import { useMouseContext } from "../utils/MouseContext";
+import { useMouseContext } from "../utils/UseMouseContext";
 
 interface Props extends MotionProps {
   className?: string;

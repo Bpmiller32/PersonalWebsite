@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import { SectionHeader } from "../global/SectionHeader";
 import { HeaderBlock } from "./HeaderBlock";
-import { MousePositionProvider } from "../utils/MouseContext";
 import { DescriptionBlock } from "./DescriptionBlock";
 import { ImagesBlock } from "./ImagesBlock";
 import { LocationBlock } from "./LocationBlock";
 import { HobbiesBlock } from "./HobbiesBlock";
+import { MousePositionProvider } from "../utils/MousePositionProvider";
 
 interface Props {
   sectionRef?: React.RefObject<HTMLElement>;

@@ -22,19 +22,20 @@ export const VerticalAccordion = ({ defaultOpen = false, children }: Props) => {
         onClick={() => setOpen((pv) => !pv)}
         className="flex w-full items-center justify-between gap-4 py-6 cursor-pointer"
       >
-        {/* <motion.span
-            variants={{
-              open: {
-                color: "#8c32e7",
-              },
-              closed: {
-                color: "#32e7e7",
-              },
-            }}
-            className="bg-gradient-to-r from-projectPrimary to-projectPrimary bg-clip-text text-left text-lg font-medium"
-          >
-            {title}
-          </motion.span> */}
+        <motion.span
+          variants={{
+            open: {
+              rotate: "-180deg",
+              color: "#8c32e7",
+            },
+            closed: {
+              rotate: "0deg",
+              color: "#32e7e7",
+            },
+          }}
+        >
+          <FiChevronDown className="text-2xl" />
+        </motion.span>
         <ProjectButton
           text={open ? "See fewer projects" : "See additional projects"}
         />

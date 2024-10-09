@@ -11,8 +11,8 @@ export const HeroSection = ({ sectionRef, targetRef }: Props) => {
   };
 
   return (
-    <section ref={sectionRef} className="h-screen bg-projectForeground">
-      <div className="relative max-w-5xl mx-auto top-40">
+    <section ref={sectionRef} className="px-4 h-screen bg-projectForeground">
+      <div className="h-full max-w-5xl mx-auto flex flex-col justify-center">
         <div className="pointer-events-none relative z-10">
           <h1 className="pointer-events-auto text-4xl sm:text-6xl font-black text-projectBright md:text-8xl">
             Hi, I'm Billy<span className="text-projectPrimary">.</span>
