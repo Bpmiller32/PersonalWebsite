@@ -14,13 +14,13 @@ export const BaseProject = ({
   title = "Placeholder Title",
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.",
   techUsed = ["placeholder tech"],
-  liveLink = "#",
-  githubLink = "#",
+  liveLink,
+  githubLink,
 }: Props) => {
   return (
     <>
       <div>
-        <div className="w-full aspect-video bg-projectForeground cursor-pointer relative rounded-lg overflow-hidden">
+        <div className="w-full aspect-video bg-projectForeground relative rounded-lg overflow-hidden">
           <img
             alt={`An image of the ${title} project.`}
             style={{
@@ -37,13 +37,20 @@ export const BaseProject = ({
             </h4>
             <div className="w-full h-[1px] bg-projectBorder" />
 
-            <a href={githubLink} rel="nofollow">
-              <AiFillGithub className="text-xl text-projectDark hover:text-projectPrimary transition-colors duration-500 cursor-pointer" />
-            </a>
-
-            <a href={liveLink} rel="nofollow">
-              <AiOutlineExport className="text-xl text-projectDark hover:text-projectPrimary transition-colors duration-500 cursor-pointer" />
-            </a>
+            {githubLink ? (
+              <a href={githubLink} rel="nofollow">
+                <AiFillGithub className="text-xl text-projectDark hover:text-projectPrimary transition-colors duration-500 cursor-pointer" />
+              </a>
+            ) : (
+              <></>
+            )}
+            {liveLink ? (
+              <a href={liveLink} rel="nofollow">
+                <AiOutlineExport className="text-xl text-projectDark hover:text-projectPrimary transition-colors duration-500 cursor-pointer" />
+              </a>
+            ) : (
+              <></>
+            )}
           </div>
           <div className="flex flex-wrap gap-2 text-sm text-projectPrimary my-2">
             {techUsed.map((tech) => {
