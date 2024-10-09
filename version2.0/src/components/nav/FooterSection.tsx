@@ -9,7 +9,7 @@ export const FooterSection = ({ refsArray }: Props) => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <section className="w-full px-4 pt-12 pb-10 text-projectBright">
+    <footer className="w-full px-4 pt-12 pb-10 text-projectBright">
       <div className="max-w-5xl mx-auto mb-5 h-[1px] bg-projectBorder"></div>
 
       <div className="max-w-5xl mx-auto flex flex-wrap justify-center items-center min-[700px]:justify-between gap-x-20 gap-y-4">
@@ -28,6 +28,6 @@ export const FooterSection = ({ refsArray }: Props) => {
           {currentYear} | Designed by Billy Miller
         </p>
       </div>
-    </section>
+    </footer>
   );
 };

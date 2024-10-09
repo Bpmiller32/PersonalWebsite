@@ -23,13 +23,13 @@ function App() {
   ];
 
   return (
-    <main className="relative bg-projectBackground overflow-hidden">
+    <main className="relative overflow-hidden">
       <NavBar refsArray={refsArray} />
 
-      <HeroSection sectionRef={heroSectionRef} targetRef={contactSectionRef} />
+      {/* <HeroSection sectionRef={heroSectionRef} targetRef={contactSectionRef} />
       <AboutSection sectionRef={aboutSectionRef} />
       <ProjectsSection sectionRef={projectSectionRef} />
-      <ExperienceSection sectionRef={experienceSectionRef} />
+      <ExperienceSection sectionRef={experienceSectionRef} /> */}
       <ContactSection sectionRef={contactSectionRef} />
 
       <FooterSection refsArray={refsArray} />

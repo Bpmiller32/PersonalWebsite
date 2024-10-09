@@ -1,6 +1,5 @@
 import { AiFillGithub, AiOutlineExport } from "react-icons/ai";
 import { BadgeItem } from "../global/BadgeItem";
-// import { ProjectButton } from "../global/ProjectButton";
 
 interface Props {
   title?: string;
@@ -57,31 +56,9 @@ export const BaseProject = ({
               return <BadgeItem key={tech}>{tech}</BadgeItem>;
             })}
           </div>
-          <p className="text-projectDark leading-relaxed">
-            {description}
-
-            {/* <ProjectButton
-              text={
-                <div className="flex items-center gap-2">
-                  <p>Learn more</p>
-                  <AiOutlineExport />
-                </div>
-              }
-              className="mt-4"
-            /> */}
-          </p>
+          <p className="text-projectDark leading-relaxed">{description}</p>
         </div>
       </div>
-      {/* <ProjectModal
-        modalContent={modalContent}
-        projectLink={projectLink}
-        setIsOpen={setIsOpen}
-        isOpen={isOpen}
-        imgSrc={imgSrc}
-        title={title}
-        code={code}
-        tech={tech}
-      /> */}
     </>
   );
 };

@@ -1,3 +1,5 @@
+import { ActionButton } from "../global/ActionButton";
+
 interface Props {
   sectionRef?: React.RefObject<HTMLDivElement>;
   targetRef?: React.RefObject<HTMLDivElement>;
@@ -27,37 +29,13 @@ export const HeroSection = ({ sectionRef, targetRef }: Props) => {
             I've spent the last 5 years building and scaling software for some
             pretty cool companies. Let's connect!
           </p>
-
-          {/* <div className="h-12">
-            <ProjectButton
-              text="Contact Me"
-              className="h-full mt-4 md:mt-6 bg-projectForeground"
-            />
-          </div> */}
         </div>
 
-        <div onClick={() => handleOnClick(targetRef)} className="h-12">
-          <button
-            className={`
-            bg-projectSecondary h-full mt-4 md:mt-6 relative z-50 flex items-center justify-center gap-2 overflow-hidden rounded-lg text-sm border-[1px] 
-            border-projectBorder px-4 py-1.5
-            text-projectBright transition-all duration-500
-            
-            before:absolute before:inset-0
-            before:-z-30 before:translate-x-[150%]
-            before:translate-y-[150%] before:scale-[2.5]
-            before:rounded-[100%] before:bg-projectBright
-            before:transition-transform before:duration-1000
-            before:content-[""]
-    
-            hover:scale-105 hover:text-projectBackground
-            hover:before:translate-x-[0%]
-            hover:before:translate-y-[0%]
-            active:scale-95`}
-          >
-            <div className="flex items-center space-x-2">Contact Me</div>
-          </button>
-        </div>
+        <ActionButton
+          onClick={() => handleOnClick(targetRef)}
+          className="mt-4 md:mt-6 h-12 w-fit"
+          text="Contact Me"
+        />
       </div>
     </section>
   );

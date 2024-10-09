@@ -16,7 +16,7 @@ export const SectionHeader = ({ title, titlePlacement = "right" }: Props) => {
   }, []);
 
   return (
-    <div className="w-full max-w-5xl flex justify-center mx-auto">
+    <header className="w-full max-w-5xl flex justify-center mx-auto">
       <div
         className="flex items-center justify-center w-full gap-8 mb-12"
         style={{
@@ -39,6 +39,6 @@ export const SectionHeader = ({ title, titlePlacement = "right" }: Props) => {
           </span>
         </h2>
       </div>
-    </div>
+    </header>
   );
 };

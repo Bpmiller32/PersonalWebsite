@@ -4,14 +4,14 @@ import { LinkButton } from "../global/LinkButton";
 
 export const InfoArea = () => {
   return (
-    <div className="max-w-lg animateFadeIn flex flex-col justify-center justify-self-center">
-      <div className="text-projectBright font-bold text-2xl">
+    <article className="max-w-lg animateFadeIn flex flex-col justify-center justify-self-center">
+      <p className="text-projectBright font-bold text-2xl">
         Shoot me an email if you want to connect!
-      </div>
-      <div className="mt-5 text-projectDark">
+      </p>
+      <p className="mt-5 text-projectDark">
         You can also find me on Linkedin, Instagram, or contact me via the
         message form here if that's more your speed.
-      </div>
+      </p>
 
       <div className="flex justify-center w-full min-[944px]:block min-[944px]:w-max my-7 text-2xl">
         <LinkButton
@@ -54,6 +54,6 @@ export const InfoArea = () => {
           }
         />
       </div>
-    </div>
+    </article>
   );
 };

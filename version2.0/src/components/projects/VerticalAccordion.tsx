@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ReactNode, useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
 import useMeasure from "react-use-measure";
-import { ProjectButton } from "../global/ProjectButton";
+import { ActionButton } from "../global/ActionButton";
 
 interface Props {
   defaultOpen: boolean;
@@ -36,8 +36,25 @@ export const VerticalAccordion = ({ defaultOpen = false, children }: Props) => {
         >
           <FiChevronDown className="text-2xl" />
         </motion.span>
-        <ProjectButton
+        <ActionButton
           text={open ? "See fewer projects" : "See additional projects"}
+          colors={
+            open
+              ? {
+                  borderColor: "border-projectPrimary",
+                  textColorBase: "text-projectBright",
+                  textColorHover: "text-projectBright",
+                  backgroundBase: "bg-projectSecondary",
+                  backgroundHover: "bg-projectSecondary",
+                }
+              : {
+                  borderColor: "border-projectPrimary",
+                  textColorBase: "text-projectBright",
+                  textColorHover: "text-projectBright",
+                  backgroundBase: "",
+                  backgroundHover: "bg-projectSecondary",
+                }
+          }
         />
         <motion.span
           variants={{

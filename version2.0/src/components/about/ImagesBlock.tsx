@@ -2,8 +2,7 @@ import { BaseBlock } from "./BaseBlock";
 import billyImage0 from "../../assets/billyImage0.webp";
 import billyImage1 from "../../assets/billyImage1.webp";
 import billyImage2 from "../../assets/billyImage2.webp";
-// import billyImage3 from "../../assets/billyImage3.webp";
-import billyImage4 from "../../assets/billyImage4.webp";
+import billyImage3 from "../../assets/billyImage3.webp";
 
 export const ImagesBlock = () => (
   <>
@@ -31,7 +30,7 @@ export const ImagesBlock = () => (
       <div className="grid h-full min-h-24 md:min-h-full place-content-center text-3xl text-white">
         <img
           className="absolute rounded-lg inset-0 w-full h-full object-cover object-bottom"
-          src={billyImage4}
+          src={billyImage3}
         ></img>
       </div>
     </BaseBlock>

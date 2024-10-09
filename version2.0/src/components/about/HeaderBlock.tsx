@@ -4,7 +4,6 @@ import { SiLinkedin, SiGithub, SiInstagram } from "react-icons/si";
 import { WebsiteLogo } from "../global/WebsiteLogo";
 
 export const HeaderBlock = () => {
-  // Render function
   return (
     <BaseBlock className="col-span-12 row-span-2 md:col-span-6">
       <WebsiteLogo className="mb-4 h-14 w-14" />
