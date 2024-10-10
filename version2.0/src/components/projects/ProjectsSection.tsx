@@ -3,6 +3,14 @@ import { useRef } from "react";
 import { SectionHeader } from "../global/SectionHeader";
 import { BaseProject } from "./BaseProject";
 import { VerticalAccordion } from "./VerticalAccordion";
+import WebGLGT from "../../assets/projectWebGLGT.webp";
+import ArgosyDirMaker from "../../assets/projectArgosyDirMaker.webp";
+import RafWebsite from "../../assets/projectRafWebsite.webp";
+import Dmi from "../../assets/projectDmi.webp";
+import PersonalWebsiteOld from "../../assets/projectPersonalWebsiteOld.webp";
+import IomMaker from "../../assets/projectIomMaker.webp";
+import CalTrans from "../../assets/projectCalTrans.webp";
+import RaspberryPi from "../../assets/projectRaspberryPi.webp";
 
 const showcaseProjects = [
   {
@@ -11,6 +19,7 @@ const showcaseProjects = [
   },
   {
     title: "Argosy DirMaker",
+    image: ArgosyDirMaker,
     techUsed: [
       "React",
       "AnimeJs",
@@ -35,6 +44,7 @@ const showcaseProjects = [
   },
   {
     title: "WebGLGT",
+    image: WebGLGT,
     techUsed: [
       "Three",
       "Vue",
@@ -55,6 +65,7 @@ const showcaseProjects = [
   },
   {
     title: "RAF Technology",
+    image: RafWebsite,
     techUsed: [
       "Nuxt",
       "Tailwind",
@@ -73,6 +84,7 @@ const showcaseProjects = [
 const additionalProjects = [
   {
     title: "CalTrans Project Manager",
+    image: CalTrans,
     techUsed: [
       "Asp.Net",
       "Authentication with Jwt",
@@ -89,6 +101,7 @@ const additionalProjects = [
   },
   {
     title: "Dangerous Mail Investigation",
+    image: Dmi,
     techUsed: ["WinForms", "Telerik", "Entity Framework", "MongoDb"],
     description:
       "In partnership with the USPS, a solution to automate the viewing and analysis of thousands of mailpiece images. This solution uses OCR technology combined with intelligent search, sorting, and filtering to identify mailpieces with characteristics similar to a previously identified dangerous item.",
@@ -111,6 +124,7 @@ const additionalProjects = [
   },
   {
     title: "Portfolio Website (Previous)",
+    image: PersonalWebsiteOld,
     techUsed: [
       "Vue",
       "VueUse/Motion",
@@ -123,12 +137,14 @@ const additionalProjects = [
   },
   {
     title: "Raspberry Pi Projects",
+    image: RaspberryPi,
     techUsed: ["Python", "C#", "Python.Net", "MailKit", "Serilog", "BME280"],
     description:
       "Solution to repair my cat’s broken automated litterbox using a mechanical relay and a custom circuit. Worker service designed to monitor temperature (and humidity, pressure, and light) levels in a server room, sending alerts to a mailing group when specific thresholds are exceeded. Scripts to make a mock GameBoy case for the Pi Zero work.",
   },
   {
     title: "Isle of Man Data Compiler",
+    image: IomMaker,
     techUsed: ["WinForms", "Serilog", "Service Controller"],
     description:
       "An application used to compile mailing directories by validating raw address data against the ruleset and schema of Isle of Man and Royal Mail postal standards.",

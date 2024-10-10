@@ -1,9 +1,9 @@
 import { AiFillGithub, AiOutlineExport } from "react-icons/ai";
 import { BadgeItem } from "../global/BadgeItem";
 import { motion } from "framer-motion";
-import billyImage from "../../assets/billyImage0.webp";
 
 interface Props {
+  image?: string;
   title?: string;
   description?: string;
   techUsed?: string[];
@@ -12,6 +12,7 @@ interface Props {
 }
 
 export const BaseProject = ({
+  image,
   title = "Placeholder Title",
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.",
   techUsed = ["placeholder tech"],
@@ -40,11 +41,15 @@ export const BaseProject = ({
       }}
     >
       <div className="w-full aspect-video bg-projectForeground relative rounded-lg overflow-hidden">
-        <img
-          src={billyImage}
-          alt={`An image of the ${title} project.`}
-          className="scale-[.85] hover:scale-95 absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/4 hover:translate-y-[20%] transition-all duration-500 ease-in-out rounded"
-        />
+        {image ? (
+          <img
+            src={image}
+            alt={`An image of the ${title} project.`}
+            className="scale-[.85] hover:scale-[.98] absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/4 hover:translate-y-[17%] transition-all duration-500 ease-in-out rounded-xl hover:rounded-md"
+          />
+        ) : (
+          <></>
+        )}
       </div>
       <div className="mt-6">
         <div className="flex items-center gap-2 w-full">
