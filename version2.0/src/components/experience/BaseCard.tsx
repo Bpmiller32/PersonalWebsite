@@ -6,18 +6,18 @@ import UnderlineAnimationSecondary from "../../assets/cardUnderlineSecondary.jso
 import UnderlineAnimationTertiary from "../../assets/cardUnderlineTertiary.json";
 
 interface Props {
-  icon: unknown;
-  heading: ReactNode;
-  description: ReactNode;
-  verticalBarHeight: string;
-  underlineColor: string;
+  icon?: unknown;
+  heading?: ReactNode;
+  description?: ReactNode;
+  verticalBarHeight?: string;
+  underlineColor?: string;
 }
 
 export const BaseCard = ({
   icon,
-  heading = "Heading Placeholder",
-  description = "Description placeholder",
-  verticalBarHeight = "1",
+  heading = "Placeholder",
+  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.",
+  verticalBarHeight = "6",
   underlineColor = "primary",
 }: Props) => {
   const logoRef = useRef<LottieRefCurrentProps>(null);
@@ -95,7 +95,7 @@ export const BaseCard = ({
               />
             </div>
 
-            <div className="relative text-projectBright font-poppins font-bold text-2xl">
+            <div className="relative text-projectBright font-bold text-2xl">
               <Lottie
                 lottieRef={underlineRef}
                 animationData={underlineColorSelector()}
@@ -109,7 +109,7 @@ export const BaseCard = ({
           </div>
 
           <div className="relative row-span-3 flex justify-center items-center min-w-full min-h-full">
-            <div className="text-zinc-700 font-poppins font-bold">
+            <div className="text-zinc-700 font-bold">
               <p className="">&lt;div&gt;</p>
               <div className="flex justify-center">
                 <div
@@ -119,7 +119,7 @@ export const BaseCard = ({
               </div>
               <p className="">&lt;/div&gt;</p>
             </div>
-            <div className="-ml-2 text-zinc-200 font-poppins">
+            <div className="-ml-2 text-zinc-200">
               <div className="relative z-10 text-projectDark">
                 {description}
               </div>

@@ -13,7 +13,7 @@ export const LinkButton = ({
   className,
 }: Props) => {
   return (
-    <a href={href}>
+    <a href={href} target="_blank" rel="noopener noreferrer">
       <button
         className={twMerge(
           className,

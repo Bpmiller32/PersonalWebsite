@@ -2,22 +2,22 @@ import { motion } from "framer-motion";
 import { BadgeItem } from "../global/BadgeItem";
 
 interface Props {
-  title: string;
-  position: string;
-  time: string;
-  location: string;
-  description: string;
-  tech: string[];
+  title?: string;
+  position?: string;
+  time?: string;
+  location?: string;
+  description?: string;
+  tech?: string[];
   renderBottomBorder?: boolean;
 }
 
 export const BaseJob = ({
-  title,
-  position,
-  time,
-  location,
-  description,
-  tech,
+  title = "Job Title",
+  position = "Job Position",
+  time = "20XX - Present",
+  location = "Sesame St, USA",
+  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.",
+  tech = [],
   renderBottomBorder = true,
 }: Props) => {
   return (
@@ -50,7 +50,9 @@ export const BaseJob = ({
         <span className="text-projectSecondary font-bold">{position}</span>
         <span className="text-projectDark shrink-0">{location}</span>
       </div>
+
       <p className="mb-6 text-projectDark leading-relaxed">{description}</p>
+
       <div className="flex flex-wrap gap-2">
         {tech.map((item) => (
           <BadgeItem key={item}>{item}</BadgeItem>

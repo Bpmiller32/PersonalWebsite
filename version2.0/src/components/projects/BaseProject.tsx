@@ -1,6 +1,7 @@
 import { AiFillGithub, AiOutlineExport } from "react-icons/ai";
 import { BadgeItem } from "../global/BadgeItem";
 import { motion } from "framer-motion";
+import billyImage from "../../assets/billyImage0.webp";
 
 interface Props {
   title?: string;
@@ -40,12 +41,9 @@ export const BaseProject = ({
     >
       <div className="w-full aspect-video bg-projectForeground relative rounded-lg overflow-hidden">
         <img
+          src={billyImage}
           alt={`An image of the ${title} project.`}
-          style={{
-            width: "85%",
-            rotate: "0deg",
-          }}
-          className="w-[85%] absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/4 transition-all rounded"
+          className="scale-[.85] hover:scale-95 absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/4 hover:translate-y-[20%] transition-all duration-500 ease-in-out rounded"
         />
       </div>
       <div className="mt-6">

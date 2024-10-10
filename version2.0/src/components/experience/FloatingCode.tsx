@@ -24,6 +24,7 @@ export const FloatingCode = () => {
           alt="Image of the code that made this, meta!"
         />
       </motion.div>
+
       <motion.div
         animate={{
           y: [0, -15, 0],
