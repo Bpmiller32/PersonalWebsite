@@ -1,3 +1,5 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { SectionHeader } from "../global/SectionHeader";
 import { BaseProject } from "./BaseProject";
 import { VerticalAccordion } from "./VerticalAccordion";
@@ -138,18 +140,29 @@ interface Props {
 }
 
 export const ProjectsSection = ({ sectionRef }: Props) => {
+  const contentRef = useRef(null);
+  const isContentVisible = useInView(contentRef, { once: true });
+
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen bg-projectBackground px-4 pt-12 text-projectBright cursor-default"
+      className="bg-projectBackground px-4 pt-12 text-projectBright cursor-default"
     >
       <SectionHeader title="Projects" titlePlacement="right" />
 
-      <div className="max-w-5xl mx-auto grid gap-12 grid-cols-1 md:grid-cols-2">
+      <motion.div
+        ref={contentRef}
+        initial="initial"
+        animate={isContentVisible ? "animate" : ""}
+        transition={{
+          staggerChildren: 0.05,
+        }}
+        className="max-w-5xl mx-auto grid gap-12 grid-cols-1 md:grid-cols-2"
+      >
         {showcaseProjects.map((project) => {
           return <BaseProject key={project.title} {...project} />;
         })}
-      </div>
+      </motion.div>
 
       <VerticalAccordion
         defaultOpen={false}

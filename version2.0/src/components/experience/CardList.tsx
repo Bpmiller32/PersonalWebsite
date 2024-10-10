@@ -7,7 +7,7 @@ import { FloatingCode } from "./FloatingCode";
 
 export const CardList = () => {
   return (
-    <motion.div
+    <motion.article
       initial="initial"
       animate="animate"
       transition={{
@@ -34,6 +34,7 @@ export const CardList = () => {
         verticalBarHeight="6"
         underlineColor="primary"
       />
+
       <BaseCard
         icon={ReactVueLogos}
         heading={
@@ -51,6 +52,7 @@ export const CardList = () => {
         verticalBarHeight="6.5"
         underlineColor="secondary"
       />
+
       <BaseCard
         icon={CloudLogo}
         heading={
@@ -67,6 +69,6 @@ export const CardList = () => {
         verticalBarHeight="4.5"
         underlineColor="tertiary"
       />
-    </motion.div>
+    </motion.article>
   );
 };

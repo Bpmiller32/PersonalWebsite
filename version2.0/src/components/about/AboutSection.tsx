@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { SectionHeader } from "../global/SectionHeader";
 import { HeaderBlock } from "./HeaderBlock";
 import { DescriptionBlock } from "./DescriptionBlock";
@@ -6,22 +6,28 @@ import { ImagesBlock } from "./ImagesBlock";
 import { LocationBlock } from "./LocationBlock";
 import { HobbiesBlock } from "./HobbiesBlock";
 import { MousePositionProvider } from "../utils/MousePositionProvider";
+import { useRef } from "react";
 
 interface Props {
   sectionRef?: React.RefObject<HTMLElement>;
 }
 
 export const AboutSection = ({ sectionRef }: Props) => {
+  const contentRef = useRef(null);
+  const isContentVisible = useInView(contentRef, { once: true });
+
   return (
     <MousePositionProvider>
       <section
         ref={sectionRef}
-        className="min-h-screen rounded-t-3xl relative -top-6 bg-projectBackground px-4 pt-12 text-projectBright cursor-default"
+        className="rounded-t-3xl relative -top-6 bg-projectBackground px-4 pt-12 text-projectBright cursor-default"
       >
         <SectionHeader title="About" titlePlacement="left" />
+
         <motion.div
+          ref={contentRef}
           initial="initial"
-          animate="animate"
+          animate={isContentVisible ? "animate" : ""}
           transition={{
             staggerChildren: 0.05,
           }}

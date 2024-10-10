@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { BadgeItem } from "../global/BadgeItem";
 
 interface Props {
@@ -20,7 +21,20 @@ export const BaseJob = ({
   renderBottomBorder = true,
 }: Props) => {
   return (
-    <div
+    <motion.div
+      variants={{
+        initial: {
+          y: 15,
+          opacity: 0,
+        },
+        animate: {
+          y: 0,
+          opacity: 1,
+        },
+      }}
+      transition={{
+        duration: 0.5,
+      }}
       className={
         renderBottomBorder === true
           ? "mb-6 border-b pb-6 border-projectBorder"
@@ -42,6 +56,6 @@ export const BaseJob = ({
           <BadgeItem key={item}>{item}</BadgeItem>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
