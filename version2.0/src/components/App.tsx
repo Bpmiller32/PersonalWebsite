@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { AboutSection } from "./about/AboutSection";
 import { ContactSection } from "./contact/ContactSection";
 import { ExperienceSection } from "./experience/ExperienceSection";
@@ -6,8 +6,18 @@ import { ProjectsSection } from "./projects/ProjectsSection";
 import { FooterSection } from "./nav/FooterSection";
 import { HeroSection } from "./hero/HeroSection";
 import { NavSection } from "./nav/NavSection";
+import { logPageLoad } from "../firebase/logPageLoad";
 
 function App() {
+  useEffect(() => {
+    // Call page load log async
+    const logLoad = async () => {
+      await logPageLoad("MainPage");
+    };
+
+    logLoad();
+  }, []);
+
   const heroSectionRef = useRef<HTMLDivElement>(null);
   const aboutSectionRef = useRef<HTMLDivElement>(null);
   const projectSectionRef = useRef<HTMLDivElement>(null);
