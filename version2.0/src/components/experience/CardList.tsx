@@ -60,7 +60,7 @@ const cards = [
 
 export const CardList = () => {
   return (
-    <motion.article
+    <motion.div
       initial="initial"
       animate="animate"
       transition={{
@@ -73,6 +73,6 @@ export const CardList = () => {
       {cards.map((card) => {
         return <BaseCard key={card.underlineColor} {...card} />;
       })}
-    </motion.article>
+    </motion.div>
   );
 };

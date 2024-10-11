@@ -20,7 +20,7 @@ export const MousePositionProvider = ({ children }: Props) => {
 
   return (
     <MouseContext.Provider value={mousePosition}>
-      <div onMouseMove={handleOnMouseMove}>{children}</div>
+      <section onMouseMove={handleOnMouseMove}>{children}</section>
     </MouseContext.Provider>
   );
 };

@@ -9,7 +9,7 @@ import { MousePositionProvider } from "../utils/MousePositionProvider";
 import { useRef } from "react";
 
 interface Props {
-  sectionRef?: React.RefObject<HTMLElement>;
+  sectionRef?: React.RefObject<HTMLDivElement>;
 }
 
 export const AboutSection = ({ sectionRef }: Props) => {
@@ -18,13 +18,13 @@ export const AboutSection = ({ sectionRef }: Props) => {
 
   return (
     <MousePositionProvider>
-      <section
+      <div
         ref={sectionRef}
         className="rounded-t-3xl relative -top-6 bg-projectBackground px-4 pt-12 text-projectBright cursor-default"
       >
         <SectionHeader title="About" titlePlacement="left" />
 
-        <motion.div
+        <motion.article
           ref={contentRef}
           initial="initial"
           animate={isContentVisible ? "animate" : ""}
@@ -38,8 +38,8 @@ export const AboutSection = ({ sectionRef }: Props) => {
           <DescriptionBlock />
           <LocationBlock />
           <HobbiesBlock />
-        </motion.div>
-      </section>
+        </motion.article>
+      </div>
     </MousePositionProvider>
   );
 };

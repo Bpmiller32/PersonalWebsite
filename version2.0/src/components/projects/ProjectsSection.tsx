@@ -168,7 +168,7 @@ export const ProjectsSection = ({ sectionRef }: Props) => {
     >
       <SectionHeader title="Projects" titlePlacement="right" />
 
-      <motion.div
+      <motion.article
         ref={contentRef}
         initial="initial"
         animate={isContentVisible ? "animate" : ""}
@@ -180,7 +180,7 @@ export const ProjectsSection = ({ sectionRef }: Props) => {
         {showcaseProjects.map((project) => {
           return <BaseProject key={project.title} {...project} />;
         })}
-      </motion.div>
+      </motion.article>
 
       <VerticalAccordion
         defaultOpen={false}

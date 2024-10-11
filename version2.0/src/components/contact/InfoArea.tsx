@@ -4,7 +4,7 @@ import { LinkButton } from "../global/LinkButton";
 
 export const InfoArea = () => {
   return (
-    <article className="max-w-lg animateFadeIn flex flex-col justify-center justify-self-center">
+    <div className="max-w-lg animateFadeIn flex flex-col justify-center justify-self-center">
       <p className="text-projectBright font-bold text-2xl">
         Shoot me an email if you want to connect!
       </p>
@@ -54,6 +54,6 @@ export const InfoArea = () => {
           }
         />
       </div>
-    </article>
+    </div>
   );
 };

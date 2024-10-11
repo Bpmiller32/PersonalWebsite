@@ -27,7 +27,7 @@ export const ExperienceSection = ({ sectionRef }: Props) => {
     >
       <SectionHeader title="Experience" titlePlacement="left" />
 
-      <motion.div
+      <motion.article
         ref={cardsRef}
         initial="initial"
         animate={isCardsVisible ? "animate" : ""}
@@ -36,9 +36,9 @@ export const ExperienceSection = ({ sectionRef }: Props) => {
         }}
       >
         <CardList />
-      </motion.div>
+      </motion.article>
 
-      <motion.div
+      <motion.article
         ref={resumeRef}
         initial={{ opacity: 0, y: 15 }}
         animate={isResumeVisible ? { opacity: 1, y: 0 } : {}}
@@ -55,9 +55,9 @@ export const ExperienceSection = ({ sectionRef }: Props) => {
           }
           className="h-12"
         />
-      </motion.div>
+      </motion.article>
 
-      <motion.div
+      <motion.article
         ref={jobsRef}
         initial="initial"
         animate={isJobsVisible ? "animate" : ""}
@@ -66,7 +66,7 @@ export const ExperienceSection = ({ sectionRef }: Props) => {
         }}
       >
         <JobList />
-      </motion.div>
+      </motion.article>
     </section>
   );
 };

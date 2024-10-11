@@ -98,7 +98,7 @@ export const MessageBox = () => {
   };
 
   return (
-    <article className="w-full max-w-xs border-2 bg-projectForeground border-projectBorder p-6 rounded-lg">
+    <div className="w-full max-w-xs border-2 bg-projectForeground border-projectBorder p-6 rounded-lg">
       <p className="text-projectDark text-sm">Your email address</p>
       <motion.input
         ref={emailRef}
@@ -177,6 +177,6 @@ export const MessageBox = () => {
         }
         className="w-full mt-3"
       />
-    </article>
+    </div>
   );
 };
