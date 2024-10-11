@@ -53,7 +53,7 @@ export const BaseProject = ({
       </div>
       <div className="mt-6">
         <div className="flex items-center gap-2 w-full">
-          <h4 className="font-bold text-projectBright text-lg shrink-0 max-w-[calc(100%_-_150px)]">
+          <h4 className="font-bold text-projectBright text-lg shrink-0">
             {title}
           </h4>
           <div className="w-full h-[1px] bg-projectBorder" />

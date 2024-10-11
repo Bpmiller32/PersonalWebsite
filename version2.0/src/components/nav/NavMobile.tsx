@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import { WebsiteLogo } from "../global/WebsiteLogo";
-import { FiMenu } from "react-icons/fi";
-import { NavLinkMobile } from "./NavLinkMobile";
-import { IoClose } from "react-icons/io5";
+import { NavMobileButton } from "./NavMobileButton";
+import { NavMobileLink } from "./NavMobileLink";
 
 interface Props {
   refsArray: React.RefObject<HTMLDivElement>[];
@@ -87,49 +86,7 @@ export const NavMobile = ({ refsArray }: Props) => {
         className="absolute top-4 right-4 rounded-xl bg-projectBackground shadow-lg"
       />
 
-      <motion.button
-        initial={false}
-        onClick={() => setActive((pv) => !pv)}
-        className={`flex justify-center items-center group absolute right-4 top-4 z-20 h-20 w-20 transition-all hover:bg-projectBorder duration-500 ${
-          active ? "rounded-bl-xl rounded-tr-xl" : "rounded-xl"
-        }`}
-      >
-        <AnimatePresence>
-          {active && (
-            <motion.div
-              key="first"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{
-                // Entry transition
-                opacity: { delay: 0.5, duration: 0.5 },
-                // Exit transition
-                rotate: { delay: 0 },
-              }}
-              exit={{ rotate: "-180deg" }}
-              className="absolute"
-            >
-              <IoClose className="h-10 w-10 text-projectBright" />
-            </motion.div>
-          )}
-
-          {!active && (
-            <motion.div
-              key="second"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{
-                opacity: { delay: 0.5, duration: 0.5 },
-                rotate: { delay: 0 },
-              }}
-              exit={{ rotate: "180deg" }}
-              className="absolute"
-            >
-              <FiMenu className="h-10 w-10 text-projectBright" />
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.button>
+      <NavMobileButton active={active} setActive={setActive} />
 
       <AnimatePresence>
         {active && (
@@ -152,7 +109,7 @@ export const NavMobile = ({ refsArray }: Props) => {
             <motion.div className="space-y-4 p-12 pl-4 md:pl-20">
               {links.map((link, idx) => {
                 return (
-                  <NavLinkMobile
+                  <NavMobileLink
                     key={link.text}
                     idx={idx}
                     text={link.text}

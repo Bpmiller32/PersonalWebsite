@@ -4,15 +4,15 @@ import { Dispatch, SetStateAction } from "react";
 interface Props {
   text: string;
   targetSection: React.RefObject<HTMLElement>;
-  idx?: number;
+  idx: number;
   setActive: Dispatch<SetStateAction<boolean>>;
 }
 
-export const NavLinkMobile = ({
+export const NavMobileLink = ({
   text,
   targetSection,
   idx = 0,
-  setActive, // Accept setActive as a prop
+  setActive,
 }: Props) => {
   const handleOnClick = (ref: React.RefObject<HTMLElement>) => {
     // Smooth scroll to target section

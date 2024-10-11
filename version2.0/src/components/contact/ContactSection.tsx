@@ -15,8 +15,6 @@ export const ContactSection = ({ sectionRef }: Props) => {
 
   const { trackerRef } = useTrackViewTime("TrackedComponent");
 
-  console.count("conteacts");
-
   return (
     <section
       ref={sectionRef}
