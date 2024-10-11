@@ -45,7 +45,7 @@ const experience = [
     ],
   },
   {
-    title: "Matthews International",
+    title: "RAF Technology",
     position: "Software Engineer",
     time: "2016 - 2020",
     location: "Redmond, WA",
@@ -65,18 +65,9 @@ const experience = [
     ],
   },
   {
-    title: "Louisiana State University",
-    position: "Network Infrastructure Engineer",
-    time: "2012 - 2016",
-    location: "Baton Rouge, LA",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.",
-    tech: ["ARM v4-v7", "Verilog", "Keil", "Pspice", "EaglePCB", "Xbee", "DSP"],
-  },
-  {
     title: "Louisiana Division of Administration",
     position: "IT Specialist",
-    time: "2010 - 2012",
+    time: "2012 - 2016",
     location: "Baton Rouge, LA",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.",
@@ -88,6 +79,15 @@ const experience = [
       "Nginx",
       "IIS",
     ],
+  },
+  {
+    title: "Louisiana State University",
+    position: "Network Infrastructure Engineer",
+    time: "2010 - 2012",
+    location: "Baton Rouge, LA",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.",
+    tech: ["ARM v4-v7", "Verilog", "Keil", "Pspice", "EaglePCB", "Xbee", "DSP"],
   },
 ];
 

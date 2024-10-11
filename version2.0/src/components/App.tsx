@@ -5,7 +5,7 @@ import { ExperienceSection } from "./experience/ExperienceSection";
 import { ProjectsSection } from "./projects/ProjectsSection";
 import { FooterSection } from "./nav/FooterSection";
 import { HeroSection } from "./hero/HeroSection";
-import { NavBar } from "./nav/NavBar";
+import { NavSection } from "./nav/NavSection";
 
 function App() {
   const heroSectionRef = useRef<HTMLDivElement>(null);
@@ -24,7 +24,7 @@ function App() {
 
   return (
     <main className="relative overflow-hidden">
-      <NavBar refsArray={refsArray} />
+      <NavSection refsArray={refsArray} />
 
       <HeroSection sectionRef={heroSectionRef} targetRef={contactSectionRef} />
       <AboutSection sectionRef={aboutSectionRef} />

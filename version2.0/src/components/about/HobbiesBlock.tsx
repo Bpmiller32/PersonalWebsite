@@ -2,7 +2,6 @@ import { AnimationProps, motion } from "framer-motion";
 import { BaseBlock } from "./BaseBlock";
 import { useEffect, useState } from "react";
 import { useWindowSize } from "../utils/UseWindowSize";
-import { degreesToRadians } from "../utils/DegreesToRadians";
 import { FaCamera, FaSnowboarding } from "react-icons/fa";
 import { TbScubaMask } from "react-icons/tb";
 import { FaEarthAmericas, FaFootball } from "react-icons/fa6";
@@ -72,6 +71,10 @@ const TRANSITION: AnimationProps["transition"] = {
   repeatType: "loop",
   duration: 50,
   ease: "linear",
+};
+
+const degreesToRadians = (degrees: number) => {
+  return degrees * (Math.PI / 180);
 };
 
 /* -------------------------------- Component ------------------------------- */

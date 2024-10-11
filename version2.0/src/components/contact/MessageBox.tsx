@@ -13,8 +13,8 @@ const regex: RegExp =
 
 export const MessageBox = () => {
   // Force renders for animation or no
-  const [, setRender] = useState(0);
-  const [animate, setAnimate] = useState(0);
+  const [, setRender] = useState(false);
+  const [animate, setAnimate] = useState(false);
 
   // Animation controls
   const errorAnimation = useAnimation();
@@ -62,7 +62,7 @@ export const MessageBox = () => {
 
     // Rerender without animate only after button is pressed once so that errortext only updates and corrects per keystroke after one attempt
     if (isButtonPressedOnce.current) {
-      setRender((prev) => prev + 1);
+      setRender((prev) => !prev);
     }
   };
 
@@ -94,7 +94,7 @@ export const MessageBox = () => {
     }
 
     // Rerender with animate every button click
-    setAnimate((prev) => prev + 1);
+    setAnimate((prev) => !prev);
   };
 
   return (

@@ -2,6 +2,7 @@ import { NavLink } from "./NavLink";
 import { WebsiteLogo } from "../global/WebsiteLogo";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { ScrambleText } from "../global/ScrambleText";
 
 interface Props {
   refsArray: React.RefObject<HTMLDivElement>[];
@@ -44,9 +45,11 @@ export const FooterSection = ({ refsArray }: Props) => {
           <NavLink text="Contact" targetSection={refsArray[4]} />
         </div>
 
-        <p className="text-projectDark">
-          {currentYear} | Designed by Billy Miller
-        </p>
+        <div className="text-projectDark flex items-center">
+          <p>{currentYear} | Designed by</p>
+          &nbsp;
+          <ScrambleText text="Billy Miller" />
+        </div>
       </motion.div>
     </footer>
   );

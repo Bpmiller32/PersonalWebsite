@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { SectionHeader } from "../global/SectionHeader";
 import { BaseProject } from "./BaseProject";
 import { VerticalAccordion } from "./VerticalAccordion";
+import FireGame from "../../assets/projectFireGame.webp";
 import WebGLGT from "../../assets/projectWebGLGT.webp";
 import ArgosyDirMaker from "../../assets/projectArgosyDirMaker.webp";
 import RafWebsite from "../../assets/projectRafWebsite.webp";
@@ -15,6 +16,7 @@ import RaspberryPi from "../../assets/projectRaspberryPi.webp";
 const showcaseProjects = [
   {
     title: "ML WebGL DonkeyKong",
+    image: FireGame,
     techUsed: ["React", "React Three Fiber", "Rapier", "Tailwind"],
   },
   {
