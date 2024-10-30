@@ -3,28 +3,36 @@ import { db } from ".";
 import axios from "axios";
 
 export const logPageLoad = async (componentName: string) => {
-  try {
-    // Fetch visitor's IP address
-    const ipResponse = await axios.get("https://api.ipify.org?format=json");
-    const ipAddress = ipResponse.data.ip;
+  let ipAddress = "";
+  let location = { city: "", country: "" };
 
-    // Fetch location data based on the IP address
+  // Fetch visitor's IP address
+  try {
+    const ipResponse = await axios.get("https://api.ipify.org?format=json");
+    ipAddress = ipResponse.data.ip;
+  } catch {
+    console.error("Error logging page load: 0");
+  }
+
+  // Fetch location data based on the IP address
+  try {
     const locationResponse = await axios.get(
       `http://ip-api.com/json/${ipAddress}`
     );
-    const { city, country } = locationResponse.data;
+    location = locationResponse.data;
+  } catch {
+    console.error("Error logging page load: 1");
+  }
 
-    // Log data to Firestore
+  // Log data to Firestore
+  try {
     await addDoc(collection(db, "pageLoads"), {
       componentName,
       ipAddress,
-      location: {
-        city,
-        country,
-      },
+      location,
       timestamp: new Date(),
     });
-  } catch (error) {
-    console.error("Error logging page load: ", error);
+  } catch {
+    console.error("Error logging page load: 2");
   }
 };

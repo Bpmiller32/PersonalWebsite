@@ -53,20 +53,20 @@ export const BaseProject = ({
       </div>
       <div className="mt-6">
         <div className="flex items-center gap-2 w-full">
-          <h4 className="font-bold text-projectBright text-lg shrink-0">
+          <p className="font-bold text-projectBright text-lg shrink-0">
             {title}
-          </h4>
+          </p>
           <div className="w-full h-[1px] bg-projectBorder" />
 
           {githubLink ? (
-            <a href={githubLink} rel="nofollow">
+            <a href={githubLink} target="_blank" rel="nofollow">
               <AiFillGithub className="text-xl text-projectDark hover:text-projectPrimary transition-colors duration-500 cursor-pointer" />
             </a>
           ) : (
             <></>
           )}
           {liveLink ? (
-            <a href={liveLink} rel="nofollow">
+            <a href={liveLink} target="_blank" rel="nofollow">
               <AiOutlineExport className="text-xl text-projectDark hover:text-projectPrimary transition-colors duration-500 cursor-pointer" />
             </a>
           ) : (

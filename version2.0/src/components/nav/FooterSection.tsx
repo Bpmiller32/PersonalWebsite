@@ -24,7 +24,7 @@ export const FooterSection = ({ refsArray }: Props) => {
         ref={loadingBarRef}
         initial={{ scaleX: 0 }}
         animate={{ scaleX: isContentVisible ? 1 : 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 1.5 }}
         className="max-w-5xl mx-auto mb-5 h-[1px] bg-projectBorder"
       ></motion.div>
 

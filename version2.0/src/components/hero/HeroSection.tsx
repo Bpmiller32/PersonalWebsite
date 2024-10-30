@@ -30,7 +30,7 @@ export const HeroSection = ({ sectionRef, targetRef }: Props) => {
           >
             <p>Hi, I'm </p>
             &nbsp;
-            <ScrambleText text="Billy" firstMountDelay={1500} />
+            <ScrambleText text="Billy" firstMountDelay={2000} />
             <span className="text-projectPrimary">.</span>
           </motion.h1>
           <motion.h2
@@ -45,7 +45,7 @@ export const HeroSection = ({ sectionRef, targetRef }: Props) => {
             &nbsp;
             <ScrambleText
               text="Developer"
-              firstMountDelay={1500}
+              firstMountDelay={2000}
               className="font-semibold text-projectSecondary"
             />
           </motion.h2>

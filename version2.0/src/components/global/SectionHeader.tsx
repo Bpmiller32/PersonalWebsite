@@ -24,7 +24,7 @@ export const SectionHeader = ({ title, titlePlacement = "right" }: Props) => {
         <motion.div
           initial={{ scaleX: 0 }}
           animate={{ scaleX: isContentVisible ? 1 : 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 1.5 }}
           className={
             "w-full h-[1px] bg-projectBorder scale-x-0 " +
             (titlePlacement === "left"
@@ -36,7 +36,7 @@ export const SectionHeader = ({ title, titlePlacement = "right" }: Props) => {
         <motion.p
           initial={{ opacity: 0, y: 15 }}
           animate={isContentVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 1.5 }}
           className="text-3xl md:text-5xl font-black text-end"
         >
           {title}
