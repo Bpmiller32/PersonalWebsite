@@ -17,6 +17,7 @@ export const ImagesBlock = () => (
         <img
           className="absolute rounded-lg inset-0 w-full h-full object-cover"
           src={billyImage0}
+          alt="Photo of me at Mount Inari"
         ></img>
       </div>
     </BaseBlock>
@@ -31,6 +32,7 @@ export const ImagesBlock = () => (
         <img
           className="absolute rounded-lg inset-0 w-full h-full object-cover object-bottom"
           src={billyImage3}
+          alt="Photo of my wife and I hiking Tolmie Peak"
         ></img>
       </div>
     </BaseBlock>
@@ -45,6 +47,7 @@ export const ImagesBlock = () => (
         <img
           className="absolute rounded-lg inset-0 w-full h-full object-cover"
           src={billyImage1}
+          alt="Photo of me and my wife"
         ></img>
       </div>
     </BaseBlock>
@@ -59,6 +62,7 @@ export const ImagesBlock = () => (
         <img
           className="absolute rounded-lg inset-0 w-full h-full object-cover object-right"
           src={billyImage2}
+          alt="Photo of me hiking the Calanques"
         ></img>
       </div>
     </BaseBlock>

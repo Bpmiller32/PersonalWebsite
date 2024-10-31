@@ -5,9 +5,9 @@ import { Webhook, MessageBuilder } from "discord-webhook-node";
 // Initialize Firebase Admin SDK (if needed)
 admin.initializeApp();
 
-// Firestore Trigger: Sends a notification to a Discord webhook when a new document is created in pageLoads
-export const sendDiscordMessagePageLoads = functions.firestore
-  .document("/pageLoads/{id}")
+// Firestore Trigger: Sends a notification to a Discord webhook when a new document is created in siteVisits
+export const sendDiscordMessageSiteVisits = functions.firestore
+  .document("/siteVisits/{id}")
   .onCreate((snap) => {
     // Create the Webhook
     const hook = new Webhook(
@@ -27,7 +27,11 @@ export const sendDiscordMessagePageLoads = functions.firestore
     const embed = new MessageBuilder()
       .setColor(0x00b0f4)
       .setTitle(data.ipAddress)
-      .setDescription(data.location.city)
+      .setDescription(
+        `City: ${data.location.city}
+        State: ${data.location.regionName}
+        Country: ${data.location.country}`
+      )
       .setFooter(
         "Time received",
         "https://cdn.discordapp.com/embed/avatars/0.png"

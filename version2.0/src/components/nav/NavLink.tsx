@@ -13,7 +13,7 @@ export const NavLink = ({ text, targetSection }: Props) => {
   };
 
   return (
-    <a
+    <div
       onClick={() => handleOnClick(targetSection)}
       className="block overflow-hidden cursor-pointer"
     >
@@ -27,6 +27,6 @@ export const NavLink = ({ text, targetSection }: Props) => {
           {text}
         </span>
       </motion.div>
-    </a>
+    </div>
   );
 };

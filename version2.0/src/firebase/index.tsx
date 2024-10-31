@@ -13,4 +13,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export const db = getFirestore(app);
+
+// Calling getAnalytics anywhere in the project causes it to be caught by iPhone content blocker
 // export const analytics = getAnalytics(app);

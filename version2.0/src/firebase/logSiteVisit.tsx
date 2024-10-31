@@ -2,7 +2,7 @@ import { collection, addDoc } from "firebase/firestore";
 import { db } from ".";
 import axios from "axios";
 
-export const logPageLoad = async (componentName: string) => {
+export const logSiteVisit = async () => {
   let ipAddress = "";
   let location = { city: "", country: "" };
 
@@ -11,7 +11,7 @@ export const logPageLoad = async (componentName: string) => {
     const ipResponse = await axios.get("https://api.ipify.org?format=json");
     ipAddress = ipResponse.data.ip;
   } catch {
-    console.error("Error logging page load: 0");
+    console.error("Error logging site visit: 0");
   }
 
   // Fetch location data based on the IP address
@@ -21,18 +21,20 @@ export const logPageLoad = async (componentName: string) => {
     );
     location = locationResponse.data;
   } catch {
-    console.error("Error logging page load: 1");
+    console.error("Error logging site visit: 1");
   }
 
   // Log data to Firestore
   try {
-    await addDoc(collection(db, "pageLoads"), {
-      componentName,
+    const docRef = await addDoc(collection(db, "siteVisits"), {
+      sectionsVisited: [],
       ipAddress,
       location,
       timestamp: new Date(),
     });
+
+    return docRef.id;
   } catch {
-    console.error("Error logging page load: 2");
+    console.error("Error logging site visit: 2");
   }
 };
