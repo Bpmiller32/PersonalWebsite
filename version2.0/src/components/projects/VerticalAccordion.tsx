@@ -14,7 +14,7 @@ export const VerticalAccordion = ({ defaultOpen = false, children }: Props) => {
   const [open, setOpen] = useState(defaultOpen);
 
   return (
-    <motion.div
+    <motion.article
       animate={open ? "open" : "closed"}
       className="max-w-5xl mx-auto"
     >
@@ -81,6 +81,6 @@ export const VerticalAccordion = ({ defaultOpen = false, children }: Props) => {
       >
         <div ref={ref}>{children}</div>
       </motion.div>
-    </motion.div>
+    </motion.article>
   );
 };

@@ -48,22 +48,29 @@ function App() {
       sessionId.current = id;
     };
 
-    logVisit();
+    // logVisit();
   }, []);
 
   // Log section views based on visibility
   useEffect(() => {
-    if (sessionId.current) {
-      if (heroSectionVisible) logSectionView(sessionId.current, "HeroSection");
+    const logView = async () => {
+      if (!sessionId.current) {
+        return;
+      }
+
+      if (heroSectionVisible)
+        await logSectionView(sessionId.current, "HeroSection");
       if (aboutSectionVisible)
-        logSectionView(sessionId.current, "AboutSection");
+        await logSectionView(sessionId.current, "AboutSection");
       if (projectSectionVisible)
-        logSectionView(sessionId.current, "ProjectsSection");
+        await logSectionView(sessionId.current, "ProjectsSection");
       if (experienceSectionVisible)
-        logSectionView(sessionId.current, "ExperienceSection");
+        await logSectionView(sessionId.current, "ExperienceSection");
       if (contactSectionVisible)
-        logSectionView(sessionId.current, "ContactSection");
-    }
+        await logSectionView(sessionId.current, "ContactSection");
+    };
+
+    // logView();
   }, [
     heroSectionVisible,
     aboutSectionVisible,

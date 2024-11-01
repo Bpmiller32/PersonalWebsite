@@ -13,7 +13,7 @@ export const NavDesktop = ({ refsArray }: Props) => {
   const isContentVisible = useInView(contentRef, { once: true });
 
   return (
-    <nav className="absolute w-full top-5 flex justify-center">
+    <nav className="absolute w-full top-5 flex justify-center z-10">
       <motion.div
         ref={contentRef}
         initial={{ opacity: 0, y: 15 }}
