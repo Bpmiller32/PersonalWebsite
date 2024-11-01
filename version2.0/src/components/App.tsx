@@ -20,17 +20,24 @@ function App() {
   const experienceSectionRef = useRef<HTMLDivElement>(null);
   const contactSectionRef = useRef<HTMLDivElement>(null);
 
+  // // Call useInView for each section at the top level
+  // const heroSectionVisible = useInView(heroSectionRef, { once: true });
+  // const aboutSectionVisible = useInView(aboutSectionRef, {
+  //   once: true,
+  //   amount: 0.25,
+  // });
+  // const projectSectionVisible = useInView(projectSectionRef, { once: true });
+  // const experienceSectionVisible = useInView(experienceSectionRef, {
+  //   once: true,
+  // });
+  // const contactSectionVisible = useInView(contactSectionRef, { once: true });
+
   // Call useInView for each section at the top level
-  const heroSectionVisible = useInView(heroSectionRef, { once: true });
-  const aboutSectionVisible = useInView(aboutSectionRef, {
-    once: true,
-    amount: 0.25,
-  });
-  const projectSectionVisible = useInView(projectSectionRef, { once: true });
-  const experienceSectionVisible = useInView(experienceSectionRef, {
-    once: true,
-  });
-  const contactSectionVisible = useInView(contactSectionRef, { once: true });
+  const heroSectionVisible = true;
+  const aboutSectionVisible = true;
+  const projectSectionVisible = true;
+  const experienceSectionVisible = true;
+  const contactSectionVisible = true;
 
   // Store refs in array for navigation in NavSection
   const refsArray = [

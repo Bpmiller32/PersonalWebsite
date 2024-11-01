@@ -11,13 +11,15 @@ interface Props {
 
 export const HeroSection = ({ sectionRef, targetRef }: Props) => {
   const contentRef = useRef(null);
-  const isContentVisible = useInView(contentRef, { once: true });
+  // const isContentVisible = useInView(contentRef, { once: true });
+  const isContentVisible = true;
 
   const handleContactClick = (ref?: React.RefObject<HTMLElement>) => {
     if (ref?.current) {
       ref.current.scrollIntoView({ behavior: "smooth" });
     }
   };
+  console.log("rendering heroElement");
 
   return (
     <section
