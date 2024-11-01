@@ -9,8 +9,8 @@ const parameters = {
   spin: 1,
   randomness: 0.2,
   randomnessPower: 3,
-  insideColor: "#ff6030",
-  outsideColor: "#1b3984",
+  insideColor: "#32e7e7",
+  outsideColor: "#8c32e7",
 };
 
 export const TwistingNether = () => {
@@ -87,9 +87,14 @@ export const TwistingNether = () => {
 
   // Set material
   const material = new THREE.ShaderMaterial({
+    transparent: true,
     depthWrite: false,
     blending: THREE.AdditiveBlending,
     vertexColors: true,
+    uniforms: {
+      uTime: { value: 0 },
+      uSize: { value: 30 * gl.getPixelRatio() },
+    },
     vertexShader: `
         uniform float uTime;
         uniform float uSize;
@@ -103,7 +108,7 @@ export const TwistingNether = () => {
         {
             // Calculate model position
             vec4 modelPosition = modelMatrix * vec4(position, 1.0);
-
+                        
             // Rotation
             float angle = atan(modelPosition.x, modelPosition.z);
             float distanceToCenter = length(modelPosition.xz);
@@ -137,7 +142,7 @@ export const TwistingNether = () => {
         {
             // Calculate the distance from the center of the point
             float strength = distance(gl_PointCoord, vec2(0.5));
-
+          
             // // Make a circle texture by inverting a step function
             // strength = step(0.5, strength);
             // strength = 1.0 - strength;
@@ -150,24 +155,33 @@ export const TwistingNether = () => {
             strength = 1.0 - strength;
             strength = pow(strength, 10.0);
 
-            // Set color to value passed from vertex shader
-            vec3 color = mix(vec3(0.0), vColor, strength);
-            
-            // Apply solid color to fragment/pixel with alpha gradient
-            gl_FragColor = vec4(vec3(strength), 1.0);
 
+
+            // Method using mix function
+            
+            // // Set color to value passed from vertex shader
+            // vec3 color = mix(vec3(0.0), vColor, strength);
+
+            // // Apply solid color to fragment/pixel with alpha gradient
+            // gl_FragColor = vec4(color, 1.0);
+
+
+
+            // More efficient method without mix function
+
+            // Apply solid color to fragment/pixel with alpha gradient
+            gl_FragColor = vec4(vColor, strength);
+            
+
+            
             #include <colorspace_fragment>
         }
     `,
-    uniforms: {
-      uTime: { value: 0 },
-      uSize: { value: 2 * gl.getPixelRatio() },
-    },
   });
 
-  // Update material in tick function
+  // Update shader material variable in tick function
   useFrame((state) => {
-    // material.uniforms.uTime.value = state.clock.elapsedTime;
+    material.uniforms.uTime.value = state.clock.elapsedTime * 0.15;
   });
 
   return <points args={[geometry, material]} />;

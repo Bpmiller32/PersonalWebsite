@@ -30,7 +30,12 @@ export const HeroSection = ({ sectionRef, targetRef }: Props) => {
         <GlExperience />
       </article>
 
-      {/* <div className="absolute w-full h-full bg-projectForeground opacity-85"></div> */}
+      <motion.div
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 0 }}
+        transition={{ delay: 3, duration: 10 }}
+        className="absolute w-full h-full bg-projectForeground"
+      />
 
       <article className="h-full px-4">
         <div className="h-full max-w-5xl mx-auto flex flex-col justify-center">
@@ -82,6 +87,13 @@ export const HeroSection = ({ sectionRef, targetRef }: Props) => {
               onClick={() => handleContactClick(targetRef)}
               className="mt-4 md:mt-6 h-12 w-fit"
               text="Contact Me"
+              colors={{
+                borderColor: "border-projectPrimary",
+                textColorBase: "text-projectBright",
+                textColorHover: "text-projectBright",
+                backgroundBase: "bg-projectPrimary/25",
+                backgroundHover: "bg-projectSecondary",
+              }}
             />
           </motion.div>
         </div>
