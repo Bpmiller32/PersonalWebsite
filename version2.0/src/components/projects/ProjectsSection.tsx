@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { memo, useRef } from "react";
 import { SectionHeader } from "../global/SectionHeader";
 import { BaseProject } from "./BaseProject";
 import { VerticalAccordion } from "./VerticalAccordion";
@@ -157,7 +157,7 @@ interface Props {
   sectionRef?: React.RefObject<HTMLDivElement>;
 }
 
-export const ProjectsSection = ({ sectionRef }: Props) => {
+export const ProjectsSection = memo(({ sectionRef }: Props) => {
   const contentRef = useRef(null);
   const isContentVisible = useInView(contentRef, { once: true });
 
@@ -194,4 +194,4 @@ export const ProjectsSection = ({ sectionRef }: Props) => {
       ></VerticalAccordion>
     </section>
   );
-};
+});

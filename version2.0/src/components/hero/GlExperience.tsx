@@ -1,16 +1,15 @@
 import { Canvas } from "@react-three/fiber";
 import { TwistingNether } from "./TwistingNether";
-import { ExperienceCamera } from "./ExperienceCamera";
+import { FiberCamera } from "./FiberCamera";
+import { memo } from "react";
 
-export const GlExperience = () => {
-  console.log("rendering glExp");
-
+export const GlExperience = memo(() => {
   return (
     <Canvas>
       {/* <OrbitControls makeDefault /> */}
-      <ExperienceCamera />
+      <FiberCamera />
 
       <TwistingNether />
     </Canvas>
   );
-};
+});

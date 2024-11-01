@@ -17,7 +17,6 @@ export const NavMobileLink = ({
   const handleOnClick = (ref: React.RefObject<HTMLElement>) => {
     // Smooth scroll to target section
     if (ref.current) {
-      console.log(ref.current);
       ref.current.scrollIntoView({ behavior: "smooth" });
     }
     // Close the menu after delay....

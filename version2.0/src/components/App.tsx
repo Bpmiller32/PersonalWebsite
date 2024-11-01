@@ -7,8 +7,8 @@ import { FooterSection } from "./nav/FooterSection";
 import { HeroSection } from "./hero/HeroSection";
 import { NavSection } from "./nav/NavSection";
 import { logSiteVisit } from "../firebase/logSiteVisit";
-import { useInView } from "framer-motion";
 import { logSectionView } from "../firebase/logSectionView";
+import { useInView } from "framer-motion";
 
 function App() {
   const sessionId = useRef<string | undefined>();
@@ -20,24 +20,17 @@ function App() {
   const experienceSectionRef = useRef<HTMLDivElement>(null);
   const contactSectionRef = useRef<HTMLDivElement>(null);
 
-  // // Call useInView for each section at the top level
-  // const heroSectionVisible = useInView(heroSectionRef, { once: true });
-  // const aboutSectionVisible = useInView(aboutSectionRef, {
-  //   once: true,
-  //   amount: 0.25,
-  // });
-  // const projectSectionVisible = useInView(projectSectionRef, { once: true });
-  // const experienceSectionVisible = useInView(experienceSectionRef, {
-  //   once: true,
-  // });
-  // const contactSectionVisible = useInView(contactSectionRef, { once: true });
-
   // Call useInView for each section at the top level
-  const heroSectionVisible = true;
-  const aboutSectionVisible = true;
-  const projectSectionVisible = true;
-  const experienceSectionVisible = true;
-  const contactSectionVisible = true;
+  const heroSectionVisible = useInView(heroSectionRef, { once: true });
+  const aboutSectionVisible = useInView(aboutSectionRef, {
+    once: true,
+    amount: 0.25,
+  });
+  const projectSectionVisible = useInView(projectSectionRef, { once: true });
+  const experienceSectionVisible = useInView(experienceSectionRef, {
+    once: true,
+  });
+  const contactSectionVisible = useInView(contactSectionRef, { once: true });
 
   // Store refs in array for navigation in NavSection
   const refsArray = [

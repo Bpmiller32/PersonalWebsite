@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { useWindowSize } from "../utils/UseWindowSize";
 import { NavDesktop } from "./NavDesktop";
 import { NavMobile } from "./NavMobile";
@@ -6,7 +7,7 @@ interface Props {
   refsArray: React.RefObject<HTMLDivElement>[];
 }
 
-export const NavSection = ({ refsArray }: Props) => {
+export const NavSection = memo(({ refsArray }: Props) => {
   const { width } = useWindowSize();
 
   if (width === undefined) {
@@ -22,4 +23,4 @@ export const NavSection = ({ refsArray }: Props) => {
       )}
     </>
   );
-};
+});

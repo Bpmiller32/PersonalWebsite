@@ -1,19 +1,33 @@
 import { useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 
-const parameters = {
-  count: 100000,
-  size: 0.01,
-  radius: 5,
-  branches: 3,
-  spin: 1,
-  randomness: 0.2,
-  randomnessPower: 3,
-  insideColor: "#32e7e7",
-  outsideColor: "#8c32e7",
-};
+interface Props {
+  parameters?: {
+    count: number;
+    size: number;
+    radius: number;
+    branches: number;
+    spin: number;
+    randomness: number;
+    randomnessPower: number;
+    insideColor: string;
+    outsideColor: string;
+  };
+}
 
-export const TwistingNether = () => {
+export const TwistingNether = ({
+  parameters = {
+    count: 100000,
+    size: 0.01,
+    radius: 10,
+    branches: 3,
+    spin: 1,
+    randomness: 0.2,
+    randomnessPower: 3,
+    insideColor: "#32e7e7",
+    outsideColor: "#8c32e7",
+  },
+}: Props) => {
   console.log("rendering galaxy");
 
   // Access the WebGL renderer, use call function instead of destructure to avoid rerender
@@ -64,7 +78,7 @@ export const TwistingNether = () => {
 
     // Color
     const mixedColor = colorInside.clone();
-    mixedColor.lerp(colorOutside, radius / parameters.radius);
+    mixedColor.lerp(colorOutside, radius / 5);
 
     colors[i3] = mixedColor.r;
     colors[i3 + 1] = mixedColor.g;

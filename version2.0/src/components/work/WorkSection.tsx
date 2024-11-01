@@ -2,7 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { SectionHeader } from "../global/SectionHeader";
 import { CardList } from "./CardList";
 import { JobList } from "./JobList";
-import { useRef } from "react";
+import { memo, useRef } from "react";
 import { LinkButton } from "../global/LinkButton";
 import { IoMdDocument } from "react-icons/io";
 
@@ -10,7 +10,7 @@ interface Props {
   sectionRef?: React.RefObject<HTMLElement>;
 }
 
-export const WorkSection = ({ sectionRef }: Props) => {
+export const WorkSection = memo(({ sectionRef }: Props) => {
   const cardsRef = useRef(null);
   const isCardsVisible = useInView(cardsRef, { once: true });
 
@@ -69,4 +69,4 @@ export const WorkSection = ({ sectionRef }: Props) => {
       </motion.article>
     </section>
   );
-};
+});

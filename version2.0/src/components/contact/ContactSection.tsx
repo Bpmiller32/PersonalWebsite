@@ -2,13 +2,13 @@ import { SectionHeader } from "../global/SectionHeader";
 import { MessageBox } from "./MessageBox";
 import { InfoArea } from "./InfoArea";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { memo, useRef } from "react";
 
 interface Props {
   sectionRef?: React.RefObject<HTMLElement>;
 }
 
-export const ContactSection = ({ sectionRef }: Props) => {
+export const ContactSection = memo(({ sectionRef }: Props) => {
   const contentRef = useRef(null);
   const isContentVisible = useInView(contentRef, { once: true });
 
@@ -31,4 +31,4 @@ export const ContactSection = ({ sectionRef }: Props) => {
       </motion.article>
     </section>
   );
-};
+});

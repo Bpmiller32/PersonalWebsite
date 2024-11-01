@@ -1,14 +1,14 @@
 import { NavLink } from "./NavLink";
 import { WebsiteLogo } from "../global/WebsiteLogo";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { memo, useRef } from "react";
 import { ScrambleText } from "../global/ScrambleText";
 
 interface Props {
   refsArray: React.RefObject<HTMLDivElement>[];
 }
 
-export const FooterSection = ({ refsArray }: Props) => {
+export const FooterSection = memo(({ refsArray }: Props) => {
   const currentYear = new Date().getFullYear();
 
   const loadingBarRef = useRef<HTMLDivElement>(null);
@@ -53,4 +53,4 @@ export const FooterSection = ({ refsArray }: Props) => {
       </motion.div>
     </footer>
   );
-};
+});

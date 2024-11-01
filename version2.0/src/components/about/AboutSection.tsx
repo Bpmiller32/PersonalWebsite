@@ -6,13 +6,13 @@ import { ImagesBlock } from "./ImagesBlock";
 import { LocationBlock } from "./LocationBlock";
 import { HobbiesBlock } from "./HobbiesBlock";
 import { MousePositionProvider } from "../utils/MousePositionProvider";
-import { useRef } from "react";
+import { memo, useRef } from "react";
 
 interface Props {
   sectionRef?: React.RefObject<HTMLDivElement>;
 }
 
-export const AboutSection = ({ sectionRef }: Props) => {
+export const AboutSection = memo(({ sectionRef }: Props) => {
   const contentRef = useRef(null);
   const isContentVisible = useInView(contentRef, { once: true });
 
@@ -42,4 +42,4 @@ export const AboutSection = ({ sectionRef }: Props) => {
       </div>
     </MousePositionProvider>
   );
-};
+});
