@@ -149,7 +149,7 @@ const additionalProjects = [
     ],
     description:
       "My old portfolio and personal website, highlighting my most recent work, skills, and accomplishments - all updated for the year.",
-    liveLink: "https://FIREBASE_PROJECT_IDold.web.app",
+    liveLink: "https://bpmillerpersonalwebsiteold.web.app",
     githubLink: "https://github.com/Bpmiller32/PersonalWebsite",
   },
   {
