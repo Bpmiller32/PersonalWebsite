@@ -37,3 +37,7 @@ version2.0/.env
 version2.0/functions/.env
 version2.0/functions/lib/index.js
 version2.0/functions/lib/index.js.map
+/version1.0/.firebase
+/version2.0/.firebase
+version1.0/tsconfig.tsbuildinfo
+version2.0/tsconfig.tsbuildinfo
