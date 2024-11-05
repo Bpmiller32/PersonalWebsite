@@ -1,5 +1,5 @@
-import { motion, AnimatePresence } from "framer-motion";
 import { Dispatch, SetStateAction } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
 

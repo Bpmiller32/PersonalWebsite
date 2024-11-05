@@ -1,8 +1,8 @@
-import { NavLink } from "./NavLink";
-import { WebsiteLogo } from "../global/WebsiteLogo";
-import { motion, useInView } from "framer-motion";
 import { memo, useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { WebsiteLogo } from "../global/WebsiteLogo";
 import { ScrambleText } from "../global/ScrambleText";
+import { NavLink } from "./NavLink";
 
 interface Props {
   refsArray: React.RefObject<HTMLDivElement>[];

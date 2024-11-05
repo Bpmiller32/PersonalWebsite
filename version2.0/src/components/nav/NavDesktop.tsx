@@ -1,8 +1,8 @@
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { LinkButton } from "../global/LinkButton";
 import { WebsiteLogo } from "../global/WebsiteLogo";
 import { NavLink } from "./NavLink";
-import { useRef } from "react";
 
 interface Props {
   refsArray: React.RefObject<HTMLDivElement>[];

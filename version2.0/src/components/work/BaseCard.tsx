@@ -1,6 +1,6 @@
+import { ReactNode, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
-import { ReactNode, useRef, useState } from "react";
 import UnderlineAnimationPrimary from "../../assets/cardUnderlinePrimary.json";
 import UnderlineAnimationSecondary from "../../assets/cardUnderlineSecondary.json";
 import UnderlineAnimationTertiary from "../../assets/cardUnderlineTertiary.json";

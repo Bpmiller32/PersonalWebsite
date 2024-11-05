@@ -1,6 +1,6 @@
+import { motion } from "framer-motion";
 import { AiFillGithub, AiOutlineExport } from "react-icons/ai";
 import { BadgeItem } from "../global/BadgeItem";
-import { motion } from "framer-motion";
 
 interface Props {
   image?: string;

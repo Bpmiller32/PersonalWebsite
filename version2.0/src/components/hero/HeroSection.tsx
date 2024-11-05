@@ -1,5 +1,5 @@
-import { motion, useInView } from "framer-motion";
 import { memo, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { ActionButton } from "../global/ActionButton";
 import { ScrambleText } from "../global/ScrambleText";
 import { GlExperience } from "./GlExperience";

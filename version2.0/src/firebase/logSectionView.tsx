@@ -5,7 +5,7 @@ export const logSectionView = async (
   sessionId: string,
   sectionName: string
 ) => {
-  // Log data to Firestore
+  // Log section view data to Firestore
   try {
     const docRef = doc(db, "siteVisits", sessionId);
     await updateDoc(docRef, {

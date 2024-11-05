@@ -1,6 +1,6 @@
+import { useEffect, useState } from "react";
 import { AnimationProps, motion } from "framer-motion";
 import { BaseBlock } from "./BaseBlock";
-import { useEffect, useState } from "react";
 import { useWindowSize } from "../utils/UseWindowSize";
 import { FaCamera, FaSnowboarding } from "react-icons/fa";
 import { TbScubaMask } from "react-icons/tb";

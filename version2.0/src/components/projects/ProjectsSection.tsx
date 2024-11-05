@@ -1,5 +1,5 @@
-import { motion, useInView } from "framer-motion";
 import { memo, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { SectionHeader } from "../global/SectionHeader";
 import { BaseProject } from "./BaseProject";
 import { VerticalAccordion } from "./VerticalAccordion";
@@ -19,7 +19,7 @@ const showcaseProjects = [
     title: "ML WebGL DonkeyKong",
     image: FireGame,
     techUsed: ["React", "React Three Fiber", "Rapier", "Tailwind"],
-    description: `WebGL recreation of the classic Donkey Kong arcade game, then used as an interactive simulation platform to train and test a Proximal Policy Optimization (PPO) reinforcement learning algorithm.
+    description: `WebGL recreation of the classic Donkey Kong arcade game, used as an interactive simulation platform to train and test a Proximal Policy Optimization (PPO) reinforcement learning algorithm.
     
     Combines retro game design with cutting-edge AI, where the recreated environment enables a model to learn strategies and optimize gameplay performance, navigating through levels and overcoming obstacles as an AI agent learns progressively from its interactions.
     
@@ -50,6 +50,7 @@ const showcaseProjects = [
     showLinks: true,
 
     liveLink: "https://rafdirmaker.web.app",
+    githubLink: "https://github.com/Bpmiller32/RafTools",
   },
   {
     title: "WebGLGT",
@@ -72,6 +73,7 @@ const showcaseProjects = [
     Optimizes previous workflow by 70+% per piece by changing the approach from manual entry to review and approval using Google Vision AI.`,
     showLinks: true,
     liveLink: "https://webglgt.web.app",
+    githubLink: "https://github.com/Bpmiller32/RafTools",
   },
   {
     title: "RAF Technology",
@@ -88,6 +90,7 @@ const showcaseProjects = [
       "RAF is a global leader in AI-driven pattern recognition, intelligent data extraction, and signature verification software for enterprise, government, and postal authorities. This is the latest iteration of 3 web solutions I made for them.",
     showLinks: true,
     liveLink: "https://www.raf.com",
+    githubLink: "https://github.com/Bpmiller32/RafWebsite",
   },
 ];
 
@@ -132,6 +135,7 @@ const additionalProjects = [
     description:
       "My current portfolio and personal website, highlighting my most recent work, skills, and accomplishments - all updated for the year.",
     liveLink: "https://bpmiller.com",
+    githubLink: "https://github.com/Bpmiller32/PersonalWebsite",
   },
   {
     title: "Portfolio Website (Previous)",
@@ -145,6 +149,8 @@ const additionalProjects = [
     ],
     description:
       "My old portfolio and personal website, highlighting my most recent work, skills, and accomplishments - all updated for the year.",
+    liveLink: "https://bpmillerpersonalwebsiteold.web.app",
+    githubLink: "https://github.com/Bpmiller32/PersonalWebsite",
   },
   {
     title: "Raspberry Pi Projects",
@@ -155,6 +161,7 @@ const additionalProjects = [
       Worker service designed to monitor temperature (and humidity, pressure, and light) levels in a server room, sending alerts to a mailing group when specific thresholds are exceeded. 
       
       Scripts to make a mock GameBoy case for the Pi Zero work.`,
+    githubLink: "https://github.com/Bpmiller32/PiProjects",
   },
   {
     title: "Isle of Man Data Compiler",
@@ -162,6 +169,7 @@ const additionalProjects = [
     techUsed: ["WinForms", "Serilog", "Service Controller"],
     description:
       "Utility application used to compile mailing directories by validating raw address data against the ruleset and schema of Isle of Man and Royal Mail postal standards.",
+    githubLink: "https://github.com/Bpmiller32/RafTools",
   },
 ];
 

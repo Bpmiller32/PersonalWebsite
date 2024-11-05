@@ -1,12 +1,12 @@
+import { memo, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { MousePositionProvider } from "../utils/MousePositionProvider";
 import { SectionHeader } from "../global/SectionHeader";
 import { HeaderBlock } from "./HeaderBlock";
 import { DescriptionBlock } from "./DescriptionBlock";
 import { ImagesBlock } from "./ImagesBlock";
 import { LocationBlock } from "./LocationBlock";
 import { HobbiesBlock } from "./HobbiesBlock";
-import { MousePositionProvider } from "../utils/MousePositionProvider";
-import { memo, useRef } from "react";
 
 interface Props {
   sectionRef?: React.RefObject<HTMLDivElement>;
