@@ -28,8 +28,6 @@ export const TwistingNether = ({
     outsideColor: "#8c32e7",
   },
 }: Props) => {
-  console.log("rendering galaxy");
-
   // Access the WebGL renderer, use call function instead of destructure to avoid rerender
   const gl = useThree((state) => state.gl);
 

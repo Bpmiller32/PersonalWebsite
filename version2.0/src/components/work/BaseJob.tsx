@@ -51,7 +51,9 @@ export const BaseJob = ({
         <span className="text-projectDark shrink-0">{location}</span>
       </div>
 
-      <p className="mb-6 text-projectDark leading-relaxed">{description}</p>
+      <p className="mb-6 text-projectDark leading-relaxed whitespace-pre-line">
+        {description}
+      </p>
 
       <div className="flex flex-wrap gap-2">
         {tech.map((item) => (

@@ -71,14 +71,6 @@ export const ScrambleText = ({
       onMouseEnter={scramble}
       onMouseLeave={stopScramble}
       className={className}
-      style={{
-        textShadow: `
-          -1px -1px 0 black,
-          1px -1px 0 black,
-          -1px 1px 0 black,
-          1px 1px 0 black
-        `,
-      }}
     >
       {scrambleText}
     </p>

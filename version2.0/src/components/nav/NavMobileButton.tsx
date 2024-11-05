@@ -16,6 +16,7 @@ export const NavMobileButton = ({ active, setActive }: Props) => {
       className={`flex justify-center items-center group absolute right-4 top-4 z-20 h-20 w-20 transition-all hover:bg-projectBorder duration-500 ${
         active ? "rounded-bl-xl rounded-tr-xl" : "rounded-xl"
       }`}
+      aria-label="Mobile navigation menu button"
     >
       <AnimatePresence>
         {active && (

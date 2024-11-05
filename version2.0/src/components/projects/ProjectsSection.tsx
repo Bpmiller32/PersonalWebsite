@@ -8,6 +8,7 @@ import WebGLGT from "../../assets/projectWebGLGT.webp";
 import ArgosyDirMaker from "../../assets/projectArgosyDirMaker.webp";
 import RafWebsite from "../../assets/projectRafWebsite.webp";
 import Dmi from "../../assets/projectDmi.webp";
+import PersonalWebsiteCurrent from "../../assets/projectPersonalWebsiteCurrent.webp";
 import PersonalWebsiteOld from "../../assets/projectPersonalWebsiteOld.webp";
 import IomMaker from "../../assets/projectIomMaker.webp";
 import CalTrans from "../../assets/projectCalTrans.webp";
@@ -18,6 +19,11 @@ const showcaseProjects = [
     title: "ML WebGL DonkeyKong",
     image: FireGame,
     techUsed: ["React", "React Three Fiber", "Rapier", "Tailwind"],
+    description: `WebGL recreation of the classic Donkey Kong arcade game, then used as an interactive simulation platform to train and test a Proximal Policy Optimization (PPO) reinforcement learning algorithm.
+    
+    Combines retro game design with cutting-edge AI, where the recreated environment enables a model to learn strategies and optimize gameplay performance, navigating through levels and overcoming obstacles as an AI agent learns progressively from its interactions.
+    
+    Both a homage to one of my favorite games and a fun experimental learning tool for reinforcement learning techniques.`,
   },
   {
     title: "Argosy DirMaker",
@@ -38,8 +44,9 @@ const showcaseProjects = [
       "MailKit",
       "Serilog",
     ],
-    description:
-      "Concurrent, multi-threaded, full-stack program used to gather, catalog, compile, and distribute critical directories on multiple timelines and deadlines. Fully automates a time-consuming manual process that previously took a week of collaboration among several team members.",
+    description: `Concurrent, multi-threaded, full-stack program used to gather, catalog, compile, and distribute critical directories on multiple timelines and deadlines. 
+    
+    Fully automates a time-consuming manual process that previously took a week of collaboration among several team members.`,
     showLinks: true,
 
     liveLink: "https://rafdirmaker.web.app",
@@ -60,8 +67,9 @@ const showcaseProjects = [
       "Express",
       "Playwright",
     ],
-    description:
-      "A custom WebGL interface with adaptable tooling and shortcuts to aid in ground truthing and tagging image sets for use in neutral nets. Optimizes previous workflow by 70+% per piece by changing the approach from manual entry to review and approval using Google Vision AI.",
+    description: `A custom WebGL interface with adaptable tooling and shortcuts to aid in ground truthing and tagging image sets for use in neutral nets.
+      
+    Optimizes previous workflow by 70+% per piece by changing the approach from manual entry to review and approval using Google Vision AI.`,
     showLinks: true,
     liveLink: "https://webglgt.web.app",
   },
@@ -110,6 +118,7 @@ const additionalProjects = [
   },
   {
     title: "Portfolio Website (Current)",
+    image: PersonalWebsiteCurrent,
     techUsed: [
       "React",
       "React Three Fiber",
@@ -118,10 +127,10 @@ const additionalProjects = [
       "Lottie",
       "Firebase",
       "Firebase Functions",
-      "Google Analytics",
+      "Custom Analytics",
     ],
     description:
-      "My current portfolio and personal website, highlighting my most recent work, skills, and accomplishments, all updated for the year.",
+      "My current portfolio and personal website, highlighting my most recent work, skills, and accomplishments - all updated for the year.",
     liveLink: "https://bpmiller.com",
   },
   {
@@ -135,21 +144,24 @@ const additionalProjects = [
       "Firebase Functions",
     ],
     description:
-      "My old portfolio and personal website, highlighting my most recent work, skills, and accomplishments, all updated for the year.",
+      "My old portfolio and personal website, highlighting my most recent work, skills, and accomplishments - all updated for the year.",
   },
   {
     title: "Raspberry Pi Projects",
     image: RaspberryPi,
     techUsed: ["Python", "C#", "Python.Net", "MailKit", "Serilog", "BME280"],
-    description:
-      "Solution to repair my cat’s broken automated litterbox using a mechanical relay and a custom circuit. Worker service designed to monitor temperature (and humidity, pressure, and light) levels in a server room, sending alerts to a mailing group when specific thresholds are exceeded. Scripts to make a mock GameBoy case for the Pi Zero work.",
+    description: `Solution to repair my cat’s broken automated litterbox using a mechanical relay and a custom circuit. 
+      
+      Worker service designed to monitor temperature (and humidity, pressure, and light) levels in a server room, sending alerts to a mailing group when specific thresholds are exceeded. 
+      
+      Scripts to make a mock GameBoy case for the Pi Zero work.`,
   },
   {
     title: "Isle of Man Data Compiler",
     image: IomMaker,
     techUsed: ["WinForms", "Serilog", "Service Controller"],
     description:
-      "An application used to compile mailing directories by validating raw address data against the ruleset and schema of Isle of Man and Royal Mail postal standards.",
+      "Utility application used to compile mailing directories by validating raw address data against the ruleset and schema of Isle of Man and Royal Mail postal standards.",
   },
 ];
 

@@ -59,14 +59,24 @@ export const BaseProject = ({
           <div className="w-full h-[1px] bg-projectBorder" />
 
           {githubLink ? (
-            <a href={githubLink} target="_blank" rel="nofollow">
+            <a
+              href={githubLink}
+              target="_blank"
+              rel="nofollow"
+              aria-label={`Go to souce code of ${title} project`}
+            >
               <AiFillGithub className="text-xl text-projectDark hover:text-projectPrimary transition-colors duration-500 cursor-pointer" />
             </a>
           ) : (
             <></>
           )}
           {liveLink ? (
-            <a href={liveLink} target="_blank" rel="nofollow">
+            <a
+              href={liveLink}
+              target="_blank"
+              rel="nofollow"
+              aria-label={`Go to live demo page of ${title} project`}
+            >
               <AiOutlineExport className="text-xl text-projectDark hover:text-projectPrimary transition-colors duration-500 cursor-pointer" />
             </a>
           ) : (
@@ -78,7 +88,9 @@ export const BaseProject = ({
             return <BadgeItem key={tech}>{tech}</BadgeItem>;
           })}
         </div>
-        <p className="text-projectDark leading-relaxed">{description}</p>
+        <p className="text-projectDark leading-relaxed whitespace-pre-line">
+          {description}
+        </p>
       </div>
     </motion.div>
   );

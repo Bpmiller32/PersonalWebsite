@@ -30,7 +30,7 @@ export const HeroSection = memo(({ sectionRef, targetRef }: Props) => {
 
       <motion.div
         initial={{ opacity: 1 }}
-        animate={{ opacity: 0.3 }}
+        animate={{ opacity: 0.1 }}
         transition={{ delay: 1.75, duration: 3 }}
         className="absolute w-full h-full bg-projectForeground"
       />
@@ -44,33 +44,14 @@ export const HeroSection = memo(({ sectionRef, targetRef }: Props) => {
               transition={{ duration: 0.5, delay: 0.25 }}
               className="pointer-events-auto flex text-4xl sm:text-6xl font-black text-projectBright md:text-8xl"
             >
-              <p
-                style={{
-                  textShadow: `
-                  -1px -1px 0 black,
-                  1px -1px 0 black,
-                  -1px 1px 0 black,
-                  1px 1px 0 black
-                `,
-                }}
-              >
-                Hi, I'm{" "}
-              </p>
+              <p className="text-shadow-black">Hi, I'm </p>
               &nbsp;
-              <ScrambleText text="Billy" firstMountDelay={2000} />
-              <span
-                className="text-projectPrimary"
-                style={{
-                  textShadow: `
-                  -1px -1px 0 black,
-                  1px -1px 0 black,
-                  -1px 1px 0 black,
-                  1px 1px 0 black
-                `,
-                }}
-              >
-                .
-              </span>
+              <ScrambleText
+                className="text-shadow-black"
+                text="Billy"
+                firstMountDelay={2000}
+              />
+              <span className="text-projectPrimary text-shadow-black">.</span>
             </motion.h1>
             <motion.h2
               initial={{ opacity: 0, y: 15 }}
@@ -78,52 +59,23 @@ export const HeroSection = memo(({ sectionRef, targetRef }: Props) => {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="pointer-events-auto flex my-2 text-xl sm:text-2xl text-projectDark md:my-4 md:text-4xl"
             >
-              <p
-                style={{
-                  textShadow: `
-                  -1px -1px 0 black,
-                  1px -1px 0 black,
-                  -1px 1px 0 black,
-                  1px 1px 0 black
-                `,
-                }}
-              >
-                I'm a
-              </p>
+              <p className="text-shadow-black">I'm a</p>
               &nbsp;
-              <p
-                className="font-semibold text-projectSecondary"
-                style={{
-                  textShadow: `
-                  -1px -1px 0 black,
-                  1px -1px 0 black,
-                  -1px 1px 0 black,
-                  1px 1px 0 black
-                `,
-                }}
-              >
+              <p className="font-semibold text-projectSecondary text-shadow-black">
                 Full Stack
               </p>
               &nbsp;
               <ScrambleText
                 text="Developer"
                 firstMountDelay={2000}
-                className="font-semibold text-projectSecondary"
+                className="font-semibold text-projectSecondary text-shadow-black"
               />
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 15 }}
               animate={isContentVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.75 }}
-              className="pointer-events-auto leading-relaxed md:leading-relaxed max-w-xl text-sm text-projectDark md:text-base"
-              style={{
-                textShadow: `
-                  -1px -1px 0 black,
-                  1px -1px 0 black,
-                  -1px 1px 0 black,
-                  1px 1px 0 black
-                `,
-              }}
+              className="pointer-events-auto leading-relaxed md:leading-relaxed max-w-xl text-sm text-projectDark text-shadow-black md:text-base"
             >
               I've spent the last 5 years building and scaling software for some
               pretty cool companies. Let's connect!

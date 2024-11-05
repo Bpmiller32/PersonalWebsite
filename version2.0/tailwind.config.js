@@ -16,7 +16,29 @@ export default {
         projectBright: "#fbfbfb",
         projectDark: "#9facac",
       },
+      textShadow: {
+        "custom-black": `
+          -1px -1px 0 black,
+          1px -1px 0 black,
+          -1px 1px 0 black,
+          1px 1px 0 black
+        `,
+      },
     },
   },
-  plugins: [forms],
+  plugins: [
+    forms,
+    function ({ addUtilities }) {
+      addUtilities({
+        ".text-shadow-black": {
+          textShadow: `
+          -1px -1px 0 black,
+          1px -1px 0 black,
+          -1px 1px 0 black,
+          1px 1px 0 black
+        `,
+        },
+      });
+    },
+  ],
 };

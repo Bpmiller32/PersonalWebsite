@@ -23,6 +23,7 @@ export const HeaderBlock = () => {
             href="https://www.linkedin.com/in/bpmiller32"
             target="_blank"
             rel="nofollow"
+            aria-label="Check out Billy's LinkedIn"
           >
             <SiLinkedin />
           </a>
@@ -31,6 +32,7 @@ export const HeaderBlock = () => {
             href="https://www.github.com/bpmiller32"
             target="_blank"
             rel="nofollow"
+            aria-label="Check out Billy's Github"
           >
             <SiGithub />
           </a>
@@ -39,6 +41,7 @@ export const HeaderBlock = () => {
             href="https://www.instagram.com/billybeboppin/"
             target="_blank"
             rel="nofollow"
+            aria-label="Check out Billy's Instagram"
           >
             <SiInstagram />
           </a>

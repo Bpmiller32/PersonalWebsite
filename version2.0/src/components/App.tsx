@@ -11,8 +11,6 @@ import { logSectionView } from "../firebase/logSectionView";
 import { useInView } from "framer-motion";
 
 function App() {
-  const sessionId = useRef<string | undefined>();
-
   // Define section refs and visibility state
   const heroSectionRef = useRef<HTMLDivElement>(null);
   const aboutSectionRef = useRef<HTMLDivElement>(null);
@@ -20,7 +18,7 @@ function App() {
   const experienceSectionRef = useRef<HTMLDivElement>(null);
   const contactSectionRef = useRef<HTMLDivElement>(null);
 
-  // Call useInView for each section at the top level
+  // Call useInView for each section at the top level because the hooks can't be inside useEffect hook
   const heroSectionVisible = useInView(heroSectionRef, { once: true });
   const aboutSectionVisible = useInView(aboutSectionRef, {
     once: true,
@@ -42,13 +40,14 @@ function App() {
   ];
 
   // Fetch session ID once on component mount
+  const sessionId = useRef<string | undefined>();
+
   useEffect(() => {
     const logVisit = async () => {
       const id = await logSiteVisit();
       sessionId.current = id;
     };
-
-    // logVisit();
+    logVisit();
   }, []);
 
   // Log section views based on visibility
@@ -57,7 +56,6 @@ function App() {
       if (!sessionId.current) {
         return;
       }
-
       if (heroSectionVisible)
         await logSectionView(sessionId.current, "HeroSection");
       if (aboutSectionVisible)
@@ -69,8 +67,7 @@ function App() {
       if (contactSectionVisible)
         await logSectionView(sessionId.current, "ContactSection");
     };
-
-    // logView();
+    logView();
   }, [
     heroSectionVisible,
     aboutSectionVisible,

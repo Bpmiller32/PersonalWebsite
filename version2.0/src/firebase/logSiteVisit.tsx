@@ -11,17 +11,17 @@ export const logSiteVisit = async () => {
     const ipResponse = await axios.get("https://api.ipify.org?format=json");
     ipAddress = ipResponse.data.ip;
   } catch {
-    console.error("Error logging site visit: 0");
+    console.error("Error logging site visit, code: 0");
   }
 
   // Fetch location data based on the IP address
   try {
     const locationResponse = await axios.get(
-      `http://ip-api.com/json/${ipAddress}`
+      `https://ipinfo.io/${ipAddress}/json?token=040e5e5262a382`
     );
     location = locationResponse.data;
   } catch {
-    console.error("Error logging site visit: 1");
+    console.error("Error logging site visit, code: 1");
   }
 
   // Log data to Firestore
@@ -35,6 +35,6 @@ export const logSiteVisit = async () => {
 
     return docRef.id;
   } catch {
-    console.error("Error logging site visit: 2");
+    console.error("Error logging site visit, code: 2");
   }
 };

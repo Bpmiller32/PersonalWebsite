@@ -29,8 +29,8 @@ export const sendDiscordMessageSiteVisits = functions.firestore
       .setTitle(data.ipAddress)
       .setDescription(
         `City: ${data.location.city}
-        State: ${data.location.regionName}
-        Country: ${data.location.country}`
+State: ${data.location.region}
+Country: ${data.location.country}`
       )
       .setFooter(
         "Time received",

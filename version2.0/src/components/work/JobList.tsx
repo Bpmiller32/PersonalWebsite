@@ -6,8 +6,13 @@ const experience = [
     position: "Engineering Manager",
     time: "2023 - Present",
     location: "Seattle, WA",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.",
+    description: `✧ Lead the team responsible for customer relations, support, and licensing while releasing, providing feedback, and supporting new product versions. Assisted with product deployment across diverse customer scenarios and gathered implementation insights to inform future iterative product improvements.
+
+    ✧ Fostered relationships with key partner stakeholders, leading regular meetings to discuss project progress, gather input, and identify opportunities for improvement. Provided technical guidance and tailored engineering solutions to address specific business challenges.
+
+    ✧ Designed and programmed new development workflow tool to improve OCR engine and neural network development efficiency and performance, resulting in a 70% improvement over previous approach.
+
+    ✧ Collaborated with sales and marketing teams to create presentations and technical documentation that effectively communicated product features and benefits to clients.`,
     tech: [
       "React",
       "ThreeJs",
@@ -25,8 +30,17 @@ const experience = [
     position: "Techservices Manager",
     time: "2020 - 2023",
     location: "Redmond, WA",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.",
+    description: `✧ Served as a primary point of contact for escalated technical issues, acting as a liaison to ensure customer needs were effectively communicated and addressed both externally and internally.
+
+    ✧ Continued the development of both new and existing product offerings, focusing on dashboards and development utilities, and utilizing multiple technologies to create 7 extension products and 3 new products.
+        
+    ✧ Managed and oversaw the organization’s IT operations, including infrastructure, systems administration, and internal technical support.
+    
+    ✧ Directed the migration of the USPS CASS cycle for our core postal products, ensuring a seamless transition and compliance with industry standards. Actively engaged in virtual and in-person conferences to align timing and development scheduling and deployment.
+    
+    ✧ Led the successful relocation of server infrastructure and networking equipment between multiple buildings, ensuring minimal downtime and disruption to business operations.
+    
+    ✧ Improved operational efficiency and reduced annual IT operating costs by 84% through various initiatives, including re-evaluating and optimizing cloud services, as well as discontinuing unnecessary legacy systems.`,
     tech: [
       "VueJs",
       "Tailwind",
@@ -41,16 +55,26 @@ const experience = [
       "Google Firebase",
       "Git",
       "GitHub",
+      "AWS",
       "Vultr",
     ],
   },
   {
-    title: "RAF Technology",
+    title: "Matthews International",
     position: "Software Engineer",
     time: "2016 - 2020",
     location: "Redmond, WA",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.",
+    description: `✧ Developed custom implementation patterns for extension products of our core OCR solution, creating programming solutions that controlled the logic flow and functionality of the engine, ultimately transforming workflows into distinctive product offerings.
+    
+    ✧ Served as the lead Electrical Engineer for the Print Code Verification project, designing and assembling circuits, integrating components and enclosures, and acting as the sales engineering representative during product demonstrations.
+    
+    ✧ Spearheaded the development and management of the current RAF websites, internal knowledge base wiki, and technical documentation, utilizing a variety of front-end and back-end frameworks and databases.
+    
+    ✧ Designed and implemented a custom CRM software solution that integrated with the wiki and bug tracking systems, significantly improving workflow and collaboration among QA, Development, and Technical Services teams.
+    
+    ✧ Developed a custom directory compilation suite that automated previously manual procedures, resulting in substantial time and resource savings for the company each month.
+    
+    ✧ Created and executed trade show demonstrations and conducted workshops for clients, resulting in increased user adoption and satisfaction.`,
     tech: [
       "C#",
       "Powershell",
@@ -59,6 +83,9 @@ const experience = [
       "Telerik",
       "MongoDb",
       "MS Access",
+      "VueJs",
+      "Asp.Net",
+      "Entity Framework",
       "Wordpress",
       "TortoiseSvn",
       "AWS",
@@ -69,8 +96,11 @@ const experience = [
     position: "IT Specialist",
     time: "2012 - 2016",
     location: "Baton Rouge, LA",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.",
+    description: `✧ Collaborated with the Chief Information Officer and IT team to evaluate system resources and support program development, executing complex tasks annually in alignment with the State of Louisiana’s evolving agenda and budget requirements.
+      
+      ✧ Managed Windows and Mac systems while integrating sensitive state databases that required security clearance, oversaw the installation of network software and hardware and the replacement of network and workstation components to ensure data integrity and compliance with regulatory standards.
+      
+      ✧ Delivered technical assistance to over 200 employees, addressing a diverse range of technical issues daily. Offered backup support to the Network Administrator and Application Owners/Administrators.`,
     tech: [
       "Active Directory",
       "Powershell",
@@ -85,8 +115,9 @@ const experience = [
     position: "Network Infrastructure Engineer",
     time: "2010 - 2012",
     location: "Baton Rouge, LA",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.",
+    description: `✧ Designed and implemented custom circuits for large-scale stock ticker display project associated with the new Business Education Complex.
+    
+    ✧ Developed expertise in Cisco-based systems and VLAN configuration, installing, configuring, and maintaining server switches across the LSU campus and satellite properties. Provided diagnostic support for LSU’s diverse network infrastructure, ensuring optimal performance and reliability.`,
     tech: ["ARM v4-v7", "Verilog", "Keil", "Pspice", "EaglePCB", "Xbee", "DSP"],
   },
 ];
