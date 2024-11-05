@@ -1,7 +1,7 @@
-import { BaseCard } from "./BaseCard";
 import DesktopLogo from "../../assets/desktopLogo.json";
 import ReactVueLogos from "../../assets/reactVueLogos.json";
 import CloudLogo from "../../assets/cloudLogo.json";
+import { BaseCard } from "./BaseCard";
 import { FloatingCode } from "./FloatingCode";
 
 const cards = [

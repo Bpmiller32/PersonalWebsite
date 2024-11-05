@@ -1,10 +1,10 @@
-import { IoIosSend } from "react-icons/io";
-import { ActionButton } from "../global/ActionButton";
 import { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { CiCircleCheck } from "react-icons/ci";
-import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../firebase";
+import { addDoc, collection } from "firebase/firestore";
+import { IoIosSend } from "react-icons/io";
+import { CiCircleCheck } from "react-icons/ci";
+import { ActionButton } from "../global/ActionButton";
 
 // Regex for email validation
 const regex: RegExp =

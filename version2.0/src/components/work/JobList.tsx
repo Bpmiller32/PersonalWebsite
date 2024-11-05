@@ -6,13 +6,13 @@ const experience = [
     position: "Engineering Manager",
     time: "2023 - Present",
     location: "Seattle, WA",
-    description: `✧ Lead the team responsible for customer relations, support, and licensing while releasing, providing feedback, and supporting new product versions. Assisted with product deployment across diverse customer scenarios and gathered implementation insights to inform future iterative product improvements.
+    description: `✧ Leading the team responsible for customer relations, support, and licensing while releasing, providing feedback, and supporting new product versions. Assisting with product deployment across diverse customer scenarios and gathering implementation insights to inform future iterative product improvements.
 
-    ✧ Fostered relationships with key partner stakeholders, leading regular meetings to discuss project progress, gather input, and identify opportunities for improvement. Provided technical guidance and tailored engineering solutions to address specific business challenges.
+    ✧ Fostering relationships with key partner stakeholders, leading regular meetings to discuss project progress, gather input, and identify opportunities for improvement. Providing technical guidance and tailored engineering solutions to address specific business challenges.
 
     ✧ Designed and programmed new development workflow tool to improve OCR engine and neural network development efficiency and performance, resulting in a 70% improvement over previous approach.
 
-    ✧ Collaborated with sales and marketing teams to create presentations and technical documentation that effectively communicated product features and benefits to clients.`,
+    ✧ Collaborating with sales and marketing teams to create presentations and technical documentation that effectively communicate product features and benefits to clients.`,
     tech: [
       "React",
       "ThreeJs",

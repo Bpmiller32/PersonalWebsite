@@ -32,39 +32,6 @@ onMounted(() => {
       <!-- JOBS LIST -->
 
       <!-- Freelance-->
-      <div class="flex">
-        <!-- Logo -->
-        <div></div>
-        <img
-          class="mt-1 h-10 w-10 rounded-full flex flex-none"
-          src="..\assets\common\datasea.webp"
-          alt="Logo for freelance"
-        />
-
-        <!-- CompanyName and Titles-->
-        <div class="ml-3 w-full text-sm text-zinc-200 font-poppins">
-          <!-- CompanyName -->
-          <p>DataSea LLC</p>
-
-          <!-- Titles -->
-          <div v-if="appWidth <= 425">
-            <div
-              class="flex flex-wrap flex-none justify-between text-xs font-poppins"
-            >
-              <p class="text-zinc-400 w-full">Freelance Developer</p>
-              <p class="text-zinc-500">2023 - Present</p>
-            </div>
-          </div>
-          <div v-else>
-            <div
-              class="flex flex-wrap flex-none justify-between text-xs font-poppins"
-            >
-              <p class="text-zinc-400">Freelance Developer</p>
-              <p class="text-zinc-500">2023 - Present</p>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <!-- Matthews-->
       <div class="flex">

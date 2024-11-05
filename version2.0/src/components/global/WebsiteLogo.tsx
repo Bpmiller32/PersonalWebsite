@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
-import animationData from "../../assets/websiteLogo.json";
 import { twMerge } from "tailwind-merge";
+import animationData from "../../assets/websiteLogo.json";
 
 interface Props {
   className?: string;

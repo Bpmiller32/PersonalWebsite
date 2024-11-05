@@ -37,7 +37,7 @@
         Fast-forward to today, and I’ve had the privilege of working in
         education, freelance, huge corporations, and a local hackathons. My main
         focus these days is building reactive, accessible, inclusive digital
-        experiences at Datasea for a variety of clients.
+        experiences at Matthews for a variety of clients.
       </p>
     </div>
   </section>

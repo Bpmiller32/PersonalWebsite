@@ -1,8 +1,8 @@
+import { memo, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { SectionHeader } from "../global/SectionHeader";
 import { MessageBox } from "./MessageBox";
 import { InfoArea } from "./InfoArea";
-import { motion, useInView } from "framer-motion";
-import { memo, useRef } from "react";
 
 interface Props {
   sectionRef?: React.RefObject<HTMLElement>;

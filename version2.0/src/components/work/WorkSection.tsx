@@ -1,10 +1,10 @@
+import { memo, useRef } from "react";
+import { IoMdDocument } from "react-icons/io";
 import { motion, useInView } from "framer-motion";
+import { LinkButton } from "../global/LinkButton";
 import { SectionHeader } from "../global/SectionHeader";
 import { CardList } from "./CardList";
 import { JobList } from "./JobList";
-import { memo, useRef } from "react";
-import { LinkButton } from "../global/LinkButton";
-import { IoMdDocument } from "react-icons/io";
 
 interface Props {
   sectionRef?: React.RefObject<HTMLElement>;

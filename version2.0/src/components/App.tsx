@@ -1,21 +1,21 @@
 import { useEffect, useRef } from "react";
-import { AboutSection } from "./about/AboutSection";
-import { ContactSection } from "./contact/ContactSection";
-import { WorkSection } from "./work/WorkSection";
-import { ProjectsSection } from "./projects/ProjectsSection";
-import { FooterSection } from "./nav/FooterSection";
-import { HeroSection } from "./hero/HeroSection";
-import { NavSection } from "./nav/NavSection";
+import { useInView } from "framer-motion";
 import { logSiteVisit } from "../firebase/logSiteVisit";
 import { logSectionView } from "../firebase/logSectionView";
-import { useInView } from "framer-motion";
+import { NavSection } from "./nav/NavSection";
+import { HeroSection } from "./hero/HeroSection";
+import { AboutSection } from "./about/AboutSection";
+import { ProjectsSection } from "./projects/ProjectsSection";
+import { WorkSection } from "./work/WorkSection";
+import { ContactSection } from "./contact/ContactSection";
+import { FooterSection } from "./nav/FooterSection";
 
 function App() {
   // Define section refs and visibility state
   const heroSectionRef = useRef<HTMLDivElement>(null);
   const aboutSectionRef = useRef<HTMLDivElement>(null);
   const projectSectionRef = useRef<HTMLDivElement>(null);
-  const experienceSectionRef = useRef<HTMLDivElement>(null);
+  const workSectionRef = useRef<HTMLDivElement>(null);
   const contactSectionRef = useRef<HTMLDivElement>(null);
 
   // Call useInView for each section at the top level because the hooks can't be inside useEffect hook
@@ -25,7 +25,7 @@ function App() {
     amount: 0.25,
   });
   const projectSectionVisible = useInView(projectSectionRef, { once: true });
-  const experienceSectionVisible = useInView(experienceSectionRef, {
+  const workSectionVisible = useInView(workSectionRef, {
     once: true,
   });
   const contactSectionVisible = useInView(contactSectionRef, { once: true });
@@ -35,7 +35,7 @@ function App() {
     heroSectionRef,
     aboutSectionRef,
     projectSectionRef,
-    experienceSectionRef,
+    workSectionRef,
     contactSectionRef,
   ];
 
@@ -62,8 +62,8 @@ function App() {
         await logSectionView(sessionId.current, "AboutSection");
       if (projectSectionVisible)
         await logSectionView(sessionId.current, "ProjectsSection");
-      if (experienceSectionVisible)
-        await logSectionView(sessionId.current, "ExperienceSection");
+      if (workSectionVisible)
+        await logSectionView(sessionId.current, "WorkSection");
       if (contactSectionVisible)
         await logSectionView(sessionId.current, "ContactSection");
     };
@@ -72,7 +72,7 @@ function App() {
     heroSectionVisible,
     aboutSectionVisible,
     projectSectionVisible,
-    experienceSectionVisible,
+    workSectionVisible,
     contactSectionVisible,
   ]);
 
@@ -83,7 +83,7 @@ function App() {
       <HeroSection sectionRef={heroSectionRef} targetRef={contactSectionRef} />
       <AboutSection sectionRef={aboutSectionRef} />
       <ProjectsSection sectionRef={projectSectionRef} />
-      <WorkSection sectionRef={experienceSectionRef} />
+      <WorkSection sectionRef={workSectionRef} />
       <ContactSection sectionRef={contactSectionRef} />
 
       <FooterSection refsArray={refsArray} />

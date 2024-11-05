@@ -6,6 +6,9 @@ const { Webhook, MessageBuilder } = require("discord-webhook-node");
 //   response.send("Hello from Firebase!");
 // });
 
+const DISCORD_WEBHOOK_AVATAR_URL = process.env.DISCORD_WEBHOOK_AVATAR_URL;
+const DISCORD_CHANNEL_WEBHOOK_1 = process.env.DISCORD_CHANNEL_WEBHOOK_1;
+
 exports.sendNotification = functions.firestore
   .document("/{collection}/{id}")
   .onCreate((snap, context) => {
@@ -13,15 +16,11 @@ exports.sendNotification = functions.firestore
     const id = context.params.id;
 
     // Overall hook
-    const hook = new Webhook(
-      "https://discord.com/api/webhooks/799379913458843710/XytHRu3A8dX-1hXWvVvGKUBRjnf43rWbkcn4OoTacVAxzDaCEtYqRs4hxS91HVN53-J0"
-    );
+    const hook = new Webhook(DISCORD_CHANNEL_WEBHOOK_1);
 
     // User and avatar
     hook.setUsername("bpmiller.com");
-    hook.setAvatar(
-      "DISCORD_WEBHOOK_AVATAR_URL"
-    );
+    hook.setAvatar(DISCORD_WEBHOOK_AVATAR_URL);
 
     // Firestore message embed
     const embed = new MessageBuilder()
