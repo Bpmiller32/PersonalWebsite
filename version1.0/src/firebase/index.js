@@ -7,7 +7,7 @@ const firebaseConfig = {
   projectId: "FIREBASE_PROJECT_ID",
   storageBucket: "FIREBASE_PROJECT_ID.appspot.com",
   messagingSenderId: "FIREBASE_MESSAGING_SENDER_ID",
-  appId: "1:FIREBASE_MESSAGING_SENDER_ID:web:FIREBASE_APP_ID_2",
+  appId: "1:FIREBASE_MESSAGING_SENDER_ID:web:FIREBASE_APP_ID_2", 
 };
 
 const app = initializeApp(firebaseConfig);
