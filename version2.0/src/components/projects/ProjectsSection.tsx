@@ -24,6 +24,8 @@ const showcaseProjects = [
     Combines retro game design with cutting-edge AI, where the recreated environment enables a model to learn strategies and optimize gameplay performance, navigating through levels and overcoming obstacles as an AI agent learns progressively from its interactions.
     
     Both a homage to one of my favorite games and a fun experimental learning tool for reinforcement learning techniques.`,
+    liveLink: "https://firegamedk.web.app",
+    githubLink: "https://github.com/Bpmiller32/FireGame",
   },
   {
     title: "Argosy DirMaker",
@@ -50,7 +52,7 @@ const showcaseProjects = [
     showLinks: true,
 
     liveLink: "https://rafdirmaker.web.app",
-    githubLink: "https://github.com/Bpmiller32/RafTools",
+    githubLink: "https://github.com/Bpmiller32/ArgosyDirMaker",
   },
   {
     title: "WebGLGT",
@@ -73,7 +75,7 @@ const showcaseProjects = [
     Optimizes previous workflow by 70+% per piece by changing the approach from manual entry to review and approval using Google Vision AI.`,
     showLinks: true,
     liveLink: "https://webglgt.web.app",
-    githubLink: "https://github.com/Bpmiller32/RafTools",
+    githubLink: "https://github.com/Bpmiller32/WebGLGT",
   },
   {
     title: "RAF Technology",
@@ -111,6 +113,8 @@ const additionalProjects = [
     ],
     description:
       "A tool that web scrapes all California Department of Transportation contracts, intelligently scans multiple documents to extract and tag relevant information, and provides a Web API for contract management and review.",
+    liveLink: "https://caltrans-3d33e.web.app/",
+    githubLink: "https://github.com/Bpmiller32/CalTransApi",
   },
   {
     title: "Dangerous Mail Investigation",
@@ -153,6 +157,15 @@ const additionalProjects = [
     githubLink: "https://github.com/Bpmiller32/PersonalWebsite",
   },
   {
+    title: "Backend DLLs + Isle of Man Data Compiler",
+    image: IomMaker,
+    techUsed: ["WinForms", "Serilog", "Service Controller"],
+    description: `An assortment of backend projects, including a socket connection interface for image and results transfer, a socket control port interface, a C# wrapper for a proprietary image and process-metadata format, an Outlook email reader, and additional scripts and tools.
+    
+    Additionally, a BE-powered utility application developed to compile mailing directories by validating raw address data against the Isle of Man and Royal Mail postal standards’ rules and schema.`,
+    githubLink: "https://github.com/Bpmiller32/RafTools",
+  },
+  {
     title: "Raspberry Pi Projects",
     image: RaspberryPi,
     techUsed: ["Python", "C#", "Python.Net", "MailKit", "Serilog", "BME280"],
@@ -162,14 +175,6 @@ const additionalProjects = [
       
       Scripts to make a mock GameBoy case for the Pi Zero work.`,
     githubLink: "https://github.com/Bpmiller32/PiProjects",
-  },
-  {
-    title: "Isle of Man Data Compiler",
-    image: IomMaker,
-    techUsed: ["WinForms", "Serilog", "Service Controller"],
-    description:
-      "Utility application used to compile mailing directories by validating raw address data against the ruleset and schema of Isle of Man and Royal Mail postal standards.",
-    githubLink: "https://github.com/Bpmiller32/RafTools",
   },
 ];
 

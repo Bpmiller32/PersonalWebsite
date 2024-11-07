@@ -11,15 +11,6 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
-
-.firebase/
-.firebaserc
-*.tsbuildinfo
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -32,12 +23,28 @@ dist-ssr
 
 # Environment variable files
 version1.0/.env
-version1.0/functions/.env
 version2.0/.env
+
+version1.0/functions/.env
 version2.0/functions/.env
+
+# Compiled Firebase function files
 version2.0/functions/lib/index.js
 version2.0/functions/lib/index.js.map
+
 /version1.0/.firebase
 /version2.0/.firebase
+
+# Build files
+node_modules
+dist
+dist-ssr
+*.local
+
 version1.0/tsconfig.tsbuildinfo
 version2.0/tsconfig.tsbuildinfo
+
+version1.0/package-lock.json
+version2.0/package-lock.json
+
+
