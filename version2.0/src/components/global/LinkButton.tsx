@@ -5,15 +5,32 @@ interface Props {
   href?: string;
   text?: ReactNode;
   className?: string;
+  sessionId?: string;
+  linkData?: string;
 }
 
 export const LinkButton = ({
   href = "#",
   text = <div>Placeholder</div>,
   className,
+  sessionId,
+  linkData,
 }: Props) => {
+  const handleOnClick = () => {
+    if (!sessionId || !linkData) {
+      return;
+    }
+
+    console.log(linkData);
+  };
+
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer">
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={handleOnClick}
+    >
       <button
         className={twMerge(
           className,

@@ -18,12 +18,12 @@ const showcaseProjects = [
   {
     title: "ML WebGL DonkeyKong",
     image: FireGame,
-    techUsed: ["React", "React Three Fiber", "Rapier", "Tailwind"],
-    description: `WebGL recreation of the classic Donkey Kong arcade game, used as an interactive simulation platform to train and test a Proximal Policy Optimization (PPO) reinforcement learning algorithm.
+    techUsed: ["Three", "Rapier", "React", "Tailwind"],
+    description: `First, a recreation of the classic Donkey Kong arcade game in my custom WebGL based game engine.
     
-    Combines retro game design with cutting-edge AI, where the recreated environment enables a model to learn strategies and optimize gameplay performance, navigating through levels and overcoming obstacles as an AI agent learns progressively from its interactions.
+    Next, an interactive simulation environment to train and test a Proximal Policy Optimization (PPO) reinforcement learning algorithm.
     
-    Both a homage to one of my favorite games and a fun experimental learning tool for reinforcement learning techniques.`,
+    Combines game design with cutting-edge AI, where the recreated game environment enables a model to learn strategies and optimize gameplay performance. Both a homage to one of my favorite games and a fun experimental learning tool for reinforcement learning techniques.`,
     liveLink: "https://firegamedk.web.app",
     githubLink: "https://github.com/Bpmiller32/FireGame",
   },
@@ -31,7 +31,7 @@ const showcaseProjects = [
     title: "Argosy DirMaker",
     image: ArgosyDirMaker,
     techUsed: [
-      "React",
+      "Vue",
       "AnimeJs",
       "Tailwind",
       "React Router",
@@ -46,7 +46,7 @@ const showcaseProjects = [
       "MailKit",
       "Serilog",
     ],
-    description: `Concurrent, multi-threaded, full-stack program used to gather, catalog, compile, and distribute critical directories on multiple timelines and deadlines. 
+    description: `Concurrent, multi-threaded, full-stack application used to gather, catalog, compile, and distribute critical directories on multiple timelines and deadlines. 
     
     Fully automates a time-consuming manual process that previously took a week of collaboration among several team members.`,
     showLinks: true,
@@ -89,7 +89,7 @@ const showcaseProjects = [
       "Google Analytics",
     ],
     description:
-      "RAF is a global leader in AI-driven pattern recognition, intelligent data extraction, and signature verification software for enterprise, government, and postal authorities. This is the latest iteration of 3 web solutions I made for them.",
+      "RAF is a global leader in AI-driven pattern recognition, intelligent data extraction, and signature verification software for enterprise, government, and postal authorities. This is the latest iteration of 3 web solutions I've made for them.",
     showLinks: true,
     liveLink: "https://www.raf.com",
     githubLink: "https://github.com/Bpmiller32/RafWebsite",
@@ -112,7 +112,7 @@ const additionalProjects = [
       "Discord Webhooks",
     ],
     description:
-      "A tool that web scrapes all California Department of Transportation contracts, intelligently scans multiple documents to extract and tag relevant information, and provides a Web API for contract management and review.",
+      "Full-stack application that web scrapes California Department of Transportation contracts, intelligently scans multiple documents to extract and tag relevant information, and provides a Web API for contract management and review.",
     liveLink: "https://caltrans-3d33e.web.app/",
     githubLink: "https://github.com/Bpmiller32/CalTransApi",
   },
@@ -138,7 +138,7 @@ const additionalProjects = [
     ],
     description:
       "My current portfolio and personal website, highlighting my most recent work, skills, and accomplishments - all updated for the year.",
-    liveLink: "https://bpmiller.com",
+    liveLink: "https://billmill.dev",
     githubLink: "https://github.com/Bpmiller32/PersonalWebsite",
   },
   {
@@ -153,11 +153,11 @@ const additionalProjects = [
     ],
     description:
       "My old portfolio and personal website, highlighting my most recent work, skills, and accomplishments - all updated for the year.",
-    liveLink: "https://bpmillerpersonalwebsiteold.web.app",
+    liveLink: "https://bpmiller.com",
     githubLink: "https://github.com/Bpmiller32/PersonalWebsite",
   },
   {
-    title: "Backend DLLs + Isle of Man Data Compiler",
+    title: "Backend Tools + Compiler Utility",
     image: IomMaker,
     techUsed: ["WinForms", "Serilog", "Service Controller"],
     description: `An assortment of backend projects, including a socket connection interface for image and results transfer, a socket control port interface, a C# wrapper for a proprietary image and process-metadata format, an Outlook email reader, and additional scripts and tools.

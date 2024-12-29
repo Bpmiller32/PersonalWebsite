@@ -2,39 +2,63 @@ import { collection, addDoc } from "firebase/firestore";
 import { db } from ".";
 import axios from "axios";
 
+interface IpifyResponse {
+  ip: string;
+}
+
+interface LocationData {
+  ip: string;
+  city: string;
+  region: string;
+  country: string;
+  loc: string;
+  org: string;
+  postal: string;
+  timezone: string;
+}
+
+interface SiteVisitDocument {
+  sectionsVisited: string[];
+  linksClicked: string[];
+  ipAddress: string;
+  location: LocationData;
+  timestamp: Date;
+}
+
 export const logSiteVisit = async () => {
   let ipAddress = "";
-  let location = { city: "", country: "" };
+  let location = {} as LocationData;
 
-  // Fetch visitor's IP address
   try {
-    const ipResponse = await axios.get("https://api.ipify.org?format=json");
+    const ipResponse = await axios.get<IpifyResponse>(
+      "https://api.ipify.org?format=json"
+    );
     ipAddress = ipResponse.data.ip;
   } catch {
-    console.error("Error logging site visit, code: 0");
+    // Silently ignore IP fetch errors
   }
 
-  // Fetch location data based on the IP address
   try {
     const locationResponse = await axios.get(
-      `https://ipinfo.io/${ipAddress}/json?token=040e5e5262a382`
+      `http://ip-api.com/json/${ipAddress}`
     );
     location = locationResponse.data;
   } catch {
-    console.error("Error logging site visit, code: 1");
+    // Silently ignore location fetch errors
   }
 
-  // Log data to Firestore
   try {
-    const docRef = await addDoc(collection(db, "siteVisits"), {
+    const siteVisit: SiteVisitDocument = {
       sectionsVisited: [],
-      ipAddress,
-      location,
+      linksClicked: [],
+      ipAddress: ipAddress,
+      location: location,
       timestamp: new Date(),
-    });
+    };
 
+    const docRef = await addDoc(collection(db, "siteVisits"), siteVisit);
     return docRef.id;
   } catch {
-    console.error("Error logging site visit, code: 2");
+    // Silently ignore Firestore errors
   }
 };

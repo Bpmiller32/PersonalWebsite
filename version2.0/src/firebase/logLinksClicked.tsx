@@ -1,17 +1,17 @@
 import { updateDoc, arrayUnion, doc } from "firebase/firestore";
 import { db } from ".";
 
-export const logSectionView = async (
+export const logLinksClicked = async (
   sessionId: string,
-  sectionName: string
+  linkClicked: string
 ) => {
-  // Log section view data to Firestore
+  // Log link click data to Firestore
   try {
     const docRef = doc(db, "siteVisits", sessionId);
     await updateDoc(docRef, {
-      sectionsVisited: arrayUnion(sectionName),
+      linksClicked: arrayUnion(linkClicked),
     });
   } catch {
-    // console.error("Error logging section view");
+    // console.error("Error logging link clicked");
   }
 };

@@ -3,7 +3,7 @@ import { BaseJob } from "./BaseJob";
 const experience = [
   {
     title: "Constellation Software - Volaris Group",
-    position: "Engineering Manager",
+    position: "Solutions Engineering Manager",
     time: "2023 - Present",
     location: "Seattle, WA",
     description: `✧ Leading the team responsible for customer relations, support, and licensing while releasing, providing feedback, and supporting new product versions. Assisting with product deployment across diverse customer scenarios and gathering implementation insights to inform future iterative product improvements.
@@ -30,11 +30,11 @@ const experience = [
     position: "Techservices Manager",
     time: "2020 - 2023",
     location: "Redmond, WA",
-    description: `✧ Served as a primary point of contact for escalated technical issues, acting as a liaison to ensure customer needs were effectively communicated and addressed both externally and internally.
+    description: `✧ Continued the development of both new and existing product offerings, focusing on dashboards and development utilities, and utilizing multiple technologies to create 7 extension products and 3 new products.
 
-    ✧ Continued the development of both new and existing product offerings, focusing on dashboards and development utilities, and utilizing multiple technologies to create 7 extension products and 3 new products.
-        
     ✧ Managed and oversaw the organization’s IT operations, including infrastructure, systems administration, and internal technical support.
+    
+    ✧ Served as a primary point of contact for escalated technical issues, acting as a liaison to ensure customer needs were effectively communicated and addressed both externally and internally.
     
     ✧ Directed the migration of the USPS CASS cycle for our core postal products, ensuring a seamless transition and compliance with industry standards. Actively engaged in virtual and in-person conferences to align timing and development scheduling and deployment.
     
@@ -66,13 +66,13 @@ const experience = [
     location: "Redmond, WA",
     description: `✧ Developed custom implementation patterns for extension products of our core OCR solution, creating programming solutions that controlled the logic flow and functionality of the engine, ultimately transforming workflows into distinctive product offerings.
     
-    ✧ Served as the lead Electrical Engineer for the Print Code Verification project, designing and assembling circuits, integrating components and enclosures, and acting as the sales engineering representative during product demonstrations.
+    ✧ Developed a custom directory compilation suite that automated previously manual procedures, resulting in substantial time and resource savings for the company each month.
     
-    ✧ Spearheaded the development and management of the current RAF websites, internal knowledge base wiki, and technical documentation, utilizing a variety of front-end and back-end frameworks and databases.
+    ✧ Served as the lead Electrical Engineer for the Print Code Verification project, designing and assembling circuits, integrating components and enclosures, and acting as the sales engineering representative during product demonstrations.
     
     ✧ Designed and implemented a custom CRM software solution that integrated with the wiki and bug tracking systems, significantly improving workflow and collaboration among QA, Development, and Technical Services teams.
     
-    ✧ Developed a custom directory compilation suite that automated previously manual procedures, resulting in substantial time and resource savings for the company each month.
+    ✧ Spearheaded the development and management of the current RAF websites, internal knowledge base wiki, and technical documentation, utilizing a variety of front-end and back-end frameworks and databases.
     
     ✧ Created and executed trade show demonstrations and conducted workshops for clients, resulting in increased user adoption and satisfaction.`,
     tech: [
