@@ -19,7 +19,7 @@ const showcaseProjects = [
     title: "ML WebGL DonkeyKong",
     image: FireGame,
     techUsed: ["Three", "Rapier", "React", "Tailwind"],
-    description: `First, a recreation of the classic Donkey Kong arcade game in my custom WebGL based game engine.
+    description: `A two-part project. First, a recreation of the classic Donkey Kong arcade game in my custom WebGL based game engine.
     
     Next, an interactive simulation environment to train and test a Proximal Policy Optimization (PPO) reinforcement learning algorithm.
     
@@ -72,7 +72,7 @@ const showcaseProjects = [
     ],
     description: `A custom WebGL interface with adaptable tooling and shortcuts to aid in ground truthing and tagging image sets for use in neutral nets.
       
-    Optimizes previous workflow by 70+% per piece by changing the approach from manual entry to review and approval using Google Vision AI.`,
+    Optimizes previous workflow by 70%+ per piece by changing the approach from manual entry to review and approval using Google Vision AI.`,
     showLinks: true,
     liveLink: "https://webglgt.web.app",
     githubLink: "https://github.com/Bpmiller32/WebGLGT",
@@ -153,7 +153,7 @@ const additionalProjects = [
     ],
     description:
       "My old portfolio and personal website, highlighting my most recent work, skills, and accomplishments - all updated for the year.",
-    liveLink: "https://bpmiller.com",
+    liveLink: "https://bpmillerpersonalwebsiteold.web.app",
     githubLink: "https://github.com/Bpmiller32/PersonalWebsite",
   },
   {

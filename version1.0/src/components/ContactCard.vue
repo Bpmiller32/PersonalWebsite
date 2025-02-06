@@ -39,55 +39,76 @@ function EmailInput() {
 }
 
 async function SendMessage() {
-  // Message has already been sent
-  if (isSent.value == true) {
-    return;
-  }
+  try {
+    // Message has already been sent
+    if (isSent.value == true) {
+      console.log('Message already sent, preventing duplicate submission');
+      return;
+    }
 
-  // Button was pressed
-  isAttempted.value = true;
+    // Button was pressed
+    isAttempted.value = true;
 
-  // Check if email is valid
-  const result = regex.test(email.value);
+    // Check if email is valid
+    const result = regex.test(email.value);
 
-  if (result == true) {
-    isValidEmail.value = true;
-    isSent.value = true;
-
-    buttonText.value = "Message Sent!";
-
-    animate(
-      "#submitButton",
-      { backgroundSize: ["150% 150%", "0% 0%"] },
-      { duration: 0.5 }
-    );
-    animate("#buttonText", { opacity: [0, 1] }, { duration: 0.5 });
-
-    await addDoc(collection(db, "websiteMessages"), {
-      email: email.value,
-      message: message.value,
-      time: new Date(),
-    });
-  } else {
-    isValidEmail.value = false;
-
-    animate(
-      "#emailValidate",
-      {
-        transform: [
-          "translateX(0)",
-          "translateX(-6px) rotateY(-9deg)",
-          "translateX(5px) rotateY(7deg)",
-          "translateX(-3px) rotateY(-5deg)",
-          "translateX(2px) rotateY(3deg)",
-          "translateX(0)",
-        ],
-      },
-      {
-        offset: [0, 0.065, 0.185, 0.315, 0.435, 0.5],
-        duration: 1,
+    if (result == true) {
+      console.log('Email validation passed, proceeding with submission');
+      
+      if (!message.value) {
+        console.error('Message is empty');
+        return;
       }
-    );
+
+      isValidEmail.value = true;
+
+      // Prepare message data
+      const messageData = {
+        email: email.value,
+        message: message.value,
+        time: new Date(),
+      };
+      console.log('Preparing to send message:', messageData);
+
+      // Add to Firestore
+      const docRef = await addDoc(collection(db, "websiteMessages"), messageData);
+      console.log('Message successfully saved to Firestore with ID:', docRef.id);
+
+      // Update UI
+      isSent.value = true;
+      buttonText.value = "Message Sent!";
+
+      animate(
+        "#submitButton",
+        { backgroundSize: ["150% 150%", "0% 0%"] },
+        { duration: 0.5 }
+      );
+      animate("#buttonText", { opacity: [0, 1] }, { duration: 0.5 });
+    } else {
+      console.log('Email validation failed');
+      isValidEmail.value = false;
+
+      animate(
+        "#emailValidate",
+        {
+          transform: [
+            "translateX(0)",
+            "translateX(-6px) rotateY(-9deg)",
+            "translateX(5px) rotateY(7deg)",
+            "translateX(-3px) rotateY(-5deg)",
+            "translateX(2px) rotateY(3deg)",
+            "translateX(0)",
+          ],
+        },
+        {
+          offset: [0, 0.065, 0.185, 0.315, 0.435, 0.5],
+          duration: 1,
+        }
+      );
+    }
+  } catch (error) {
+    console.error('Error sending message:', error);
+    buttonText.value = "Error - Try Again";
   }
 }
 

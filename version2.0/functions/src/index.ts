@@ -2,15 +2,17 @@ import * as functions from "firebase-functions";
 import { Webhook, MessageBuilder } from "discord-webhook-node";
 
 const DISCORD_WEBHOOK_AVATAR_URL = process.env.DISCORD_WEBHOOK_AVATAR_URL;
-const DISCORD_CHANNEL_WEBHOOK_1 = process.env.DISCORD_CHANNEL_WEBHOOK_1;
-const DISCORD_CHANNEL_WEBHOOK_2 = process.env.DISCORD_CHANNEL_WEBHOOK_2;
+const DISCORD_CHANNEL_WEBHOOK_VISITS =
+  process.env.DISCORD_CHANNEL_WEBHOOK_VISITS;
+const DISCORD_CHANNEL_WEBHOOK_MESSAGES =
+  process.env.DISCORD_CHANNEL_WEBHOOK_MESSAGES;
 
 // Firestore Trigger: Sends a notification to a Discord webhook when a new document is created in siteVisits
 export const sendDiscordMessageSiteVisits = functions.firestore
   .document("/siteVisits/{id}")
   .onCreate((snap) => {
     // Create the Webhook
-    const hook = new Webhook(DISCORD_CHANNEL_WEBHOOK_1 as string);
+    const hook = new Webhook(DISCORD_CHANNEL_WEBHOOK_VISITS as string);
 
     // Set webhook username and avatar
     hook.setUsername("bpmiller.com");
@@ -44,7 +46,7 @@ export const sendDiscordMessageWebsiteMessages = functions.firestore
   .document("/websiteMessages/{id}")
   .onCreate((snap) => {
     // Create the Webhook
-    const hook = new Webhook(DISCORD_CHANNEL_WEBHOOK_2 as string);
+    const hook = new Webhook(DISCORD_CHANNEL_WEBHOOK_MESSAGES as string);
 
     // Set webhook username and avatar
     hook.setUsername("bpmiller.com");

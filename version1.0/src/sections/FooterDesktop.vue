@@ -60,7 +60,7 @@ function RouteLink1(route) {
         </div>
         <!-- Designed by -->
         <p class="flex justify-center text-zinc-200 font-poppins">
-          © {{ year }} | Designed by Billy Miller
+          {{ year }} | Designed by Billy Miller
         </p>
       </div>
     </section>
