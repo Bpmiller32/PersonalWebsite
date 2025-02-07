@@ -5,15 +5,11 @@ import { LinkButton } from "../global/LinkButton";
 export const InfoArea = () => {
   return (
     <div className="max-w-lg animateFadeIn flex flex-col justify-center justify-self-center">
-      <p className="text-projectBright font-bold text-2xl">
-        Shoot me an email if you want to connect!
-      </p>
-      <p className="mt-5 text-projectDark">
-        You can also find me on Linkedin, Instagram, or contact me via the
-        message form here if that's more your speed.
+      <p className="mb-7 text-projectBright font-bold text-2xl">
+        Send me an email and let's connect!
       </p>
 
-      <div className="flex justify-center w-full min-[944px]:block min-[944px]:w-max my-7 text-2xl">
+      <div className="flex justify-center w-full min-[944px]:block min-[944px]:w-max mb-7 text-2xl">
         <LinkButton
           href="mailto:bpmiller32@outlook.com"
           text={
@@ -24,6 +20,11 @@ export const InfoArea = () => {
           }
         />
       </div>
+
+      <p className="mb-7 text-projectDark">
+        You can also find me on Linkedin, Instagram, or send me a message using
+        the contact form here.
+      </p>
 
       <div className="flex items-center min-[944px]:items-start flex-col gap-2">
         <LinkButton

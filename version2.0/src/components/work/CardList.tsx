@@ -21,6 +21,8 @@ const cards = [
     ),
     verticalBarHeight: "6",
     underlineColor: "primary",
+    tagName: "ListView",
+    descriptionOffset: 2.75,
   },
   {
     icon: ReactVueLogos,
@@ -32,8 +34,8 @@ const cards = [
     ),
     description: (
       <div className="text-pretty">
-        4 years of development experience with Vue, React, Three, Asp.Net Core,
-        ExpressJs, Firebase, Wordpress, and Webflow.
+        4 years of development experience with Vue.js, React, Three.js, Asp.Net
+        Core, Express.js, Firebase, Wordpress, and Webflow.
       </div>
     ),
     verticalBarHeight: "6.5",
@@ -54,6 +56,8 @@ const cards = [
     ),
     verticalBarHeight: "4.5",
     underlineColor: "tertiary",
+    tagName: "Property",
+    descriptionOffset: 3,
   },
 ];
 

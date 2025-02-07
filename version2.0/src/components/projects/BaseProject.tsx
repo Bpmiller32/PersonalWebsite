@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
 import { AiFillGithub, AiOutlineExport } from "react-icons/ai";
 import { BadgeItem } from "../global/BadgeItem";
 
@@ -10,6 +11,59 @@ interface Props {
   liveLink?: string;
   githubLink?: string;
 }
+
+const useIsMobileDevice = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    setIsMobile(mediaQuery.matches);
+
+    // Debounce resize handler
+    let resizeTimeout: number;
+    const handleResize = () => {
+      if (resizeTimeout) {
+        window.clearTimeout(resizeTimeout);
+      }
+      resizeTimeout = window.setTimeout(() => {
+        setIsMobile(mediaQuery.matches);
+      }, 100);
+    };
+
+    mediaQuery.addEventListener("change", handleResize);
+    return () => {
+      mediaQuery.removeEventListener("change", handleResize);
+      if (resizeTimeout) {
+        window.clearTimeout(resizeTimeout);
+      }
+    };
+  }, []);
+
+  return isMobile;
+};
+
+const ProjectImage = ({ image, title }: { image?: string; title: string }) => {
+  const ref = useRef(null);
+  const isMobile = useIsMobileDevice();
+  const isInView = useInView(ref, {
+    margin: "-30% 0px -30% 0px", // Triggers when element is in middle 40% of viewport
+    amount: 0.6, // Requires 60% of the element to be visible
+    once: false // Allow re-triggering when scrolling back up
+  });
+  
+  const baseClasses = "absolute bottom-0 left-1/2 -translate-x-1/2 transition-all duration-500 ease-in-out rounded-xl";
+  const mobileClasses = `${baseClasses} ${isInView ? 'scale-[.98] translate-y-[17%] rounded-md' : 'scale-[.85] translate-y-1/4'}`;
+  const desktopClasses = `${baseClasses} scale-[.85] hover:scale-[.98] translate-y-1/4 hover:translate-y-[17%] hover:rounded-md`;
+
+  return (
+    <img
+      ref={ref}
+      src={image}
+      alt={`An image of the ${title} project.`}
+      className={isMobile ? mobileClasses : desktopClasses}
+    />
+  );
+};
 
 export const BaseProject = ({
   image,
@@ -42,11 +96,13 @@ export const BaseProject = ({
     >
       <div className="w-full aspect-video bg-projectForeground relative rounded-lg overflow-hidden">
         {image ? (
-          <img
-            src={image}
-            alt={`An image of the ${title} project.`}
-            className="scale-[.85] hover:scale-[.98] absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/4 hover:translate-y-[17%] transition-all duration-500 ease-in-out rounded-xl hover:rounded-md"
-          />
+          liveLink ? (
+            <a href={liveLink} target="_blank" rel="nofollow">
+              <ProjectImage image={image} title={title} />
+            </a>
+          ) : (
+            <ProjectImage image={image} title={title} />
+          )
         ) : (
           <></>
         )}

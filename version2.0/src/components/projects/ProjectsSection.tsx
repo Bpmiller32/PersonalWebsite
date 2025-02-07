@@ -7,6 +7,7 @@ import FireGame from "../../assets/projectFireGame.webp";
 import WebGLGT from "../../assets/projectWebGLGT.webp";
 import ArgosyDirMaker from "../../assets/projectArgosyDirMaker.webp";
 import RafWebsite from "../../assets/projectRafWebsite.webp";
+import RafWebsiteOld from "../../assets/projectRafWebsiteOld.webp";
 import Dmi from "../../assets/projectDmi.webp";
 import PersonalWebsiteCurrent from "../../assets/projectPersonalWebsiteCurrent.webp";
 import PersonalWebsiteOld from "../../assets/projectPersonalWebsiteOld.webp";
@@ -18,7 +19,14 @@ const showcaseProjects = [
   {
     title: "ML WebGL DonkeyKong",
     image: FireGame,
-    techUsed: ["Three", "Rapier", "React", "Tailwind"],
+    techUsed: [
+      "Three.js",
+      "Stable-Baselines",
+      "PPO Neural Network",
+      "Rapier",
+      "React",
+      "Tailwind",
+    ],
     description: `A two-part project. First, a recreation of the classic Donkey Kong arcade game in my custom WebGL based game engine.
     
     Next, an interactive simulation environment to train and test a Proximal Policy Optimization (PPO) reinforcement learning algorithm.
@@ -31,8 +39,8 @@ const showcaseProjects = [
     title: "Argosy DirMaker",
     image: ArgosyDirMaker,
     techUsed: [
-      "Vue",
-      "AnimeJs",
+      "Vue.js",
+      "Anime.js",
       "Tailwind",
       "React Router",
       "Firebase",
@@ -41,7 +49,7 @@ const showcaseProjects = [
       "SQL Server",
       "Swagger/Swashbuckle",
       "PuppeteerSharp",
-      "Fla.Ui",
+      "Fla.UI",
       "HtmlAgilityPack",
       "MailKit",
       "Serilog",
@@ -58,16 +66,18 @@ const showcaseProjects = [
     title: "WebGLGT",
     image: WebGLGT,
     techUsed: [
-      "Three",
-      "Vue",
-      "VueUse/Motion",
+      "Three.js",
+      "Vue.js",
       "Tailwind",
       "Google Cloud Vision AI",
       "Axios",
       "Firebase",
       "Firestore",
+      "Google Authentication",
       "Mitt",
-      "Express",
+      "Express.js",
+      "JWT",
+      "Sharp",
       "Playwright",
     ],
     description: `A custom WebGL interface with adaptable tooling and shortcuts to aid in ground truthing and tagging image sets for use in neutral nets.
@@ -81,15 +91,15 @@ const showcaseProjects = [
     title: "RAF Technology",
     image: RafWebsite,
     techUsed: [
-      "Nuxt",
+      "Webflow",
       "Tailwind",
       "Lottie",
-      "Webflow",
       "Firebase Functions",
       "Google Analytics",
     ],
-    description:
-      "RAF is a global leader in AI-driven pattern recognition, intelligent data extraction, and signature verification software for enterprise, government, and postal authorities. This is the latest iteration of 3 web solutions I've made for them.",
+    description: `RAF is a global leader in AI-driven pattern recognition, intelligent data extraction, and signature verification software for enterprise, government, and postal authorities. 
+    
+    This is the latest in a series of 3 web solutions I've designed for them. This iteration showcases a major marketing upgrade and is implemented using Webflow to empower faster marketing team contributions and real-time collaboration.`,
     showLinks: true,
     liveLink: "https://www.raf.com",
     githubLink: "https://github.com/Bpmiller32/RafWebsite",
@@ -101,8 +111,9 @@ const additionalProjects = [
     title: "CalTrans Project Manager",
     image: CalTrans,
     techUsed: [
+      "React",
       "Asp.Net",
-      "Authentication with Jwt",
+      "JWT",
       "Entity Framework",
       "SQL Server",
       "Swagger/Swashbuckle",
@@ -145,7 +156,7 @@ const additionalProjects = [
     title: "Portfolio Website (Previous)",
     image: PersonalWebsiteOld,
     techUsed: [
-      "Vue",
+      "Vue.js",
       "VueUse/Motion",
       "Tailwind",
       "Firebase",
@@ -157,23 +168,49 @@ const additionalProjects = [
     githubLink: "https://github.com/Bpmiller32/PersonalWebsite",
   },
   {
-    title: "Backend Tools + Compiler Utility",
+    title: "RAF Technology (Previous)",
+    image: RafWebsiteOld,
+    techUsed: [
+      "Nuxt",
+      "Tailwind",
+      "Lottie",
+      "Firebase Functions",
+      "Google Analytics",
+    ],
+    description: `RAF is a global leader in AI-driven pattern recognition, intelligent data extraction, and signature verification software for enterprise, government, and postal authorities.
+    
+    This is the 2nd in a series of 3 web solutions I've designed for them. This iteration is built with Nuxt, leveraging its powerful server-side rendering (SSR) for fast load times, SEO optimization, and enhanced performance across all devices. Also uses Lottie animations for a polished user experience and Google Analytics to provide insights needed to refine marketing strategies and boost sales.`,
+    showLinks: true,
+    liveLink: "https://raftechnologywebsite.web.app",
+    githubLink: "https://github.com/Bpmiller32/RafWebsite",
+  },
+  {
+    title: "Backend Tools + Compiler Utilities",
     image: IomMaker,
     techUsed: ["WinForms", "Serilog", "Service Controller"],
-    description: `An assortment of backend projects, including a socket connection interface for image and results transfer, a socket control port interface, a C# wrapper for a proprietary image and process-metadata format, an Outlook email reader, and additional scripts and tools.
+    description: `An assortment of backend projects, including a socket connection interface for image and result transfer, a socket control port interface, a C# wrapper for a proprietary image and process-metadata format, an Outlook email reader, and additional scripts and tools.
     
-    Additionally, a BE-powered utility application developed to compile mailing directories by validating raw address data against the Isle of Man and Royal Mail postal standards’ rules and schema.`,
+    Additionally, BE-powered utility applications developed to compile mailing directories by validating raw address data against the Isle of Man and Royal Mail postal standards, rules, and schema.`,
     githubLink: "https://github.com/Bpmiller32/RafTools",
   },
   {
-    title: "Raspberry Pi Projects",
+    title: "Embedded and IoT Projects",
     image: RaspberryPi,
-    techUsed: ["Python", "C#", "Python.Net", "MailKit", "Serilog", "BME280"],
-    description: `Solution to repair my cat’s broken automated litterbox using a mechanical relay and a custom circuit. 
+    techUsed: [
+      "KiCad",
+      "Python",
+      "C#",
+      "Python.Net",
+      "MailKit",
+      "Serilog",
+      "Raspberry Pi",
+      "ESP32",
+    ],
+    description: `A custom circuit solution to restore and improve my cat's broken automated litter box. Effectively replacing faulty components and ensuring long-term reliability. 
       
-      Worker service designed to monitor temperature (and humidity, pressure, and light) levels in a server room, sending alerts to a mailing group when specific thresholds are exceeded. 
+      A worker service to monitor temperature, humidity, pressure, and light levels in a server room - ensuring optimal environmental conditions. Automatically triggers alerts to a designated mailing group when thresholds are exceeded, enabling proactive maintenance. Built using a BME280 sensor, Raspberry Pi, and a custom circuit. 
       
-      Scripts to make a mock GameBoy case for the Pi Zero work.`,
+      A custom device that detects potential drowning incidents in a pool by monitoring movement patterns, water & submersion detection - enhancing pool safety with real-time alerts. Utilizes an ESP32-C3 along with photoelectric, capacitive, barometric, and IMU senors.`,
     githubLink: "https://github.com/Bpmiller32/PiProjects",
   },
 ];

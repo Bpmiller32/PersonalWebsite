@@ -1,9 +1,39 @@
-import { ReactNode, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { ReactNode, useRef, useState, useEffect } from "react";
+import { motion, useInView } from "framer-motion";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import UnderlineAnimationPrimary from "../../assets/cardUnderlinePrimary.json";
 import UnderlineAnimationSecondary from "../../assets/cardUnderlineSecondary.json";
 import UnderlineAnimationTertiary from "../../assets/cardUnderlineTertiary.json";
+
+const useIsMobileDevice = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    setIsMobile(mediaQuery.matches);
+
+    // Debounce resize handler
+    let resizeTimeout: number;
+    const handleResize = () => {
+      if (resizeTimeout) {
+        window.clearTimeout(resizeTimeout);
+      }
+      resizeTimeout = window.setTimeout(() => {
+        setIsMobile(mediaQuery.matches);
+      }, 100);
+    };
+
+    mediaQuery.addEventListener("change", handleResize);
+    return () => {
+      mediaQuery.removeEventListener("change", handleResize);
+      if (resizeTimeout) {
+        window.clearTimeout(resizeTimeout);
+      }
+    };
+  }, []);
+
+  return isMobile;
+};
 
 interface Props {
   icon?: unknown;
@@ -11,6 +41,8 @@ interface Props {
   description?: ReactNode;
   verticalBarHeight?: string;
   underlineColor?: string;
+  tagName?: string;
+  descriptionOffset?: number;
 }
 
 export const BaseCard = ({
@@ -19,13 +51,34 @@ export const BaseCard = ({
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.",
   verticalBarHeight = "6",
   underlineColor = "primary",
+  tagName = "div",
+  descriptionOffset = 1,
 }: Props) => {
   const logoRef = useRef<LottieRefCurrentProps>(null);
   const underlineRef = useRef<LottieRefCurrentProps>(null);
+  const cardRef = useRef(null);
   const [isLogoPlaying, setIsLogoPlaying] = useState(false);
   const [isUnderlinePlaying, setIsUnderlinePlaying] = useState(false);
+  const isMobile = useIsMobileDevice();
+  const isInView = useInView(cardRef, {
+    margin: "-25% 0px -25% 0px", // Triggers when element is in middle 50% of viewport
+    amount: 0.9, // Requires 90% of the element to be visible
+    once: false, // Allow re-triggering when scrolling back up
+  });
+
+  // Handle mobile scroll-based animation
+  useEffect(() => {
+    if (isMobile && isInView && !isLogoPlaying && !isUnderlinePlaying) {
+      logoRef.current?.play();
+      underlineRef.current?.play();
+      setIsLogoPlaying(true);
+      setIsUnderlinePlaying(true);
+    }
+  }, [isMobile, isInView, isLogoPlaying, isUnderlinePlaying]);
 
   const handleMouseEnter = () => {
+    if (isMobile) return; // Disable hover on mobile
+
     if (!isLogoPlaying) {
       logoRef.current?.play();
       setIsLogoPlaying(true);
@@ -80,10 +133,25 @@ export const BaseCard = ({
       }}
     >
       <div
+        ref={cardRef}
         onMouseEnter={handleMouseEnter}
-        className="group relative w-full max-w-sm overflow-hidden rounded-lg bg-projectBorder p-0.5 transition-all duration-500 hover:scale-[1.01] hover:bg-projectForeground/50"
+        className={`group relative w-full max-w-sm overflow-hidden rounded-lg bg-projectBorder p-0.5 transition-all duration-500 ${
+          isMobile
+            ? isInView
+              ? "scale-[1.01] bg-projectForeground/50"
+              : ""
+            : "hover:scale-[1.01] hover:bg-projectForeground/50"
+        }`}
       >
-        <div className="relative z-10 min-h-[19.25rem] grid grid-rows-4 grid-cols-1 overflow-hidden rounded-[7px] bg-projectBackground p-6 transition-colors duration-500 group-hover:bg-projectForeground">
+        <div
+          className={`relative z-10 min-h-[19.25rem] grid grid-rows-4 grid-cols-1 overflow-hidden rounded-[7px] bg-projectBackground p-6 transition-colors duration-500 ${
+            isMobile
+              ? isInView
+                ? "bg-projectForeground"
+                : ""
+              : "group-hover:bg-projectForeground"
+          }`}
+        >
           <div className="relative z-10 flex items-center justify-center w-full space-x-5">
             <div className="w-14 h-14">
               <Lottie
@@ -110,16 +178,19 @@ export const BaseCard = ({
 
           <div className="relative row-span-3 flex justify-center items-center min-w-full min-h-full">
             <div className="text-zinc-700 font-bold">
-              <p className="">&lt;div&gt;</p>
-              <div className="flex justify-center">
+              <p className="">&lt;{tagName}&gt;</p>
+              <div className="flex">
                 <div
                   style={{ height: verticalBarHeight + "rem" }}
-                  className="w-[0.15rem] bg-zinc-700"
+                  className="w-[0.15rem] bg-zinc-700 ml-[25%]"
                 ></div>
               </div>
-              <p className="">&lt;/div&gt;</p>
+              <p className="">&lt;/{tagName}&gt;</p>
             </div>
-            <div className="-ml-2 text-zinc-200">
+            <div
+              style={{ marginLeft: `-${descriptionOffset}rem` }}
+              className="text-zinc-200"
+            >
               <div className="relative z-10 text-projectDark">
                 {description}
               </div>
@@ -136,7 +207,13 @@ export const BaseCard = ({
             duration: 3.5,
             ease: "linear",
           }}
-          className="absolute inset-0 z-0 bg-gradient-to-br from-projectSecondary via-projectSecondary/0 to-projectSecondary opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+          className={`absolute inset-0 z-0 bg-gradient-to-br from-projectSecondary via-projectSecondary/0 to-projectSecondary transition-opacity duration-500 ${
+            isMobile
+              ? isInView
+                ? "opacity-100"
+                : "opacity-0"
+              : "opacity-0 group-hover:opacity-100"
+          }`}
         />
       </div>
     </motion.div>
