@@ -4,6 +4,7 @@ import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import UnderlineAnimationPrimary from "../../assets/cardUnderlinePrimary.json";
 import UnderlineAnimationSecondary from "../../assets/cardUnderlineSecondary.json";
 import UnderlineAnimationTertiary from "../../assets/cardUnderlineTertiary.json";
+import UnderlineAnimationFavorite from "../../assets/cardUnderlineFavorite.json";
 
 const useIsMobileDevice = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -39,6 +40,11 @@ interface Props {
   icon?: unknown;
   heading?: ReactNode;
   description?: ReactNode;
+  logos?: Array<{
+    src: string;
+    alt: string;
+    description?: string;
+  }>;
   verticalBarHeight?: string;
   underlineColor?: string;
   tagName?: string;
@@ -46,8 +52,9 @@ interface Props {
 }
 
 export const BaseCard = ({
-  icon,
   heading = "Placeholder",
+  icon,
+  logos,
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.",
   verticalBarHeight = "6",
   underlineColor = "primary",
@@ -61,20 +68,36 @@ export const BaseCard = ({
   const [isUnderlinePlaying, setIsUnderlinePlaying] = useState(false);
   const isMobile = useIsMobileDevice();
   const isInView = useInView(cardRef, {
-    margin: "-25% 0px -25% 0px", // Triggers when element is in middle 50% of viewport
-    amount: 0.9, // Requires 90% of the element to be visible
+    margin: "-35% 0px -35% 0px", // Triggers when element is in middle 70% of viewport
+    amount: 0.6, // Requires 60% of the element to be visible
     once: false, // Allow re-triggering when scrolling back up
   });
 
+  // Add debounced state to smooth out rapid changes
+  const [debouncedIsInView, setDebouncedIsInView] = useState(isInView);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setDebouncedIsInView(isInView);
+    }, 300); // 300ms debounce delay
+
+    return () => clearTimeout(timeoutId);
+  }, [isInView]);
+
   // Handle mobile scroll-based animation
   useEffect(() => {
-    if (isMobile && isInView && !isLogoPlaying && !isUnderlinePlaying) {
+    if (
+      isMobile &&
+      debouncedIsInView &&
+      !isLogoPlaying &&
+      !isUnderlinePlaying
+    ) {
       logoRef.current?.play();
       underlineRef.current?.play();
       setIsLogoPlaying(true);
       setIsUnderlinePlaying(true);
     }
-  }, [isMobile, isInView, isLogoPlaying, isUnderlinePlaying]);
+  }, [isMobile, debouncedIsInView, isLogoPlaying, isUnderlinePlaying]);
 
   const handleMouseEnter = () => {
     if (isMobile) return; // Disable hover on mobile
@@ -105,6 +128,8 @@ export const BaseCard = ({
         return UnderlineAnimationSecondary;
       case "tertiary":
         return UnderlineAnimationTertiary;
+      case "favorite":
+        return UnderlineAnimationFavorite;
 
       default:
         return UnderlineAnimationPrimary;
@@ -135,9 +160,9 @@ export const BaseCard = ({
       <div
         ref={cardRef}
         onMouseEnter={handleMouseEnter}
-        className={`group relative w-full max-w-sm overflow-hidden rounded-lg bg-projectBorder p-0.5 transition-all duration-500 ${
+        className={`group relative min-w-[24rem] max-w-sm overflow-hidden rounded-lg bg-projectBorder p-0.5 transition-all duration-500 ${
           isMobile
-            ? isInView
+            ? debouncedIsInView
               ? "scale-[1.01] bg-projectForeground/50"
               : ""
             : "hover:scale-[1.01] hover:bg-projectForeground/50"
@@ -146,7 +171,7 @@ export const BaseCard = ({
         <div
           className={`relative z-10 min-h-[19.25rem] grid grid-rows-4 grid-cols-1 overflow-hidden rounded-[7px] bg-projectBackground p-6 transition-colors duration-500 ${
             isMobile
-              ? isInView
+              ? debouncedIsInView
                 ? "bg-projectForeground"
                 : ""
               : "group-hover:bg-projectForeground"
@@ -177,23 +202,47 @@ export const BaseCard = ({
           </div>
 
           <div className="relative row-span-3 flex justify-center items-center min-w-full min-h-full">
-            <div className="text-zinc-700 font-bold">
-              <p className="">&lt;{tagName}&gt;</p>
-              <div className="flex">
-                <div
-                  style={{ height: verticalBarHeight + "rem" }}
-                  className="w-[0.15rem] bg-zinc-700 ml-[25%]"
-                ></div>
+            {!logos && (
+              <div className="text-zinc-700 font-bold">
+                <p className="">&lt;{tagName}&gt;</p>
+                <div className="flex">
+                  <div
+                    style={{ height: verticalBarHeight + "rem" }}
+                    className="w-[0.15rem] bg-zinc-700 ml-[25%]"
+                  ></div>
+                </div>
+                <p className="">&lt;/{tagName}&gt;</p>
               </div>
-              <p className="">&lt;/{tagName}&gt;</p>
-            </div>
+            )}
             <div
-              style={{ marginLeft: `-${descriptionOffset}rem` }}
-              className="text-zinc-200"
+              style={{ marginLeft: logos ? "0" : `-${descriptionOffset}rem` }}
+              className={`text-zinc-200 ${logos ? "w-full" : ""}`}
             >
-              <div className="relative z-10 text-projectDark">
-                {description}
-              </div>
+              {logos ? (
+                <div className="grid grid-cols-3 gap-4 items-center justify-items-center h-full px-6 mt-4">
+                  {logos.map((logo) => (
+                    <div
+                      key={logo.src}
+                      className="flex flex-col items-center gap-2"
+                    >
+                      <img
+                        src={logo.src}
+                        alt={logo.alt}
+                        className="w-auto rounded-full h-12 object-contain transition-transform hover:scale-110"
+                      />
+                      {logo.description && (
+                        <p className="text-projectDark text-sm text-center">
+                          {logo.description}
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="relative z-10 text-projectDark">
+                  {description}
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -209,7 +258,7 @@ export const BaseCard = ({
           }}
           className={`absolute inset-0 z-0 bg-gradient-to-br from-projectSecondary via-projectSecondary/0 to-projectSecondary transition-opacity duration-500 ${
             isMobile
-              ? isInView
+              ? debouncedIsInView
                 ? "opacity-100"
                 : "opacity-0"
               : "opacity-0 group-hover:opacity-100"

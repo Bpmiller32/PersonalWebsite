@@ -78,15 +78,15 @@ function App() {
 
   return (
     <main className="relative overflow-hidden">
-      <NavSection refsArray={refsArray} />
+      <NavSection refsArray={refsArray} sessionId={sessionId.current} />
 
       <HeroSection sectionRef={heroSectionRef} targetRef={contactSectionRef} />
-      <AboutSection sectionRef={aboutSectionRef} />
-      <ProjectsSection sectionRef={projectSectionRef} />
-      <WorkSection sectionRef={workSectionRef} />
-      <ContactSection sectionRef={contactSectionRef} />
+      <AboutSection sectionRef={aboutSectionRef} sessionId={sessionId.current} />
+      <ProjectsSection sectionRef={projectSectionRef} sessionId={sessionId.current} />
+      <WorkSection sectionRef={workSectionRef} sessionId={sessionId.current} />
+      <ContactSection sectionRef={contactSectionRef} sessionId={sessionId.current} />
 
-      <FooterSection refsArray={refsArray} />
+      <FooterSection refsArray={refsArray} sessionId={sessionId.current} />
     </main>
   );
 }

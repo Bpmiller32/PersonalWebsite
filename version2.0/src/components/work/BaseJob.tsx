@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { BadgeItem } from "../global/BadgeItem";
+import websiteLogo from "../../assets/websiteLogo.webp";
 
 interface Props {
+  logo?: string;
   title?: string;
   position?: string;
   time?: string;
@@ -13,6 +15,7 @@ interface Props {
 
 export const BaseJob = ({
   title = "Job Title",
+  logo = websiteLogo,
   position = "Job Position",
   time = "20XX - Present",
   location = "Sesame St, USA",
@@ -41,19 +44,36 @@ export const BaseJob = ({
           : "border-projectBorder"
       }
     >
-      <div className="flex justify-between space-x-10 mb-2">
-        <span className="font-bold text-xl text-projectBright">{title}</span>
-        <span className="text-projectDark shrink-0">{time}</span>
+      <div className="flex flex-col md:flex-row md:space-x-6">
+        {logo && (
+          <div className="mb-4 md:mb-0 flex justify-center md:justify-start">
+            <img
+              src={logo}
+              alt={`${title} logo`}
+              className="w-16 h-16 rounded-full object-contain"
+            />
+          </div>
+        )}
+        <div className="flex-grow">
+          <div className="flex justify-between space-x-10 mb-2">
+            <span className="font-bold text-xl text-projectBright">
+              {title}
+            </span>
+            <span className="text-projectDark shrink-0">{time}</span>
+          </div>
+
+          <div className="flex justify-between space-x-10 mb-4">
+            <span className="text-projectSecondary font-bold">{position}</span>
+            <span className="text-projectDark shrink-0">{location}</span>
+          </div>
+        </div>
       </div>
 
-      <div className="flex justify-between space-x-10 mb-4">
-        <span className="text-projectSecondary font-bold">{position}</span>
-        <span className="text-projectDark shrink-0">{location}</span>
-      </div>
-
-      <p className="mb-6 text-projectDark leading-relaxed whitespace-pre-line">
+      <p className="mb-10 text-projectDark leading-relaxed whitespace-pre-line">
         {description}
       </p>
+
+      <p className="mb-4 text-projectBright/85">Key Technologies Used</p>
 
       <div className="flex flex-wrap gap-2">
         {tech.map((item) => (

@@ -10,9 +10,10 @@ import { HobbiesBlock } from "./HobbiesBlock";
 
 interface Props {
   sectionRef?: React.RefObject<HTMLDivElement>;
+  sessionId?: string;
 }
 
-export const AboutSection = memo(({ sectionRef }: Props) => {
+export const AboutSection = memo(({ sectionRef, sessionId }: Props) => {
   const contentRef = useRef(null);
   const isContentVisible = useInView(contentRef, { once: true });
 
@@ -33,7 +34,7 @@ export const AboutSection = memo(({ sectionRef }: Props) => {
           }}
           className="mx-auto grid max-w-4xl grid-flow-dense grid-cols-12 gap-4"
         >
-          <HeaderBlock />
+          <HeaderBlock sessionId={sessionId} />
           <ImagesBlock />
           <DescriptionBlock />
           <LocationBlock />

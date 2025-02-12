@@ -8,9 +8,10 @@ import { JobList } from "./JobList";
 
 interface Props {
   sectionRef?: React.RefObject<HTMLElement>;
+  sessionId?: string;
 }
 
-export const WorkSection = memo(({ sectionRef }: Props) => {
+export const WorkSection = memo(({ sectionRef, sessionId }: Props) => {
   const cardsRef = useRef(null);
   const isCardsVisible = useInView(cardsRef, { once: true });
 
@@ -54,6 +55,8 @@ export const WorkSection = memo(({ sectionRef }: Props) => {
             </div>
           }
           className="h-12"
+          sessionId={sessionId}
+          linkData="Resume Download (Work)"
         />
       </motion.article>
 

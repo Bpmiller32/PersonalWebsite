@@ -1,24 +1,31 @@
 import { BaseJob } from "./BaseJob";
+import { VerticalAccordion } from "../projects/VerticalAccordion";
+import ConstellationLogo from "../../assets/constellation.webp";
+import MatthewsLogo from "../../assets/matthews.webp";
+import RafLogo from "../../assets/raf.webp";
+import LdoaLogo from "../../assets/ldoa.webp";
+import LsuLogo from "../../assets/lsu.webp";
 
 const experience = [
   {
     title: "Constellation Software - Volaris Group",
+    logo: ConstellationLogo,
     position: "Solutions Engineering Manager",
     time: "2023 - Present",
     location: "Seattle, WA",
-    description: `✧ Leading the team responsible for customer relations, support, and licensing while releasing, providing feedback, and supporting new product versions. Assisting with product deployment across diverse customer scenarios and gathering implementation insights to inform future iterative product improvements.
+    description: `✧ Leading the team responsible for customer relations, support, and licensing while releasing, providing feedback, and supporting new product versions. Assisting with product deployment across diverse customer scenarios and gathering insights from implementation to inform future iterative product improvements.
 
-    ✧ Fostering relationships with key partner stakeholders, leading regular meetings to discuss project progress, gather input, and identify opportunities for improvement. Providing technical guidance and tailored engineering solutions to address specific business challenges.
+    ✧ Fostering relationships with key partner stakeholders. Leading regular discussions to align on project goals, gather feedback, and identify opportunities for improvement. Providing technical guidance and tailored engineering solutions to address specific business challenges.
 
-    ✧ Designed and programmed new development workflow tool to improve OCR engine and neural network development efficiency and performance, resulting in a 70% improvement over previous approach.
+    ✧ Designed, developed, and currently maintaining a workflow automation tool that improves OCR engine and neural network training efficiency by 70%+, accelerating data preprocessing and improving model accuracy.
 
-    ✧ Collaborating with sales and marketing teams to create presentations and technical documentation that effectively communicate product features and benefits to clients.`,
+    ✧ Collaborating with sales and marketing teams to develop compelling presentations and technical documentation that effectively showcase product features and benefits to clients.`,
     tech: [
+      "Three.js",
       "React",
-      "ThreeJs",
-      "Framer Motion",
       "React Three Fiber",
-      "ExpressJs",
+      "Framer Motion",
+      "Express.js",
       "Playwright",
       "Google Firebase",
       "Git",
@@ -27,6 +34,7 @@ const experience = [
   },
   {
     title: "Matthews International",
+    logo: MatthewsLogo,
     position: "Techservices Manager",
     time: "2020 - 2023",
     location: "Redmond, WA",
@@ -42,9 +50,9 @@ const experience = [
     
     ✧ Improved operational efficiency and reduced annual IT operating costs by 84% through various initiatives, including re-evaluating and optimizing cloud services, as well as discontinuing unnecessary legacy systems.`,
     tech: [
-      "VueJs",
+      "Vue.js",
       "Tailwind",
-      "AnimeJs",
+      "Anime.js",
       "C#",
       "Asp.Net",
       "Entity Framework",
@@ -60,7 +68,8 @@ const experience = [
     ],
   },
   {
-    title: "Matthews International",
+    title: "RAF Technology",
+    logo: RafLogo,
     position: "Software Engineer",
     time: "2016 - 2020",
     location: "Redmond, WA",
@@ -83,7 +92,7 @@ const experience = [
       "Telerik",
       "MongoDb",
       "MS Access",
-      "VueJs",
+      "Vue.js",
       "Asp.Net",
       "Entity Framework",
       "Wordpress",
@@ -93,6 +102,7 @@ const experience = [
   },
   {
     title: "Louisiana Division of Administration",
+    logo: LdoaLogo,
     position: "IT Specialist",
     time: "2012 - 2016",
     location: "Baton Rouge, LA",
@@ -112,6 +122,7 @@ const experience = [
   },
   {
     title: "Louisiana State University",
+    logo: LsuLogo,
     position: "Network Infrastructure Engineer",
     time: "2010 - 2012",
     location: "Baton Rouge, LA",
@@ -125,11 +136,13 @@ const experience = [
 export const JobList = () => {
   return (
     <div className="max-w-5xl mt-12 mx-auto">
-      <BaseJob {...experience[0]} />
-      <BaseJob {...experience[1]} />
-      <BaseJob {...experience[2]} />
-      <BaseJob {...experience[3]} />
-      <BaseJob renderBottomBorder={false} {...experience[4]} />
+      <BaseJob renderBottomBorder={false} {...experience[0]} />
+      <VerticalAccordion defaultOpen={false} buttonText="jobs">
+        <BaseJob {...experience[1]} />
+        <BaseJob {...experience[2]} />
+        <BaseJob {...experience[3]} />
+        <BaseJob renderBottomBorder={false} {...experience[4]} />
+      </VerticalAccordion>
     </div>
   );
 };

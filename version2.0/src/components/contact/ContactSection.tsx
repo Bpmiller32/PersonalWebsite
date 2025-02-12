@@ -6,9 +6,10 @@ import { InfoArea } from "./InfoArea";
 
 interface Props {
   sectionRef?: React.RefObject<HTMLElement>;
+  sessionId?: string;
 }
 
-export const ContactSection = memo(({ sectionRef }: Props) => {
+export const ContactSection = memo(({ sectionRef, sessionId }: Props) => {
   const contentRef = useRef(null);
   const isContentVisible = useInView(contentRef, { once: true });
 
@@ -26,7 +27,7 @@ export const ContactSection = memo(({ sectionRef }: Props) => {
         transition={{ duration: 0.5 }}
         className="max-w-5xl mx-auto flex flex-wrap justify-center min-[944px]:justify-between items-center gap-x-20 gap-y-12"
       >
-        <InfoArea />
+        <InfoArea sessionId={sessionId} />
         <MessageBox />
       </motion.article>
     </section>

@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { AiFillGithub, AiOutlineExport } from "react-icons/ai";
 import { BadgeItem } from "../global/BadgeItem";
+import { logLinksClicked } from "../../firebase/logLinksClicked";
 
 interface Props {
   image?: string;
@@ -10,6 +11,7 @@ interface Props {
   techUsed?: string[];
   liveLink?: string;
   githubLink?: string;
+  sessionId?: string;
 }
 
 const useIsMobileDevice = () => {
@@ -50,9 +52,20 @@ const ProjectImage = ({ image, title }: { image?: string; title: string }) => {
     amount: 0.6, // Requires 60% of the element to be visible
     once: false // Allow re-triggering when scrolling back up
   });
+
+  // Add debounced state to smooth out rapid changes
+  const [debouncedIsInView, setDebouncedIsInView] = useState(isInView);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setDebouncedIsInView(isInView);
+    }, 300); // 300ms debounce delay
+
+    return () => clearTimeout(timeoutId);
+  }, [isInView]);
   
   const baseClasses = "absolute bottom-0 left-1/2 -translate-x-1/2 transition-all duration-500 ease-in-out rounded-xl";
-  const mobileClasses = `${baseClasses} ${isInView ? 'scale-[.98] translate-y-[17%] rounded-md' : 'scale-[.85] translate-y-1/4'}`;
+  const mobileClasses = `${baseClasses} ${debouncedIsInView ? 'scale-[.98] translate-y-[17%] rounded-md' : 'scale-[.85] translate-y-1/4'}`;
   const desktopClasses = `${baseClasses} scale-[.85] hover:scale-[.98] translate-y-1/4 hover:translate-y-[17%] hover:rounded-md`;
 
   return (
@@ -72,6 +85,7 @@ export const BaseProject = ({
   techUsed = ["placeholder tech"],
   liveLink,
   githubLink,
+  sessionId,
 }: Props) => {
   return (
     <motion.div
@@ -97,7 +111,7 @@ export const BaseProject = ({
       <div className="w-full aspect-video bg-projectForeground relative rounded-lg overflow-hidden">
         {image ? (
           liveLink ? (
-            <a href={liveLink} target="_blank" rel="nofollow">
+            <a href={liveLink} target="_blank" rel="nofollow" onClick={() => sessionId && logLinksClicked(sessionId, `Live Demo: ${title}`)}>
               <ProjectImage image={image} title={title} />
             </a>
           ) : (
@@ -120,6 +134,7 @@ export const BaseProject = ({
               target="_blank"
               rel="nofollow"
               aria-label={`Go to souce code of ${title} project`}
+              onClick={() => sessionId && logLinksClicked(sessionId, `GitHub: ${title}`)}
             >
               <AiFillGithub className="text-xl text-projectDark hover:text-projectPrimary transition-colors duration-500 cursor-pointer" />
             </a>
@@ -132,6 +147,7 @@ export const BaseProject = ({
               target="_blank"
               rel="nofollow"
               aria-label={`Go to live demo page of ${title} project`}
+              onClick={() => sessionId && logLinksClicked(sessionId, `Live Demo: ${title}`)}
             >
               <AiOutlineExport className="text-xl text-projectDark hover:text-projectPrimary transition-colors duration-500 cursor-pointer" />
             </a>

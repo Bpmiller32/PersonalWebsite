@@ -54,9 +54,9 @@ const showcaseProjects = [
       "MailKit",
       "Serilog",
     ],
-    description: `Concurrent, multi-threaded, full-stack application used to gather, catalog, compile, and distribute critical directories on multiple timelines and deadlines. 
+    description: `Full-stack enterprise application built with Vue.js and .NET Core designed to automate, catalog, compile, and distribute critical postal directories across multiple timelines and deadlines. It replaces a week-long manual process with a fully automated pipeline - leveraging real-time monitoring, multi-stage processing, and intelligent file management for seamless data handling. 
     
-    Fully automates a time-consuming manual process that previously took a week of collaboration among several team members.`,
+    Designed for scalability and modularity it features a microservices architecture with every core function being API-driven - enabling flexible expansion, integration, and interoperability across databases and external services. Asynchronous processing and cancellable long-running operations optimize performance for large datasets while automated directory testing, real-time validation, and Puppeteer-driven data retrieval enhance reliability and QA. Built-in security measures, including encrypted license handling and access controls, also ensure compliance and data integrity.`,
     showLinks: true,
 
     liveLink: "https://rafdirmaker.web.app",
@@ -80,9 +80,11 @@ const showcaseProjects = [
       "Sharp",
       "Playwright",
     ],
-    description: `A custom WebGL interface with adaptable tooling and shortcuts to aid in ground truthing and tagging image sets for use in neutral nets.
-      
-    Optimizes previous workflow by 70%+ per piece by changing the approach from manual entry to review and approval using Google Vision AI.`,
+    description: `Full-stack WebGL-based platform for data labeling and annotation, improving workflow efficiency by over 70% with AI-assisted review and approval. 
+    
+    Features multi-user authentication, robust concurrency handling, deadlock prevention, and access controls for seamless collaboration. Includes a file browser with search and filtering, a query system that determines and prioritizes entry serving, and comprehensive project statistics and export capabilities. 
+    
+    Hardware-accelerated for speed, it supports all image formats (correcting misencoded and misformatted files), and adapts controls per project. Secure and fully web-based, it eliminates dependencies and allows remote access without a VPN. Designed for scalability, it integrates easily with additional AI models and annotation workflows.`,
     showLinks: true,
     liveLink: "https://webglgt.web.app",
     githubLink: "https://github.com/Bpmiller32/WebGLGT",
@@ -206,20 +208,21 @@ const additionalProjects = [
       "Raspberry Pi",
       "ESP32",
     ],
-    description: `A custom circuit solution to restore and improve my cat's broken automated litter box. Effectively replacing faulty components and ensuring long-term reliability. 
+    description: `A custom device that detects potential drowning incidents in a pool by monitoring movement patterns, water & submersion detection - enhancing pool safety with real-time alerts. Utilizes an ESP32-C3 along with photoelectric, capacitive, barometric, and IMU senors.
       
       A worker service to monitor temperature, humidity, pressure, and light levels in a server room - ensuring optimal environmental conditions. Automatically triggers alerts to a designated mailing group when thresholds are exceeded, enabling proactive maintenance. Built using a BME280 sensor, Raspberry Pi, and a custom circuit. 
       
-      A custom device that detects potential drowning incidents in a pool by monitoring movement patterns, water & submersion detection - enhancing pool safety with real-time alerts. Utilizes an ESP32-C3 along with photoelectric, capacitive, barometric, and IMU senors.`,
+      A custom circuit solution to restore and improve my cat's broken automated litter box. Effectively replacing faulty components and ensuring long-term reliability.`,
     githubLink: "https://github.com/Bpmiller32/PiProjects",
   },
 ];
 
 interface Props {
   sectionRef?: React.RefObject<HTMLDivElement>;
+  sessionId?: string;
 }
 
-export const ProjectsSection = memo(({ sectionRef }: Props) => {
+export const ProjectsSection = memo(({ sectionRef, sessionId }: Props) => {
   const contentRef = useRef(null);
   const isContentVisible = useInView(contentRef, { once: true });
 
@@ -240,7 +243,7 @@ export const ProjectsSection = memo(({ sectionRef }: Props) => {
         className="max-w-5xl mx-auto grid gap-12 grid-cols-1 md:grid-cols-2"
       >
         {showcaseProjects.map((project) => {
-          return <BaseProject key={project.title} {...project} />;
+          return <BaseProject key={project.title} {...project} sessionId={sessionId} />;
         })}
       </motion.article>
 
@@ -249,7 +252,7 @@ export const ProjectsSection = memo(({ sectionRef }: Props) => {
         children={
           <div className="max-w-5xl mx-auto grid gap-12 grid-cols-1 md:grid-cols-2">
             {additionalProjects.map((project) => {
-              return <BaseProject key={project.title} {...project} />;
+              return <BaseProject key={project.title} {...project} sessionId={sessionId} />;
             })}
           </div>
         }

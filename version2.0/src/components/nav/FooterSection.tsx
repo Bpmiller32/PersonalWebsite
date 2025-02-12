@@ -6,6 +6,7 @@ import { NavLink } from "./NavLink";
 
 interface Props {
   refsArray: React.RefObject<HTMLDivElement>[];
+  sessionId?: string;
 }
 
 export const FooterSection = memo(({ refsArray }: Props) => {

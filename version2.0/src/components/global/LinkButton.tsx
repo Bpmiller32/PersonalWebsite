@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
+import { logLinksClicked } from "../../firebase/logLinksClicked";
 
 interface Props {
   href?: string;
@@ -16,12 +17,12 @@ export const LinkButton = ({
   sessionId,
   linkData,
 }: Props) => {
-  const handleOnClick = () => {
+  const handleOnClick = async () => {
     if (!sessionId || !linkData) {
       return;
     }
 
-    console.log(linkData);
+    await logLinksClicked(sessionId, linkData);
   };
 
   return (

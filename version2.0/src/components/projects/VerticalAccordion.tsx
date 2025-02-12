@@ -7,9 +7,10 @@ import { ActionButton } from "../global/ActionButton";
 interface Props {
   defaultOpen: boolean;
   children: ReactNode;
+  buttonText?: string;
 }
 
-export const VerticalAccordion = ({ defaultOpen = false, children }: Props) => {
+export const VerticalAccordion = ({ defaultOpen = false, children, buttonText = "projects" }: Props) => {
   const [ref, { height }] = useMeasure();
   const [open, setOpen] = useState(defaultOpen);
 
@@ -37,7 +38,7 @@ export const VerticalAccordion = ({ defaultOpen = false, children }: Props) => {
           <FiChevronDown className="text-2xl" />
         </motion.span>
         <ActionButton
-          text={open ? "See fewer projects" : "See additional projects"}
+          text={open ? `See fewer ${buttonText}` : `See additional ${buttonText}`}
           colors={
             open
               ? {

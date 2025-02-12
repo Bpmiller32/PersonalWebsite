@@ -6,6 +6,7 @@ import { NavMobileLink } from "./NavMobileLink";
 
 interface Props {
   refsArray: React.RefObject<HTMLDivElement>[];
+  sessionId?: string;
 }
 
 export const NavMobile = ({ refsArray }: Props) => {

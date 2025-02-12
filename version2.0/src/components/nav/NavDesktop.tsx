@@ -6,9 +6,10 @@ import { NavLink } from "./NavLink";
 
 interface Props {
   refsArray: React.RefObject<HTMLDivElement>[];
+  sessionId?: string;
 }
 
-export const NavDesktop = ({ refsArray }: Props) => {
+export const NavDesktop = ({ refsArray, sessionId }: Props) => {
   const contentRef = useRef(null);
   const isContentVisible = useInView(contentRef, { once: true });
 
@@ -33,6 +34,8 @@ export const NavDesktop = ({ refsArray }: Props) => {
         <LinkButton
           href="https://storage.googleapis.com/bpmillerwebsitestorage/Billy's%20Resume.docx.pdf"
           text="My Resume"
+          sessionId={sessionId}
+          linkData="Resume Download"
         />
       </motion.div>
     </nav>

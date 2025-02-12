@@ -5,9 +5,10 @@ import { NavMobile } from "./NavMobile";
 
 interface Props {
   refsArray: React.RefObject<HTMLDivElement>[];
+  sessionId?: string;
 }
 
-export const NavSection = memo(({ refsArray }: Props) => {
+export const NavSection = memo(({ refsArray, sessionId }: Props) => {
   const { width } = useWindowSize();
 
   if (width === undefined) {
@@ -17,9 +18,9 @@ export const NavSection = memo(({ refsArray }: Props) => {
   return (
     <>
       {width > 515 ? (
-        <NavDesktop refsArray={refsArray} />
+        <NavDesktop refsArray={refsArray} sessionId={sessionId} />
       ) : (
-        <NavMobile refsArray={refsArray} />
+        <NavMobile refsArray={refsArray} sessionId={sessionId} />
       )}
     </>
   );

@@ -2,7 +2,11 @@ import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import { LinkButton } from "../global/LinkButton";
 
-export const InfoArea = () => {
+interface Props {
+  sessionId?: string;
+}
+
+export const InfoArea = ({ sessionId }: Props) => {
   return (
     <div className="max-w-lg animateFadeIn flex flex-col justify-center justify-self-center">
       <p className="mb-7 text-projectBright font-bold text-2xl">
@@ -14,10 +18,12 @@ export const InfoArea = () => {
           href="mailto:bpmiller32@outlook.com"
           text={
             <>
-              <IoIosMail className="h-8 w-8" />
-              <div>bpmiller32@outlook.com</div>
+          <IoIosMail className="h-8 w-8" />
+          <div>bpmiller32@outlook.com</div>
             </>
           }
+          sessionId={sessionId}
+          linkData="Email Contact"
         />
       </div>
 
@@ -35,6 +41,8 @@ export const InfoArea = () => {
               <div>LinkedIn</div>
             </>
           }
+          sessionId={sessionId}
+          linkData="LinkedIn Profile"
         />
         <LinkButton
           href="https://www.github.com/bpmiller32"
@@ -44,6 +52,8 @@ export const InfoArea = () => {
               <div>Github</div>
             </>
           }
+          sessionId={sessionId}
+          linkData="GitHub Profile"
         />
         <LinkButton
           href="https://www.instagram.com/billybeboppin/"
@@ -53,6 +63,8 @@ export const InfoArea = () => {
               <div>Instagram</div>
             </>
           }
+          sessionId={sessionId}
+          linkData="Instagram Profile"
         />
       </div>
     </div>
