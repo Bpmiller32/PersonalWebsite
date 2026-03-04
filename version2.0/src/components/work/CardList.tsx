@@ -1,3 +1,4 @@
+import StackLogo from "../../assets/StackLogo.json";
 import DesktopLogo from "../../assets/desktopLogo.json";
 import ReactVueLogos from "../../assets/reactVueLogos.json";
 import CloudLogo from "../../assets/cloudLogo.json";
@@ -12,7 +13,7 @@ import NodeLogo from "../../assets/node.webp";
 
 const cards = [
   {
-    icon: DesktopLogo,
+    icon: StackLogo,
     heading: (
       <div>
         <p className="relative">Favorite Tools</p>

@@ -47,7 +47,7 @@ export const WorkSection = memo(({ sectionRef, sessionId }: Props) => {
         className="flex justify-center my-10"
       >
         <LinkButton
-          href="https://storage.googleapis.com/bpmillerwebsitestorage/Billy's%20Resume.docx.pdf"
+          href="https://storage.googleapis.com/bpmillerwebsitestorage/BillyResume2026.pdf"
           text={
             <div className="flex justify-center items-center space-x-2">
               <p>My Resume</p>
