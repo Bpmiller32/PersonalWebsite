@@ -1,6 +1,6 @@
 import { BaseBlock } from "./BaseBlock";
 import { FiArrowRight } from "react-icons/fi";
-import { SiLinkedin, SiGithub, SiInstagram } from "react-icons/si";
+import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { WebsiteLogo } from "../global/WebsiteLogo";
 import { logLinksClicked } from "../../firebase/logLinksClicked";
 
@@ -37,7 +37,7 @@ export const HeaderBlock = ({ sessionId }: Props) => {
             aria-label="Check out Billy's LinkedIn"
             onClick={() => handleLinkClick("LinkedIn Profile")}
           >
-            <SiLinkedin />
+            <FaLinkedin />
           </a>
           <a
             className="text-projectBright hover:text-projectPrimary transition-colors duration-500"
@@ -47,7 +47,7 @@ export const HeaderBlock = ({ sessionId }: Props) => {
             aria-label="Check out Billy's Github"
             onClick={() => handleLinkClick("GitHub Profile")}
           >
-            <SiGithub />
+            <FaGithub />
           </a>
           <a
             className="text-projectBright hover:text-projectPrimary transition-colors duration-500"
@@ -57,7 +57,7 @@ export const HeaderBlock = ({ sessionId }: Props) => {
             aria-label="Check out Billy's Instagram"
             onClick={() => handleLinkClick("Instagram Profile")}
           >
-            <SiInstagram />
+            <FaInstagram />
           </a>
         </div>
       </div>

@@ -40,7 +40,7 @@ export const logSiteVisit = async () => {
 
   try {
     const locationResponse = await axios.get(
-      `http://ip-api.com/json/${ipAddress}`
+      `https://ipinfo.io/${ipAddress}/json`
     );
     location = locationResponse.data;
   } catch {

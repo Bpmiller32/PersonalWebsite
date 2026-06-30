@@ -32,7 +32,7 @@ export const NavDesktop = ({ refsArray, sessionId }: Props) => {
         <NavLink text="Contact" targetSection={refsArray[4]} />
 
         <LinkButton
-          href="https://storage.googleapis.com/bpmillerwebsitestorage/BillyResume2026.pdf"
+          href="https://storage.googleapis.com/bpmillerwebsitestorage/BillyResume2026.pdf?v=2026.05.20"
           text="My Resume"
           sessionId={sessionId}
           linkData="Resume Download"

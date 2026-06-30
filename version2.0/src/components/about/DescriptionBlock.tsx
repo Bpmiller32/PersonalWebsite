@@ -7,8 +7,8 @@ export const DescriptionBlock = () => {
         I specialize in creating exceptional digital experiences.{" "}
         <span className="text-projectDark">
           My journey in tech began as a kid - exploring video game modding,
-          automation, and engineering. Today, at Constellation, I create
-          accessible and inclusive solutions for a diverse range of clients.
+          automation, and engineering. Today, at Volaris, I create accessible
+          and inclusive solutions for a diverse range of clients.
         </span>
       </p>
     </BaseBlock>

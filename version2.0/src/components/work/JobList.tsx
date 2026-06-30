@@ -8,47 +8,57 @@ import LsuLogo from "../../assets/lsu.webp";
 
 const experience = [
   {
-    title: "Constellation Software - Volaris Group",
+    title: "Volaris Group",
     logo: ConstellationLogo,
-    position: "Solutions Engineering Manager",
+    position: "Systems & Software Engineer",
     time: "2023 - Present",
     location: "Seattle, WA",
-    description: `✧ Leading the team responsible for customer relations, support, and licensing while releasing, providing feedback, and supporting new product versions. Assisting with product deployment across diverse customer scenarios and gathering insights from implementation to inform future iterative product improvements.
+    description: `✧ Architected and shipped WebGLGT, a full-stack TypeScript/WebGL platform integrating Google Vision AI that made ML data-labeling 70%+ faster and eliminated the need for temporary staff.
 
-    ✧ Fostering relationships with key partner stakeholders. Leading regular discussions to align on project goals, gather feedback, and identify opportunities for improvement. Providing technical guidance and tailored engineering solutions to address specific business challenges.
+    ✧ Designed backend services, REST APIs, and SQL/Firestore data layers powering data prep, job orchestration, and evaluation feedback loops for downstream OCR and computer-vision models; owned schema design and resolved slow-query hot paths across millions of records.
 
-    ✧ Designed, developed, and currently maintaining a workflow automation tool that improves OCR engine and neural network training efficiency by 70%+, accelerating data preprocessing and improving model accuracy.
+    ✧ Trained and iterated on production OCR and computer-vision models using large image datasets across letters, flats, parcels, print codes, and routing marks for mail-sorting reader applications.
 
-    ✧ Collaborating with sales and marketing teams to develop compelling presentations and technical documentation that effectively showcase product features and benefits to clients.`,
+    ✧ Built and maintained C#/.NET automation services for the postal-directory build pipeline using ASP.NET Core, Entity Framework, headless-browser automation, a raw-TCP protocol driving the OCR engine, and real-time SSE status streaming to a Vue dashboard.
+
+    ✧ Drove $340K in annual cost savings (84% reduction) through infrastructure consolidation and delivered two zero-downtime datacenter migrations in 12 months supporting hundreds of customers.
+
+    ✧ Led a cross-functional team of 4 engineers supporting 6 major OEM partners and hundreds of facilities, providing tier-3 support and tailored engineering solutions with <24hr response time.`,
     tech: [
-      "Three.js",
+      "TypeScript",
       "React",
+      "Vue.js",
+      "Three.js",
       "React Three Fiber",
-      "Framer Motion",
+      "Node.js",
       "Express.js",
+      "C#",
+      "Asp.Net Core",
+      "Entity Framework",
+      "Google Cloud Vision AI",
+      "Firebase",
+      "Firestore",
       "Playwright",
-      "Google Firebase",
       "Git",
-      "GitHub",
     ],
   },
   {
     title: "Matthews International",
     logo: MatthewsLogo,
-    position: "Techservices Manager",
+    position: "Technical Services Manager",
     time: "2020 - 2023",
     location: "Redmond, WA",
     description: `✧ Continued the development of both new and existing product offerings, focusing on dashboards and development utilities, and utilizing multiple technologies to create 7 extension products and 3 new products.
 
-    ✧ Managed and oversaw the organization’s IT operations, including infrastructure, systems administration, and internal technical support.
+    ✧ Managed a cross-functional team of 6 technical consultants supporting 6 major OEM partners and hundreds of facilities for an industry-leading postal OCR solution deployed at USPIS and every major presort facility nationwide.
     
     ✧ Served as a primary point of contact for escalated technical issues, acting as a liaison to ensure customer needs were effectively communicated and addressed both externally and internally.
     
     ✧ Directed the migration of the USPS CASS cycle for our core postal products, ensuring a seamless transition and compliance with industry standards. Actively engaged in virtual and in-person conferences to align timing and development scheduling and deployment.
     
-    ✧ Led the successful relocation of server infrastructure and networking equipment between multiple buildings, ensuring minimal downtime and disruption to business operations.
+    ✧ Supervised product releases, licensing operations, and deployment for mission-critical OCR systems processing millions of mailpieces daily; administered cloud infrastructure (AWS, Vultr) and the technical-operations budget supporting hundreds of customer installations.
     
-    ✧ Improved operational efficiency and reduced annual IT operating costs by 84% through various initiatives, including re-evaluating and optimizing cloud services, as well as discontinuing unnecessary legacy systems.`,
+    ✧ Directed training programs and daily stand-ups to manage team workload and customer escalations; maintained <24hr response and <1 week average resolution with industry-leading customer satisfaction.`,
     tech: [
       "Vue.js",
       "Tailwind",
@@ -101,7 +111,7 @@ const experience = [
     ],
   },
   {
-    title: "Louisiana Division of Administration",
+    title: "Louisiana Department of Education",
     logo: LdoaLogo,
     position: "IT Specialist",
     time: "2012 - 2016",
@@ -123,7 +133,7 @@ const experience = [
   {
     title: "Louisiana State University",
     logo: LsuLogo,
-    position: "Network Infrastructure Engineer",
+    position: "Networking Infrastructure Engineer",
     time: "2010 - 2012",
     location: "Baton Rouge, LA",
     description: `✧ Designed and implemented custom circuits for large-scale stock ticker display project associated with the new Business Education Complex.

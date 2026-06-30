@@ -77,7 +77,7 @@ export const HeroSection = memo(({ sectionRef, targetRef }: Props) => {
               transition={{ duration: 0.5, delay: 0.75 }}
               className="pointer-events-auto leading-relaxed md:leading-relaxed max-w-xl text-sm text-projectDark text-shadow-black md:text-base"
             >
-              I've spent the last 5 years building and scaling software for some
+              I've spent the last 10 years building and scaling software for some
               pretty cool companies. Let's connect!
             </motion.p>
           </div>

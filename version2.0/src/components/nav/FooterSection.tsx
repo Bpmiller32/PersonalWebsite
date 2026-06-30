@@ -47,7 +47,7 @@ export const FooterSection = memo(({ refsArray }: Props) => {
         </div>
 
         <div className="text-projectDark flex items-center">
-          <p>{currentYear} | Designed by</p>
+          <p><a href="https://storage.googleapis.com/bpmillerwebsitestorage/therapy-presentation/index.html" target="_blank" rel="noopener noreferrer" className="text-inherit no-underline cursor-default">{currentYear}</a> | Designed by</p>
           &nbsp;
           <ScrambleText text="Billy Miller" />
         </div>
