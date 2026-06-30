@@ -21,12 +21,10 @@ lerna-debug.log*
 *.sln
 *.sw?
 
-# Environment variable files
-version1.0/.env
-version2.0/.env
-
-version1.0/functions/.env
-version2.0/functions/.env
+# Environment variable files (ignore all .env / .env.* everywhere, keep templates)
+.env
+.env.*
+!.env.example
 
 # Compiled Firebase function files
 version2.0/functions/lib/index.js

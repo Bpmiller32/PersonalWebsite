@@ -1,6 +1,6 @@
 # Billy Miller — Personal Website
 
-*A portfolio that's also an engineering playground: a hand-written WebGL galaxy hero and a Firestore → Discord notification backend, no Google Analytics in sight.*
+_A portfolio and engineering playground: a hand-written WebGL galaxy hero, animations, and a Firestore → Discord notification backend_
 
 **Languages**
 
@@ -14,7 +14,7 @@
 ![Three.js](https://img.shields.io/badge/Three.js-000000?style=flat-square&logo=threedotjs&logoColor=white)
 ![React Three Fiber](https://img.shields.io/badge/React_Three_Fiber-000000?style=flat-square&logo=react&logoColor=61DAFB)
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white)
-![Vue 3](https://img.shields.io/badge/Vue_3_(v1)-35495E?style=flat-square&logo=vuedotjs&logoColor=4FC08D)
+![Vue 3](<https://img.shields.io/badge/Vue_3_(v1)-35495E?style=flat-square&logo=vuedotjs&logoColor=4FC08D>)
 
 **Libraries**
 
@@ -40,40 +40,39 @@
 ![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=flat-square&logo=eslint&logoColor=white)
 ![PostCSS](https://img.shields.io/badge/PostCSS-DD3A0A?style=flat-square&logo=postcss&logoColor=white)
 
-This is my personal site — a single scrolling React page that opens on a 100,000-particle WebGL galaxy I wrote the shaders for by hand, then carries you through about / projects / work / contact with motion driving every section. Under the hood it runs its own analytics: instead of a third-party tag, the page writes visits and messages straight to Firestore, and Cloud Functions fan them out to me as live Discord notifications. It's deliberately over-built — the point was a portfolio impressive enough to stand next to the projects it links to.
+This is my personal site - a single scrolling React page that opens on a 100,000-particle WebGL galaxy I wrote the shaders for by hand, then carries you through about / projects / work / contact with motion driving every section. Under the hood it runs its own analytics instead of a third-party tag, the page writes visits and messages straight to Firestore, and Cloud Functions fan them out to me as live Discord notifications. It's deliberately over-built — the point was a portfolio impressive enough to stand next to the projects it links to.
 
-[Live site](https://billmill.dev) · [Architecture](#architecture) · [The galaxy hero](#the-galaxy-hero--100000-particles-of-hand-written-glsl) · [What I learned](#what-i-learned)
+[Live site](https://billmill.dev) · [Architecture](#architecture) · [What I learned](#what-i-learned)
 
 ---
 
-## Demo
+<!-- ## Demo
 
 ![Galaxy hero demo](./assets/demo.gif)
 
-<!-- TODO: replace with a real demo.gif — a 3-5s loop of the galaxy spiral winding/rotating on first load, captured at full width. 1200px wide max; Kap (Mac) / ScreenToGif (Windows) / LICEcap (cross-platform). This is the single best moment to capture and it goes at the very top, so make it the galaxy. -->
+TODO: replace with a real demo.gif — a 3-5s loop of the galaxy spiral winding/rotating on first load, captured at full width. 1200px wide max; Kap (Mac) / ScreenToGif (Windows) / LICEcap (cross-platform). This is the single best moment to capture and it goes at the very top, so make it the galaxy.
 
-<!-- TODO: optional second clip near Features — scroll the full page so sections animate in, then the contact form's invalid-email shake → successful "Message Sent". ./assets/scroll-and-contact.gif -->
+TODO: optional second clip near Features — scroll the full page so sections animate in, then the contact form's invalid-email shake → successful "Message Sent". ./assets/scroll-and-contact.gif -->
 
 ## Why this exists
 
-I wanted one site that did double duty: a professional front door for recruiters, and a sandbox where I could try things I don't get to try at work — GPU shader programming, a serverless event pipeline, motion design that isn't an afterthought. A static template would have done the "front door" job, but it wouldn't have *shown* anything. So I built the version that's a little excessive on purpose: if the portfolio is going to claim I can do graphics and backend plumbing, the portfolio itself should be the proof. This is the v2 React rewrite of an earlier [Vue 3 site](#from-vue-to-react) — same idea, rebuilt for the Three.js ecosystem and a cleaner component model.
+I wanted one site that did double duty: a professional front door for recruiters and a sandbox where I could try things I don't get to try at work — GPU shader programming, a serverless event pipeline, motion design that isn't an afterthought. A static template would have done the "front door" job, but it wouldn't have _shown_ anything. If the portfolio is going to claim I can do graphics and backend plumbing, the portfolio itself should be the proof. This is the v2 React rewrite of an earlier Vue 3 site. Same idea, rebuilt for the Three.js/React-Three-Fiber ecosystem and a cleaner component model.
 
 ## Features
 
 - **100,000-particle WebGL galaxy hero** — a single `THREE.Points` spiral rendered through react-three-fiber with hand-written GLSL vertex and fragment shaders, animated entirely on the GPU.
-- **First-party analytics with no Google Analytics** — `getAnalytics` is intentionally left off because it gets stripped by mobile content blockers; the page logs to its own Firestore instead, so there's no third-party beacon to block.
+- **First-party analytics with no Google Analytics** — `getAnalytics` is intentionally left off because it gets stripped by mobile content blockers. The page logs to its own Firestore instead so there's no third-party beacon to block.
 - **Real-time Discord notifications** — two Firestore `onCreate` Cloud Functions turn every visit and every contact message into a rich Discord embed (IP + geo for visits, email + body for messages) the moment the document is written.
 - **Scroll-driven motion throughout** — Framer Motion `useInView` reveals, a custom `ScrambleText` title effect, and Lottie micro-animations on logos and section underlines.
-- **Validated contact form** — regex email validation with an invalid-email *shake* animation, error text that only appears after the first submit attempt, and a one-shot send that writes straight to Firestore.
+- **Validated contact form** — regex email validation with an invalid-email _shake_ animation, error text that only appears after the first submit attempt, and a one-shot send that writes straight to Firestore.
 - **Visit fingerprinting** — each session captures public IP (ipify) and geolocation (ipinfo: city, region, country, coords, ISP, timezone), plus which sections were viewed and which links were clicked, all on one Firestore document.
 - **Responsive desktop / mobile split** — dedicated `NavDesktop` and `NavMobile` component trees rather than one set of breakpoints doing double duty.
-- **Single-page scroll navigation** — no router; nav and footer links `scrollIntoView` against shared section refs.
-
-<!-- TODO: drop the second demo gif (scroll + contact form shake) here if captured. -->
+- **Single-page scroll navigation** — no router, nav and footer links `scrollIntoView` against shared section refs.
 
 ## Tech stack
 
 **Frontend (version2.0)**
+
 - **React 18 + TypeScript** — single-page app, strict TS, JSX via SWC.
 - **react-three-fiber 8 + three 0.168** — declarative React bindings over Three.js for the galaxy hero.
 - **GLSL** — inline vertex/fragment shaders compiled into a `THREE.ShaderMaterial`.
@@ -83,6 +82,7 @@ I wanted one site that did double duty: a professional front door for recruiters
 - **axios** — IP/geo lookups. **@heroicons/react** + **react-icons** — iconography.
 
 **Backend & infrastructure**
+
 - **Cloud Firestore** — two collections, `siteVisits` and `websiteMessages`.
 - **Firebase Cloud Functions** (firebase-functions v1 API, Node 20) — `onCreate` Firestore triggers.
 - **discord-webhook-node** — builds and sends the Discord embeds.
@@ -90,6 +90,7 @@ I wanted one site that did double duty: a professional front door for recruiters
 - **External APIs** — [api.ipify.org](https://www.ipify.org/) (public IP), [ipinfo.io](https://ipinfo.io/) (geolocation).
 
 **Tooling**
+
 - **Vite 5** (+ `@vitejs/plugin-react-swc`) — dev server and production build.
 - **ESLint 9** (flat config, typescript-eslint, react-hooks/react-refresh plugins).
 - **PostCSS + autoprefixer**, **TypeScript 5.5**.
@@ -98,45 +99,7 @@ I wanted one site that did double duty: a professional front door for recruiters
 
 ## Architecture
 
-```mermaid
-flowchart TD
-  subgraph Browser["Visitor's browser — React 18 SPA"]
-    App["App.tsx<br/>single scroll page"]
-    Hero["WebGL galaxy hero<br/>r3f + GLSL"]
-    Form["Contact form<br/>MessageBox.tsx"]
-    App --> Hero
-    App --> Form
-  end
-
-  subgraph Ext["External APIs"]
-    Ipify(["api.ipify.org<br/>public IP"])
-    Ipinfo(["ipinfo.io<br/>geo lookup"])
-  end
-
-  subgraph FB["Firebase — project: bpmillerpersonalwebsite"]
-    Hosting["Hosting<br/>serves /dist (SPA)"]
-    FS[("Cloud Firestore<br/>siteVisits · websiteMessages")]
-    Fn1["Cloud Function<br/>sendDiscordMessageSiteVisits"]
-    Fn2["Cloud Function<br/>sendDiscordMessageWebsiteMessages"]
-  end
-
-  subgraph DC["Discord"]
-    WHv{{"Visits webhook"}}
-    WHm{{"Messages webhook"}}
-  end
-
-  Hosting -. serves app .-> App
-  App -- "on load: IP then geo" --> Ipify --> Ipinfo
-  App -- "addDoc + arrayUnion<br/>(IP, geo, sections, links)" --> FS
-  Form -- "addDoc(email, message)" --> FS
-  FS -- "onCreate /siteVisits" --> Fn1 --> WHv
-  FS -- "onCreate /websiteMessages" --> Fn2 --> WHm
-```
-
-<!-- Optional: replace the Mermaid diagram with a custom image (Excalidraw, draw.io, Figma export) for a more polished look -->
-<!-- ![Architecture](./assets/architecture.png) -->
-
-The interesting part of this diagram is the right-hand path: **the browser never talks to a server I wrote.** It writes a document to Firestore, and the *database write itself* is the event that triggers a Cloud Function to notify me on Discord. There's no API to stand up, no endpoint to secure, no polling loop — analytics and contact delivery are both just "a document appeared, fan it out." That's also why there's no Google Analytics anywhere: the client writes to its own Firestore through the Firebase SDK, so there's no `google-analytics.com`/`gtag` request for a content blocker to catch.
+The browser never talks to a server I wrote. It writes a document to Firestore, and the _database write itself_ is the event that triggers a Cloud Function to notify me on Discord. There's no API to stand up, no endpoint to secure, no polling loop — analytics and contact delivery are both just "a document appeared, fan it out." That's also why there's no Google Analytics anywhere. The client writes to its own Firestore through the Firebase SDK, so there's no `google-analytics.com`/`gtag` request for a content blocker to catch.
 
 ## The galaxy hero — 100,000 particles of hand-written GLSL
 
@@ -162,13 +125,6 @@ gl_FragColor = vec4(vColor, strength);   // vColor lerps cyan #32e7e7 → purple
 
 ## Real-time analytics, without Google Analytics
 
-The decision that shaped this whole subsystem is one commented-out line in `firebase/index.tsx`:
-
-```ts
-// Calling getAnalytics anywhere in the project causes it to be caught by iPhone content blocker
-// export const analytics = getAnalytics(app);
-```
-
 Instead of a third-party tag, the client is the analytics. On mount, `App.tsx` calls `logSiteVisit()`, which fetches the visitor's IP from ipify, geolocates it via ipinfo, and `addDoc`s a `siteVisits` document — holding the returned doc id in a `useRef` as the session id. As the visitor scrolls, Framer Motion's `useInView` flags each section once and `logSectionView()` does an `arrayUnion` into `sectionsVisited`; link clicks `arrayUnion` into `linksClicked`. The contact form writes a separate `websiteMessages` document. On the backend, two `onCreate` Cloud Functions translate those writes into Discord embeds in real time:
 
 ```ts
@@ -180,7 +136,9 @@ export const sendDiscordMessageSiteVisits = functions.firestore
     const embed = new MessageBuilder()
       .setColor(0x00b0f4)
       .setTitle(data.ipAddress)
-      .setDescription(`City: ${data.location.city}\nState: ${data.location.region}\nCountry: ${data.location.country}`)
+      .setDescription(
+        `City: ${data.location.city}\nState: ${data.location.region}\nCountry: ${data.location.country}`,
+      )
       .setTimestamp();
     return hook.send(embed);
   });
@@ -191,6 +149,7 @@ The result: I get a live ping in Discord with a visitor's location the moment th
 ## Getting started
 
 **Prerequisites**
+
 - **Node.js 20** (the Cloud Functions runtime is pinned to Node 20; the app builds on Node 18+).
 - **npm** (ships with Node).
 - **Firebase CLI** — only needed if you intend to deploy: `npm i -g firebase-tools`.
@@ -228,41 +187,14 @@ firebase deploy                       # hosting + functions + firestore rules
 firebase deploy --only hosting        # site only
 ```
 
-**Environment variables.** There is no `.env.example` yet <!-- TODO: add version2.0/.env.example and version2.0/functions/.env.example templates -->, so create the env files by hand:
-
-`version2.0/.env` (Vite client config — these values are public by design):
-
-```bash
-VITE_FIREBASE_API_KEY=...
-VITE_FIREBASE_AUTH_DOMAIN=...
-VITE_FIREBASE_PROJECT_ID=...
-VITE_FIREBASE_STORAGE_BUCKET=...
-VITE_FIREBASE_MESSAGING_SENDER_ID=...
-VITE_FIREBASE_APP_ID=...
-```
-
-`version2.0/functions/.env` (server-side — keep private):
-
-```bash
-DISCORD_WEBHOOK_AVATAR_URL=...
-DISCORD_CHANNEL_WEBHOOK_VISITS=...
-DISCORD_CHANNEL_WEBHOOK_MESSAGES=...
-```
-
 ## What I learned
 
-- **Animate on the GPU, not the CPU.** My first instinct was to recompute 100,000 particle positions in JavaScript every frame — which tanks the frame rate before you've drawn a single pixel. Moving the rotation into the vertex shader and driving it with one `uTime` uniform means the CPU does almost nothing per frame and the GPU handles all 100k transforms in parallel. The `1.0 / distanceToCenter` rotation rate was the small idea that made the spiral actually *look* like a galaxy instead of a rigid pinwheel.
+- **Animate on the GPU, not the CPU.** Moving the rotation into the vertex shader and driving it with one `uTime` uniform means the CPU does almost nothing per frame and the GPU handles all 100k transforms in parallel. The `1.0 / distanceToCenter` rotation rate was the small idea that made the spiral actually look like a galaxy instead of a rigid pinwheel.
 
-- **The best backend is sometimes a database trigger.** I didn't write a notification server. The Firestore write *is* the event — `onCreate` triggers fan it out to Discord. No endpoint to host, no queue to poll, no auth layer to babysit; the database and the event bus are the same thing. It reframed "I need a backend" into "I need a document to appear."
+- **The best backend is sometimes a database trigger.** I didn't write a notification server. The Firestore write is the event — `onCreate` triggers fan it out to Discord. No endpoint to host, no queue to poll, no auth layer to babysit. The database and the event bus are the same thing. It reframed "I need a backend" into "I need a document to appear".
 
-- **Working around content blockers changed the design, not just a config flag.** Discovering that `getAnalytics` gets silently stripped on iOS meant the whole analytics approach had to move client-side: write first-party documents through the Firebase SDK so there's no recognizable third-party beacon. The constraint pushed me toward a design that's both more private and more under my control.
+- **Working around content blockers changed the design, not just a config flag.** Discovering that `getAnalytics` gets silently stripped on iOS and common adblockers meant the whole analytics approach had to move client-side. Write first-party documents through the Firebase SDK so there's no recognizable third-party beacon. The constraint pushed me toward a design that's both more private and more under my control.
 
-- **Refs are a deliberate tool for controlling renders, not just escape hatches.** The contact form keeps email validity, "pressed once," and enabled state in `useRef`s and only forces a re-render when it actually needs the shake to fire or the error text to update — so the invalid-email message appears *only after* the first submit and then corrects per keystroke. Reaching for `useRef` over `useState` was a conscious choice about exactly when React should re-render, and it's the same reasoning behind reading `useThree((s) => s.gl)` as a selector so the canvas doesn't re-render needlessly.
+- **Refs are a deliberate tool for controlling renders, not just escape hatches.** The contact form keeps email validity, "pressed once," and enabled state in `useRef`s and only forces a re-render when it actually needs the shake to fire or the error text to update — so the invalid-email message appears only after the first submit and then corrects per keystroke. Reaching for `useRef` over `useState` was a conscious choice about exactly when React should re-render, and it's the same reasoning behind reading `useThree((s) => s.gl)` as a selector so the canvas doesn't re-render needlessly.
 
-## From Vue to React
-
-The first version of this site (`version1.0`, still in the repo) was Vue 3 with the `motion` animation library and Firebase 9. I rewrote it in React 18 mainly to get first-class access to **react-three-fiber** and the Three.js ecosystem for the galaxy hero, plus a component model and TypeScript setup I wanted to build the rest of the site on. The Vue version is kept around as the "before."
-
----
-
-*Status: live at [billmill.dev](https://billmill.dev) and fully functional — refreshed for a 2026 job search. Near-term roadmap: ship `.env.example` templates, add Open Graph / Twitter-card meta and a social-share image, and pause the WebGL canvas when the hero scrolls out of view to save battery on long pages.*
+- **From Vue to React.** The first version of this site (version1.0, still in the repo) was Vue 3 with the `motion` animation library and Firebase 9. I rewrote it in React 18 mainly to get first-class access to react-three-fiber and the Three.js ecosystem for the galaxy hero. Plus I wanted a new component model and TypeScript setup to build the rest of the site on.
